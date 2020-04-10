@@ -1,0 +1,17 @@
+[
+  {
+    "_id": 1,
+    "code": "tag1",
+    "name": "Tag 1"
+  },
+  {
+    "_id": 2,
+    "code": "tag2",
+    "name": "Tag 2"
+  },
+  {
+    "_id": 3,
+    "code": "tag3",
+    "name": "Tag 3"
+  }
+]

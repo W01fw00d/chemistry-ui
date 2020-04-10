@@ -1,0 +1,78 @@
+{
+  "name": "escaping_boredom",
+  "version": "1.0.0",
+  "description": "Portfolio App about Escape Rooms",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -s ./public -p 6006",
+    "build-storybook": "build-storybook",
+    "cypress:open": "cypress open",
+    "start-back": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-rec/0a07418b40b5c4e0b00a8bbb05f7c7efd328bf48.git"
+  },
+  "author": "romay.gabriel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-rec/0a07418b40b5c4e0b00a8bbb05f7c7efd328bf48/issues"
+  },
+  "homepage": "https://github.com/m-rec/0a07418b40b5c4e0b00a8bbb05f7c7efd328bf48#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.3.12",
+    "@storybook/addon-links": "^5.3.12",
+    "@storybook/addons": "^5.3.12",
+    "@storybook/react": "^5.3.12",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "cypress": "^4.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.1",
+    "@material-ui/icons": "^4.9.1",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "react-hot-loader": "^4.12.19",
+    "react-router-dom": "^5.1.2",
+    "storybook-react-router": "^1.0.8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint",
+      "pretty-quick — staged",
+      "git add"
+    ]
+  }
+}
