@@ -1,12 +1,14 @@
 ## How to use
 
-- Install dependencies
+## How to launch Storybook
+
+1. Install dependencies
 
 ```
 npm install
 ```
 
-- Launch Storybook
+2. Launch Storybook
 
 ```
 npm run storybook

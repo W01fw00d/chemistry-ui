@@ -2,15 +2,21 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
-  mode: 'development',
+  entry: 'index.js',
+  mode: 'production',
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        options: { presets: ['@babel/env'] },
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['preset-env', 'react'],
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
@@ -26,7 +32,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist/'),
     publicPath: '/dist/',
-    filename: 'bundle.js',
+    filename: 'index.js',
+    libraryTarget: 'commonjs2',
   },
   devServer: {
     contentBase: path.join(__dirname, 'public/'),
