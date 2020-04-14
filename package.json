@@ -1,6 +1,6 @@
 {
   "name": "chemistry-ui",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Portfolio React Components Library based on Material-ui",
   "main": "index.js",
   "scripts": {
