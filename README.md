@@ -1,4 +1,8 @@
+Published on https://www.npmjs.com/package/chemistry-ui !
+
 ## How to use
+
+A link to an usage example project will be added soon...
 
 ## How to launch Storybook
 
