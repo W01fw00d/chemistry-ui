@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, ThemeProvider } from '@material-ui/core';
+
+import theme from '../styles/global-styles';
 
 import Typography from '../atoms/typography';
 import Image from '../atoms/image';
@@ -11,14 +13,14 @@ import ItemDetailDescriptionSection from '../organisms/itemDetailDescriptionSect
 import ItemDetailFooterBar from '../organisms/itemDetailFooterBar';
 
 export default function RoomDetailTemplate({ literals, data, handleClick }) {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles({
     marginBottom: {
       marginBottom: theme.spacing(7),
     },
     name: {
       padding: theme.spacing(1),
     },
-  }));
+  });
   const classes = useStyles();
 
   const buttonsRowLiterals = {
@@ -39,7 +41,7 @@ export default function RoomDetailTemplate({ literals, data, handleClick }) {
 
   return (
     data && (
-      <div>
+      <ThemeProvider theme={theme}>
         <ItemDetailAppBar name={data.name} handleClick={handleClick} />
         <Image src={data.image} />
         <Typography variant="h6" color="inherit" className={classes.name}>
@@ -60,7 +62,7 @@ export default function RoomDetailTemplate({ literals, data, handleClick }) {
           data={footerBarData}
           handleClick={handleClick}
         />
-      </div>
+      </ThemeProvider>
     )
   );
 }

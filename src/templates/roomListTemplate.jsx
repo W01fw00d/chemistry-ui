@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, ThemeProvider } from '@material-ui/core';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
+
+import theme from '../styles/global-styles';
 
 import ItemListGrid from '../molecules/itemListGrid';
 import OverlayedIconButton from '../molecules/overlayedIconButton';
@@ -17,12 +19,12 @@ export default function RoomListTemplate({
   handleChange,
   handleClick,
 }) {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles({
     layout: {
       backgroundColor: theme.palette.primary.light,
       paddingBottom: theme.spacing(4),
     },
-  }));
+  });
   const classes = useStyles();
 
   const itemListHeaderLiterals = {
@@ -30,27 +32,29 @@ export default function RoomListTemplate({
   };
 
   return (
-    <div className={classes.layout}>
-      {tags && (
-        <ItemListHeader
-          literals={itemListHeaderLiterals}
-          tags={tags}
-          searchValue={search}
-          handleChange={handleChange}
-          handleClick={handleClick}
-        />
-      )}
-      {itemList && (
-        <ItemListGrid>
-          {itemList.map(productData => (
-            <ItemListProduct key={productData.id} data={productData} />
-          ))}
-        </ItemListGrid>
-      )}
-      <OverlayedIconButton handleClick={handleClick}>
-        <PhotoCameraIcon />
-      </OverlayedIconButton>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className={classes.layout}>
+        {tags && (
+          <ItemListHeader
+            literals={itemListHeaderLiterals}
+            tags={tags}
+            searchValue={search}
+            handleChange={handleChange}
+            handleClick={handleClick}
+          />
+        )}
+        {itemList && (
+          <ItemListGrid>
+            {itemList.map(productData => (
+              <ItemListProduct key={productData.id} data={productData} />
+            ))}
+          </ItemListGrid>
+        )}
+        <OverlayedIconButton handleClick={handleClick}>
+          <PhotoCameraIcon />
+        </OverlayedIconButton>
+      </div>
+    </ThemeProvider>
   );
 }
 
