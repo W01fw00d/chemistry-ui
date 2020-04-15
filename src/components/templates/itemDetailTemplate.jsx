@@ -12,7 +12,7 @@ import ItemDetailButtonsRow from '../organisms/itemDetailButtonsRow';
 import ItemDetailDescriptionSection from '../organisms/itemDetailDescriptionSection';
 import ItemDetailFooterBar from '../organisms/itemDetailFooterBar';
 
-export default function RoomDetailTemplate({ literals, data, handleClick }) {
+export default function ItemDetailTemplate({ literals, data, handleClick }) {
   const useStyles = makeStyles({
     marginBottom: {
       marginBottom: theme.spacing(7),
@@ -67,7 +67,7 @@ export default function RoomDetailTemplate({ literals, data, handleClick }) {
   );
 }
 
-RoomDetailTemplate.defaultProps = {
+ItemDetailTemplate.defaultProps = {
   literals: {
     like: ItemDetailButtonsRow.defaultProps.literals.like,
     comment: ItemDetailButtonsRow.defaultProps.literals.comment,
@@ -85,7 +85,7 @@ RoomDetailTemplate.defaultProps = {
   handleClick: () => {},
 };
 
-RoomDetailTemplate.propTypes = {
+ItemDetailTemplate.propTypes = {
   literals: PropTypes.shape({
     like: ItemDetailButtonsRow.propTypes.literals.like,
     comment: ItemDetailButtonsRow.propTypes.literals.comment,

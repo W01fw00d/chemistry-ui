@@ -50,4 +50,4 @@ npm run storybook
 
 - Editor's choice banner from [original image](https://pixabay.com/illustrations/tape-red-decor-for-the-web-plate-2410588/), which is under Pixabay License, free for commercial use
 
-- Fake room image from [pixabay](https://pixabay.com/photos/wall-furniture-design-apartment-416060/)
+- Fake item image from [pixabay](https://pixabay.com/photos/wall-furniture-design-apartment-416060/)

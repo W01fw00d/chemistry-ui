@@ -3,16 +3,16 @@ import React from 'react';
 import StoryRouter from 'storybook-react-router';
 import { storiesOf } from '@storybook/react';
 
-import roomsData from '../../../../.storybook/fake_data/rooms.json';
+import itemData from '../../../../.storybook/fake_data/items.json';
 
 import ItemListProduct from '../itemListProduct';
 
-const room = roomsData[0];
+const item = itemData[0];
 const data = {
-  image: room.image,
-  name: room.name,
-  price: room.price,
-  likeCount: room.likeCount,
+  image: item.image,
+  name: item.name,
+  price: item.price,
+  likeCount: item.likeCount,
 };
 
 storiesOf('3. Organisms|ItemList.Product', module)

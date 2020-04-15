@@ -9,8 +9,8 @@ import { ThemeProvider } from '@material-ui/core';
 import theme from '../../../styles/global-styles';
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
 import tags from '../../../../.storybook/fake_data/tags.json';
-import rooms from '../../../../.storybook/fake_data/rooms.json';
-import RoomListTemplate from '../roomListTemplate';
+import items from '../../../../.storybook/fake_data/items.json';
+import ItemListTemplate from '../itemListTemplate';
 
 const literals = {
   search: allLiterals.search,
@@ -20,14 +20,14 @@ const getThemeProviderDecorator = storyFn => (
   <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>
 );
 
-storiesOf('4. Templates|RoomList', module)
+storiesOf('4. Templates|ItemList', module)
   .addDecorator(StoryRouter())
   .addDecorator(getThemeProviderDecorator)
   .add('default', () => (
-    <RoomListTemplate
+    <ItemListTemplate
       literals={literals}
       search="Search Value"
-      itemList={rooms}
+      itemList={items}
       tags={tags}
       handleChange={action('Input detected')}
       handleClick={action('Button clicked')}

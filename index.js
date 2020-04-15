@@ -1,2 +1,2 @@
-export { default as RoomListTemplate } from './src/components/templates/roomListTemplate.jsx';
-export { default as RoomDetailTemplate } from './src/components/templates/roomDetailTemplate.jsx';
+export { default as ItemListTemplate } from './src/components/templates/itemListTemplate.jsx';
+export { default as ItemDetailTemplate } from './src/components/templates/itemDetailTemplate.jsx';

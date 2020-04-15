@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
-import data from '../../../../.storybook/fake_data/rooms.json';
+import data from '../../../../.storybook/fake_data/items.json';
 
 import ItemDetailFooterBar from '../itemDetailFooterBar';
 

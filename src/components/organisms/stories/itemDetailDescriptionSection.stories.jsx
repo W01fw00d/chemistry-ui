@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
-import data from '../../../../.storybook/fake_data/rooms.json';
+import data from '../../../../.storybook/fake_data/items.json';
 
 import ItemDetailDescriptionSection from '../itemDetailDescriptionSection';
 

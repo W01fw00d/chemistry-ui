@@ -11,7 +11,7 @@ import OverlayedIconButton from '../molecules/overlayedIconButton';
 import ItemListHeader from '../organisms/itemListHeader';
 import ItemListProduct from '../organisms/itemListProduct';
 
-export default function RoomListTemplate({
+export default function ItemListTemplate({
   literals,
   search,
   itemList,
@@ -58,7 +58,7 @@ export default function RoomListTemplate({
   );
 }
 
-RoomListTemplate.defaultProps = {
+ItemListTemplate.defaultProps = {
   literals: {
     search: ItemListHeader.defaultProps.literals.search,
   },
@@ -69,7 +69,7 @@ RoomListTemplate.defaultProps = {
   handleClick: () => {},
 };
 
-RoomListTemplate.propTypes = {
+ItemListTemplate.propTypes = {
   literals: PropTypes.shape({
     search: ItemListHeader.propTypes.literals.search,
   }),

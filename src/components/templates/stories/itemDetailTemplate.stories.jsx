@@ -8,9 +8,9 @@ import { ThemeProvider } from '@material-ui/core';
 
 import theme from '../../../styles/global-styles';
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
-import allData from '../../../../.storybook/fake_data/rooms.json';
+import allData from '../../../../.storybook/fake_data/items.json';
 
-import RoomDetailTemplate from '../roomDetailTemplate';
+import ItemDetailTemplate from '../itemDetailTemplate';
 
 const literals = {
   like: allLiterals.like,
@@ -30,9 +30,9 @@ const getThemeProviderDecorator = storyFn => (
   <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>
 );
 
-storiesOf('4. Templates|RoomDetail', module)
+storiesOf('4. Templates|ItemDetail', module)
   .addDecorator(StoryRouter())
   .addDecorator(getThemeProviderDecorator)
   .add('default', () => (
-    <RoomDetailTemplate literals={literals} data={data} handleClick={action('Button clicked')} />
+    <ItemDetailTemplate literals={literals} data={data} handleClick={action('Button clicked')} />
   ));
