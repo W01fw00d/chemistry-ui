@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles, ThemeProvider } from '@material-ui/core';
 
-import theme from '../styles/global-styles';
+import theme from '../../styles/global-styles';
 
 import Typography from '../atoms/typography';
 import Image from '../atoms/image';

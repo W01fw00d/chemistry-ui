@@ -68,7 +68,7 @@ ItemDetailFooterBar.propTypes = {
   }),
   data: PropTypes.shape({
     price: PropTypes.number,
-    isGroupPrice: PropTypes.boolean,
+    isGroupPrice: PropTypes.bool,
   }),
   handleClick: PropTypes.func,
 };

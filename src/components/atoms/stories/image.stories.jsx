@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import data from '../../../public/storybook_fake_data/rooms.json';
+import data from '../../../../.storybook/fake_data/rooms.json';
 
 import Image from '../image';
 

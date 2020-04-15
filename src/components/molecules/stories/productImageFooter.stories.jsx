@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import rooms from '../../../public/storybook_fake_data/rooms.json';
+import rooms from '../../../../.storybook/fake_data/rooms.json';
 import ProductImageFooter from '../productImageFooter';
 
 const details = rooms[0];

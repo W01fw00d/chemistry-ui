@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import allLiterals from '../../../public/storybook_fake_data/literals.json';
+import allLiterals from '../../../../.storybook/fake_data/literals.json';
 
 import ItemDetailButtonsRow from '../itemDetailButtonsRow';
 

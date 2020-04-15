@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles, ThemeProvider } from '@material-ui/core';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 
-import theme from '../styles/global-styles';
+import theme from '../../styles/global-styles';
 
 import ItemListGrid from '../molecules/itemListGrid';
 import OverlayedIconButton from '../molecules/overlayedIconButton';

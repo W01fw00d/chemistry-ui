@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import tags from '../../../public/storybook_fake_data/tags.json';
+import tags from '../../../../.storybook/fake_data/tags.json';
 
 import ItemListCategoriesBar from '../itemListCategoriesBar';
 

@@ -53,7 +53,8 @@ export default function ItemListToolbar({
 
 ItemListToolbar.defaultProps = {
   literals: {},
-  searchValue: '',
+  className: '',
+  searchValue: null,
   handleChange: () => {},
   handleClick: () => {},
 };
@@ -62,6 +63,7 @@ ItemListToolbar.propTypes = {
   literals: PropTypes.shape({
     search: PropTypes.string,
   }),
+  className: PropTypes.string,
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,

@@ -6,10 +6,10 @@ import { action } from '@storybook/addon-actions';
 
 import { ThemeProvider } from '@material-ui/core';
 
-import theme from '../../styles/global-styles';
-import allLiterals from '../../../public/storybook_fake_data/literals.json';
-import tags from '../../../public/storybook_fake_data/tags.json';
-import rooms from '../../../public/storybook_fake_data/rooms.json';
+import theme from '../../../styles/global-styles';
+import allLiterals from '../../../../.storybook/fake_data/literals.json';
+import tags from '../../../../.storybook/fake_data/tags.json';
+import rooms from '../../../../.storybook/fake_data/rooms.json';
 import RoomListTemplate from '../roomListTemplate';
 
 const literals = {
