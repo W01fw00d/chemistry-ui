@@ -1,5 +1,3 @@
-[Published on npm](https://www.npmjs.com/package/chemistry-ui).
-
 [![npm version](https://badge.fury.io/js/chemistry-ui.svg)](//npmjs.com/package/chemistry-ui)
 
 ## How to use
