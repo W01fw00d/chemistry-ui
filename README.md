@@ -1,4 +1,4 @@
-Published on https://www.npmjs.com/package/chemistry-ui !
+Published on [npm](https://www.npmjs.com/package/chemistry-ui).
 
 ## How to use
 
