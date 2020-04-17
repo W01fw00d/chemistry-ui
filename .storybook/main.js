@@ -5,6 +5,13 @@ module.exports = {
     '../src/components/organisms/stories/**/*.stories.jsx',
     '../src/components/templates/stories/**/*.stories.jsx',
   ],
-  addons: ['@storybook/addon-actions', '@storybook/addon-links'],
+  addons: [
+    '@storybook/addon-actions',
+    '@storybook/addon-links',
+    '@storybook/addons',
+    '@storybook/react',
+    '@storybook/theming',
+    '@storybook/theming/create',
+  ],
   webpackFinal: async config => config,
 };
