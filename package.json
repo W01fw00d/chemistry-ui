@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "start-storybook -s ./public -p 6006",
+    "heroku-postbuild": "build-storybook",
     "build-storybook": "build-storybook"
   },
   "repository": {
