@@ -15,7 +15,7 @@ npm install
 2. Launch Storybook
 
 ```
-npm start
+npm run storybook
 ```
 
 ## Functional description
@@ -46,8 +46,8 @@ npm start
 
 ## Atribution
 
-- Favicon generated from [original image](https://pixabay.com/photos/leuchtkasten-shield-output-note-1773916/), which is under Pixabay License, free for commercial use
+- [Favicons generated](https://www.favicon-generator.org/) from original image created by MartaX, which is under Pixabay License, free for commercial use.
 
-- Editor's choice banner from [original image](https://pixabay.com/illustrations/tape-red-decor-for-the-web-plate-2410588/), which is under Pixabay License, free for commercial use
+- Editor's choice banner from [original image](https://pixabay.com/illustrations/tape-red-decor-for-the-web-plate-2410588/), which is under Pixabay License, free for commercial use.
 
-- Fake item image from [pixabay](https://pixabay.com/photos/wall-furniture-design-apartment-416060/)
+- Fake item image from [pixabay](https://pixabay.com/photos/wall-furniture-design-apartment-416060/).
