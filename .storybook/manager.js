@@ -1,10 +1,12 @@
 import { addons } from '@storybook/addons';
-import { themes } from '@storybook/theming';
+import { create } from '@storybook/theming/create';
 
 addons.setConfig({
-  theme: themes.dark,
+  theme: create({
+    base: 'light',
 
-  brandTitle: 'Chemistry-UI',
-  brandUrl: 'https://github.com/W01fw00d/chemistry-ui',
-  brandImage: 'escaping_boredom.png',
+    brandTitle: 'MANAGER',
+    brandUrl: 'https://example.com',
+    brandImage: 'https://placehold.it/350x150',
+  }),
 });

@@ -1,12 +1,14 @@
 import { addParameters } from '@storybook/react';
-import { themes } from '@storybook/theming';
+import { create } from '@storybook/theming/create';
 
 addParameters({
   options: {
-    theme: themes.dark,
+    theme: create({
+      base: 'light',
 
-    brandTitle: 'Chemistry-UI',
-    brandUrl: 'https://github.com/W01fw00d/chemistry-ui',
-    brandImage: 'escaping_boredom.png',
+      brandTitle: 'PREVIEW',
+      brandUrl: 'https://example.com',
+      brandImage: 'https://placehold.it/350x150',
+    }),
   },
 });

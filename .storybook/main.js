@@ -11,6 +11,7 @@ module.exports = {
     '@storybook/addons',
     '@storybook/react',
     '@storybook/theming',
+    '@storybook/theming/create',
   ],
   webpackFinal: async config => config,
 };
