@@ -15,7 +15,7 @@ npm install
 2. Launch Storybook
 
 ```
-npm run storybook
+npm start
 ```
 
 ## Functional description

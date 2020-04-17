@@ -4,22 +4,22 @@
   "description": "Portfolio React Components Library based on Material-ui",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -s ./public -p 6006",
+    "start": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/W01fw00d/chemistry-ui.git"
   },
-  "author": "romay.gabriel",
+  "author": "Gabriel Romay Machado",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/W01fw00d/chemistry-ui/issues"
   },
   "homepage": "https://github.com/W01fw00d/chemistry-ui#readme",
+  "engines": {
+    "node": "12.13.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.9.0",
