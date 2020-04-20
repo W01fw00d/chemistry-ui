@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles, Grid } from '@material-ui/core';
 import { FavoriteBorder as LikeIcon } from '@material-ui/icons';
 
-import Typography from '../atoms/typography';
+import Typography from '../atoms/typography.jsx';
 
 export default function ProductImageFooter({ data }) {
   const useStyles = makeStyles(theme => ({

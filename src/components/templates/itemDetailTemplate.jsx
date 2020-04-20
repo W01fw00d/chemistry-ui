@@ -7,12 +7,12 @@ import theme from '../../styles/global-styles';
 
 import itemImage from '../../../public/fake_imgs/item.jpg';
 
-import Typography from '../atoms/typography';
-import Image from '../atoms/image';
-import ItemDetailAppBar from '../organisms/itemDetailHeader';
-import ItemDetailButtonsRow from '../organisms/itemDetailButtonsRow';
-import ItemDetailDescriptionSection from '../organisms/itemDetailDescriptionSection';
-import ItemDetailFooterBar from '../organisms/itemDetailFooterBar';
+import Typography from '../atoms/typography.jsx';
+import Image from '../atoms/image.jsx';
+import ItemDetailAppBar from '../organisms/itemDetailHeader.jsx';
+import ItemDetailButtonsRow from '../organisms/itemDetailButtonsRow.jsx';
+import ItemDetailDescriptionSection from '../organisms/itemDetailDescriptionSection.jsx';
+import ItemDetailFooterBar from '../organisms/itemDetailFooterBar.jsx';
 
 export default function ItemDetailTemplate({ literals, data, handleClick }) {
   const useStyles = makeStyles({

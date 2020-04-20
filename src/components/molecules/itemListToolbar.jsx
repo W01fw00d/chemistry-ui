@@ -8,8 +8,8 @@ import {
   Check as CheckIcon,
 } from '@material-ui/icons';
 
-import IconButton from '../atoms/iconButton';
-import TextField from '../atoms/textField';
+import IconButton from '../atoms/iconButton.jsx';
+import TextField from '../atoms/textField.jsx';
 
 export default function ItemListToolbar({
   literals,

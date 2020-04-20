@@ -8,10 +8,10 @@ import {
   Publish as PublishIcon,
 } from '@material-ui/icons';
 
-import Link from '../atoms/link';
-import Typography from '../atoms/typography';
-import IconButton from '../atoms/iconButton';
-import AppBar from '../molecules/appBar';
+import Link from '../atoms/link.jsx';
+import Typography from '../atoms/typography.jsx';
+import IconButton from '../atoms/iconButton.jsx';
+import AppBar from '../molecules/appBar.jsx';
 
 export default function ItemDetailAppBar({ name, handleClick }) {
   const useStyles = makeStyles(theme => ({

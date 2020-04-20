@@ -6,10 +6,10 @@ import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 
 import theme from '../../styles/global-styles';
 
-import ItemListGrid from '../molecules/itemListGrid';
-import OverlayedIconButton from '../molecules/overlayedIconButton';
-import ItemListHeader from '../organisms/itemListHeader';
-import ItemListProduct from '../organisms/itemListProduct';
+import ItemListGrid from '../molecules/itemListGrid.jsx';
+import OverlayedIconButton from '../molecules/overlayedIconButton.jsx';
+import ItemListHeader from '../organisms/itemListHeader.jsx';
+import ItemListProduct from '../organisms/itemListProduct.jsx';
 
 export default function ItemListTemplate({
   literals,
