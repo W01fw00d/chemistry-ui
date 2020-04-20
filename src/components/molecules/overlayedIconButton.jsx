@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-import IconButton from '../atoms/iconButton';
-import Footer from './footer';
+import IconButton from '../atoms/iconButton.jsx';
+import Footer from './footer.jsx';
 
 export default function OverlayedIconButton({ color, children, handleClick }) {
   const useStyles = makeStyles(theme => ({

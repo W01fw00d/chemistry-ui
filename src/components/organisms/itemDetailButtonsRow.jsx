@@ -8,9 +8,9 @@ import {
   Flag as FlagIcon,
 } from '@material-ui/icons';
 
-import Typography from '../atoms/typography';
-import IconTextButton from '../atoms/iconTextButton';
-import IconButton from '../atoms/iconButton';
+import Typography from '../atoms/typography.jsx';
+import IconTextButton from '../atoms/iconTextButton.jsx';
+import IconButton from '../atoms/iconButton.jsx';
 
 export default function ItemDetailButtonsRow({ literals, likeCount, handleClick }) {
   const useStyles = makeStyles(theme => ({

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-import Typography from '../atoms/typography';
+import Typography from '../atoms/typography.jsx';
 
 export default function ItemDetailDescriptionSection({ className, literals, description }) {
   const useStyles = makeStyles(theme => ({

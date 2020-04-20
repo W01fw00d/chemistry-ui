@@ -6,9 +6,9 @@ import { makeStyles } from '@material-ui/core';
 import banner from '../../../public/banner.png';
 import itemImage from '../../../public/fake_imgs/item.jpg';
 
-import Link from '../atoms/link';
-import Image from '../atoms/image';
-import ProductImageFooter from '../molecules/productImageFooter';
+import Link from '../atoms/link.jsx';
+import Image from '../atoms/image.jsx';
+import ProductImageFooter from '../molecules/productImageFooter.jsx';
 
 export default function ItemListProduct({ data }) {
   const useStyles = makeStyles({

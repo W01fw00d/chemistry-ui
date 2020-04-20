@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { makeStyles, Grid } from '@material-ui/core';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
-import IconButton from '../atoms/iconButton';
-import AppBar from '../molecules/appBar';
-import ItemListToolbar from '../molecules/itemListToolbar';
-import ItemListCategoriesBar from '../molecules/itemListCategoriesBar';
+import IconButton from '../atoms/iconButton.jsx';
+import AppBar from '../molecules/appBar.jsx';
+import ItemListToolbar from '../molecules/itemListToolbar.jsx';
+import ItemListCategoriesBar from '../molecules/itemListCategoriesBar.jsx';
 
 export default function ItemListHeader({ literals, tags, searchValue, handleChange, handleClick }) {
   const useStyles = makeStyles(theme => ({

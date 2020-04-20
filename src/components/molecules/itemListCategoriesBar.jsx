@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles, Grid } from '@material-ui/core';
 
-import TextButton from '../atoms/textButton';
+import TextButton from '../atoms/textButton.jsx';
 
 export default function ItemListCategoriesBar({ tags, handleClick }) {
   const useStyles = makeStyles(theme => ({
