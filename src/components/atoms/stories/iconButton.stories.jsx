@@ -10,7 +10,7 @@ import theme from '../../../styles/global-styles';
 
 import IconButton from '../iconButton';
 
-storiesOf('1. Atoms|Buttons.IconButton', module)
+storiesOf('Atoms/Buttons/IconButton', module)
   .addDecorator(themeDecorator(theme))
   .add('ArrowBackIcon', () => (
     <IconButton handleClick={action('IconButton clicked')}>

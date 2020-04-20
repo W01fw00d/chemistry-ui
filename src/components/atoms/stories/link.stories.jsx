@@ -10,7 +10,7 @@ import theme from '../../../styles/global-styles';
 
 import Link from '../link';
 
-storiesOf('1. Atoms|Link', module)
+storiesOf('Atoms/Link', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
   .add('ArrowBackIcon', () => (

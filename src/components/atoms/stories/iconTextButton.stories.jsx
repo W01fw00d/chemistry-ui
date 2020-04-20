@@ -10,7 +10,7 @@ import theme from '../../../styles/global-styles';
 
 import IconTextButton from '../iconTextButton';
 
-storiesOf('1. Atoms|Buttons.IconTextButton', module)
+storiesOf('Atoms/Buttons/IconTextButton', module)
   .addDecorator(themeDecorator(theme))
   .add('With Like Icon', () => (
     <IconTextButton

@@ -10,7 +10,7 @@ import theme from '../../../styles/global-styles';
 
 import OverlayedIconButton from '../overlayedIconButton';
 
-storiesOf('2. Molecules|Buttons.OverlayedIconButton', module)
+storiesOf('Molecules/Buttons/OverlayedIconButton', module)
   .addDecorator(themeDecorator(theme))
   .add('ArrowBackIcon', () => (
     <OverlayedIconButton handleClick={action('OverlayedIconButton clicked')}>

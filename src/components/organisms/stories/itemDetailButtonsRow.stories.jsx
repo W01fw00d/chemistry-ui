@@ -14,7 +14,7 @@ const literals = {
   comment: allLiterals.comment,
 };
 
-storiesOf('3. Organisms|ItemDetail.ButtonsRow', module)
+storiesOf('Organisms/ItemDetail/ButtonsRow', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <ItemDetailButtonsRow

@@ -8,7 +8,7 @@ import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 
 import TextButton from '../textButton';
 
-storiesOf('1. Atoms|Buttons.TextButton', module)
+storiesOf('Atoms/Buttons/TextButton', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <TextButton handleClick={action('TextButton clicked')}>Text Button</TextButton>

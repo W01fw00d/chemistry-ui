@@ -8,7 +8,7 @@ import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 
 import TextField from '../textField';
 
-storiesOf('1. Atoms|Fields.Text', module)
+storiesOf('Atoms/Fields/Text', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <TextField id="textField" label="Write here" value="" handleChange={action('Input detected')} />

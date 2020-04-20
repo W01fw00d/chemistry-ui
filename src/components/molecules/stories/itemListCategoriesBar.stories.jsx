@@ -9,7 +9,7 @@ import tags from '../../../../.storybook/fake_data/tags.json';
 
 import ItemListCategoriesBar from '../itemListCategoriesBar';
 
-storiesOf('2. Molecules|ItemList.CategoriesBar', module)
+storiesOf('Molecules/ItemList/CategoriesBar', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <ItemListCategoriesBar tags={tags} handleClick={action('IconButton clicked')} />

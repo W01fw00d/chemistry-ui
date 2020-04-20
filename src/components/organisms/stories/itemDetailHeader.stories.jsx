@@ -9,7 +9,7 @@ import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 
 import ItemDetailAppBar from '../itemDetailHeader';
 
-storiesOf('3. Organisms|ItemDetail.Header', module)
+storiesOf('Organisms/ItemDetail/Header', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
   .add('default', () => (

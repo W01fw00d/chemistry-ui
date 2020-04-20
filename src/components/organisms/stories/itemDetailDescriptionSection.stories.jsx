@@ -13,7 +13,7 @@ const literals = {
   description: allLiterals.description,
 };
 
-storiesOf('3. Organisms|ItemDetail.DescriptionSection', module)
+storiesOf('Organisms/ItemDetail/DescriptionSection', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <ItemDetailDescriptionSection literals={literals} description={data[0].details} />

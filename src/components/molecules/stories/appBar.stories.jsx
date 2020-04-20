@@ -9,7 +9,7 @@ import Typography from '../../atoms/typography';
 
 import AppBar from '../appBar';
 
-storiesOf('2. Molecules|Bars.App', module)
+storiesOf('Molecules/Bars/App', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <AppBar position="sticky">

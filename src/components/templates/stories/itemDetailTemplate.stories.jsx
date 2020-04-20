@@ -23,7 +23,7 @@ const data = {
   isGroupPrice: details.isGroupPrice,
 };
 
-storiesOf('4. Templates|ItemDetail', module)
+storiesOf('Templates/ItemDetail', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
     <ItemDetailTemplate literals={literals} data={data} handleClick={action('Button clicked')} />

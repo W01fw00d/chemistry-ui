@@ -24,7 +24,7 @@ const data = [
   { ...getItemData(itemsData[2]), id: '3' },
 ];
 
-storiesOf('2. Molecules|ItemList.Grid', module)
+storiesOf('Molecules/ItemList/Grid', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
