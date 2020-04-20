@@ -2,7 +2,10 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
+import theme from '../../../styles/global-styles';
+import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 import items from '../../../../.storybook/fake_data/items.json';
+
 import ProductImageFooter from '../productImageFooter';
 
 const details = items[0];
@@ -12,6 +15,6 @@ const data = {
   likeCount: details.likeCount,
 };
 
-storiesOf('2. Molecules|ItemList.ProductImageFooter', module).add('default', () => (
-  <ProductImageFooter data={data} />
-));
+storiesOf('2. Molecules|ItemList.ProductImageFooter', module)
+  .addDecorator(themeDecorator(theme))
+  .add('default', () => <ProductImageFooter data={data} />);

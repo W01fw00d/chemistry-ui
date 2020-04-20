@@ -2,6 +2,8 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
+import theme from '../../../styles/global-styles';
+import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
 import data from '../../../../.storybook/fake_data/items.json';
 
@@ -11,6 +13,8 @@ const literals = {
   description: allLiterals.description,
 };
 
-storiesOf('3. Organisms|ItemDetail.DescriptionSection', module).add('default', () => (
-  <ItemDetailDescriptionSection literals={literals} description={data[0].details} />
-));
+storiesOf('3. Organisms|ItemDetail.DescriptionSection', module)
+  .addDecorator(themeDecorator(theme))
+  .add('default', () => (
+    <ItemDetailDescriptionSection literals={literals} description={data[0].details} />
+  ));

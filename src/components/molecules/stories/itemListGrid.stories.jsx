@@ -3,7 +3,10 @@ import React from 'react';
 import StoryRouter from 'storybook-react-router';
 import { storiesOf } from '@storybook/react';
 
+import theme from '../../../styles/global-styles';
+import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 import itemsData from '../../../../.storybook/fake_data/items.json';
+
 import ItemListProduct from '../../organisms/itemListProduct';
 
 import ItemListGrid from '../itemListGrid';
@@ -23,6 +26,7 @@ const data = [
 
 storiesOf('2. Molecules|ItemList.Grid', module)
   .addDecorator(StoryRouter())
+  .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <ItemListGrid>
       {data.map(item => (

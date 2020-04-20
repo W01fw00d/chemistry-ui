@@ -3,6 +3,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
+import theme from '../../../styles/global-styles';
+import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
 import data from '../../../../.storybook/fake_data/items.json';
 
@@ -18,10 +20,12 @@ const footerBarData = {
   isGroupPrice: details.isGroupPrice,
 };
 
-storiesOf('3. Organisms|ItemDetail.Footer', module).add('default', () => (
-  <ItemDetailFooterBar
-    literals={footerBarLiterals}
-    data={footerBarData}
-    handleClick={action('Button clicked')}
-  />
-));
+storiesOf('3. Organisms|ItemDetail.Footer', module)
+  .addDecorator(themeDecorator(theme))
+  .add('default', () => (
+    <ItemDetailFooterBar
+      literals={footerBarLiterals}
+      data={footerBarData}
+      handleClick={action('Button clicked')}
+    />
+  ));
