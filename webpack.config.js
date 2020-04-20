@@ -10,9 +10,8 @@ module.exports = {
     path: path.join(__dirname, './lib'),
     filename: 'index.js',
     library: libraryName,
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs2',
     publicPath: '/dist/',
-    umdNamedDefine: true,
   },
   module: {
     rules: [
@@ -23,28 +22,16 @@ module.exports = {
       },
       {
         test: /\.(woff2?|jpe?g|png|gif|ico)$/,
-        use: 'file-loader',
+        loader: 'url-loader',
+        options: {
+          limit: Infinity,
+        },
       },
     ],
   },
-  resolve: {
-    alias: {
-      react: path.resolve(__dirname, './node_modules/react'),
-      'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
-    },
-  },
   externals: {
-    react: {
-      commonjs: 'react',
-      commonjs2: 'react',
-      amd: 'React',
-      root: 'React',
-    },
-    'react-dom': {
-      commonjs: 'react-dom',
-      commonjs2: 'react-dom',
-      amd: 'ReactDOM',
-      root: 'ReactDOM',
-    },
+    react: 'commonjs react',
+    'react-dom': 'commonjs react-dom',
+    'react-router-dom': 'commonjs react-router-dom',
   },
 };
