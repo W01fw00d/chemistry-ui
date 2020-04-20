@@ -2,8 +2,8 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import data from '../../../../.storybook/fake_data/items.json';
+import itemImage from '../../../../public/fake_imgs/item.jpg';
 
 import Image from '../image';
 
-storiesOf('1. Atoms|Image', module).add('default', () => <Image src={data[0].image} />);
+storiesOf('1. Atoms|Image', module).add('default', () => <Image src={itemImage} />);

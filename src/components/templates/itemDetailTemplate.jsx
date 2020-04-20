@@ -5,6 +5,8 @@ import { makeStyles, ThemeProvider } from '@material-ui/core';
 
 import theme from '../../styles/global-styles';
 
+import itemImage from '../../../public/fake_imgs/item.jpg';
+
 import Typography from '../atoms/typography';
 import Image from '../atoms/image';
 import ItemDetailAppBar from '../organisms/itemDetailHeader';
@@ -43,7 +45,7 @@ export default function ItemDetailTemplate({ literals, data, handleClick }) {
     data && (
       <ThemeProvider theme={theme}>
         <ItemDetailAppBar name={data.name} handleClick={handleClick} />
-        <Image src={data.image} />
+        <Image src={itemImage} />
         <Typography variant="h6" color="inherit" className={classes.name}>
           {data.name}
         </Typography>
