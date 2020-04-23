@@ -18,6 +18,14 @@ storiesOf('Templates/ItemList', module)
   .add('default', () => (
     <ItemListTemplate
       literals={literals}
+      authorData={{
+        name: 'Gabriel Romay Machado',
+        email: 'romay.gabriel@gmail.com',
+        url: 'https://www.linkedin.com/in/gabriel-romay-machado-40050a114/?locale=en_US',
+      }}
+      projectData={{
+        url: 'https://github.com/W01fw00d/chemistry-ui/blob/master/README.md',
+      }}
       search="Search Value"
       itemList={items}
       tags={tags}

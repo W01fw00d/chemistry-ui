@@ -7,7 +7,7 @@ import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 
 import DrawerPanel from '../drawerPanel.jsx';
 
-storiesOf('Organisms/Panel/Drawer', module)
+storiesOf('Organisms/Panels/Drawer', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <DrawerPanel>

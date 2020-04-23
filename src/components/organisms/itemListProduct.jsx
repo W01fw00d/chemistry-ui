@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core';
 import banner from '../../../public/banner.png';
 import itemImage from '../../../public/fake_imgs/item.jpg';
 
-import Link from '../atoms/link.jsx';
+import InternalLink from '../atoms/internalLink.jsx';
 import Image from '../atoms/image.jsx';
 import ProductImageFooter from '../molecules/productImageFooter.jsx';
 
@@ -29,13 +29,13 @@ export default function ItemListProduct({ data }) {
   };
 
   return (
-    <Link to={`/detail/${data.id}`}>
+    <InternalLink to={`/detail/${data.id}`}>
       <div className={classes.wrapper}>
-        {data.isEditorsChoice && <Image src={banner} className={classes.banner} />}
+        {data.isEditorsChoice && <Image src={banner} alt="Banner" className={classes.banner} />}
         <Image src={itemImage} />
       </div>
       <ProductImageFooter data={footerData} />
-    </Link>
+    </InternalLink>
   );
 }
 

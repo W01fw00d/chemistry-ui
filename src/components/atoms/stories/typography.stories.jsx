@@ -9,4 +9,5 @@ import Typography from '../typography';
 
 storiesOf('Atoms/Typography', module)
   .addDecorator(themeDecorator(theme))
-  .add('h6', () => <Typography variant="h6">Test</Typography>);
+  .add('Title', () => <Typography variant="h1">Title</Typography>)
+  .add('Body Text', () => <Typography variant="body1">Body text</Typography>);

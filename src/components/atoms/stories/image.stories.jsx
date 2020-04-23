@@ -11,4 +11,4 @@ import Image from '../image';
 
 storiesOf('Atoms/Image', module)
   .addDecorator(themeDecorator(theme))
-  .add('default', () => <Image src={itemImage} />);
+  .add('default', () => <Image alt="Item Image" src={itemImage} />);
