@@ -6,7 +6,8 @@ import { NotificationsOutlined as NotificationsIcon, Check as CheckIcon } from '
 
 import IconButton from '../atoms/iconButton.jsx';
 import TextField from '../atoms/textField.jsx';
-import AboutDrawerPanel from '../organisms/aboutDrawerPanel.jsx';
+import About from '../molecules/about.jsx';
+import DrawerPanel from '../organisms/drawerPanel.jsx';
 
 export default function ItemListToolbar({
   literals,
@@ -21,13 +22,15 @@ export default function ItemListToolbar({
     <div className={className}>
       <Grid container alignItems="center">
         <Grid item xs={2} container justify="center">
-          <AboutDrawerPanel
-            logo={projectData.logo}
-            authorName={authorData.name}
-            email={authorData.email}
-            authorUrl={authorData.url}
-            projectUrl={projectData.url}
-          />
+          <DrawerPanel>
+            <About
+              logo={projectData.logo}
+              authorName={authorData.name}
+              email={authorData.email}
+              authorUrl={authorData.url}
+              projectUrl={projectData.url}
+            />
+          </DrawerPanel>
         </Grid>
         <Grid item xs={6} container justify="center">
           <form noValidate autoComplete="off">

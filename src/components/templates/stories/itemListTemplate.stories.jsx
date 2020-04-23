@@ -5,6 +5,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
+import authorData from '../../../../.storybook/fake_data/author.json';
+import projectData from '../../../../.storybook/fake_data/project.json';
 import tags from '../../../../.storybook/fake_data/tags.json';
 import items from '../../../../.storybook/fake_data/items.json';
 import ItemListTemplate from '../itemListTemplate';
@@ -18,12 +20,8 @@ storiesOf('Templates/ItemList', module)
   .add('default', () => (
     <ItemListTemplate
       literals={literals}
-      authorData={{
-        name: 'Author Name',
-        email: 'fake@email.com',
-        url: 'https://fake.io/author-url',
-      }}
-      projectData={{ logo: '', url: 'https://fake.io/project-url' }}
+      authorData={authorData}
+      projectData={projectData}
       search="Search Value"
       itemList={items}
       tags={tags}
