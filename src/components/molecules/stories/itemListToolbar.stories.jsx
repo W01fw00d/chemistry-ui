@@ -9,6 +9,8 @@ import allLiterals from '../../../../.storybook/fake_data/literals.json';
 import authorData from '../../../../.storybook/fake_data/author.json';
 import projectData from '../../../../.storybook/fake_data/project.json';
 
+import escapingBoredomTitleLogo from '../../../../public/escaping-boredom-title-logo.png';
+
 import ItemListToolbar from '../itemListToolbar';
 
 const literals = {
@@ -22,6 +24,7 @@ storiesOf('Molecules/ItemList/Toolbar', module)
       literals={literals}
       authorData={authorData}
       projectData={projectData}
+      logo={escapingBoredomTitleLogo}
       searchValue="Search Value"
       handleChange={action('Input detected')}
       handleClick={action('IconButton clicked')}

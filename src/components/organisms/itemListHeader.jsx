@@ -13,6 +13,7 @@ export default function ItemListHeader({
   literals,
   authorData,
   projectData,
+  logo,
   tags,
   searchValue,
   handleChange,
@@ -48,6 +49,7 @@ export default function ItemListHeader({
             literals={literals}
             authorData={authorData}
             projectData={projectData}
+            logo={logo}
             className={classes.toolbar}
             tags={tags}
             searchValue={searchValue}

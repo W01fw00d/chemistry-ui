@@ -5,8 +5,6 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
-import authorData from '../../../../.storybook/fake_data/author.json';
-import projectData from '../../../../.storybook/fake_data/project.json';
 import tags from '../../../../.storybook/fake_data/tags.json';
 import items from '../../../../.storybook/fake_data/items.json';
 import ItemListTemplate from '../itemListTemplate';
@@ -20,8 +18,14 @@ storiesOf('Templates/ItemList', module)
   .add('default', () => (
     <ItemListTemplate
       literals={literals}
-      authorData={authorData}
-      projectData={projectData}
+      authorData={{
+        name: 'Gabriel Romay Machado',
+        email: 'romay.gabriel@gmail.com',
+        url: 'https://www.linkedin.com/in/gabriel-romay-machado-40050a114/?locale=en_US',
+      }}
+      projectData={{
+        url: 'https://github.com/W01fw00d/chemistry-ui/blob/master/README.md',
+      }}
       search="Search Value"
       itemList={items}
       tags={tags}

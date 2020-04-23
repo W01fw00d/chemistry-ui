@@ -6,6 +6,8 @@ import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 
 import theme from '../../styles/global-styles';
 
+import escapingBoredomTitleLogo from '../../../public/escaping-boredom-title-logo.png';
+
 import ItemListGrid from '../molecules/itemListGrid.jsx';
 import OverlayedIconButton from '../molecules/overlayedIconButton.jsx';
 import ItemListHeader from '../organisms/itemListHeader.jsx';
@@ -41,6 +43,7 @@ export default function ItemListTemplate({
             literals={itemListHeaderLiterals}
             authorData={authorData}
             projectData={projectData}
+            logo={escapingBoredomTitleLogo}
             tags={tags}
             searchValue={search}
             handleChange={handleChange}

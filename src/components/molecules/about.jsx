@@ -21,7 +21,9 @@ export default function About({ logo, authorName, email, authorUrl, projectUrl }
   return (
     <div>
       <ExternalLink id="projectUrl" to={projectUrl} className={classes.link}>
-        <Image src={logo} alt="App Logo" className={classes.logo} />
+        <div className={classes.logo}>
+          <Image src={logo} alt="App Logo" />
+        </div>
       </ExternalLink>
       <p>
         <ExternalLink id="authorUrl" to={authorUrl}>

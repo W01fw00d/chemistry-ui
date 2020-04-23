@@ -10,6 +10,8 @@ import authorData from '../../../../.storybook/fake_data/author.json';
 import projectData from '../../../../.storybook/fake_data/project.json';
 import tags from '../../../../.storybook/fake_data/tags.json';
 
+import escapingBoredomTitleLogo from '../../../../public/escaping-boredom-title-logo.png';
+
 import ItemListHeader from '../itemListHeader';
 
 const literals = {
@@ -23,6 +25,7 @@ storiesOf('Organisms/ItemList/Header', module)
       literals={literals}
       authorData={authorData}
       projectData={projectData}
+      logo={escapingBoredomTitleLogo}
       tags={tags}
       searchValue="Search Value"
       handleChange={action('Input detected')}

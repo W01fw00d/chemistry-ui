@@ -13,6 +13,7 @@ export default function ItemListToolbar({
   literals,
   authorData,
   projectData,
+  logo,
   className,
   searchValue,
   handleChange,
@@ -24,7 +25,7 @@ export default function ItemListToolbar({
         <Grid item xs={2} container justify="center">
           <DrawerPanel>
             <About
-              logo={projectData.logo}
+              logo={logo}
               authorName={authorData.name}
               email={authorData.email}
               authorUrl={authorData.url}
