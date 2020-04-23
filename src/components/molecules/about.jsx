@@ -5,22 +5,34 @@ import { makeStyles } from '@material-ui/core';
 
 import Image from '../atoms/image.jsx';
 import Typography from '../atoms/typography.jsx';
+import ExternalLink from '../atoms/externalLink.jsx';
 
 export default function About({ logo, authorName, email, authorUrl, projectUrl }) {
   const useStyles = makeStyles(theme => ({
     logo: {
       width: '300px',
     },
+    link: {
+      color: theme.palette.primary.dark,
+    },
   }));
   const classes = useStyles();
 
   return (
     <div>
-      <Image src={logo} alt="App Logo" className={classes.logo} />
-      <Typography variant="body1">{authorName}</Typography>
-      <Typography variant="body1">{email}</Typography>
-      <Typography variant="body1">{authorUrl}</Typography>
-      <Typography variant="body1">{projectUrl}</Typography>
+      <ExternalLink id="projectUrl" to={projectUrl} className={classes.link}>
+        <Image src={logo} alt="App Logo" className={classes.logo} />
+      </ExternalLink>
+      <p>
+        <ExternalLink id="authorUrl" to={authorUrl}>
+          <Typography variant="body1" className={classes.link}>
+            {authorName}
+          </Typography>
+        </ExternalLink>
+      </p>
+      <p>
+        <Typography variant="body1">{email}</Typography>
+      </p>
     </div>
   );
 }

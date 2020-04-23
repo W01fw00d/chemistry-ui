@@ -8,7 +8,7 @@ import {
   Publish as PublishIcon,
 } from '@material-ui/icons';
 
-import Link from '../atoms/link.jsx';
+import InternalLink from '../atoms/internalLink.jsx';
 import Typography from '../atoms/typography.jsx';
 import IconButton from '../atoms/iconButton.jsx';
 import AppBar from '../molecules/appBar.jsx';
@@ -29,9 +29,9 @@ export default function ItemDetailAppBar({ name, handleClick }) {
     <AppBar position="sticky">
       <Grid container alignItems="center" className={classes.layout}>
         <Grid item xs={2} container justify="center">
-          <Link id="back" to="/">
+          <InternalLink id="back" to="/">
             <ArrowBackIcon />
-          </Link>
+          </InternalLink>
         </Grid>
         <Grid item xs={6}>
           <Typography variant="h6" color="inherit" className={classes.name}>

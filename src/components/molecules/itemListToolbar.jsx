@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Grid } from '@material-ui/core';
+import { Grid, Divider } from '@material-ui/core';
 import { NotificationsOutlined as NotificationsIcon, Check as CheckIcon } from '@material-ui/icons';
 
 import IconButton from '../atoms/iconButton.jsx';
@@ -30,6 +30,7 @@ export default function ItemListToolbar({
               authorUrl={authorData.url}
               projectUrl={projectData.url}
             />
+            <Divider />
           </DrawerPanel>
         </Grid>
         <Grid item xs={6} container justify="center">

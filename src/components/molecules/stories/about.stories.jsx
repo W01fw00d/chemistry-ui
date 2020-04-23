@@ -1,5 +1,6 @@
 import React from 'react';
 
+import StoryRouter from 'storybook-react-router';
 import { storiesOf } from '@storybook/react';
 
 import theme from '../../../styles/global-styles';
@@ -10,6 +11,7 @@ import itemImage from '../../../../public/fake_imgs/item.jpg';
 import About from '../about.jsx';
 
 storiesOf('Molecules/About', module)
+  .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <About
