@@ -18,6 +18,12 @@ storiesOf('Templates/ItemList', module)
   .add('default', () => (
     <ItemListTemplate
       literals={literals}
+      authorData={{
+        name: 'Author Name',
+        email: 'fake@email.com',
+        url: 'https://fake.io/author-url',
+      }}
+      projectData={{ logo: '', url: 'https://fake.io/project-url' }}
       search="Search Value"
       itemList={items}
       tags={tags}

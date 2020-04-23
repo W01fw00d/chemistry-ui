@@ -13,6 +13,8 @@ import ItemListProduct from '../organisms/itemListProduct.jsx';
 
 export default function ItemListTemplate({
   literals,
+  authorData,
+  projectData,
   search,
   itemList,
   tags,
@@ -37,6 +39,8 @@ export default function ItemListTemplate({
         {tags && (
           <ItemListHeader
             literals={itemListHeaderLiterals}
+            authorData={authorData}
+            projectData={projectData}
             tags={tags}
             searchValue={search}
             handleChange={handleChange}

@@ -9,7 +9,15 @@ import AppBar from '../molecules/appBar.jsx';
 import ItemListToolbar from '../molecules/itemListToolbar.jsx';
 import ItemListCategoriesBar from '../molecules/itemListCategoriesBar.jsx';
 
-export default function ItemListHeader({ literals, tags, searchValue, handleChange, handleClick }) {
+export default function ItemListHeader({
+  literals,
+  authorData,
+  projectData,
+  tags,
+  searchValue,
+  handleChange,
+  handleClick,
+}) {
   const useStyles = makeStyles(theme => ({
     appbar: {
       backgroundColor: 'transparent',
@@ -38,6 +46,8 @@ export default function ItemListHeader({ literals, tags, searchValue, handleChan
         <Grid item xs={12} className={classes.container}>
           <ItemListToolbar
             literals={literals}
+            authorData={authorData}
+            projectData={projectData}
             className={classes.toolbar}
             tags={tags}
             searchValue={searchValue}

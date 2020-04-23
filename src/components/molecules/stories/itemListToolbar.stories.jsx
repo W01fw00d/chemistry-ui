@@ -18,6 +18,8 @@ storiesOf('Molecules/ItemList/Toolbar', module)
   .add('default', () => (
     <ItemListToolbar
       literals={literals}
+      authorData={}
+      projectData={}
       searchValue="Search Value"
       handleChange={action('Input detected')}
       handleClick={action('IconButton clicked')}

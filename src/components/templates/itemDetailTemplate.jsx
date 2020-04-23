@@ -45,7 +45,7 @@ export default function ItemDetailTemplate({ literals, data, handleClick }) {
     data && (
       <ThemeProvider theme={theme}>
         <ItemDetailAppBar name={data.name} handleClick={handleClick} />
-        <Image src={itemImage} />
+        <Image src={itemImage} alt={data.name} />
         <Typography variant="h6" color="inherit" className={classes.name}>
           {data.name}
         </Typography>

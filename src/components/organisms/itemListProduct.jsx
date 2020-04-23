@@ -31,7 +31,7 @@ export default function ItemListProduct({ data }) {
   return (
     <Link to={`/detail/${data.id}`}>
       <div className={classes.wrapper}>
-        {data.isEditorsChoice && <Image src={banner} className={classes.banner} />}
+        {data.isEditorsChoice && <Image src={banner} alt="Banner" className={classes.banner} />}
         <Image src={itemImage} />
       </div>
       <ProductImageFooter data={footerData} />

@@ -19,6 +19,8 @@ storiesOf('Organisms/ItemList/Header', module)
   .add('default', () => (
     <ItemListHeader
       literals={literals}
+      authorData={}
+      projectData={}
       tags={tags}
       searchValue="Search Value"
       handleChange={action('Input detected')}

@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import { makeStyles } from '@material-ui/core';
 import Drawer from '@material-ui/core/Drawer';
+
 import { Menu as MenuIcon } from '@material-ui/icons';
 
 import IconButton from '../atoms/iconButton.jsx';
 
-export default function DrawerPanel({ children }) {
+export default function DrawerPanel({ className, children }) {
+  const useStyles = makeStyles(theme => ({
+    layout: {
+      backgroundColor: theme.palette.primary.main,
+      padding: theme.spacing(1),
+    },
+  }));
+  const classes = useStyles();
+
   const [state, setState] = useState(false);
 
   const toggleDrawer = ({ type, key }) => {
@@ -23,16 +33,18 @@ export default function DrawerPanel({ children }) {
         <MenuIcon />
       </IconButton>
       <Drawer anchor="left" open={state} onClose={toggleDrawer}>
-        {children}
+        <div className={`${classes.layout} ${className}`}>{children}</div>
       </Drawer>
     </>
   );
 }
 
 DrawerPanel.defaultProps = {
+  className: '',
   children: <></>,
 };
 
 DrawerPanel.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.node,
 };

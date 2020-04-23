@@ -7,8 +7,16 @@ import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 
 import itemImage from '../../../../public/fake_imgs/item.jpg';
 
-import Image from '../image';
+import About from '../about.jsx';
 
-storiesOf('Atoms/Image', module)
+storiesOf('Molecules/About', module)
   .addDecorator(themeDecorator(theme))
-  .add('default', () => <Image alt="Item Image" src={itemImage} />);
+  .add('default', () => (
+    <About
+      logo={itemImage}
+      authorName="Author Name"
+      email="fake@email.com"
+      authorUrl="https://fake.io/author-url"
+      projectUrl="https://fake.io/project-url"
+    />
+  ));
