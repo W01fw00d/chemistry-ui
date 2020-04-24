@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/chemistry-ui.svg)](https://github.com/W01fw00d/chemistry-ui/packages/197889)
+[![npm version](https://badge.fury.io/js/chemistry-ui.svg)](//npmjs.com/package/chemistry-ui)
 
 ## How to use
 
