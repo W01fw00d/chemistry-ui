@@ -29,7 +29,7 @@ export default function DrawerPanel({ className, children }) {
 
   return (
     <>
-      <IconButton handleClick={toggleDrawer}>
+      <IconButton id="drawerButton" handleClick={toggleDrawer}>
         <MenuIcon />
       </IconButton>
       <Drawer anchor="left" open={state} onClose={toggleDrawer}>
