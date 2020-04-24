@@ -55,3 +55,9 @@ npm run storybook
 - Editor's choice banner from [original image](https://pixabay.com/illustrations/tape-red-decor-for-the-web-plate-2410588/), which is under Pixabay License, free for commercial use.
 
 - Fake item image from [pixabay](https://pixabay.com/photos/wall-furniture-design-apartment-416060/).
+
+## Projects using this library
+
+- [Escaping Boredom, a simple blog about Escape Rooms](https://github.com/W01fw00d/escaping_boredom)
+
+- More comming soon...
