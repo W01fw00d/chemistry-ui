@@ -1,7 +1,5 @@
 [![npm version](https://badge.fury.io/js/chemistry-ui.svg)](//npmjs.com/package/chemistry-ui)
 
-[Demo](https://chemistry-ui.netlify.app/?path=/story/*)
-
 ## How to use
 
 A link to an usage example project will be added soon...
