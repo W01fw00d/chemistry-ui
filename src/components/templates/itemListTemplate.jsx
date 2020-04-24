@@ -69,6 +69,8 @@ ItemListTemplate.defaultProps = {
   literals: {
     search: ItemListHeader.defaultProps.literals.search,
   },
+  authorData: {},
+  projectData: {},
   search: '',
   itemList: [],
   tags: [],
@@ -79,6 +81,14 @@ ItemListTemplate.defaultProps = {
 ItemListTemplate.propTypes = {
   literals: PropTypes.shape({
     search: ItemListHeader.propTypes.literals.search,
+  }),
+  authorData: PropTypes.shape({
+    name: PropTypes.string,
+    email: PropTypes.string,
+    url: PropTypes.string,
+  }),
+  projectData: PropTypes.shape({
+    url: PropTypes.string,
   }),
   search: PropTypes.string,
   itemList: PropTypes.arrayOf(PropTypes.object),
