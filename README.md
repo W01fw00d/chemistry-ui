@@ -1,3 +1,5 @@
+<img alt="Chemistry-UI Logo" src="https://github.com/W01fw00d/chemistry-ui/blob/master/public/chemistry-ui-logo.png?raw=true" width="350" title="by Marta Ximenis">
+
 [![npm version](https://badge.fury.io/js/chemistry-ui.svg)](//npmjs.com/package/chemistry-ui)
 
 ## How to use
@@ -48,7 +50,9 @@ npm run storybook
 
 ## Atribution
 
-- [Favicons generated](https://www.favicon-generator.org/) from original image created by MartaX, which is under Pixabay License, free for commercial use.
+- Logo created by [Marta Ximenis](https://www.domestika.org/es/projects/686589-chemistry-ui)
+
+- Favicon formatted from logo with [favicon-generator](https://www.favicon-generator.org/)
 
 - Editor's choice banner from [original image](https://pixabay.com/illustrations/tape-red-decor-for-the-web-plate-2410588/), which is under Pixabay License, free for commercial use.
 
