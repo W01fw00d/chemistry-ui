@@ -1,5 +1,5 @@
 {
-  "name": "@w01fw00d/chemistry-ui",
+  "name": "chemistry-ui",
   "version": "2.2.6",
   "description": "Portfolio React Components Library based on Material-ui",
   "main": "lib/index.js",
@@ -9,9 +9,6 @@
     "build": "webpack"
   },
   "repository": "git://github.com/W01fw00d/chemistry-ui.git",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "author": "Gabriel Romay Machado",
   "license": "ISC",
   "bugs": {
