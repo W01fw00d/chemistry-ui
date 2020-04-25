@@ -5,7 +5,7 @@ import { makeStyles, Grid } from '@material-ui/core';
 
 import TextButton from '../atoms/textButton.jsx';
 
-export default function ItemListCategoriesBar({ tags, handleClick }) {
+export default function ItemListTagsBar({ tags, handleClick }) {
   const useStyles = makeStyles(theme => ({
     button: {
       backgroundColor: theme.palette.primary.main,
@@ -33,12 +33,12 @@ export default function ItemListCategoriesBar({ tags, handleClick }) {
   );
 }
 
-ItemListCategoriesBar.defaultProps = {
+ItemListTagsBar.defaultProps = {
   tags: [],
   handleClick: () => {},
 };
 
-ItemListCategoriesBar.propTypes = {
+ItemListTagsBar.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.object),
   handleClick: PropTypes.func,
 };

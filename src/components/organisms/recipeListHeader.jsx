@@ -6,10 +6,9 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 import IconButton from '../atoms/iconButton.jsx';
 import AppBar from '../molecules/appBar.jsx';
-import ItemListToolbar from '../molecules/itemListToolbar.jsx';
-import ItemListTagsBar from '../molecules/itemListTagsBar.jsx';
+import RecipeListToolbar from '../molecules/recipeListToolbar.jsx';
 
-export default function ItemListHeader({
+export default function RecipeListHeader({
   literals,
   authorData,
   projectData,
@@ -45,7 +44,7 @@ export default function ItemListHeader({
     <AppBar position="sticky" className={classes.appbar}>
       <Grid container>
         <Grid item xs={12} className={classes.container}>
-          <ItemListToolbar
+          <RecipeListToolbar
             literals={literals}
             authorData={authorData}
             projectData={projectData}
@@ -57,9 +56,6 @@ export default function ItemListHeader({
             handleClick={handleClick}
           />
         </Grid>
-        <Grid item xs={12} className={classes.container}>
-          <ItemListTagsBar tags={tags} handleClick={handleClick} />
-        </Grid>
         <Grid item xs={12} container justify="center">
           <IconButton color="primary" className={classes.overlayed} handleClick={handleClick}>
             <ArrowUpwardIcon />
@@ -70,7 +66,7 @@ export default function ItemListHeader({
   );
 }
 
-ItemListHeader.defaultProps = {
+RecipeListHeader.defaultProps = {
   literals: {},
   tags: [],
   searchValue: '',
@@ -78,7 +74,7 @@ ItemListHeader.defaultProps = {
   handleClick: () => {},
 };
 
-ItemListHeader.propTypes = {
+RecipeListHeader.propTypes = {
   literals: PropTypes.shape({
     search: PropTypes.string,
   }),

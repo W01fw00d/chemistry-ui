@@ -14,7 +14,7 @@ export default function ItemListGrid({ children }) {
   return (
     <Grid container className={classes.grid} spacing={2}>
       {children.map(node => (
-        <Grid item xs={6} key={node.props.data.id}>
+        <Grid item xs={12} md={6} key={node.props.data.id}>
           {node}
         </Grid>
       ))}

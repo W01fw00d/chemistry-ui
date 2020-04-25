@@ -1,0 +1,35 @@
+[
+  {
+    "_id": 1,
+    "id": 1,
+    "name": "Recipe name 1",
+    "description": "Recipe description 1",
+    "preparationTime": "01:30",
+    "eventDate": "25/04/2020",
+    "difficulty": 5,
+    "nIngredients": 10,
+    "image": "fake_imgs/pilotes.jpeg"
+  },
+  {
+    "_id": 2,
+    "id": 2,
+    "name": "Recipe name 2",
+    "description": "Recipe description 2",
+    "preparationTime": "00:30",
+    "eventDate": "25/04/2020",
+    "difficulty": 1,
+    "nIngredients": 3,
+    "image": "fake_imgs/pilotes.jpeg"
+  },
+  {
+    "_id": 3,
+    "id": 3,
+    "name": "Recipe name 3",
+    "description": "Recipe description 3",
+    "preparationTime": "01:00",
+    "eventDate": "25/04/2020",
+    "difficulty": 3,
+    "nIngredients": 1,
+    "image": "fake_imgs/pilotes.jpeg"
+  }
+]

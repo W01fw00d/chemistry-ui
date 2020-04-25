@@ -7,9 +7,9 @@ import banner from '../../../public/banner.png';
 
 import InternalLink from '../atoms/internalLink.jsx';
 import Image from '../atoms/image.jsx';
-import ProductImageFooter from '../molecules/productImageFooter.jsx';
+import RecipeListImageFooter from '../molecules/recipeListImageFooter.jsx';
 
-export default function ItemListProduct({ data }) {
+export default function RecipeListItem({ data }) {
   const useStyles = makeStyles({
     wrapper: {
       position: 'relative',
@@ -25,6 +25,9 @@ export default function ItemListProduct({ data }) {
     name: data.name,
     price: data.price,
     likeCount: data.likeCount,
+    preparationTime: data.preparationTime,
+    difficulty: data.difficulty,
+    nIngredients: data.nIngredients,
   };
 
   return (
@@ -33,16 +36,16 @@ export default function ItemListProduct({ data }) {
         {data.isEditorsChoice && <Image src={banner} alt="Banner" className={classes.banner} />}
         <Image src={data.image} />
       </div>
-      <ProductImageFooter data={footerData} />
+      <RecipeListImageFooter data={footerData} />
     </InternalLink>
   );
 }
 
-ItemListProduct.defaultProps = {
+RecipeListItem.defaultProps = {
   data: {},
 };
 
-ItemListProduct.propTypes = {
+RecipeListItem.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.string,
     image: PropTypes.string,

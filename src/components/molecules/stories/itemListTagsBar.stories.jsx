@@ -7,10 +7,8 @@ import theme from '../../../styles/global-styles';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 import tags from '../../../../.storybook/fake_data/tags.json';
 
-import ItemListCategoriesBar from '../itemListCategoriesBar';
+import ItemListTagsBar from '../itemListTagsBar';
 
-storiesOf('Molecules/ItemList/CategoriesBar', module)
+storiesOf('Molecules/ItemList/TagsBar', module)
   .addDecorator(themeDecorator(theme))
-  .add('default', () => (
-    <ItemListCategoriesBar tags={tags} handleClick={action('IconButton clicked')} />
-  ));
+  .add('default', () => <ItemListTagsBar tags={tags} handleClick={action('IconButton clicked')} />);

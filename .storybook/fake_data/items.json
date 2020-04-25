@@ -9,7 +9,7 @@
     "price": 30,
     "isGroupPrice": false,
     "isEditorsChoice": false,
-    "image": "itemImage",
+    "image": "fake_imgs/item.jpg",
     "tags": [1, 2]
   },
   {
@@ -22,7 +22,7 @@
     "price": 150,
     "isGroupPrice": true,
     "isEditorsChoice": true,
-    "image": "itemImage",
+    "image": "fake_imgs/item.jpg",
     "category_id": [3]
   },
   {
@@ -35,7 +35,7 @@
     "price": 15,
     "isGroupPrice": true,
     "isEditorsChoice": false,
-    "image": "itemImage",
+    "image": "fake_imgs/item.jpg",
     "category_id": [1, 3]
   }
 ]
