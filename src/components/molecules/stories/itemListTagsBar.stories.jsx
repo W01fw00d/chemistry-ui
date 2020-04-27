@@ -9,6 +9,6 @@ import tags from '../../../../.storybook/fake_data/tags.json';
 
 import ItemListTagsBar from '../itemListTagsBar';
 
-storiesOf('Molecules/ItemList/TagsBar', module)
+storiesOf('Molecules/Item/List/TagsBar', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => <ItemListTagsBar tags={tags} handleClick={action('IconButton clicked')} />);

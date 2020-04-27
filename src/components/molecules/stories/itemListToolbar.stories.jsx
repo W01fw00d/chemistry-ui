@@ -17,7 +17,7 @@ const literals = {
   search: allLiterals.search,
 };
 
-storiesOf('Molecules/ItemList/Toolbar', module)
+storiesOf('Molecules/Item/List/Toolbar', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <ItemListToolbar

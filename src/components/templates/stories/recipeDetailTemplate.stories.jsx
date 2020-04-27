@@ -5,9 +5,9 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
-import allData from '../../../../.storybook/fake_data/items.json';
+import allData from '../../../../.storybook/fake_data/recipes.json';
 
-import ItemDetailTemplate from '../itemDetailTemplate';
+import RecipeDetailTemplate from '../recipeDetailTemplate';
 
 const literals = {
   like: allLiterals.like,
@@ -18,13 +18,12 @@ const literals = {
 
 const details = allData[0];
 const data = {
+  name: details.name,
   image: details.image,
-  price: details.price,
-  isGroupPrice: details.isGroupPrice,
 };
 
-storiesOf('Templates/Item/Detail', module)
+storiesOf('Templates/Recipe/Detail', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
-    <ItemDetailTemplate literals={literals} data={data} handleClick={action('Button clicked')} />
+    <RecipeDetailTemplate literals={literals} data={data} handleClick={action('Button clicked')} />
   ));

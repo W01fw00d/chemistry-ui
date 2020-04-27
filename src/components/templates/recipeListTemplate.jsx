@@ -7,7 +7,7 @@ import theme from '../../styles/global-styles';
 
 import escapingBoredomTitleLogo from '../../../public/escaping-boredom-title-logo.png';
 
-import ItemListGrid from '../molecules/itemListGrid.jsx';
+import ListGrid from '../molecules/listGrid.jsx';
 import RecipeListHeader from '../organisms/recipeListHeader.jsx';
 import RecipeListItem from '../organisms/recipeListItem.jsx';
 
@@ -49,11 +49,11 @@ export default function RecipeListTemplate({
           />
         )}
         {itemList && (
-          <ItemListGrid>
+          <ListGrid>
             {itemList.map(productData => (
               <RecipeListItem key={productData.id} data={productData} />
             ))}
-          </ItemListGrid>
+          </ListGrid>
         )}
       </div>
     </ThemeProvider>

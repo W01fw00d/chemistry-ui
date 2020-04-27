@@ -15,6 +15,6 @@ const data = {
   likeCount: details.likeCount,
 };
 
-storiesOf('Molecules/RecipeList/ImageFooter', module)
+storiesOf('Molecules/Recipe/List/ImageFooter', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => <RecipeListImageFooter data={data} />);

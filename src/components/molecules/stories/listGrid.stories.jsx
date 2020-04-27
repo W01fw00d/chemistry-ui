@@ -9,7 +9,7 @@ import itemsData from '../../../../.storybook/fake_data/items.json';
 
 import ItemListProduct from '../../organisms/itemListProduct';
 
-import ItemListGrid from '../itemListGrid';
+import ListGrid from '../listGrid';
 
 const getItemData = ({ image, name, price, likeCount }) => ({
   image,
@@ -24,13 +24,13 @@ const data = [
   { ...getItemData(itemsData[2]), id: '3' },
 ];
 
-storiesOf('Molecules/ItemList/Grid', module)
+storiesOf('Molecules/List/Grid', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
-    <ItemListGrid>
+    <ListGrid>
       {data.map(item => (
         <ItemListProduct key={item.id} data={item} />
       ))}
-    </ItemListGrid>
+    </ListGrid>
   ));

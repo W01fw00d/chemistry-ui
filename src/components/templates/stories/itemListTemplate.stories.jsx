@@ -13,7 +13,7 @@ const literals = {
   search: allLiterals.search,
 };
 
-storiesOf('Templates/ItemList', module)
+storiesOf('Templates/Item/List', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
     <ItemListTemplate

@@ -18,7 +18,7 @@ const literals = {
   search: allLiterals.search,
 };
 
-storiesOf('Organisms/RecipeList/Header', module)
+storiesOf('Organisms/Recipe/List/Header', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <RecipeListHeader

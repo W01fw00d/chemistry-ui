@@ -17,7 +17,7 @@ const data = {
   likeCount: item.likeCount,
 };
 
-storiesOf('Organisms/ItemList/Product', module)
+storiesOf('Organisms/Item/List/Product', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
   .add('default', () => <ItemListProduct data={data} />);

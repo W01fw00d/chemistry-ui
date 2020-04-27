@@ -17,7 +17,7 @@ const data = {
   likeCount: item.likeCount,
 };
 
-storiesOf('Organisms/RecipeList/Item', module)
+storiesOf('Organisms/Recipe/List/Item', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
   .add('default', () => <RecipeListItem data={data} />);

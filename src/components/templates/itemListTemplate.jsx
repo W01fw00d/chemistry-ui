@@ -8,7 +8,7 @@ import theme from '../../styles/global-styles';
 
 import escapingBoredomTitleLogo from '../../../public/escaping-boredom-title-logo.png';
 
-import ItemListGrid from '../molecules/itemListGrid.jsx';
+import ListGrid from '../molecules/listGrid.jsx';
 import OverlayedIconButton from '../molecules/overlayedIconButton.jsx';
 import ItemListHeader from '../organisms/itemListHeader.jsx';
 import ItemListProduct from '../organisms/itemListProduct.jsx';
@@ -51,11 +51,11 @@ export default function ItemListTemplate({
           />
         )}
         {itemList && (
-          <ItemListGrid>
+          <ListGrid>
             {itemList.map(productData => (
               <ItemListProduct key={productData.id} data={productData} />
             ))}
-          </ItemListGrid>
+          </ListGrid>
         )}
         <OverlayedIconButton handleClick={handleClick}>
           <PhotoCameraIcon />

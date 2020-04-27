@@ -20,7 +20,7 @@ const footerBarData = {
   isGroupPrice: details.isGroupPrice,
 };
 
-storiesOf('Organisms/ItemDetail/Footer', module)
+storiesOf('Organisms/Item/Detail/Footer', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <ItemDetailFooterBar

@@ -13,7 +13,7 @@ const literals = {
   search: allLiterals.search,
 };
 
-storiesOf('Templates/RecipeList', module)
+storiesOf('Templates/Recipe/List', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
     <RecipeListTemplate
