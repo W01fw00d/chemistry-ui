@@ -7,11 +7,13 @@ import theme from '../../../styles/global-styles';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 import itemData from '../../../../.storybook/fake_data/items.json';
 
+import itemImage from '../../../../public/fake_imgs/item.jpg';
+
 import ItemListProduct from '../itemListProduct';
 
 const item = itemData[0];
 const data = {
-  image: item.image,
+  image: itemImage,
   name: item.name,
   price: item.price,
   likeCount: item.likeCount,

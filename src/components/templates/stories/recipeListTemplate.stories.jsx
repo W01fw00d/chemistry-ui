@@ -6,7 +6,15 @@ import { action } from '@storybook/addon-actions';
 
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
 import recipes from '../../../../.storybook/fake_data/recipes.json';
+
+import recipeImage from '../../../../public/fake_imgs/recipe.jpeg';
+
 import RecipeListTemplate from '../recipeListTemplate';
+
+const formattedRecipes = recipes.map(recipe => {
+  recipe.image = recipeImage;
+  return recipe;
+});
 
 const literals = {
   search: allLiterals.search,
@@ -29,7 +37,7 @@ storiesOf('Templates/Recipe/List', module)
         url: 'https://github.com/W01fw00d/chemistry-ui/blob/master/README.md',
       }}
       search="Coming soon!"
-      itemList={recipes}
+      itemList={formattedRecipes}
       handleChange={action('Input detected')}
       handleClick={action('Button clicked')}
     />

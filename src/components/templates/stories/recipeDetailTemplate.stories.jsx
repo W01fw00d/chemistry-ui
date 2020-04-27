@@ -7,6 +7,8 @@ import { action } from '@storybook/addon-actions';
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
 import allData from '../../../../.storybook/fake_data/recipes.json';
 
+import recipeImage from '../../../../public/fake_imgs/recipe.jpeg';
+
 import RecipeDetailTemplate from '../recipeDetailTemplate';
 
 const literals = {
@@ -19,7 +21,7 @@ const literals = {
 const details = allData[0];
 const data = {
   name: details.name,
-  image: details.image,
+  image: recipeImage,
 };
 
 storiesOf('Templates/Recipe/Detail', module)

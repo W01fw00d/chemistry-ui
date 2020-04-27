@@ -7,12 +7,14 @@ import theme from '../../../styles/global-styles';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 import itemsData from '../../../../.storybook/fake_data/items.json';
 
+import itemImage from '../../../../public/fake_imgs/item.jpg';
+
 import ItemListProduct from '../../organisms/itemListProduct';
 
 import ListGrid from '../listGrid';
 
-const getItemData = ({ image, name, price, likeCount }) => ({
-  image,
+const getItemData = ({ name, price, likeCount }) => ({
+  image: itemImage,
   name,
   price,
   likeCount,

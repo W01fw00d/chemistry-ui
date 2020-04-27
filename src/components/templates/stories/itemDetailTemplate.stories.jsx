@@ -7,6 +7,8 @@ import { action } from '@storybook/addon-actions';
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
 import allData from '../../../../.storybook/fake_data/items.json';
 
+import itemImage from '../../../../public/fake_imgs/item.jpg';
+
 import ItemDetailTemplate from '../itemDetailTemplate';
 
 const literals = {
@@ -18,7 +20,7 @@ const literals = {
 
 const details = allData[0];
 const data = {
-  image: details.image,
+  image: itemImage,
   price: details.price,
   isGroupPrice: details.isGroupPrice,
 };

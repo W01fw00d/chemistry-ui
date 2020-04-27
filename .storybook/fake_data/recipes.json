@@ -8,7 +8,7 @@
     "eventDate": "25/04/2020",
     "difficulty": 5,
     "nIngredients": 10,
-    "image": "fake_imgs/pilotes.jpeg"
+    "image": ""
   },
   {
     "_id": 2,
@@ -19,7 +19,7 @@
     "eventDate": "25/04/2020",
     "difficulty": 1,
     "nIngredients": 3,
-    "image": "fake_imgs/pilotes.jpeg"
+    "image": ""
   },
   {
     "_id": 3,
@@ -30,6 +30,6 @@
     "eventDate": "25/04/2020",
     "difficulty": 3,
     "nIngredients": 1,
-    "image": "fake_imgs/pilotes.jpeg"
+    "image": ""
   }
 ]
