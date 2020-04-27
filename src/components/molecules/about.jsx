@@ -39,8 +39,15 @@ export default function About({ logo, authorName, email, authorUrl, projectUrl }
   );
 }
 
+About.defaultProps = {
+  authorName: '',
+  email: '',
+  authorUrl: '',
+  projectUrl: '',
+};
+
 About.propTypes = {
-  logo: PropTypes.string,
+  logo: PropTypes.string.isRequired,
   authorName: PropTypes.string,
   email: PropTypes.string,
   authorUrl: PropTypes.string,

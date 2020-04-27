@@ -27,6 +27,5 @@ storiesOf('Molecules/Recipe/List/Toolbar', module)
       logo={escapingBoredomTitleLogo}
       searchValue="Search Value"
       handleChange={action('Input detected')}
-      handleClick={action('IconButton clicked')}
     />
   ));

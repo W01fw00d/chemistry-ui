@@ -17,7 +17,6 @@ export default function RecipeListTemplate({
   projectData,
   search,
   itemList,
-  tags,
   handleChange,
   handleClick,
 }) {
@@ -36,18 +35,15 @@ export default function RecipeListTemplate({
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.layout}>
-        {tags && (
-          <RecipeListHeader
-            literals={itemListHeaderLiterals}
-            authorData={authorData}
-            projectData={projectData}
-            logo={escapingBoredomTitleLogo}
-            tags={tags}
-            searchValue={search}
-            handleChange={handleChange}
-            handleClick={handleClick}
-          />
-        )}
+        <RecipeListHeader
+          literals={itemListHeaderLiterals}
+          authorData={authorData}
+          projectData={projectData}
+          logo={escapingBoredomTitleLogo}
+          searchValue={search}
+          handleChange={handleChange}
+          handleClick={handleClick}
+        />
         {itemList && (
           <ListGrid>
             {itemList.map(productData => (
@@ -68,7 +64,6 @@ RecipeListTemplate.defaultProps = {
   projectData: {},
   search: '',
   itemList: [],
-  tags: [],
   handleChange: () => {},
   handleClick: () => {},
 };
@@ -87,7 +82,6 @@ RecipeListTemplate.propTypes = {
   }),
   search: PropTypes.string,
   itemList: PropTypes.arrayOf(PropTypes.object),
-  tags: PropTypes.arrayOf(PropTypes.object),
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,
 };

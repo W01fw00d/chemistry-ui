@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { makeStyles, Grid, Divider } from '@material-ui/core';
-import { NotificationsOutlined as NotificationsIcon, Check as CheckIcon } from '@material-ui/icons';
 
-import IconButton from '../atoms/iconButton.jsx';
 import TextField from '../atoms/textField.jsx';
 import About from './about.jsx';
 import DrawerPanel from '../organisms/drawerPanel.jsx';
@@ -17,13 +15,12 @@ export default function RecipeListToolbar({
   className,
   searchValue,
   handleChange,
-  handleClick,
 }) {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles({
     description: {
       width: '300px',
     },
-  }));
+  });
   const classes = useStyles();
 
   return (
@@ -64,7 +61,6 @@ RecipeListToolbar.defaultProps = {
   className: '',
   searchValue: null,
   handleChange: () => {},
-  handleClick: () => {},
 };
 
 RecipeListToolbar.propTypes = {
@@ -77,11 +73,12 @@ RecipeListToolbar.propTypes = {
     url: PropTypes.string,
   }),
   projectData: PropTypes.shape({
+    description: PropTypes.string,
     logo: PropTypes.string,
     url: PropTypes.string,
   }),
+  logo: PropTypes.string.isRequired,
   className: PropTypes.string,
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
-  handleClick: PropTypes.func,
 };

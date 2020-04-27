@@ -5,7 +5,6 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
-import tags from '../../../../.storybook/fake_data/tags.json';
 import recipes from '../../../../.storybook/fake_data/recipes.json';
 import RecipeListTemplate from '../recipeListTemplate';
 
@@ -25,12 +24,12 @@ storiesOf('Templates/Recipe/List', module)
       }}
       projectData={{
         description:
-          'While quarentined, a group of friends attempt to learn how to cook under the expert guidance of the Great Chef Mateu...',
+          'While quarentined, a group of friends ' +
+          'attempt to learn how to cook under the expert guidance of the Great Chef Mateu...',
         url: 'https://github.com/W01fw00d/chemistry-ui/blob/master/README.md',
       }}
       search="Coming soon!"
       itemList={recipes}
-      tags={tags}
       handleChange={action('Input detected')}
       handleClick={action('Button clicked')}
     />

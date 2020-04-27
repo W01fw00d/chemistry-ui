@@ -10,7 +10,7 @@ export default function ItemListTagsBar({ tags, handleClick }) {
     button: {
       backgroundColor: theme.palette.primary.main,
     },
-    currentCategory: {
+    currentTag: {
       color: theme.palette.secondary.main,
     },
   }));
@@ -18,14 +18,14 @@ export default function ItemListTagsBar({ tags, handleClick }) {
 
   return (
     <Grid container justify="center">
-      {tags.map(category => (
-        <Grid key={category.id} item>
+      {tags.map(tag => (
+        <Grid key={tag.id} item>
           <TextButton
-            className={`${classes.button} ${category.isCurrent ? classes.currentCategory : ''}`}
-            id={category.id}
+            className={`${classes.button} ${tag.isCurrent ? classes.currentTag : ''}`}
+            id={tag.id}
             handleClick={handleClick}
           >
-            {category.name}
+            {tag.name}
           </TextButton>
         </Grid>
       ))}
@@ -39,6 +39,12 @@ ItemListTagsBar.defaultProps = {
 };
 
 ItemListTagsBar.propTypes = {
-  tags: PropTypes.arrayOf(PropTypes.object),
+  tags: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      isCurrent: PropTypes.bool,
+    }),
+  ),
   handleClick: PropTypes.func,
 };

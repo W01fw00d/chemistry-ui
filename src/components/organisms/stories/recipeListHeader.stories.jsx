@@ -8,7 +8,6 @@ import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 import allLiterals from '../../../../.storybook/fake_data/literals.json';
 import authorData from '../../../../.storybook/fake_data/author.json';
 import projectData from '../../../../.storybook/fake_data/project.json';
-import tags from '../../../../.storybook/fake_data/tags.json';
 
 import escapingBoredomTitleLogo from '../../../../public/escaping-boredom-title-logo.png';
 
@@ -26,7 +25,6 @@ storiesOf('Organisms/Recipe/List/Header', module)
       authorData={authorData}
       projectData={projectData}
       logo={escapingBoredomTitleLogo}
-      tags={tags}
       searchValue="Search Value"
       handleChange={action('Input detected')}
       handleClick={action('IconButton clicked')}

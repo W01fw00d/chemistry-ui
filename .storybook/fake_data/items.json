@@ -23,7 +23,7 @@
     "isGroupPrice": true,
     "isEditorsChoice": true,
     "image": "fake_imgs/item.jpg",
-    "category_id": [3]
+    "tags": [3]
   },
   {
     "_id": 3,
@@ -36,6 +36,6 @@
     "isGroupPrice": true,
     "isEditorsChoice": false,
     "image": "fake_imgs/item.jpg",
-    "category_id": [1, 3]
+    "tags": [1, 3]
   }
 ]

@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-import banner from '../../../public/banner.png';
-
 import InternalLink from '../atoms/internalLink.jsx';
 import Image from '../atoms/image.jsx';
 import RecipeListImageFooter from '../molecules/recipeListImageFooter.jsx';
@@ -23,8 +21,6 @@ export default function RecipeListItem({ data }) {
 
   const footerData = {
     name: data.name,
-    price: data.price,
-    likeCount: data.likeCount,
     preparationTime: data.preparationTime,
     difficulty: data.difficulty,
     nIngredients: data.nIngredients,
@@ -33,7 +29,6 @@ export default function RecipeListItem({ data }) {
   return (
     <InternalLink to={`/detail/${data.id}`}>
       <div className={classes.wrapper}>
-        {data.isEditorsChoice && <Image src={banner} alt="Banner" className={classes.banner} />}
         <Image src={data.image} />
       </div>
       <RecipeListImageFooter data={footerData} />
@@ -50,8 +45,8 @@ RecipeListItem.propTypes = {
     id: PropTypes.string,
     image: PropTypes.string,
     name: PropTypes.string,
-    price: PropTypes.number,
-    likeCount: PropTypes.number,
-    isEditorsChoice: PropTypes.bool,
+    preparationTime: PropTypes.string,
+    difficulty: PropTypes.number,
+    nIngredients: PropTypes.number,
   }),
 };

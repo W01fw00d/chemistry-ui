@@ -6,7 +6,7 @@ import { NotificationsOutlined as NotificationsIcon, Check as CheckIcon } from '
 
 import IconButton from '../atoms/iconButton.jsx';
 import TextField from '../atoms/textField.jsx';
-import About from '../molecules/about.jsx';
+import About from './about.jsx';
 import DrawerPanel from '../organisms/drawerPanel.jsx';
 
 export default function ItemListToolbar({
@@ -82,6 +82,7 @@ ItemListToolbar.propTypes = {
     logo: PropTypes.string,
     url: PropTypes.string,
   }),
+  logo: PropTypes.string.isRequired,
   className: PropTypes.string,
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,

@@ -51,7 +51,6 @@ export default function ItemListHeader({
             projectData={projectData}
             logo={logo}
             className={classes.toolbar}
-            tags={tags}
             searchValue={searchValue}
             handleChange={handleChange}
             handleClick={handleClick}
@@ -72,6 +71,8 @@ export default function ItemListHeader({
 
 ItemListHeader.defaultProps = {
   literals: {},
+  authorData: {},
+  projectData: {},
   tags: [],
   searchValue: '',
   handleChange: () => {},
@@ -82,7 +83,10 @@ ItemListHeader.propTypes = {
   literals: PropTypes.shape({
     search: PropTypes.string,
   }),
-  tags: PropTypes.arrayOf(PropTypes.object),
+  authorData: ItemListToolbar.propTypes.authorData,
+  projectData: ItemListToolbar.propTypes.projectData,
+  logo: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(ItemListTagsBar.propTypes.tags),
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,

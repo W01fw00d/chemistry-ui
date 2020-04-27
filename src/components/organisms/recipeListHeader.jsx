@@ -13,7 +13,6 @@ export default function RecipeListHeader({
   authorData,
   projectData,
   logo,
-  tags,
   searchValue,
   handleChange,
   handleClick,
@@ -50,7 +49,6 @@ export default function RecipeListHeader({
             projectData={projectData}
             logo={logo}
             className={classes.toolbar}
-            tags={tags}
             searchValue={searchValue}
             handleChange={handleChange}
             handleClick={handleClick}
@@ -68,7 +66,8 @@ export default function RecipeListHeader({
 
 RecipeListHeader.defaultProps = {
   literals: {},
-  tags: [],
+  authorData: {},
+  projectData: {},
   searchValue: '',
   handleChange: () => {},
   handleClick: () => {},
@@ -78,7 +77,9 @@ RecipeListHeader.propTypes = {
   literals: PropTypes.shape({
     search: PropTypes.string,
   }),
-  tags: PropTypes.arrayOf(PropTypes.object),
+  authorData: RecipeListToolbar.propTypes.authorData,
+  projectData: RecipeListToolbar.propTypes.projectData,
+  logo: PropTypes.string.isRequired,
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,

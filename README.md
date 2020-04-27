@@ -20,6 +20,14 @@ npm install
 npm run storybook
 ```
 
+## Other commands
+
+- Launch eslint
+
+```
+npm run linter
+```
+
 ## Functional description
 
 - When Storybook is launched, a catalogue will appear with all the App components. A component will be rendered with its default material-ui theme, if our custom theme isn't explicitly defined on its story (templates themes are defined to help visualization).
