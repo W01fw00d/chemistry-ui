@@ -22,10 +22,16 @@ npm run storybook
 
 ## Other commands
 
-- Launch eslint
+- Launch eslint autofix
 
 ```
-npm run linter
+npm run eslint
+```
+
+- Launch prettier autofix
+
+```
+npm run prettier
 ```
 
 ## Functional description
