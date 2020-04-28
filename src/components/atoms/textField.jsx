@@ -26,7 +26,7 @@ export default function TextField({ id, label, className, value, handleChange })
 
 TextField.defaultProps = {
   id: 'textButton',
-  label: 'Write here',
+  label: '',
   className: '',
   value: '',
   handleChange: () => {},

@@ -11,5 +11,5 @@ import TextField from '../textField';
 storiesOf('Atoms/Fields/Text', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
-    <TextField id="textField" label="Write here" value="" handleChange={action('Input detected')} />
+    <TextField id="textField" value="Write here" handleChange={action('Input detected')} />
   ));

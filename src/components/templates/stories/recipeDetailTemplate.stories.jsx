@@ -11,13 +11,14 @@ import recipeImage from '../../../../public/fake_imgs/recipe.jpeg';
 
 import RecipeDetailTemplate from '../recipeDetailTemplate';
 
-const getLiterals = ({ description }) => ({
-  description,
+const getLiterals = ({ ingredients }) => ({
+  ingredients,
 });
 
 const details = allData[0];
 const data = {
   name: details.name,
+  ingredients: details.ingredients,
   image: recipeImage,
 };
 

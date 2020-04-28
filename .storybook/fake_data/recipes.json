@@ -8,6 +8,7 @@
     "eventDate": "25/04/2020",
     "difficulty": 5,
     "nIngredients": 10,
+    "ingredients": [],
     "image": ""
   },
   {
@@ -19,6 +20,7 @@
     "eventDate": "25/04/2020",
     "difficulty": 1,
     "nIngredients": 3,
+    "ingredients": [],
     "image": ""
   },
   {
@@ -30,6 +32,7 @@
     "eventDate": "25/04/2020",
     "difficulty": 3,
     "nIngredients": 1,
+    "ingredients": [],
     "image": ""
   }
 ]

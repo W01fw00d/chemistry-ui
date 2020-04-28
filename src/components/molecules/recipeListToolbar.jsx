@@ -38,7 +38,7 @@ export default function RecipeListToolbar({
             <p className={classes.description}>{projectData.description}</p>
           </DrawerPanel>
         </Grid>
-        <Grid item xs={6} container justify="center">
+        <Grid item xs={8} container justify="center">
           <form noValidate autoComplete="off">
             <TextField id="search" value={searchValue} handleChange={handleChange} />
           </form>

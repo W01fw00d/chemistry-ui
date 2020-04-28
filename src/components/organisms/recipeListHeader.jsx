@@ -54,11 +54,12 @@ export default function RecipeListHeader({
             handleClick={handleClick}
           />
         </Grid>
-        <Grid item xs={12} container justify="center">
+        {/* TODO: Anchor */}
+        {/* <Grid item xs={12} container justify="center">
           <IconButton color="primary" className={classes.overlayed} handleClick={handleClick}>
             <ArrowUpwardIcon />
           </IconButton>
-        </Grid>
+        </Grid> */}
       </Grid>
     </AppBar>
   );
