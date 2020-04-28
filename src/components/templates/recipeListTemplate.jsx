@@ -5,7 +5,7 @@ import { makeStyles, ThemeProvider } from '@material-ui/core';
 
 import theme from '../../styles/global-styles';
 
-import escapingBoredomTitleLogo from '../../../public/escaping-boredom-title-logo.png';
+import logo from '../../../public/cooking-with-amateurs-title-logo.png';
 
 import ListGrid from '../molecules/listGrid.jsx';
 import RecipeListHeader from '../organisms/recipeListHeader.jsx';
@@ -40,7 +40,7 @@ export default function RecipeListTemplate({
         <RecipeListHeader
           authorData={authorData}
           projectData={projectData}
-          logo={escapingBoredomTitleLogo}
+          logo={logo}
           searchValue={search}
           handleChange={handleChange}
           handleClick={handleClick}
