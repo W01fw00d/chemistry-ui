@@ -8,7 +8,6 @@ import About from './about.jsx';
 import DrawerPanel from '../organisms/drawerPanel.jsx';
 
 export default function RecipeListToolbar({
-  literals,
   authorData,
   projectData,
   logo,
@@ -41,12 +40,7 @@ export default function RecipeListToolbar({
         </Grid>
         <Grid item xs={6} container justify="center">
           <form noValidate autoComplete="off">
-            <TextField
-              id="search"
-              label={literals.search}
-              value={searchValue}
-              handleChange={handleChange}
-            />
+            <TextField id="search" value={searchValue} handleChange={handleChange} />
           </form>
         </Grid>
       </Grid>
@@ -55,7 +49,6 @@ export default function RecipeListToolbar({
 }
 
 RecipeListToolbar.defaultProps = {
-  literals: {},
   authorData: {},
   projectData: {},
   className: '',
@@ -64,9 +57,6 @@ RecipeListToolbar.defaultProps = {
 };
 
 RecipeListToolbar.propTypes = {
-  literals: PropTypes.shape({
-    search: PropTypes.string,
-  }),
   authorData: PropTypes.shape({
     name: PropTypes.string,
     email: PropTypes.string,

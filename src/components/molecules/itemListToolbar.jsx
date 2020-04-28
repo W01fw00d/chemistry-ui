@@ -10,7 +10,6 @@ import About from './about.jsx';
 import DrawerPanel from '../organisms/drawerPanel.jsx';
 
 export default function ItemListToolbar({
-  literals,
   authorData,
   projectData,
   logo,
@@ -36,12 +35,7 @@ export default function ItemListToolbar({
         </Grid>
         <Grid item xs={6} container justify="center">
           <form noValidate autoComplete="off">
-            <TextField
-              id="search"
-              label={literals.search}
-              value={searchValue}
-              handleChange={handleChange}
-            />
+            <TextField id="search" value={searchValue} handleChange={handleChange} />
           </form>
         </Grid>
         <Grid item xs={2} container justify="flex-end">
@@ -60,7 +54,6 @@ export default function ItemListToolbar({
 }
 
 ItemListToolbar.defaultProps = {
-  literals: {},
   authorData: {},
   projectData: {},
   className: '',
@@ -70,9 +63,6 @@ ItemListToolbar.defaultProps = {
 };
 
 ItemListToolbar.propTypes = {
-  literals: PropTypes.shape({
-    search: PropTypes.string,
-  }),
   authorData: PropTypes.shape({
     name: PropTypes.string,
     email: PropTypes.string,

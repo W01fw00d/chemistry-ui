@@ -14,7 +14,6 @@ import ItemListHeader from '../organisms/itemListHeader.jsx';
 import ItemListProduct from '../organisms/itemListProduct.jsx';
 
 export default function ItemListTemplate({
-  literals,
   authorData,
   projectData,
   search,
@@ -31,16 +30,11 @@ export default function ItemListTemplate({
   });
   const classes = useStyles();
 
-  const itemListHeaderLiterals = {
-    search: literals.search,
-  };
-
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.layout}>
         {tags && (
           <ItemListHeader
-            literals={itemListHeaderLiterals}
             authorData={authorData}
             projectData={projectData}
             logo={escapingBoredomTitleLogo}
@@ -66,9 +60,6 @@ export default function ItemListTemplate({
 }
 
 ItemListTemplate.defaultProps = {
-  literals: {
-    search: ItemListHeader.defaultProps.literals.search,
-  },
   authorData: {},
   projectData: {},
   search: '',
@@ -79,9 +70,6 @@ ItemListTemplate.defaultProps = {
 };
 
 ItemListTemplate.propTypes = {
-  literals: PropTypes.shape({
-    search: ItemListHeader.propTypes.literals.search,
-  }),
   authorData: PropTypes.shape({
     name: PropTypes.string,
     email: PropTypes.string,

@@ -74,9 +74,7 @@ RecipeListHeader.defaultProps = {
 };
 
 RecipeListHeader.propTypes = {
-  literals: PropTypes.shape({
-    search: PropTypes.string,
-  }),
+  literals: RecipeListToolbar.propTypes.literals,
   authorData: RecipeListToolbar.propTypes.authorData,
   projectData: RecipeListToolbar.propTypes.projectData,
   logo: PropTypes.string.isRequired,

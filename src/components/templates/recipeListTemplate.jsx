@@ -28,15 +28,16 @@ export default function RecipeListTemplate({
   });
   const classes = useStyles();
 
-  const itemListHeaderLiterals = {
-    search: literals.search,
-  };
+  const getRecipeListItemLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
+    difficulty,
+    preparationTime,
+    howManyIngredients,
+  });
 
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.layout}>
         <RecipeListHeader
-          literals={itemListHeaderLiterals}
           authorData={authorData}
           projectData={projectData}
           logo={escapingBoredomTitleLogo}
@@ -47,7 +48,11 @@ export default function RecipeListTemplate({
         {itemList && (
           <ListGrid>
             {itemList.map(productData => (
-              <RecipeListItem key={productData.id} data={productData} />
+              <RecipeListItem
+                literals={getRecipeListItemLiterals(literals)}
+                key={productData.id}
+                data={productData}
+              />
             ))}
           </ListGrid>
         )}
@@ -57,9 +62,7 @@ export default function RecipeListTemplate({
 }
 
 RecipeListTemplate.defaultProps = {
-  literals: {
-    search: RecipeListHeader.defaultProps.literals.search,
-  },
+  literals: {},
   authorData: {},
   projectData: {},
   search: '',
@@ -70,7 +73,7 @@ RecipeListTemplate.defaultProps = {
 
 RecipeListTemplate.propTypes = {
   literals: PropTypes.shape({
-    search: RecipeListHeader.propTypes.literals.search,
+    ...RecipeListItem.propTypes.literals,
   }),
   authorData: PropTypes.shape({
     name: PropTypes.string,

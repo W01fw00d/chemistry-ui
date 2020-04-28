@@ -22,10 +22,6 @@ export default function RecipeDetailTemplate({ literals, data, handleClick }) {
   });
   const classes = useStyles();
 
-  const descriptionSectionLiterals = {
-    description: literals.description,
-  };
-
   return (
     data && (
       <ThemeProvider theme={theme}>
@@ -36,7 +32,7 @@ export default function RecipeDetailTemplate({ literals, data, handleClick }) {
         </Typography>
         <ItemDetailDescriptionSection
           className={classes.marginBottom}
-          literals={descriptionSectionLiterals}
+          literals={literals}
           description={data.description}
         />
       </ThemeProvider>

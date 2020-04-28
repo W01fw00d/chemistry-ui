@@ -10,7 +10,6 @@ import ItemListToolbar from '../molecules/itemListToolbar.jsx';
 import ItemListTagsBar from '../molecules/itemListTagsBar.jsx';
 
 export default function ItemListHeader({
-  literals,
   authorData,
   projectData,
   logo,
@@ -46,7 +45,6 @@ export default function ItemListHeader({
       <Grid container>
         <Grid item xs={12} className={classes.container}>
           <ItemListToolbar
-            literals={literals}
             authorData={authorData}
             projectData={projectData}
             logo={logo}
@@ -70,7 +68,6 @@ export default function ItemListHeader({
 }
 
 ItemListHeader.defaultProps = {
-  literals: {},
   authorData: {},
   projectData: {},
   tags: [],
@@ -80,9 +77,6 @@ ItemListHeader.defaultProps = {
 };
 
 ItemListHeader.propTypes = {
-  literals: PropTypes.shape({
-    search: PropTypes.string,
-  }),
   authorData: ItemListToolbar.propTypes.authorData,
   projectData: ItemListToolbar.propTypes.projectData,
   logo: PropTypes.string.isRequired,

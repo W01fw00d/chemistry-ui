@@ -5,7 +5,6 @@ import { action } from '@storybook/addon-actions';
 
 import theme from '../../../styles/global-styles';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
-import allLiterals from '../../../../.storybook/fake_data/literals.json';
 import authorData from '../../../../.storybook/fake_data/author.json';
 import projectData from '../../../../.storybook/fake_data/project.json';
 
@@ -13,15 +12,10 @@ import escapingBoredomTitleLogo from '../../../../public/escaping-boredom-title-
 
 import RecipeListHeader from '../recipeListHeader';
 
-const literals = {
-  search: allLiterals.search,
-};
-
 storiesOf('Organisms/Recipe/List/Header', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <RecipeListHeader
-      literals={literals}
       authorData={authorData}
       projectData={projectData}
       logo={escapingBoredomTitleLogo}

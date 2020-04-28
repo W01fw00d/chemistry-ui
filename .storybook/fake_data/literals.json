@@ -1,12 +1,21 @@
 {
   "---common": "",
+  "comingSoon": "Coming soon!",
   "--ItemListToolbar": "",
-  "search": "Search",
   "--ButtonsRow": "",
   "like": "Like!",
   "comment": "Comment",
   "--DescriptionSection": "",
   "description": "Description",
   "--FooterBar": "",
-  "buy": "Book"
+  "buy": "Book",
+  "---ListTemplates": "",
+  "gabriel": "Gabriel Romay Machado",
+  "cv": "https://www.linkedin.com/in/gabriel-romay-machado-40050a114/?locale=en_US",
+  "---recipeListTemplate": "",
+  "projectDescription": "While quarentined, a group of friends attempt to learn how to cook under the expert guidance of the Great Chef Mateu...",
+  "---RecipeListImageFooter": "",
+  "difficulty": "Difficulty",
+  "preparationTime": "Preparation time",
+  "howManyIngredients": "How many ingredients?"
 }
