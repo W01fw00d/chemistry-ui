@@ -17,10 +17,7 @@ const getLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
   howManyIngredients,
 });
 
-const formattedRecipes = recipes.map(recipe => {
-  recipe.image = recipeImage;
-  return recipe;
-});
+const formattedRecipes = recipes.map(recipe => ({ ...recipe, image: recipeImage }));
 
 storiesOf('Templates/Recipe/List', module)
   .addDecorator(StoryRouter())
