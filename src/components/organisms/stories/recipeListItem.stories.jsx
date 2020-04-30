@@ -17,12 +17,13 @@ const getLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
   preparationTime,
   howManyIngredients,
 });
-const getData = ({ name, difficulty, preparationTime, nIngredients }) => ({
-  image: recipeImage,
+const getData = ({ id, name, difficulty, preparationTime, nIngredients }) => ({
+  id,
   name,
   difficulty,
   preparationTime,
   nIngredients,
+  image: recipeImage,
 });
 
 storiesOf('Organisms/Recipe/List/Item', module)

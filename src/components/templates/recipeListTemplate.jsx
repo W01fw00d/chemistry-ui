@@ -62,7 +62,6 @@ export default function RecipeListTemplate({
 }
 
 RecipeListTemplate.defaultProps = {
-  literals: {},
   authorData: {},
   projectData: {},
   search: '',
@@ -72,9 +71,7 @@ RecipeListTemplate.defaultProps = {
 };
 
 RecipeListTemplate.propTypes = {
-  literals: PropTypes.shape({
-    ...RecipeListItem.propTypes.literals,
-  }),
+  literals: RecipeListItem.propTypes.literals,
   authorData: PropTypes.shape({
     name: PropTypes.string,
     email: PropTypes.string,

@@ -19,19 +19,19 @@ export default function RecipeListItem({ literals, data }) {
   });
   const classes = useStyles();
 
-  const footerData = {
-    name: data.name,
-    preparationTime: data.preparationTime,
-    difficulty: data.difficulty,
-    nIngredients: data.nIngredients,
-  };
+  const getFooterData = ({ name, preparationTime, difficulty, nIngredients }) => ({
+    name,
+    preparationTime,
+    difficulty,
+    nIngredients,
+  });
 
   return (
     <InternalLink to={`/detail/${data.id}`}>
       <div className={classes.wrapper}>
         <Image src={data.image} />
       </div>
-      <RecipeListImageFooter literals={literals} data={footerData} />
+      <RecipeListImageFooter literals={literals} data={getFooterData(data)} />
     </InternalLink>
   );
 }
@@ -44,7 +44,7 @@ RecipeListItem.defaultProps = {
 RecipeListItem.propTypes = {
   literals: RecipeListImageFooter.propTypes.literals,
   data: PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.number,
     image: PropTypes.string,
     name: PropTypes.string,
     preparationTime: PropTypes.string,

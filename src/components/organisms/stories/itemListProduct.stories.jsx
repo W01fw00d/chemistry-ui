@@ -11,15 +11,16 @@ import itemImage from '../../../../public/fake_imgs/item.jpg';
 
 import ItemListProduct from '../itemListProduct';
 
-const item = itemData[0];
-const data = {
+const getData = ({ id, name, price, likeCount, isEditorsChoice }) => ({
+  id,
+  name,
+  price,
+  likeCount,
+  isEditorsChoice,
   image: itemImage,
-  name: item.name,
-  price: item.price,
-  likeCount: item.likeCount,
-};
+});
 
 storiesOf('Organisms/Item/List/Product', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
-  .add('default', () => <ItemListProduct data={data} />);
+  .add('default', () => <ItemListProduct data={getData(itemData[0])} />);

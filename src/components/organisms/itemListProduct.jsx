@@ -21,11 +21,11 @@ export default function ItemListProduct({ data }) {
   });
   const classes = useStyles();
 
-  const footerData = {
-    name: data.name,
-    price: data.price,
-    likeCount: data.likeCount,
-  };
+  const getFooterData = ({ name, price, likeCount }) => ({
+    name,
+    price,
+    likeCount,
+  });
 
   return (
     <InternalLink to={`/detail/${data.id}`}>
@@ -33,7 +33,7 @@ export default function ItemListProduct({ data }) {
         {data.isEditorsChoice && <Image src={banner} alt="Banner" className={classes.banner} />}
         <Image src={data.image} />
       </div>
-      <ProductImageFooter data={footerData} />
+      <ProductImageFooter data={getFooterData(data)} />
     </InternalLink>
   );
 }
@@ -44,7 +44,7 @@ ItemListProduct.defaultProps = {
 
 ItemListProduct.propTypes = {
   data: PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.number,
     image: PropTypes.string,
     name: PropTypes.string,
     price: PropTypes.number,

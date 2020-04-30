@@ -15,19 +15,18 @@ const getLiterals = ({ ingredients }) => ({
   ingredients,
 });
 
-const details = allData[0];
-const data = {
-  name: details.name,
-  ingredients: details.ingredients,
+const getData = ({ name, ingredients }) => ({
+  name,
+  ingredients,
   image: recipeImage,
-};
+});
 
 storiesOf('Templates/Recipe/Detail', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
     <RecipeDetailTemplate
       literals={getLiterals(literals)}
-      data={data}
+      data={getData(allData[0])}
       handleClick={action('Button clicked')}
     />
   ));

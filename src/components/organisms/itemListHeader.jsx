@@ -80,7 +80,7 @@ ItemListHeader.propTypes = {
   authorData: ItemListToolbar.propTypes.authorData,
   projectData: ItemListToolbar.propTypes.projectData,
   logo: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(ItemListTagsBar.propTypes.tags),
+  tags: ItemListTagsBar.propTypes.tags,
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,

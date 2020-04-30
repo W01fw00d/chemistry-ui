@@ -38,7 +38,7 @@ RecipeDetailTemplate.defaultProps = {
   data: {
     name: RecipeDetailAppBar.defaultProps.name,
     image: Image.defaultProps.src,
-    ingredients: ItemDetailDescriptionSection.defaultProps.description,
+    ingredients: [],
   },
   handleClick: () => {},
 };
@@ -48,7 +48,7 @@ RecipeDetailTemplate.propTypes = {
   data: PropTypes.shape({
     name: RecipeDetailAppBar.propTypes.name,
     image: Image.propTypes.src,
-    ingredients: ItemDetailDescriptionSection.propTypes.description,
+    ingredients: PropTypes.array,
   }),
   handleClick: PropTypes.func,
 };
