@@ -11,30 +11,32 @@ export default function About({ logo, authorName, email, authorUrl, projectUrl }
   const useStyles = makeStyles(theme => ({
     logo: {
       width: '300px',
+      paddingBottom: '10px',
     },
     link: {
       color: theme.palette.primary.dark,
+    },
+    paragraph: {
+      padding: '20px 0',
     },
   }));
   const classes = useStyles();
 
   return (
     <div>
-      <ExternalLink id="projectUrl" to={projectUrl} className={classes.link}>
+      <ExternalLink id="projectUrl" to={projectUrl}>
         <div className={classes.logo}>
           <Image src={logo} alt="App Logo" />
         </div>
       </ExternalLink>
-      <p>
-        <ExternalLink id="authorUrl" to={authorUrl}>
-          <Typography variant="body1" className={classes.link}>
-            {authorName}
-          </Typography>
+      <Typography variant="body1" className={classes.link}>
+        <ExternalLink id="authorUrl" to={authorUrl} className={classes.paragraph}>
+          {authorName}
         </ExternalLink>
-      </p>
-      <p>
-        <Typography variant="body1">{email}</Typography>
-      </p>
+      </Typography>
+      <Typography variant="body1" className={classes.paragraph}>
+        {email}
+      </Typography>
     </div>
   );
 }

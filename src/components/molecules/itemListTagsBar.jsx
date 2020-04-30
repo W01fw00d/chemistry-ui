@@ -16,19 +16,21 @@ export default function ItemListTagsBar({ tags, handleClick }) {
   }));
   const classes = useStyles();
 
+  const TabButton = ({ _id, isCurrent, name }) => (
+    <Grid key={_id} item>
+      <TextButton
+        className={`${classes.button} ${isCurrent ? classes.currentTag : ''}`}
+        id={_id}
+        handleClick={handleClick}
+      >
+        {name}
+      </TextButton>
+    </Grid>
+  );
+
   return (
     <Grid container justify="center">
-      {tags.map(tag => (
-        <Grid key={tag.id} item>
-          <TextButton
-            className={`${classes.button} ${tag.isCurrent ? classes.currentTag : ''}`}
-            id={tag.id}
-            handleClick={handleClick}
-          >
-            {tag.name}
-          </TextButton>
-        </Grid>
-      ))}
+      {tags.map(TabButton)}
     </Grid>
   );
 }
