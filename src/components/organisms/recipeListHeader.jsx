@@ -2,14 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { makeStyles, Grid } from '@material-ui/core';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
-import IconButton from '../atoms/iconButton.jsx';
 import AppBar from '../molecules/appBar.jsx';
 import RecipeListToolbar from '../molecules/recipeListToolbar.jsx';
 
 export default function RecipeListHeader({
-  literals,
   authorData,
   projectData,
   logo,
@@ -44,7 +41,6 @@ export default function RecipeListHeader({
       <Grid container>
         <Grid item xs={12} className={classes.container}>
           <RecipeListToolbar
-            literals={literals}
             authorData={authorData}
             projectData={projectData}
             logo={logo}
@@ -66,7 +62,6 @@ export default function RecipeListHeader({
 }
 
 RecipeListHeader.defaultProps = {
-  literals: {},
   authorData: {},
   projectData: {},
   searchValue: '',
@@ -75,7 +70,6 @@ RecipeListHeader.defaultProps = {
 };
 
 RecipeListHeader.propTypes = {
-  literals: RecipeListToolbar.propTypes.literals,
   authorData: RecipeListToolbar.propTypes.authorData,
   projectData: RecipeListToolbar.propTypes.projectData,
   logo: PropTypes.string.isRequired,
