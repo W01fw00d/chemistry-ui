@@ -16,7 +16,7 @@ export default function ItemListTagsBar({ tags, handleClick }) {
   }));
   const classes = useStyles();
 
-  const TabButton = ({ _id, isCurrent, name }) => (
+  const TagButton = ({ _id, isCurrent, name }) => (
     <Grid key={_id} item>
       <TextButton
         className={`${classes.button} ${isCurrent ? classes.currentTag : ''}`}
@@ -27,10 +27,20 @@ export default function ItemListTagsBar({ tags, handleClick }) {
       </TextButton>
     </Grid>
   );
+  TagButton.defaultProps = {
+    _id: '',
+    name: '',
+    isCurrent: false,
+  };
+  TagButton.propTypes = {
+    _id: PropTypes.string,
+    name: PropTypes.string,
+    isCurrent: PropTypes.bool,
+  };
 
   return (
     <Grid container justify="center">
-      {tags.map(TabButton)}
+      {tags.map(TagButton)}
     </Grid>
   );
 }
@@ -43,7 +53,7 @@ ItemListTagsBar.defaultProps = {
 ItemListTagsBar.propTypes = {
   tags: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
+      _id: PropTypes.string,
       name: PropTypes.string,
       isCurrent: PropTypes.bool,
     }),

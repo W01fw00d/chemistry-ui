@@ -21,7 +21,8 @@
     "difficulty": 1,
     "nIngredients": 3,
     "ingredients": [],
-    "image": ""
+    "image": "",
+    "showName": true
   },
   {
     "_id": 3,

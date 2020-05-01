@@ -15,14 +15,19 @@ const getLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
   preparationTime,
   howManyIngredients,
 });
-
-const details = recipes[0];
-const data = {
-  difficulty: details.difficulty,
-  preparationTime: details.preparationTime,
-  nIngredients: details.nIngredients,
-};
+const getData = ({ name, difficulty, preparationTime, nIngredients, showName }) => ({
+  name,
+  difficulty,
+  preparationTime,
+  nIngredients,
+  showName,
+});
 
 storiesOf('Molecules/Recipe/List/ImageFooter', module)
   .addDecorator(themeDecorator(theme))
-  .add('default', () => <RecipeListImageFooter literals={getLiterals(literals)} data={data} />);
+  .add('without name', () => (
+    <RecipeListImageFooter literals={getLiterals(literals)} data={getData(recipes[0])} />
+  ))
+  .add('with name', () => (
+    <RecipeListImageFooter literals={getLiterals(literals)} data={getData(recipes[1])} />
+  ));

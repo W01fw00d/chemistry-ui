@@ -20,6 +20,13 @@ export default function RecipeListImageFooter({ literals, data }) {
   return (
     <div className={classes.layout}>
       <Grid container>
+        {data.showName && (
+          <Grid item xs={12}>
+            <Typography variant="h6" className={classes.text}>
+              {data.name}
+            </Typography>
+          </Grid>
+        )}
         <Grid item xs={12}>
           <Typography variant="h6" className={classes.text}>
             {`${literals.difficulty}: ${data.difficulty}/5`}
@@ -52,8 +59,10 @@ RecipeListImageFooter.propTypes = {
     howManyIngredients: PropTypes.string,
   }),
   data: PropTypes.shape({
+    name: PropTypes.string,
     difficulty: PropTypes.number,
     preparationTime: PropTypes.string,
     nIngredients: PropTypes.number,
+    showName: PropTypes.bool,
   }),
 };

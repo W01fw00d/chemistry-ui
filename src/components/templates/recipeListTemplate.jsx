@@ -62,6 +62,7 @@ export default function RecipeListTemplate({
 }
 
 RecipeListTemplate.defaultProps = {
+  literals: {},
   authorData: {},
   projectData: {},
   search: '',

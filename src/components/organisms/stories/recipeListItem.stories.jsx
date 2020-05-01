@@ -17,18 +17,22 @@ const getLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
   preparationTime,
   howManyIngredients,
 });
-const getData = ({ id, name, difficulty, preparationTime, nIngredients }) => ({
+const getData = ({ id, name, difficulty, preparationTime, nIngredients, showName }) => ({
   id,
   name,
   difficulty,
   preparationTime,
   nIngredients,
   image: recipeImage,
+  showName,
 });
 
 storiesOf('Organisms/Recipe/List/Item', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
-  .add('default', () => (
+  .add('without name', () => (
     <RecipeListItem literals={getLiterals(literals)} data={getData(recipes[0])} />
+  ))
+  .add('with name', () => (
+    <RecipeListItem literals={getLiterals(literals)} data={getData(recipes[1])} />
   ));
