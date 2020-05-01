@@ -29,7 +29,7 @@ export default function RecipeIngredientsList({ className, ingredients }) {
   }));
   const classes = useStyles();
 
-  const [checked, setChecked] = useState([0]);
+  const [checked, setChecked] = useState([]);
 
   let rowCounter = -1;
 
@@ -46,10 +46,10 @@ export default function RecipeIngredientsList({ className, ingredients }) {
     setChecked(newChecked);
   };
 
-  const SectionListItem = ({ section, items }) => (
+  const SectionListItem = ({ sectionName, items }) => (
     <>
-      <MaterialListItem key={section} role={undefined} dense>
-        <ListItemText id={`checkbox-list-section-${section}`} primary={section} />
+      <MaterialListItem key={sectionName} role={undefined} dense>
+        <ListItemText id={`checkbox-list-section-${sectionName}`} primary={sectionName} />
       </MaterialListItem>
       {items.map(ListItem)}
     </>
@@ -65,7 +65,7 @@ export default function RecipeIngredientsList({ className, ingredients }) {
         </ListItemIcon>
         <ListItemText
           id={`checkbox-list-label-${code}`}
-          primary={isOptional ? `${name}` : `${name} (required)`}
+          primary={isOptional ? `${name} (optional)` : `${name}`}
         />
         {alternatives && alternatives.length > 0 && (
           <ListItemSecondaryAction>
