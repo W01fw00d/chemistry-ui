@@ -12,4 +12,5 @@ import RecipeIngredientsList from '../recipeIngredientsList.jsx';
 storiesOf('Organisms/Recipe/Detail/IngredientsList', module)
   .addDecorator(themeDecorator(theme))
   .add('without alternatives', () => <RecipeIngredientsList ingredients={recipes[0].ingredients} />)
-  .add('with alternatives', () => <RecipeIngredientsList ingredients={recipes[1].ingredients} />);
+  .add('with alternatives', () => <RecipeIngredientsList ingredients={recipes[1].ingredients} />)
+  .add('without ingredients', () => <RecipeIngredientsList />);

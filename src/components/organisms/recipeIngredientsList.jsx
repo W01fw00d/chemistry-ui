@@ -11,6 +11,7 @@ import {
 } from '@material-ui/core';
 import CommentIcon from '@material-ui/icons/Comment';
 
+import Typography from '../atoms/typography.jsx';
 import IconButton from '../atoms/iconButton.jsx';
 import Checkbox from '../atoms/checkbox.jsx';
 
@@ -19,6 +20,11 @@ export default function RecipeIngredientsList({ className, ingredients }) {
     root: {
       width: '100%',
       backgroundColor: theme.palette.background.paper,
+    },
+    message: {
+      color: theme.palette.primary.dark,
+      textAlign: 'center',
+      paddingBottom: '20px',
     },
   }));
   const classes = useStyles();
@@ -58,7 +64,13 @@ export default function RecipeIngredientsList({ className, ingredients }) {
     );
   };
 
-  return <List className={`${classes.root} ${className}`}>{ingredients.map(ListItem)}</List>;
+  return ingredients && ingredients.length > 0 ? (
+    <List className={`${classes.root} ${className}`}>{ingredients.map(ListItem)}</List>
+  ) : (
+    <Typography variant="body1" className={classes.message}>
+      No ingredients required
+    </Typography>
+  );
 }
 
 RecipeIngredientsList.defaultProps = {
