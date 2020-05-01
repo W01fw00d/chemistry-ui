@@ -8,7 +8,18 @@
     "eventDate": "25/04/2020",
     "difficulty": 5,
     "nIngredients": 10,
-    "ingredients": [],
+    "ingredients": [
+      {
+        "code": "code1",
+        "name": "Ingredient name 1"
+      },
+      {
+        "code": "code2",
+        "name": "Ingredient name 2",
+        "isOptional": true,
+        "alternatives": []
+      }
+    ],
     "image": ""
   },
   {
@@ -20,7 +31,34 @@
     "eventDate": "25/04/2020",
     "difficulty": 1,
     "nIngredients": 3,
-    "ingredients": [],
+    "ingredients": [
+      {
+        "code": "code1",
+        "name": "Ingredient name 1",
+        "isOptional": false,
+        "alternatives": [
+          {
+            "code": "code3",
+            "name": "Ingredient name 3"
+          }
+        ]
+      },
+      {
+        "code": "code2",
+        "name": "Ingredient name 2",
+        "isOptional": true,
+        "alternatives": [
+          {
+            "code": "code4",
+            "name": "Ingredient name 4"
+          },
+          {
+            "code": "code5",
+            "name": "Ingredient name 5"
+          }
+        ]
+      }
+    ],
     "image": "",
     "showName": true
   },

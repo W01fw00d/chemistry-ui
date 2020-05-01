@@ -23,7 +23,7 @@ export default function RecipeListImageFooter({ literals, data }) {
         {data.showName && (
           <Grid item xs={12}>
             <Typography variant="h6" className={classes.text}>
-              {data.name}
+              {`[${data.name}]`}
             </Typography>
           </Grid>
         )}
