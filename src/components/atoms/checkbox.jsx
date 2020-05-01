@@ -4,12 +4,7 @@ import PropTypes from 'prop-types';
 import { Checkbox as MaterialCheckbox } from '@material-ui/core';
 
 const Checkbox = ({ id, value, handleChange }) => (
-  <MaterialCheckbox
-    id={id}
-    checked={value}
-    onChange={handleChange}
-    inputProps={{ 'aria-label': 'primary checkbox' }}
-  />
+  <MaterialCheckbox id={id} checked={value} onChange={handleChange} />
 );
 
 Checkbox.defaultProps = {

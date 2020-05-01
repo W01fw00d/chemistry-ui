@@ -57,6 +57,11 @@
             "name": "Ingredient name 5"
           }
         ]
+      },
+      {
+        "code": "code6",
+        "name": "Ingredient name 6",
+        "alternatives": []
       }
     ],
     "image": "",
