@@ -4,79 +4,121 @@
     "id": 1,
     "name": "Recipe name 1",
     "description": "Recipe description 1",
-    "preparationTime": "01:30",
+    "image": "",
     "eventDate": "25/04/2020",
     "difficulty": 5,
     "nIngredients": 10,
     "ingredients": [
       {
-        "code": "code1",
-        "name": "Ingredient name 1"
-      },
-      {
-        "code": "code2",
-        "name": "Ingredient name 2",
-        "isOptional": true,
-        "alternatives": []
+        "items": [
+          {
+            "code": "code1",
+            "name": "Ingredient name 1"
+          },
+          {
+            "code": "code2",
+            "name": "Ingredient name 2",
+            "isOptional": true,
+            "alternatives": []
+          }
+        ]
       }
-    ],
-    "image": ""
+    ]
   },
   {
     "_id": 2,
     "id": 2,
     "name": "Recipe name 2",
-    "description": "Recipe description 2",
+    "showName": true,
+    "image": "",
     "preparationTime": "00:30",
     "eventDate": "25/04/2020",
     "difficulty": 1,
     "nIngredients": 3,
     "ingredients": [
       {
-        "code": "code1",
-        "name": "Ingredient name 1",
-        "isOptional": false,
-        "alternatives": [
+        "section": "Section 1",
+        "items": [
           {
-            "code": "code3",
-            "name": "Ingredient name 3"
-          }
-        ]
-      },
-      {
-        "code": "code2",
-        "name": "Ingredient name 2",
-        "isOptional": true,
-        "alternatives": [
-          {
-            "code": "code4",
-            "name": "Ingredient name 4"
+            "code": "code1",
+            "name": "Ingredient name 1",
+            "isOptional": false,
+            "alternatives": [
+              {
+                "code": "code3",
+                "name": "Ingredient name 3"
+              }
+            ]
           },
           {
-            "code": "code5",
-            "name": "Ingredient name 5"
+            "code": "code2",
+            "name": "Ingredient name 2",
+            "isOptional": true,
+            "alternatives": [
+              {
+                "code": "code4",
+                "name": "Ingredient name 4"
+              },
+              {
+                "code": "code5",
+                "name": "Ingredient name 5"
+              }
+            ]
+          },
+          {
+            "code": "code6",
+            "name": "Ingredient name 6",
+            "alternatives": []
           }
         ]
-      },
-      {
-        "code": "code6",
-        "name": "Ingredient name 6",
-        "alternatives": []
       }
-    ],
-    "image": "",
-    "showName": true
+    ]
   },
   {
     "_id": 3,
     "id": 3,
     "name": "Recipe name 3",
-    "description": "Recipe description 3",
+    "image": "",
     "preparationTime": "01:00",
     "eventDate": "25/04/2020",
     "difficulty": 3,
     "nIngredients": 1,
-    "ingredients": [],
-    "image": ""
+    "ingredients": [
+      {
+        "section": "Section 1",
+        "items": [
+          {
+            "code": "code1",
+            "name": "Ingredient name 1"
+          },
+          {
+            "code": "code2",
+            "name": "Ingredient name 2",
+            "isOptional": true,
+            "alternatives": [
+              {
+                "code": "code5",
+                "name": "Ingredient name 5"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": "Section 2",
+        "items": [
+          {
+            "code": "code1",
+            "name": "Ingredient name 1"
+          },
+          {
+            "code": "code2",
+            "name": "Ingredient name 2",
+            "isOptional": true,
+            "alternatives": []
+          }
+        ]
+      }
+    ]
   }
 ]

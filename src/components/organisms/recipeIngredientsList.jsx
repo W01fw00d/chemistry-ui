@@ -31,6 +31,8 @@ export default function RecipeIngredientsList({ className, ingredients }) {
 
   const [checked, setChecked] = useState([0]);
 
+  let rowCounter = -1;
+
   const handleToggle = value => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
@@ -44,15 +46,27 @@ export default function RecipeIngredientsList({ className, ingredients }) {
     setChecked(newChecked);
   };
 
-  const ListItem = ({ code, name, isOptional, alternatives }, id) => {
-    const labelId = `checkbox-list-label-${code}`;
+  const SectionListItem = ({ section, items }) => (
+    <>
+      <MaterialListItem key={section} role={undefined} dense>
+        <ListItemText id={`checkbox-list-section-${section}`} primary={section} />
+      </MaterialListItem>
+      {items.map(ListItem)}
+    </>
+  );
+
+  const ListItem = ({ code, name, isOptional, alternatives }) => {
+    rowCounter++;
 
     return (
-      <MaterialListItem key={code} role={undefined} dense button onClick={handleToggle(id)}>
+      <MaterialListItem key={code} role={undefined} dense button onClick={handleToggle(rowCounter)}>
         <ListItemIcon>
-          <Checkbox value={checked.indexOf(id) !== -1} />
+          <Checkbox value={checked.indexOf(rowCounter) !== -1} />
         </ListItemIcon>
-        <ListItemText id={labelId} primary={isOptional ? `${name}` : `${name} (required)`} />
+        <ListItemText
+          id={`checkbox-list-label-${code}`}
+          primary={isOptional ? `${name}` : `${name} (required)`}
+        />
         {alternatives && alternatives.length > 0 && (
           <ListItemSecondaryAction>
             <IconButton edge="end" aria-label="comments">
@@ -65,7 +79,7 @@ export default function RecipeIngredientsList({ className, ingredients }) {
   };
 
   return ingredients && ingredients.length > 0 ? (
-    <List className={`${classes.root} ${className}`}>{ingredients.map(ListItem)}</List>
+    <List className={`${classes.root} ${className}`}>{ingredients.map(SectionListItem)}</List>
   ) : (
     <Typography variant="body1" className={classes.message}>
       No ingredients required
