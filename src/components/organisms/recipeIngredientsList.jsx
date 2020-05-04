@@ -55,8 +55,10 @@ export default function RecipeIngredientsList({ className, ingredients }) {
     </>
   );
 
-  const ListItem = ({ code, name, isOptional, alternatives }) => {
+  const ListItem = ({ code, quantity, name, isOptional, alternatives }) => {
     rowCounter++;
+
+    const label = quantity ? `${quantity} ${name}` : name;
 
     return (
       <MaterialListItem key={code} role={undefined} dense button onClick={handleToggle(rowCounter)}>
@@ -65,7 +67,7 @@ export default function RecipeIngredientsList({ className, ingredients }) {
         </ListItemIcon>
         <ListItemText
           id={`checkbox-list-label-${code}`}
-          primary={isOptional ? `(${name})` : `${name}`}
+          primary={isOptional ? `(${label})` : `${label}`}
         />
         {alternatives && alternatives.length > 0 && (
           <ListItemSecondaryAction>
