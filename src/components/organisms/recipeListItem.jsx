@@ -19,8 +19,16 @@ export default function RecipeListItem({ literals, data }) {
   });
   const classes = useStyles();
 
-  const getFooterData = ({ name, preparationTime, difficulty, nIngredients, showName }) => ({
+  const getFooterData = ({
     name,
+    eventDate,
+    preparationTime,
+    difficulty,
+    nIngredients,
+    showName,
+  }) => ({
+    name,
+    eventDate,
     preparationTime,
     difficulty,
     nIngredients,
@@ -48,6 +56,7 @@ RecipeListItem.propTypes = {
     id: PropTypes.number,
     image: PropTypes.string,
     name: PropTypes.string,
+    eventDate: PropTypes.string,
     preparationTime: PropTypes.string,
     difficulty: PropTypes.number,
     nIngredients: PropTypes.number,

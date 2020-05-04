@@ -23,7 +23,7 @@ export default function RecipeListImageFooter({ literals, data }) {
         {data.showName && (
           <Grid item xs={12}>
             <Typography variant="h6" className={classes.text}>
-              {`[${data.name}]`}
+              {`[${data.name}] - ${data.eventDate}`}
             </Typography>
           </Grid>
         )}
@@ -60,6 +60,7 @@ RecipeListImageFooter.propTypes = {
   }),
   data: PropTypes.shape({
     name: PropTypes.string,
+    eventDate: PropTypes.string,
     difficulty: PropTypes.number,
     preparationTime: PropTypes.string,
     nIngredients: PropTypes.number,

@@ -15,8 +15,9 @@ const getLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
   preparationTime,
   howManyIngredients,
 });
-const getData = ({ name, difficulty, preparationTime, nIngredients, showName }) => ({
+const getData = ({ name, eventDate, difficulty, preparationTime, nIngredients, showName }) => ({
   name,
+  eventDate,
   difficulty,
   preparationTime,
   nIngredients,

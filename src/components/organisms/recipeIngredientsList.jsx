@@ -65,7 +65,7 @@ export default function RecipeIngredientsList({ className, ingredients }) {
         </ListItemIcon>
         <ListItemText
           id={`checkbox-list-label-${code}`}
-          primary={isOptional ? `${name} (optional)` : `${name}`}
+          primary={isOptional ? `(${name})` : `${name}`}
         />
         {alternatives && alternatives.length > 0 && (
           <ListItemSecondaryAction>
