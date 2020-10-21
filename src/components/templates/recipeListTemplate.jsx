@@ -44,6 +44,7 @@ export default function RecipeListTemplate({
           searchValue={search}
           handleChange={handleChange}
           handleClick={handleClick}
+          literals={{participants: literals.participants}}
         />
         {itemList && (
           <ListGrid>

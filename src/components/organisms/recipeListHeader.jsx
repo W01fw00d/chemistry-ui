@@ -13,6 +13,7 @@ export default function RecipeListHeader({
   searchValue,
   handleChange,
   handleClick,
+  literals,
 }) {
   const useStyles = makeStyles(theme => ({
     appbar: {
@@ -48,6 +49,7 @@ export default function RecipeListHeader({
             searchValue={searchValue}
             handleChange={handleChange}
             handleClick={handleClick}
+            literals={literals}
           />
         </Grid>
         {/* TODO: Anchor */}

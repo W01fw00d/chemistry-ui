@@ -19,6 +19,9 @@ export default function About({ logo, authorName, email, authorUrl, projectUrl }
     paragraph: {
       padding: '20px 0',
     },
+    alignText: {
+      'text-align': 'center',
+    },
   }));
   const classes = useStyles();
 
@@ -29,12 +32,12 @@ export default function About({ logo, authorName, email, authorUrl, projectUrl }
           <Image src={logo} alt="App Logo" />
         </div>
       </ExternalLink>
-      <Typography variant="body1" className={classes.link}>
+      <Typography variant="body1" className={`${classes.link} ${classes.alignText}`}>
         <ExternalLink id="authorUrl" to={authorUrl} className={classes.paragraph}>
           {authorName}
         </ExternalLink>
       </Typography>
-      <Typography variant="body1" className={classes.paragraph}>
+      <Typography variant="body1" className={`${classes.paragraph} ${classes.alignText}`}>
         {email}
       </Typography>
     </div>

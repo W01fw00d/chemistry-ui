@@ -14,11 +14,15 @@ export default function RecipeListToolbar({
   className,
   searchValue,
   handleChange,
+  literals,
 }) {
   const useStyles = makeStyles({
     description: {
       width: '300px',
     },
+    alignText: {
+      'text-align': 'center',
+    }
   });
   const classes = useStyles();
 
@@ -35,7 +39,15 @@ export default function RecipeListToolbar({
               projectUrl={projectData.url}
             />
             <Divider />
-            <p className={classes.description}>{projectData.description}</p>
+            <div className={`${classes.description} ${classes.alignText}`}>
+              <p>{projectData.description}</p>
+              <p>
+                <strong>{literals.participants}</strong>
+              </p>
+              {projectData.participants.map(
+                (name) => <p>{name}</p>
+              )}
+            </div>
           </DrawerPanel>
         </Grid>
         <Grid item xs={8} container justify="center">
