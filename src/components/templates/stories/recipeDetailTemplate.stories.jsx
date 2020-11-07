@@ -14,6 +14,22 @@ const getData = ({ name, ingredients }) => ({
   name,
   ingredients,
   image: recipeImage,
+  steps: [
+    {
+      id: 1,
+      sectionName: "Section Name 1",
+      description: "Description",
+      items: [
+        "Item 1",
+        "Item 2"
+      ]
+    },
+    {
+      id: 1,
+      sectionName: "Section Name 2",
+      description: "Description",
+    },
+  ]
 });
 
 storiesOf('Templates/Recipe/Detail', module)

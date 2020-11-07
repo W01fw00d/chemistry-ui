@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "items": [
+      "Derretimos la mantequilla y el chocolate en el microondas.",
+      "En un bol batimos con una varilla los huevos con el azúcar.",
+      "Mezclamos las dos elaboraciones anteriores.",
+      "Integramos poco a poco la harina a la mezcla.",
+      "Untamos el interior de una taza con mantequilla y la recubrimos con un poco de harina. Esto la hacemos para que nos resulte más fácil desmoldar el coulant.",
+      "Ponemos en la taza nuestra masa hasta llenar un tercio. Ponemos dos pastillas de chocolate con leche y cubrimos con la masa, dejando un dedo de margen en la taza ya que la masa va a subir.",
+      "Ponemos la taza en el microondas a 800 W durante 1 minuto... ¡Y ya lo tenemos listo para comer!."
+    ]
+  },
+  {
+    "id": 2,
+    "sectionName": "Guarnición",
+    "description": "Para acompañar este postre tan contundente recomiendo algo refrescante como alguna fruta con zumo de limón y hierbas fresca. En esta ocasión hemos elegido naranjas y hierbabuena.",
+    "items": [
+      "Para ello cortaremos las naranjas con gajos en vivo. Es decir, pelar la naranja a cuchillo quitando la piel y la parte blanca; y sacar cada gajo (separados por las membranas blancas) con el cuchillo.",
+      "Con los restos de naranja que nos sobran los exprimimos con las manos mismas. Juntamos este zumo con los gajos.",
+      "Por último, para darle aún un toque más fresco, picamos un poco de hierbabuena."
+    ]
+  },
+  {
+    "id": 3,
+    "sectionName": "Finalización",
+    "description": "Recuerda que el coulant se debe comer cuando está aún caliente y con la guarnición fresquita."
+  }
+]

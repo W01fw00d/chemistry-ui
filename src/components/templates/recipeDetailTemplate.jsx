@@ -6,8 +6,9 @@ import { makeStyles, ThemeProvider } from '@material-ui/core';
 import theme from '../../styles/global-styles';
 
 import Image from '../atoms/image.jsx';
-import RecipeDetailAppBar from '../organisms/recipeDetailHeader.jsx';
-import RecipeIngredientsList from '../organisms/recipeIngredientsList.jsx';
+import AppBar from '../organisms/recipeDetailHeader.jsx';
+import IngredientsList from '../organisms/recipeIngredientsList.jsx';
+import StepsList from '../organisms/recipeStepsList.jsx';
 
 export default function RecipeDetailTemplate({ data, handleClick }) {
   const useStyles = makeStyles({
@@ -20,9 +21,10 @@ export default function RecipeDetailTemplate({ data, handleClick }) {
   return (
     data && (
       <ThemeProvider theme={theme}>
-        <RecipeDetailAppBar name={data.name} handleClick={handleClick} />
+        <AppBar name={data.name} handleClick={handleClick} />
         <Image src={data.image} alt={data.name} />
-        <RecipeIngredientsList className={classes.marginBottom} ingredients={data.ingredients} />
+        <IngredientsList className={classes.marginBottom} ingredients={data.ingredients} />
+        <StepsList className={classes.marginBottom} steps={data.steps} />
       </ThemeProvider>
     )
   );
@@ -30,18 +32,20 @@ export default function RecipeDetailTemplate({ data, handleClick }) {
 
 RecipeDetailTemplate.defaultProps = {
   data: {
-    name: RecipeDetailAppBar.defaultProps.name,
+    name: AppBar.defaultProps.name,
     image: Image.defaultProps.src,
     ingredients: [],
+    steps: [],
   },
   handleClick: () => {},
 };
 
 RecipeDetailTemplate.propTypes = {
   data: PropTypes.shape({
-    name: RecipeDetailAppBar.propTypes.name,
+    name: AppBar.propTypes.name,
     image: Image.propTypes.src,
     ingredients: PropTypes.array,
+    steps: PropTypes.array,
   }),
   handleClick: PropTypes.func,
 };
