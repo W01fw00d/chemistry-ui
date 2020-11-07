@@ -7,15 +7,12 @@ import {
   ListItem as MaterialListItem,
   ListItemIcon,
   ListItemText,
-  ListItemSecondaryAction,
 } from '@material-ui/core';
-import CommentIcon from '@material-ui/icons/Comment';
 
 import Typography from '../atoms/typography.jsx';
-import IconButton from '../atoms/iconButton.jsx';
 import Checkbox from '../atoms/checkbox.jsx';
 
-export default function RecipeIngredientsList({ className, ingredients }) {
+export default function Component({ className, steps }) {
   const useStyles = makeStyles(theme => ({
     root: {
       width: '100%',
@@ -46,57 +43,73 @@ export default function RecipeIngredientsList({ className, ingredients }) {
     setChecked(newChecked);
   };
 
-  const SectionListItem = ({ sectionName, items }) => (
-    <>
-      <MaterialListItem key={sectionName} role={undefined} dense>
-        <ListItemText id={`checkbox-list-section-${sectionName}`} primary={sectionName} />
-      </MaterialListItem>
-      {items.map(ListItem)}
-    </>
-  );
-
-  const ListItem = ({ code, quantity, name, isOptional, alternatives }) => {
+  const ListItem = (step, code) => {
     rowCounter += 1;
 
-    const label = quantity ? `${quantity} ${name}` : name;
-
     return (
-      <MaterialListItem key={code} role={undefined} dense button onClick={handleToggle(rowCounter)}>
+      <MaterialListItem
+        key={code}
+        role={undefined}
+        dense
+        button
+        onClick={handleToggle(rowCounter)}
+      >
         <ListItemIcon>
           <Checkbox value={checked.indexOf(rowCounter) !== -1} />
         </ListItemIcon>
         <ListItemText
           id={`checkbox-list-label-${code}`}
-          primary={isOptional ? `(${label})` : `${label}`}
+          primary={step}
         />
-        {alternatives && alternatives.length > 0 && (
-          <ListItemSecondaryAction>
-            <IconButton edge="end" aria-label="comments">
-              <CommentIcon />
-            </IconButton>
-          </ListItemSecondaryAction>
-        )}
       </MaterialListItem>
     );
   };
 
-  return ingredients && ingredients.length > 0 ? (
+  const SectionListItem = ({ sectionName, description, items }) => (
+    <>
+      <MaterialListItem
+        key={sectionName}
+        role={undefined}
+        dense
+      >
+        <ListItemText
+          id={`checkbox-list-section-${sectionName}`}
+          primary={sectionName}
+        />
+      </MaterialListItem>
+      {description && (
+        <MaterialListItem
+          key={sectionName}
+          role={undefined}
+          dense
+        >
+          <ListItemText
+            id={`checkbox-list-section-${description}`}
+            primary={`* ${description}`}
+          />
+        </MaterialListItem>
+      )}
+      {items && items.map(ListItem)}
+    </>
+  );
+
+  return steps && steps.length > 0 ? (
     <List className={`${classes.root} ${className}`}>
-      {ingredients.map(SectionListItem)}
+      {steps.map(SectionListItem)}
     </List>
   ) : (
     <Typography variant="body1" className={classes.message}>
-      No ingredients required
+      No steps required
     </Typography>
   );
 }
 
-RecipeIngredientsList.defaultProps = {
+Component.defaultProps = {
   className: '',
-  ingredients: [],
+  steps: [],
 };
 
-RecipeIngredientsList.propTypes = {
+Component.propTypes = {
   className: PropTypes.string,
-  ingredients: PropTypes.any,
+  steps: PropTypes.array,
 };
