@@ -65,26 +65,26 @@ export default function Component({ className, steps }) {
     );
   };
 
-  const SectionListItem = ({ sectionName, description, items }) => (
+  const SectionListItem = ({ sectionName, description, items }, code) => (
     <>
       <MaterialListItem
-        key={sectionName}
+        key={`${sectionName}-${code}`}
         role={undefined}
         dense
       >
         <ListItemText
-          id={`checkbox-list-section-${sectionName}`}
+          id={`checkbox-list-section-${sectionName}-${code}`}
           primary={sectionName}
         />
       </MaterialListItem>
       {description && (
         <MaterialListItem
-          key={sectionName}
+          key={`${description}-${code}`}
           role={undefined}
           dense
         >
           <ListItemText
-            id={`checkbox-list-section-${description}`}
+            id={`checkbox-list-section-${description}-${code}`}
             primary={`* ${description}`}
           />
         </MaterialListItem>
