@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {
   makeStyles,
   List,
+  ListSubheader,
   ListItem as MaterialListItem,
   ListItemIcon,
   ListItemText,
@@ -20,11 +21,16 @@ export default function RecipeIngredientsList({ className, ingredients }) {
     root: {
       width: '100%',
       backgroundColor: theme.palette.background.paper,
+      'margin-bottom': 0,
     },
     message: {
       color: theme.palette.primary.dark,
       textAlign: 'center',
       paddingBottom: '20px',
+    },
+    subheader: {
+      color: '#A9A8AD',
+      'font-size': 'medium',
     },
   }));
   const classes = useStyles();
@@ -46,22 +52,20 @@ export default function RecipeIngredientsList({ className, ingredients }) {
     setChecked(newChecked);
   };
 
-  const SectionListItem = ({ sectionName, items }) => (
-    <>
-      <MaterialListItem key={sectionName} role={undefined} dense>
-        <ListItemText id={`checkbox-list-section-${sectionName}`} primary={sectionName} />
-      </MaterialListItem>
-      {items.map(ListItem)}
-    </>
-  );
-
-  const ListItem = ({ code, quantity, name, isOptional, alternatives }) => {
+  const ListItem = ({ code, quantity, name, isOptional, alternatives }, key) => {
     rowCounter += 1;
 
     const label = quantity ? `${quantity} ${name}` : name;
 
     return (
-      <MaterialListItem key={code} role={undefined} dense button onClick={handleToggle(rowCounter)}>
+      <MaterialListItem
+        id={`${code}-${key}-${rowCounter}`}
+        key={`${code}-${key}-${rowCounter}`}
+        role={undefined}
+        dense
+        button
+        onClick={handleToggle(rowCounter)}
+      >
         <ListItemIcon>
           <Checkbox value={checked.indexOf(rowCounter) !== -1} />
         </ListItemIcon>
@@ -80,10 +84,27 @@ export default function RecipeIngredientsList({ className, ingredients }) {
     );
   };
 
-  return ingredients && ingredients.length > 0 ? (
-    <List className={`${classes.root} ${className}`}>
-      {ingredients.map(SectionListItem)}
+  const SectionListItem = ({ sectionName, items }, key) => (
+    <List
+      key={`list-${key}`}
+      className={`${classes.root} ${className}`}
+      subheader={
+        <ListSubheader
+          id={`subheader-${key}`}
+          key={`subheader-${key}`}
+          component="div"
+          className={`${classes.subheader}`}
+        >
+          {sectionName}
+        </ListSubheader>
+      }
+    >
+      {items.map(ListItem)}
     </List>
+  );
+
+  return ingredients && ingredients.length > 0 ? (
+    <List className={`${classes.root} ${className}`}>{ingredients.map(SectionListItem)}</List>
   ) : (
     <Typography variant="body1" className={classes.message}>
       No ingredients required

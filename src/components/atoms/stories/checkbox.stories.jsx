@@ -11,7 +11,7 @@ import Checkbox from '../checkbox';
 storiesOf('Atoms/Fields/Checkbox', module)
   .addDecorator(themeDecorator(theme))
   .add('checked', () => (
-    <Checkbox id="checkbox" value={true} handleChange={action('Input detected')} />
+    <Checkbox id="checkbox" value handleChange={action('Input detected')} />
   ))
   .add('unchecked', () => (
     <Checkbox id="checkbox" value={false} handleChange={action('Input detected')} />

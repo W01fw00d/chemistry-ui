@@ -9,13 +9,13 @@ const Checkbox = ({ id, value, handleChange }) => (
 
 Checkbox.defaultProps = {
   id: '',
-  value: '',
+  value: false,
   handleChange: () => {},
 };
 
 Checkbox.propTypes = {
   id: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.bool,
   handleChange: PropTypes.func,
 };
 

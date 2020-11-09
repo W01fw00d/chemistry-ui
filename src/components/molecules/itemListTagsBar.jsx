@@ -28,12 +28,12 @@ export default function ItemListTagsBar({ tags, handleClick }) {
     </Grid>
   );
   TagButton.defaultProps = {
-    _id: '',
+    _id: 0,
     name: '',
     isCurrent: false,
   };
   TagButton.propTypes = {
-    _id: PropTypes.string,
+    _id: PropTypes.number,
     name: PropTypes.string,
     isCurrent: PropTypes.bool,
   };
@@ -53,7 +53,7 @@ ItemListTagsBar.defaultProps = {
 ItemListTagsBar.propTypes = {
   tags: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.string,
+      _id: PropTypes.number,
       name: PropTypes.string,
       isCurrent: PropTypes.bool,
     }),

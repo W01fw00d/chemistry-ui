@@ -11,7 +11,7 @@ import LabeledCheckbox from '../labeledCheckbox.jsx';
 storiesOf('Molecules/LabeledCheckbox', module)
   .addDecorator(themeDecorator(theme))
   .add('checked', () => (
-    <LabeledCheckbox id="checkbox" value={true} handleChange={action('Input detected')}>
+    <LabeledCheckbox id="checkbox" value handleChange={action('Input detected')}>
       Labeled Checkbox
     </LabeledCheckbox>
   ))

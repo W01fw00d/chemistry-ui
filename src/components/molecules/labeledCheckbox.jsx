@@ -26,14 +26,14 @@ export default function LabeledCheckbox({ id, value, handleChange, children }) {
 
 LabeledCheckbox.defaultProps = {
   id: '',
-  value: '',
+  value: false,
   handleChange: () => {},
   children: '',
 };
 
 LabeledCheckbox.propTypes = {
   id: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.bool,
   handleChange: PropTypes.func,
   children: PropTypes.string,
 };
