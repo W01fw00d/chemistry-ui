@@ -88,27 +88,26 @@ export default function RecipeIngredientsList({ className, ingredients }) {
     <List
       key={`list-${key}`}
       className={`${classes.root} ${className}`}
-      subheader={
+      subheader={(
         <ListSubheader
-          id={`subheader-${key}`}
           key={`subheader-${key}`}
           component="div"
           className={`${classes.subheader}`}
         >
           {sectionName}
         </ListSubheader>
-      }
+      )}
     >
       {items.map(ListItem)}
     </List>
   );
 
-  return ingredients && ingredients.length > 0 ? (
-    <List className={`${classes.root} ${className}`}>{ingredients.map(SectionListItem)}</List>
-  ) : (
-    <Typography variant="body1" className={classes.message}>
-      No ingredients required
-    </Typography>
+  return ingredients && ingredients.length > 0 ?
+      ingredients.map(SectionListItem)
+    : (
+      <Typography variant="body1" className={classes.message}>
+        No ingredients required
+      </Typography>
   );
 }
 

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {
   makeStyles,
   List,
+  ListSubheader,
   ListItem as MaterialListItem,
   ListItemIcon,
   ListItemText,
@@ -17,11 +18,16 @@ export default function Component({ className, steps }) {
     root: {
       width: '100%',
       backgroundColor: theme.palette.background.paper,
+      'margin-bottom': 0,
     },
     message: {
       color: theme.palette.primary.dark,
       textAlign: 'center',
       paddingBottom: '20px',
+    },
+    subheader: {
+      color: '#A9A8AD',
+      'font-size': 'medium',
     },
   }));
   const classes = useStyles();
@@ -57,47 +63,44 @@ export default function Component({ className, steps }) {
         <ListItemIcon>
           <Checkbox value={checked.indexOf(rowCounter) !== -1} />
         </ListItemIcon>
-        <ListItemText
-          id={`checkbox-list-label-${code}`}
-          primary={step}
-        />
+        <ListItemText id={`checkbox-list-label-${code}`} primary={step} />
       </MaterialListItem>
     );
   };
 
-  const SectionListItem = ({ sectionName, description, items }, code) => (
-    <>
-      <MaterialListItem
-        key={`${sectionName}-${code}`}
-        role={undefined}
-        dense
+  const SectionListItem = ({ sectionName, description, items }, key) =>
+    items && (
+      <List
+        key={`list-${key}`}
+        className={`${classes.root} ${className}`}
+        subheader={(
+          <ListSubheader
+            key={`subheader-${key}`}
+            component="div"
+            className={`${classes.subheader}`}
+          >
+            <div>{sectionName}</div>
+          </ListSubheader>
+        )}
       >
-        <ListItemText
-          id={`checkbox-list-section-${sectionName}-${code}`}
-          primary={sectionName}
-        />
-      </MaterialListItem>
-      {description && (
+        {description && (
         <MaterialListItem
-          key={`${description}-${code}`}
+          key={`description-${key}`}
           role={undefined}
           dense
         >
           <ListItemText
-            id={`checkbox-list-section-${description}-${code}`}
             primary={`* ${description}`}
           />
         </MaterialListItem>
-      )}
-      {items && items.map(ListItem)}
-    </>
-  );
+        )}
+        {items.map(ListItem)}
+      </List>
+    );
 
-  return steps && steps.length > 0 ? (
-    <List className={`${classes.root} ${className}`}>
-      {steps.map(SectionListItem)}
-    </List>
-  ) : (
+  return steps && steps.length > 0 ?
+    steps.map(SectionListItem)
+  : (
     <Typography variant="body1" className={classes.message}>
       No steps required
     </Typography>
