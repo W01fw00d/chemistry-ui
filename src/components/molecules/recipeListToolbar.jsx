@@ -45,7 +45,7 @@ export default function RecipeListToolbar({
                 <strong>{literals.participants}</strong>
               </p>
               {projectData.participants.map(
-                (name) => <p>{name}</p>
+                (name) => <p key={`${name}`}>{name}</p>
               )}
             </div>
           </DrawerPanel>

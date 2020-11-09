@@ -21,9 +21,9 @@ const getItemData = ({ name, price, likeCount }) => ({
 });
 
 const data = [
-  { ...getItemData(itemsData[0]), id: '1' },
-  { ...getItemData(itemsData[1]), id: '2' },
-  { ...getItemData(itemsData[2]), id: '3' },
+  { ...getItemData(itemsData[0]), id: 1 },
+  { ...getItemData(itemsData[1]), id: 2 },
+  { ...getItemData(itemsData[2]), id: 3 },
 ];
 
 storiesOf('Molecules/List/Grid', module)
