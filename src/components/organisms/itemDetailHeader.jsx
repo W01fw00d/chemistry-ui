@@ -8,9 +8,9 @@ import {
   Publish as PublishIcon,
 } from '@material-ui/icons';
 
-import InternalLink from '../atoms/internalLink.jsx';
+import InternalLink from '../atoms/links/internal.jsx';
 import Typography from '../atoms/typography.jsx';
-import IconButton from '../atoms/iconButton.jsx';
+import IconButton from '../atoms/buttons/icon.jsx';
 import AppBar from '../molecules/appBar.jsx';
 
 export default function ItemDetailAppBar({ name, handleClick }) {

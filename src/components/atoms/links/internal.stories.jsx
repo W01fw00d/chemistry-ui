@@ -8,9 +8,9 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBackIos';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 import theme from '../../../styles/global-styles';
 
-import InternalLink from '../internalLink';
+import InternalLink from './internal';
 
-storiesOf('Atoms/Links/InternalLink', module)
+storiesOf('Atoms/Links/Internal', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
   .add('ArrowBackIcon', () => (

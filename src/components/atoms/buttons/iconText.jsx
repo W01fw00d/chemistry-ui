@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-import TextButton from './textButton.jsx';
+import TextButton from './text.jsx';
 
 export default function IconTextButton({ icon, text, handleClick }) {
   const useStyles = makeStyles(theme => ({

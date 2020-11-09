@@ -2,10 +2,10 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import theme from '../../../styles/global-styles';
-import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
+import theme from '../../styles/global-styles';
+import themeDecorator from '../../../.storybook/decorators/themeDecorator';
 
-import Typography from '../typography';
+import Typography from './typography';
 
 storiesOf('Atoms/Typography', module)
   .addDecorator(themeDecorator(theme))

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles, Grid } from '@material-ui/core';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
-import IconButton from '../atoms/iconButton.jsx';
+import IconButton from '../atoms/buttons/icon.jsx';
 import AppBar from '../molecules/appBar.jsx';
 import ItemListToolbar from '../molecules/itemListToolbar.jsx';
 import ItemListTagsBar from '../molecules/itemListTagsBar.jsx';

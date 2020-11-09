@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-import InternalLink from '../atoms/internalLink.jsx';
+import InternalLink from '../atoms/links/internal.jsx';
 import Image from '../atoms/image.jsx';
 import RecipeListImageFooter from '../molecules/recipeListImageFooter.jsx';
 

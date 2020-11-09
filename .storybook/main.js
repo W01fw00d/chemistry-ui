@@ -1,9 +1,9 @@
 module.exports = {
   stories: [
-    '../src/components/atoms/stories/**/*.stories.jsx',
-    '../src/components/molecules/stories/**/*.stories.jsx',
-    '../src/components/organisms/stories/**/*.stories.jsx',
-    '../src/components/templates/stories/**/*.stories.jsx',
+    '../src/components/atoms/**/*.stories.jsx',
+    '../src/components/molecules/**/*.stories.jsx',
+    '../src/components/organisms/**/*.stories.jsx',
+    '../src/components/templates/**/*.stories.jsx',
   ],
   addons: [
     '@storybook/addon-actions',

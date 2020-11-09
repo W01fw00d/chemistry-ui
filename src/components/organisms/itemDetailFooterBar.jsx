@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles, Grid } from '@material-ui/core';
 
 import Typography from '../atoms/typography.jsx';
-import TextButton from '../atoms/textButton.jsx';
+import TextButton from '../atoms/buttons/text.jsx';
 import Footer from '../molecules/footer.jsx';
 
 export default function ItemDetailFooterBar({ literals, data, handleClick }) {

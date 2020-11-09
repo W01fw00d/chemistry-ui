@@ -1,14 +1,15 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import theme from '../../../styles/global-styles';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 
-import itemImage from '../../../../public/fake_imgs/item.jpg';
+import TextField from './text';
 
-import Image from '../image';
-
-storiesOf('Atoms/Image', module)
+storiesOf('Atoms/Fields/Text', module)
   .addDecorator(themeDecorator(theme))
-  .add('default', () => <Image alt="Item Image" src={itemImage} />);
+  .add('default', () => (
+    <TextField id="textField" value="Write here" handleChange={action('Input detected')} />
+  ));

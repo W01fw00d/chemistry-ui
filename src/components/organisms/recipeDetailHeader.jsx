@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles, Grid } from '@material-ui/core';
 import { ArrowBackIos as ArrowBackIcon } from '@material-ui/icons';
 
-import InternalLink from '../atoms/internalLink.jsx';
+import InternalLink from '../atoms/links/internal.jsx';
 import Typography from '../atoms/typography.jsx';
 import AppBar from '../molecules/appBar.jsx';
 

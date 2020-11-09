@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-import IconButton from '../atoms/iconButton.jsx';
+import IconButton from '../atoms/buttons/icon.jsx';
 import Footer from './footer.jsx';
 
 export default function OverlayedIconButton({ color, children, handleClick }) {

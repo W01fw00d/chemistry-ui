@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Grid, Divider } from '@material-ui/core';
 import { NotificationsOutlined as NotificationsIcon, Check as CheckIcon } from '@material-ui/icons';
 
-import IconButton from '../atoms/iconButton.jsx';
-import TextField from '../atoms/textField.jsx';
+import IconButton from '../atoms/buttons/icon.jsx';
+import TextField from '../atoms/fields/text.jsx';
 import About from './about.jsx';
 import DrawerPanel from '../organisms/drawerPanel.jsx';
 

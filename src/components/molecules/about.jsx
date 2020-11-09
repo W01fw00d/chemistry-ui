@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core';
 
 import Image from '../atoms/image.jsx';
 import Typography from '../atoms/typography.jsx';
-import ExternalLink from '../atoms/externalLink.jsx';
+import ExternalLink from '../atoms/links/external.jsx';
 
 export default function About({ logo, authorName, email, authorUrl, projectUrl }) {
   const useStyles = makeStyles(theme => ({

@@ -6,10 +6,13 @@ import { action } from '@storybook/addon-actions';
 import theme from '../../../styles/global-styles';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 
-import TextButton from '../textButton';
+import Checkbox from './checkbox';
 
-storiesOf('Atoms/Buttons/TextButton', module)
+storiesOf('Atoms/Fields/Checkbox', module)
   .addDecorator(themeDecorator(theme))
-  .add('default', () => (
-    <TextButton handleClick={action('TextButton clicked')}>Text Button</TextButton>
+  .add('checked', () => (
+    <Checkbox id="checkbox" value handleChange={action('Input detected')} />
+  ))
+  .add('unchecked', () => (
+    <Checkbox id="checkbox" value={false} handleChange={action('Input detected')} />
   ));

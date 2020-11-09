@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles, Grid, Divider } from '@material-ui/core';
 
-import TextField from '../atoms/textField.jsx';
+import TextField from '../atoms/fields/text.jsx';
 import About from './about.jsx';
 import DrawerPanel from '../organisms/drawerPanel.jsx';
 

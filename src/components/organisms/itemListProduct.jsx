@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core';
 
 import banner from '../../../public/banner.png';
 
-import InternalLink from '../atoms/internalLink.jsx';
+import InternalLink from '../atoms/links/internal.jsx';
 import Image from '../atoms/image.jsx';
 import ProductImageFooter from '../molecules/productImageFooter.jsx';
 

@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core';
 
 import Typography from '../atoms/typography.jsx';
-import Checkbox from '../atoms/checkbox.jsx';
+import Checkbox from '../atoms/fields/checkbox.jsx';
 
 export default function Component({ className, steps }) {
   const useStyles = makeStyles(theme => ({

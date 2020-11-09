@@ -13,8 +13,8 @@ import {
 import CommentIcon from '@material-ui/icons/Comment';
 
 import Typography from '../atoms/typography.jsx';
-import IconButton from '../atoms/iconButton.jsx';
-import Checkbox from '../atoms/checkbox.jsx';
+import IconButton from '../atoms/buttons/icon.jsx';
+import Checkbox from '../atoms/fields/checkbox.jsx';
 
 export default function RecipeIngredientsList({ className, ingredients }) {
   const useStyles = makeStyles(theme => ({
