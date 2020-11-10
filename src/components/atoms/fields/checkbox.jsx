@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Checkbox as MaterialCheckbox } from '@material-ui/core';
+import { Checkbox } from '@material-ui/core';
 
-const Checkbox = ({ id, value, handleChange }) => (
-  <MaterialCheckbox id={id} checked={value} onChange={handleChange} />
+const Component = ({ id, value, handleChange }) => (
+  <Checkbox id={id} checked={value} onChange={handleChange} />
 );
 
-Checkbox.defaultProps = {
+Component.defaultProps = {
   id: '',
   value: false,
-  handleChange: () => {},
+  handleChange: () => { },
 };
 
-Checkbox.propTypes = {
+Component.propTypes = {
   id: PropTypes.string,
   value: PropTypes.bool,
   handleChange: PropTypes.func,
 };
 
-export default Checkbox;
+export default Component;

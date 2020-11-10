@@ -7,8 +7,8 @@ import themeDecorator from '../../../.storybook/decorators/themeDecorator';
 
 import itemImage from '../../../public/fake_imgs/item.jpg';
 
-import Image from './image';
+import Component from './image';
 
 storiesOf('Atoms/Image', module)
   .addDecorator(themeDecorator(theme))
-  .add('default', () => <Image alt="Item Image" src={itemImage} />);
+  .add('default', () => <Component alt="Item Image" src={itemImage} />);

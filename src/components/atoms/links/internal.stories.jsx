@@ -8,13 +8,13 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBackIos';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 import theme from '../../../styles/global-styles';
 
-import InternalLink from './internal';
+import Component from './internal';
 
 storiesOf('Atoms/Links/Internal', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
   .add('ArrowBackIcon', () => (
-    <InternalLink to="/">
+    <Component to="/">
       <ArrowBackIcon />
-    </InternalLink>
+    </Component>
   ));

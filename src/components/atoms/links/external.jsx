@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-export default function ExternalLink({ id, to, className, children }) {
+const Component = ({ id, to, className, children }) => {
   const useStyles = makeStyles({
     text: {
       textDecoration: 'none',
@@ -25,16 +25,18 @@ export default function ExternalLink({ id, to, className, children }) {
   );
 }
 
-ExternalLink.defaultProps = {
+Component.defaultProps = {
   id: 'externalLink',
   to: '/',
   className: '',
   children: <></>,
 };
 
-ExternalLink.propTypes = {
+Component.propTypes = {
   id: PropTypes.string,
   to: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node,
 };
+
+export default Component;

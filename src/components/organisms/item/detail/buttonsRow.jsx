@@ -10,7 +10,7 @@ import {
 
 import Typography from '../../../atoms/typography.jsx';
 import IconTextButton from '../../../atoms/buttons/iconText.jsx';
-import IconButton from '../../../atoms/buttons/icon';
+import IconButton from '../../../atoms/buttons/icon.jsx';
 
 export default function ItemDetailButtonsRow({ literals, likeCount, handleClick }) {
   const useStyles = makeStyles(theme => ({
@@ -50,7 +50,7 @@ export default function ItemDetailButtonsRow({ literals, likeCount, handleClick 
 ItemDetailButtonsRow.defaultProps = {
   literals: {},
   likeCount: 0,
-  handleClick: () => {},
+  handleClick: () => { },
 };
 
 ItemDetailButtonsRow.propTypes = {

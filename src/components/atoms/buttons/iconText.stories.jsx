@@ -8,12 +8,12 @@ import { FavoriteBorder as LikeIcon } from '@material-ui/icons';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 import theme from '../../../styles/global-styles';
 
-import IconTextButton from './iconText';
+import Component from './iconText';
 
 storiesOf('Atoms/Buttons/IconText', module)
   .addDecorator(themeDecorator(theme))
   .add('With Like Icon', () => (
-    <IconTextButton
+    <Component
       icon={<LikeIcon />}
       text="Icon Text Button"
       handleClick={action('IconTextButton clicked')}
