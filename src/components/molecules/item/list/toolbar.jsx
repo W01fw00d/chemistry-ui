@@ -7,7 +7,7 @@ import { NotificationsOutlined as NotificationsIcon, Check as CheckIcon } from '
 import IconButton from '../../../atoms/buttons/icon.jsx';
 import TextField from '../../../atoms/fields/text.jsx';
 import About from '../../about.jsx';
-import DrawerPanel from '../../../organisms/drawerPanel.jsx';
+import DrawerPanel from '../../panels/drawer.jsx';
 
 export default function ItemListToolbar({
   authorData,
