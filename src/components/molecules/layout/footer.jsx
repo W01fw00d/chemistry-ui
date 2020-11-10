@@ -3,26 +3,27 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-const Component = ({ src, alt, className }) => {
+const Component = ({ children, className }) => {
   const useStyles = makeStyles({
-    img: {
-      width: '100%',
+    bar: {
+      left: 0,
+      right: 0,
+      bottom: 0,
+      position: 'fixed',
     },
   });
   const classes = useStyles();
 
-  return <img src={src} alt={alt} className={`${classes.img} ${className}`} />;
+  return <footer className={`${classes.bar} ${className}`}>{children}</footer>;
 }
 
 Component.defaultProps = {
-  src: '',
-  alt: 'Image',
+  children: <></>,
   className: '',
 };
 
 Component.propTypes = {
-  src: PropTypes.string,
-  alt: PropTypes.string,
+  children: PropTypes.node,
   className: PropTypes.string,
 };
 

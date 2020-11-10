@@ -5,9 +5,9 @@ import { makeStyles } from '@material-ui/core';
 
 import Image from '../atoms/image.jsx';
 import Typography from '../atoms/typography.jsx';
-import ExternalLink from '../atoms/externalLink.jsx';
+import ExternalLink from '../atoms/links/external.jsx';
 
-export default function About({ logo, authorName, email, authorUrl, projectUrl }) {
+const Component = ({ logo, authorName, email, authorUrl, projectUrl }) => {
   const useStyles = makeStyles(theme => ({
     logo: {
       width: '300px',
@@ -44,17 +44,19 @@ export default function About({ logo, authorName, email, authorUrl, projectUrl }
   );
 }
 
-About.defaultProps = {
+Component.defaultProps = {
   authorName: '',
   email: '',
   authorUrl: '',
   projectUrl: '',
 };
 
-About.propTypes = {
+Component.propTypes = {
   logo: PropTypes.string.isRequired,
   authorName: PropTypes.string,
   email: PropTypes.string,
   authorUrl: PropTypes.string,
   projectUrl: PropTypes.string,
 };
+
+export default Component;
