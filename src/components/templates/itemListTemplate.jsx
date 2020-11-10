@@ -8,8 +8,8 @@ import theme from '../../styles/global-styles';
 
 import escapingBoredomTitleLogo from '../../../public/escaping-boredom-title-logo.png';
 
-import ListGrid from '../molecules/listGrid.jsx';
-import OverlayedIconButton from '../molecules/overlayedIconButton.jsx';
+import ListGrid from '../molecules/layout/listGrid.jsx';
+import OverlayedIconButton from '../molecules/buttons/overlayedIcon.jsx';
 import ItemListHeader from '../organisms/itemListHeader.jsx';
 import ItemListProduct from '../organisms/itemListProduct.jsx';
 

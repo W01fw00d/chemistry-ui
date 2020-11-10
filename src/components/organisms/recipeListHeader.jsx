@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import { makeStyles, Grid } from '@material-ui/core';
 
-import AppBar from '../molecules/appBar.jsx';
-import RecipeListToolbar from '../molecules/recipeListToolbar.jsx';
+import AppBar from '../molecules/layout/appBar.jsx';
+import Toolbar from '../molecules/recipe/list/toolbar.jsx';
 
 export default function RecipeListHeader({
   authorData,
@@ -41,7 +41,7 @@ export default function RecipeListHeader({
     <AppBar position="sticky" className={classes.appbar}>
       <Grid container>
         <Grid item xs={12} className={classes.container}>
-          <RecipeListToolbar
+          <Toolbar
             authorData={authorData}
             projectData={projectData}
             logo={logo}

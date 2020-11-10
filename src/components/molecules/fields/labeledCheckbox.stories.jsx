@@ -6,9 +6,9 @@ import { action } from '@storybook/addon-actions';
 import theme from '../../../styles/global-styles';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 
-import LabeledCheckbox from '../labeledCheckbox.jsx';
+import LabeledCheckbox from './labeledCheckbox.jsx';
 
-storiesOf('Molecules/LabeledCheckbox', module)
+storiesOf('Molecules/Fields/LabeledCheckbox', module)
   .addDecorator(themeDecorator(theme))
   .add('checked', () => (
     <LabeledCheckbox id="checkbox" value handleChange={action('Input detected')}>

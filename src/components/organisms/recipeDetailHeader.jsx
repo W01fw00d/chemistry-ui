@@ -6,7 +6,7 @@ import { ArrowBackIos as ArrowBackIcon } from '@material-ui/icons';
 
 import InternalLink from '../atoms/links/internal.jsx';
 import Typography from '../atoms/typography.jsx';
-import AppBar from '../molecules/appBar.jsx';
+import AppBar from '../molecules/layout/appBar.jsx';
 
 export default function RecipeDetailAppBar({ name }) {
   const useStyles = makeStyles(theme => ({

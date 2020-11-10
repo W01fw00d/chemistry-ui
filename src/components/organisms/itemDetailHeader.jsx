@@ -11,7 +11,7 @@ import {
 import InternalLink from '../atoms/links/internal.jsx';
 import Typography from '../atoms/typography.jsx';
 import IconButton from '../atoms/buttons/icon.jsx';
-import AppBar from '../molecules/appBar.jsx';
+import AppBar from '../molecules/layout/appBar.jsx';
 
 export default function ItemDetailAppBar({ name, handleClick }) {
   const useStyles = makeStyles(theme => ({

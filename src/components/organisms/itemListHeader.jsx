@@ -5,9 +5,9 @@ import { makeStyles, Grid } from '@material-ui/core';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 import IconButton from '../atoms/buttons/icon.jsx';
-import AppBar from '../molecules/appBar.jsx';
-import ItemListToolbar from '../molecules/itemListToolbar.jsx';
-import ItemListTagsBar from '../molecules/itemListTagsBar.jsx';
+import AppBar from '../molecules/layout/appBar.jsx';
+import ItemListToolbar from '../molecules/item/list/toolbar.jsx';
+import ItemListTagsBar from '../molecules/item/list/tagsBar.jsx';
 
 export default function ItemListHeader({
   authorData,

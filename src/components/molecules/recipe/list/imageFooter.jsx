@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles, Grid } from '@material-ui/core';
 
-import Typography from '../atoms/typography.jsx';
+import Typography from '../../../atoms/typography.jsx';
 
 export default function RecipeListImageFooter({ literals, data }) {
   const useStyles = makeStyles(theme => ({

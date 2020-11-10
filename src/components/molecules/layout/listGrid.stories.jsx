@@ -11,7 +11,7 @@ import itemImage from '../../../../public/fake_imgs/item.jpg';
 
 import ItemListProduct from '../../organisms/itemListProduct';
 
-import ListGrid from '../listGrid';
+import ListGrid from './listGrid';
 
 const getItemData = ({ name, price, likeCount }) => ({
   image: itemImage,
@@ -26,7 +26,7 @@ const data = [
   { ...getItemData(itemsData[2]), id: 3 },
 ];
 
-storiesOf('Molecules/List/Grid', module)
+storiesOf('Molecules/Layout/ListGrid', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
   .add('default', () => (

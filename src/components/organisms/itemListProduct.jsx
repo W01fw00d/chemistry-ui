@@ -7,7 +7,7 @@ import banner from '../../../public/banner.png';
 
 import InternalLink from '../atoms/links/internal.jsx';
 import Image from '../atoms/image.jsx';
-import ProductImageFooter from '../molecules/productImageFooter.jsx';
+import ImageFooter from '../molecules/item/list/imageFooter.jsx';
 
 export default function ItemListProduct({ data }) {
   const useStyles = makeStyles({
@@ -33,7 +33,7 @@ export default function ItemListProduct({ data }) {
         {data.isEditorsChoice && <Image src={banner} alt="Banner" className={classes.banner} />}
         <Image src={data.image} />
       </div>
-      <ProductImageFooter data={getFooterData(data)} />
+      <ImageFooter data={getFooterData(data)} />
     </InternalLink>
   );
 }

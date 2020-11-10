@@ -1,31 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, Grid, Divider } from '@material-ui/core';
+import { Grid, Divider } from '@material-ui/core';
+import { NotificationsOutlined as NotificationsIcon, Check as CheckIcon } from '@material-ui/icons';
 
-import TextField from '../atoms/fields/text.jsx';
-import About from './about.jsx';
-import DrawerPanel from '../organisms/drawerPanel.jsx';
+import IconButton from '../../../atoms/buttons/icon.jsx';
+import TextField from '../../../atoms/fields/text.jsx';
+import About from '../../about.jsx';
+import DrawerPanel from '../../../organisms/drawerPanel.jsx';
 
-export default function RecipeListToolbar({
+export default function ItemListToolbar({
   authorData,
   projectData,
   logo,
   className,
   searchValue,
   handleChange,
-  literals,
+  handleClick,
 }) {
-  const useStyles = makeStyles({
-    description: {
-      width: '300px',
-    },
-    alignText: {
-      'text-align': 'center',
-    }
-  });
-  const classes = useStyles();
-
   return (
     <div className={className}>
       <Grid container alignItems="center">
@@ -39,43 +31,44 @@ export default function RecipeListToolbar({
               projectUrl={projectData.url}
             />
             <Divider />
-            <div className={`${classes.description} ${classes.alignText}`}>
-              <p>{projectData.description}</p>
-              <p>
-                <strong>{literals.participants}</strong>
-              </p>
-              {projectData.participants.map(
-                (name) => <p key={`${name}`}>{name}</p>
-              )}
-            </div>
           </DrawerPanel>
         </Grid>
-        <Grid item xs={8} container justify="center">
+        <Grid item xs={6} container justify="center">
           <form noValidate autoComplete="off">
             <TextField id="search" value={searchValue} handleChange={handleChange} />
           </form>
+        </Grid>
+        <Grid item xs={2} container justify="flex-end">
+          <IconButton handleClick={handleClick}>
+            <NotificationsIcon />
+          </IconButton>
+        </Grid>
+        <Grid item xs={2} container justify="flex-start">
+          <IconButton handleClick={handleClick}>
+            <CheckIcon />
+          </IconButton>
         </Grid>
       </Grid>
     </div>
   );
 }
 
-RecipeListToolbar.defaultProps = {
+ItemListToolbar.defaultProps = {
   authorData: {},
   projectData: {},
   className: '',
   searchValue: null,
   handleChange: () => {},
+  handleClick: () => {},
 };
 
-RecipeListToolbar.propTypes = {
+ItemListToolbar.propTypes = {
   authorData: PropTypes.shape({
     name: PropTypes.string,
     email: PropTypes.string,
     url: PropTypes.string,
   }),
   projectData: PropTypes.shape({
-    description: PropTypes.string,
     logo: PropTypes.string,
     url: PropTypes.string,
   }),
@@ -83,4 +76,5 @@ RecipeListToolbar.propTypes = {
   className: PropTypes.string,
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
+  handleClick: PropTypes.func,
 };

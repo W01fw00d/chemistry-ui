@@ -8,9 +8,9 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBackIos';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 import theme from '../../../styles/global-styles';
 
-import OverlayedIconButton from '../overlayedIconButton';
+import OverlayedIconButton from './overlayedIcon';
 
-storiesOf('Molecules/Buttons/OverlayedIconButton', module)
+storiesOf('Molecules/Buttons/OverlayedIcon', module)
   .addDecorator(themeDecorator(theme))
   .add('ArrowBackIcon', () => (
     <OverlayedIconButton handleClick={action('OverlayedIconButton clicked')}>

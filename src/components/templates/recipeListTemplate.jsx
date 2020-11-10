@@ -7,7 +7,7 @@ import theme from '../../styles/global-styles';
 
 import logo from '../../../public/cooking-with-amateurs-title-logo.png';
 
-import ListGrid from '../molecules/listGrid.jsx';
+import ListGrid from '../molecules/layout/listGrid.jsx';
 import RecipeListHeader from '../organisms/recipeListHeader.jsx';
 import RecipeListItem from '../organisms/recipeListItem.jsx';
 

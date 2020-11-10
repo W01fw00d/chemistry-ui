@@ -7,9 +7,9 @@ import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 
 import Typography from '../../atoms/typography';
 
-import AppBar from '../appBar';
+import AppBar from './appBar';
 
-storiesOf('Molecules/Bars/App', module)
+storiesOf('Molecules/Layout/AppBar', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <AppBar position="sticky">

@@ -3,12 +3,12 @@ import React from 'react';
 import StoryRouter from 'storybook-react-router';
 import { storiesOf } from '@storybook/react';
 
-import theme from '../../../styles/global-styles';
-import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
+import theme from '../../styles/global-styles';
+import themeDecorator from '../../../.storybook/decorators/themeDecorator';
 
-import itemImage from '../../../../public/fake_imgs/item.jpg';
+import itemImage from '../../../public/fake_imgs/item.jpg';
 
-import About from '../about.jsx';
+import About from './about.jsx';
 
 storiesOf('Molecules/About', module)
   .addDecorator(StoryRouter())

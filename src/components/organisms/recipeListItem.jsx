@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core';
 
 import InternalLink from '../atoms/links/internal.jsx';
 import Image from '../atoms/image.jsx';
-import RecipeListImageFooter from '../molecules/recipeListImageFooter.jsx';
+import RecipeListImageFooter from '../molecules/recipe/list/imageFooter.jsx';
 
 export default function RecipeListItem({ literals, data }) {
   const useStyles = makeStyles({

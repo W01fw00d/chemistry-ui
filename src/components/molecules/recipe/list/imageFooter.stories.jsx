@@ -2,13 +2,13 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import theme from '../../../styles/global-styles';
+import theme from '../../../../styles/global-styles';
 
-import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
-import recipes from '../../../../.storybook/fake_data/recipes.json';
-import literals from '../../../../.storybook/fake_data/literals.json';
+import themeDecorator from '../../../../../.storybook/decorators/themeDecorator';
+import recipes from '../../../../../.storybook/fake_data/recipes.json';
+import literals from '../../../../../.storybook/fake_data/literals.json';
 
-import RecipeListImageFooter from '../recipeListImageFooter';
+import RecipeListImageFooter from './imageFooter';
 
 const getLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
   difficulty,
@@ -24,7 +24,7 @@ const getData = ({ name, eventDate, difficulty, preparationTime, nIngredients, s
   showName,
 });
 
-storiesOf('Molecules/Recipe/List/ImageFooter', module)
+storiesOf('Molecules/[Recipe]/List/ImageFooter', module)
   .addDecorator(themeDecorator(theme))
   .add('without name', () => (
     <RecipeListImageFooter literals={getLiterals(literals)} data={getData(recipes[0])} />
