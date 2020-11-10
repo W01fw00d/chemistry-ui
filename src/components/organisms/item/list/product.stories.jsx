@@ -9,7 +9,7 @@ import itemData from '../../../../../.storybook/fake_data/items.json';
 
 import itemImage from '../../../../../public/fake_imgs/item.jpg';
 
-import ItemListProduct from './product';
+import Component from './product';
 
 const getData = ({ id, name, price, likeCount, isEditorsChoice }) => ({
   id,
@@ -23,4 +23,4 @@ const getData = ({ id, name, price, likeCount, isEditorsChoice }) => ({
 storiesOf('Organisms/[Item]/List/Product', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
-  .add('default', () => <ItemListProduct data={getData(itemData[0])} />);
+  .add('default', () => <Component data={getData(itemData[0])} />);

@@ -5,7 +5,7 @@ import { makeStyles, Grid } from '@material-ui/core';
 
 import TextButton from '../../../atoms/buttons/text.jsx';
 
-export default function ItemListTagsBar({ tags, handleClick }) {
+const Component = ({ tags, handleClick }) => {
   const useStyles = makeStyles(theme => ({
     button: {
       backgroundColor: theme.palette.primary.main,
@@ -45,12 +45,12 @@ export default function ItemListTagsBar({ tags, handleClick }) {
   );
 }
 
-ItemListTagsBar.defaultProps = {
+Component.defaultProps = {
   tags: [],
-  handleClick: () => {},
+  handleClick: () => { },
 };
 
-ItemListTagsBar.propTypes = {
+Component.propTypes = {
   tags: PropTypes.arrayOf(
     PropTypes.shape({
       _id: PropTypes.number,
@@ -60,3 +60,5 @@ ItemListTagsBar.propTypes = {
   ),
   handleClick: PropTypes.func,
 };
+
+export default Component;

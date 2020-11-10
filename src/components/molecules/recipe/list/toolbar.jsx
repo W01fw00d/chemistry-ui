@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, Grid, Divider } from '@material-ui/core';
+import {
+  makeStyles,
+  Grid,
+  Divider
+} from '@material-ui/core';
 
 import TextField from '../../../atoms/fields/text.jsx';
 import About from '../../about.jsx';
 import DrawerPanel from '../../panels/drawer.jsx';
 
-export default function RecipeListToolbar({
+const Component = ({
   authorData,
   projectData,
   logo,
@@ -15,7 +19,7 @@ export default function RecipeListToolbar({
   searchValue,
   handleChange,
   literals,
-}) {
+}) => {
   const useStyles = makeStyles({
     description: {
       width: '300px',
@@ -52,7 +56,11 @@ export default function RecipeListToolbar({
         </Grid>
         <Grid item xs={8} container justify="center">
           <form noValidate autoComplete="off">
-            <TextField id="search" value={searchValue} handleChange={handleChange} />
+            <TextField
+              id="search"
+              value={searchValue}
+              handleChange={handleChange}
+            />
           </form>
         </Grid>
       </Grid>
@@ -60,15 +68,15 @@ export default function RecipeListToolbar({
   );
 }
 
-RecipeListToolbar.defaultProps = {
+Component.defaultProps = {
   authorData: {},
   projectData: {},
   className: '',
   searchValue: null,
-  handleChange: () => {},
+  handleChange: () => { },
 };
 
-RecipeListToolbar.propTypes = {
+Component.propTypes = {
   authorData: PropTypes.shape({
     name: PropTypes.string,
     email: PropTypes.string,
@@ -84,3 +92,5 @@ RecipeListToolbar.propTypes = {
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
 };
+
+export default Component;

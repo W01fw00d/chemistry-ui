@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 
 import tags from '../../../../.storybook/fake_data/tags.json';
 import items from '../../../../.storybook/fake_data/items.json';
-import ItemListTemplate from './list';
+import Component from './list';
 
 import itemImage from '../../../../public/fake_imgs/item.jpg';
 
@@ -15,7 +15,7 @@ const formattedItems = items.map(item => ({ ...item, image: itemImage }));
 storiesOf('Templates/[Item]/List', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
-    <ItemListTemplate
+    <Component
       authorData={{
         name: 'Gabriel Romay Machado',
         email: 'romay.gabriel@gmail.com',

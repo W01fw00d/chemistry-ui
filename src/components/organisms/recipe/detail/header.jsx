@@ -8,7 +8,7 @@ import InternalLink from '../../../atoms/links/internal.jsx';
 import Typography from '../../../atoms/typography.jsx';
 import AppBar from '../../../molecules/layout/appBar.jsx';
 
-export default function RecipeDetailAppBar({ name }) {
+const Component = ({ name }) => {
   const useStyles = makeStyles(theme => ({
     layout: {
       padding: theme.spacing(1),
@@ -38,10 +38,12 @@ export default function RecipeDetailAppBar({ name }) {
   );
 }
 
-RecipeDetailAppBar.defaultProps = {
+Component.defaultProps = {
   name: '',
 };
 
-RecipeDetailAppBar.propTypes = {
+Component.propTypes = {
   name: PropTypes.string,
 };
+
+export default Component;

@@ -8,13 +8,13 @@ import themeDecorator from '../../../.storybook/decorators/themeDecorator';
 
 import itemImage from '../../../public/fake_imgs/item.jpg';
 
-import About from './about.jsx';
+import Component from './about.jsx';
 
 storiesOf('Molecules/About', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
-    <About
+    <Component
       logo={itemImage}
       authorName="Author Name"
       email="fake@email.com"

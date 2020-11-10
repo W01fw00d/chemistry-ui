@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core';
 
 import Typography from '../../../atoms/typography.jsx';
 
-export default function ItemDetailDescriptionSection({ className, literals, description }) {
+const Component = ({ className, literals, description }) => {
   const useStyles = makeStyles(theme => ({
     layout: {
       padding: theme.spacing(1),
@@ -19,26 +19,36 @@ export default function ItemDetailDescriptionSection({ className, literals, desc
 
   return (
     <div className={className}>
-      <Typography variant="h6" color="inherit" className={`${classes.layout} ${classes.title}`}>
+      <Typography
+        variant="h6"
+        color="inherit"
+        className={`${classes.layout} ${classes.title}`}
+      >
         {literals.description}
       </Typography>
-      <Typography variant="h6" color="inherit" className={classes.layout}>
+      <Typography
+        variant="h6"
+        color="inherit"
+        className={classes.layout}
+      >
         {description}
       </Typography>
     </div>
   );
 }
 
-ItemDetailDescriptionSection.defaultProps = {
+Component.defaultProps = {
   className: '',
   literals: {},
   description: '',
 };
 
-ItemDetailDescriptionSection.propTypes = {
+Component.propTypes = {
   className: PropTypes.string,
   literals: PropTypes.shape({
     description: PropTypes.string,
   }),
   description: PropTypes.string,
 };
+
+export default Component;

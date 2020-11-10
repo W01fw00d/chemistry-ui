@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-export default function Footer({ children, className }) {
+const Component = ({ children, className }) => {
   const useStyles = makeStyles({
     bar: {
       left: 0,
@@ -17,12 +17,14 @@ export default function Footer({ children, className }) {
   return <footer className={`${classes.bar} ${className}`}>{children}</footer>;
 }
 
-Footer.defaultProps = {
+Component.defaultProps = {
   children: <></>,
   className: '',
 };
 
-Footer.propTypes = {
+Component.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
 };
+
+export default Component;

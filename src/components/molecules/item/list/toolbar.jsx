@@ -2,14 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Grid, Divider } from '@material-ui/core';
-import { NotificationsOutlined as NotificationsIcon, Check as CheckIcon } from '@material-ui/icons';
+import {
+  NotificationsOutlined as NotificationsIcon,
+  Check as CheckIcon
+} from '@material-ui/icons';
 
 import IconButton from '../../../atoms/buttons/icon.jsx';
 import TextField from '../../../atoms/fields/text.jsx';
 import About from '../../about.jsx';
 import DrawerPanel from '../../panels/drawer.jsx';
 
-export default function ItemListToolbar({
+const Component = ({
   authorData,
   projectData,
   logo,
@@ -17,52 +20,52 @@ export default function ItemListToolbar({
   searchValue,
   handleChange,
   handleClick,
-}) {
-  return (
-    <div className={className}>
-      <Grid container alignItems="center">
-        <Grid item xs={2} container justify="center">
-          <DrawerPanel>
-            <About
-              logo={logo}
-              authorName={authorData.name}
-              email={authorData.email}
-              authorUrl={authorData.url}
-              projectUrl={projectData.url}
-            />
-            <Divider />
-          </DrawerPanel>
-        </Grid>
-        <Grid item xs={6} container justify="center">
-          <form noValidate autoComplete="off">
-            <TextField id="search" value={searchValue} handleChange={handleChange} />
-          </form>
-        </Grid>
-        <Grid item xs={2} container justify="flex-end">
-          <IconButton handleClick={handleClick}>
-            <NotificationsIcon />
-          </IconButton>
-        </Grid>
-        <Grid item xs={2} container justify="flex-start">
-          <IconButton handleClick={handleClick}>
-            <CheckIcon />
-          </IconButton>
-        </Grid>
+}) =>
+  <div className={className}>
+    <Grid container alignItems="center">
+      <Grid item xs={2} container justify="center">
+        <DrawerPanel>
+          <About
+            logo={logo}
+            authorName={authorData.name}
+            email={authorData.email}
+            authorUrl={authorData.url}
+            projectUrl={projectData.url}
+          />
+          <Divider />
+        </DrawerPanel>
       </Grid>
-    </div>
-  );
-}
+      <Grid item xs={6} container justify="center">
+        <form noValidate autoComplete="off">
+          <TextField
+            id="search"
+            value={searchValue}
+            handleChange={handleChange} />
+        </form>
+      </Grid>
+      <Grid item xs={2} container justify="flex-end">
+        <IconButton handleClick={handleClick}>
+          <NotificationsIcon />
+        </IconButton>
+      </Grid>
+      <Grid item xs={2} container justify="flex-start">
+        <IconButton handleClick={handleClick}>
+          <CheckIcon />
+        </IconButton>
+      </Grid>
+    </Grid>
+  </div>;
 
-ItemListToolbar.defaultProps = {
+Component.defaultProps = {
   authorData: {},
   projectData: {},
   className: '',
   searchValue: null,
-  handleChange: () => {},
-  handleClick: () => {},
+  handleChange: () => { },
+  handleClick: () => { },
 };
 
-ItemListToolbar.propTypes = {
+Component.propTypes = {
   authorData: PropTypes.shape({
     name: PropTypes.string,
     email: PropTypes.string,
@@ -78,3 +81,5 @@ ItemListToolbar.propTypes = {
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,
 };
+
+export default Component;

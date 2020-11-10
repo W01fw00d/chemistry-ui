@@ -12,12 +12,12 @@ import tags from '../../../../../.storybook/fake_data/tags.json';
 
 import escapingBoredomTitleLogo from '../../../../../public/escaping-boredom-title-logo.png';
 
-import ItemListHeader from './header';
+import Component from './header';
 
 storiesOf('Organisms/[Item]/List/Header', module)
   .addDecorator(themeDecorator(theme))
-  .add('default', () => (
-    <ItemListHeader
+  .add('default', () =>
+    <Component
       authorData={authorData}
       projectData={projectData}
       logo={escapingBoredomTitleLogo}
@@ -25,5 +25,4 @@ storiesOf('Organisms/[Item]/List/Header', module)
       searchValue="Search Value"
       handleChange={action('Input detected')}
       handleClick={action('IconButton clicked')}
-    />
-  ));
+    />);

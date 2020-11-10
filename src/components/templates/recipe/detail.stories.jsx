@@ -8,7 +8,7 @@ import allData from '../../../../.storybook/fake_data/recipes.json';
 
 import recipeImage from '../../../../public/fake_imgs/recipe.jpeg';
 
-import RecipeDetailTemplate from './detail';
+import Component from './detail';
 
 const getData = ({ name, ingredients }) => ({
   name,
@@ -35,5 +35,5 @@ const getData = ({ name, ingredients }) => ({
 storiesOf('Templates/[Recipe]/Detail', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
-    <RecipeDetailTemplate data={getData(allData[0])} handleClick={action('Button clicked')} />
+    <Component data={getData(allData[0])} handleClick={action('Button clicked')} />
   ));

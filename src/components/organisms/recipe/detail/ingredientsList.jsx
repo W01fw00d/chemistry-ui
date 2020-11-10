@@ -16,7 +16,7 @@ import Typography from '../../../atoms/typography.jsx';
 import IconButton from '../../../atoms/buttons/icon.jsx';
 import Checkbox from '../../../atoms/fields/checkbox.jsx';
 
-export default function RecipeIngredientsList({ className, ingredients }) {
+const Component = ({ className, ingredients }) => {
   const useStyles = makeStyles(theme => ({
     root: {
       width: '100%',
@@ -103,20 +103,22 @@ export default function RecipeIngredientsList({ className, ingredients }) {
   );
 
   return ingredients && ingredients.length > 0 ?
-      ingredients.map(SectionListItem)
+    ingredients.map(SectionListItem)
     : (
       <Typography variant="body1" className={classes.message}>
         No ingredients required
       </Typography>
-  );
+    );
 }
 
-RecipeIngredientsList.defaultProps = {
+Component.defaultProps = {
   className: '',
   ingredients: [],
 };
 
-RecipeIngredientsList.propTypes = {
+Component.propTypes = {
   className: PropTypes.string,
   ingredients: PropTypes.any,
 };
+
+export default Component;

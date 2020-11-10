@@ -6,17 +6,17 @@ import { action } from '@storybook/addon-actions';
 import theme from '../../../styles/global-styles';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 
-import LabeledCheckbox from './labeledCheckbox.jsx';
+import Component from './labeledCheckbox.jsx';
 
 storiesOf('Molecules/Fields/LabeledCheckbox', module)
   .addDecorator(themeDecorator(theme))
   .add('checked', () => (
-    <LabeledCheckbox id="checkbox" value handleChange={action('Input detected')}>
+    <Component id="checkbox" value handleChange={action('Input detected')}>
       Labeled Checkbox
-    </LabeledCheckbox>
+    </Component>
   ))
   .add('unchecked', () => (
-    <LabeledCheckbox id="checkbox" value={false} handleChange={action('Input detected')}>
+    <Component id="checkbox" value={false} handleChange={action('Input detected')}>
       Labeled Checkbox
-    </LabeledCheckbox>
+    </Component>
   ));

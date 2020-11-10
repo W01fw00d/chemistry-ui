@@ -6,7 +6,7 @@ import { FavoriteBorder as LikeIcon } from '@material-ui/icons';
 
 import Typography from '../../../atoms/typography.jsx';
 
-export default function ProductImageFooter({ data }) {
+const Component = ({ data }) => {
   const useStyles = makeStyles(theme => ({
     layout: {
       backgroundColor: theme.palette.primary.main,
@@ -58,14 +58,16 @@ export default function ProductImageFooter({ data }) {
   );
 }
 
-ProductImageFooter.defaultProps = {
+Component.defaultProps = {
   data: {},
 };
 
-ProductImageFooter.propTypes = {
+Component.propTypes = {
   data: PropTypes.shape({
     name: PropTypes.string,
     price: PropTypes.number,
     likeCount: PropTypes.number,
   }),
 };
+
+export default Component;

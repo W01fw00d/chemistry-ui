@@ -7,7 +7,7 @@ import InternalLink from '../../../atoms/links/internal.jsx';
 import Image from '../../../atoms/image.jsx';
 import RecipeListImageFooter from '../../../molecules/recipe/list/imageFooter.jsx';
 
-export default function RecipeListItem({ literals, data }) {
+const Component = ({ literals, data }) => {
   const useStyles = makeStyles({
     wrapper: {
       position: 'relative',
@@ -45,12 +45,12 @@ export default function RecipeListItem({ literals, data }) {
   );
 }
 
-RecipeListItem.defaultProps = {
+Component.defaultProps = {
   literals: {},
   data: {},
 };
 
-RecipeListItem.propTypes = {
+Component.propTypes = {
   literals: RecipeListImageFooter.propTypes.literals,
   data: PropTypes.shape({
     id: PropTypes.number,
@@ -63,3 +63,5 @@ RecipeListItem.propTypes = {
     showName: PropTypes.bool,
   }),
 };
+
+export default Component;

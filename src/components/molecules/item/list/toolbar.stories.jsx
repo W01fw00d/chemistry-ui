@@ -11,12 +11,12 @@ import projectData from '../../../../../.storybook/fake_data/project.json';
 
 import escapingBoredomTitleLogo from '../../../../../public/escaping-boredom-title-logo.png';
 
-import ItemListToolbar from './toolbar';
+import Component from './toolbar';
 
 storiesOf('Molecules/[Item]/List/Toolbar', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
-    <ItemListToolbar
+    <Component
       authorData={authorData}
       projectData={projectData}
       logo={escapingBoredomTitleLogo}

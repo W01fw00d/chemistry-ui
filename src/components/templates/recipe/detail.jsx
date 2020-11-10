@@ -10,7 +10,7 @@ import Header from '../../organisms/recipe/detail/header.jsx';
 import IngredientsList from '../../organisms/recipe/detail/ingredientsList.jsx';
 import StepsList from '../../organisms/recipe/detail/stepsList.jsx';
 
-export default function RecipeDetailTemplate({ data, handleClick }) {
+const Component = ({ data, handleClick }) => {
   const useStyles = makeStyles({
     marginBottom: {
       marginBottom: theme.spacing(7),
@@ -21,26 +21,38 @@ export default function RecipeDetailTemplate({ data, handleClick }) {
   return (
     data && (
       <ThemeProvider theme={theme}>
-        <Header name={data.name} handleClick={handleClick} />
-        <Image src={data.image} alt={data.name} />
-        <IngredientsList className={classes.marginBottom} ingredients={data.ingredients} />
-        <StepsList className={classes.marginBottom} steps={data.steps} />
+        <Header
+          name={data.name}
+          handleClick={handleClick}
+        />
+        <Image
+          src={data.image}
+          alt={data.name}
+        />
+        <IngredientsList
+          className={classes.marginBottom}
+          ingredients={data.ingredients}
+        />
+        <StepsList
+          className={classes.marginBottom}
+          steps={data.steps}
+        />
       </ThemeProvider>
     )
   );
 }
 
-RecipeDetailTemplate.defaultProps = {
+Component.defaultProps = {
   data: {
     name: Header.defaultProps.name,
     image: Image.defaultProps.src,
     ingredients: [],
     steps: [],
   },
-  handleClick: () => {},
+  handleClick: () => { },
 };
 
-RecipeDetailTemplate.propTypes = {
+Component.propTypes = {
   data: PropTypes.shape({
     name: Header.propTypes.name,
     image: Image.propTypes.src,
@@ -49,3 +61,5 @@ RecipeDetailTemplate.propTypes = {
   }),
   handleClick: PropTypes.func,
 };
+
+export default Component;

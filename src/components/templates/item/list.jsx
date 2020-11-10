@@ -13,7 +13,7 @@ import OverlayedIconButton from '../../molecules/buttons/overlayedIcon.jsx';
 import Header from '../../organisms/item/list/header.jsx';
 import Product from '../../organisms/item/list/product.jsx';
 
-export default function ItemListTemplate({
+const Component = ({
   authorData,
   projectData,
   search,
@@ -21,7 +21,7 @@ export default function ItemListTemplate({
   tags,
   handleChange,
   handleClick,
-}) {
+}) => {
   const useStyles = makeStyles({
     layout: {
       backgroundColor: theme.palette.primary.light,
@@ -59,17 +59,17 @@ export default function ItemListTemplate({
   );
 }
 
-ItemListTemplate.defaultProps = {
+Component.defaultProps = {
   authorData: {},
   projectData: {},
   search: '',
   itemList: [],
   tags: [],
-  handleChange: () => {},
-  handleClick: () => {},
+  handleChange: () => { },
+  handleClick: () => { },
 };
 
-ItemListTemplate.propTypes = {
+Component.propTypes = {
   authorData: PropTypes.shape({
     name: PropTypes.string,
     email: PropTypes.string,
@@ -84,3 +84,5 @@ ItemListTemplate.propTypes = {
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,
 };
+
+export default Component;

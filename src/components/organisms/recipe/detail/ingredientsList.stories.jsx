@@ -7,11 +7,11 @@ import themeDecorator from '../../../../../.storybook/decorators/themeDecorator'
 
 import recipes from '../../../../../.storybook/fake_data/recipes.json';
 
-import RecipeIngredientsList from './ingredientsList.jsx';
+import Component from './ingredientsList.jsx';
 
 storiesOf('Organisms/[Recipe]/Detail/IngredientsList', module)
   .addDecorator(themeDecorator(theme))
-  .add('without alternatives', () => <RecipeIngredientsList ingredients={recipes[0].ingredients} />)
-  .add('with alternatives', () => <RecipeIngredientsList ingredients={recipes[1].ingredients} />)
-  .add('with sections', () => <RecipeIngredientsList ingredients={recipes[2].ingredients} />)
-  .add('without ingredients', () => <RecipeIngredientsList />);
+  .add('without alternatives', () => <Component ingredients={recipes[0].ingredients} />)
+  .add('with alternatives', () => <Component ingredients={recipes[1].ingredients} />)
+  .add('with sections', () => <Component ingredients={recipes[2].ingredients} />)
+  .add('without ingredients', () => <Component />);

@@ -9,7 +9,7 @@ import InternalLink from '../../../atoms/links/internal.jsx';
 import Image from '../../../atoms/image.jsx';
 import ImageFooter from '../../../molecules/item/list/imageFooter.jsx';
 
-export default function ItemListProduct({ data }) {
+const Component = ({ data }) => {
   const useStyles = makeStyles({
     wrapper: {
       position: 'relative',
@@ -30,7 +30,9 @@ export default function ItemListProduct({ data }) {
   return (
     <InternalLink to={`/detail/${data.id}`}>
       <div className={classes.wrapper}>
-        {data.isEditorsChoice && <Image src={banner} alt="Banner" className={classes.banner} />}
+        {data.isEditorsChoice &&
+          <Image src={banner} alt="Banner" className={classes.banner} />
+        }
         <Image src={data.image} />
       </div>
       <ImageFooter data={getFooterData(data)} />
@@ -38,11 +40,11 @@ export default function ItemListProduct({ data }) {
   );
 }
 
-ItemListProduct.defaultProps = {
+Component.defaultProps = {
   data: {},
 };
 
-ItemListProduct.propTypes = {
+Component.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.number,
     image: PropTypes.string,
@@ -52,3 +54,5 @@ ItemListProduct.propTypes = {
     isEditorsChoice: PropTypes.bool,
   }),
 };
+
+export default Component;

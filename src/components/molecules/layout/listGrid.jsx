@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles, Grid } from '@material-ui/core';
 
-export default function ListGrid({ children }) {
+const Component = ({ children }) => {
   const useStyles = makeStyles(theme => ({
     grid: {
       padding: theme.spacing(2),
@@ -22,10 +22,12 @@ export default function ListGrid({ children }) {
   );
 }
 
-ListGrid.defaultProps = {
+Component.defaultProps = {
   children: <></>,
 };
 
-ListGrid.propTypes = {
+Component.propTypes = {
   children: PropTypes.node,
 };
+
+export default Component;

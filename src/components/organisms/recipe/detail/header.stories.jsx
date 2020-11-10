@@ -6,9 +6,9 @@ import { storiesOf } from '@storybook/react';
 import theme from '../../../../styles/global-styles';
 import themeDecorator from '../../../../../.storybook/decorators/themeDecorator';
 
-import RecipeDetailAppBar from './header';
+import Component from './header';
 
 storiesOf('Organisms/[Recipe]/Detail/Header', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
-  .add('default', () => <RecipeDetailAppBar name="Item Name" />);
+  .add('default', () => <Component name="Item Name" />);

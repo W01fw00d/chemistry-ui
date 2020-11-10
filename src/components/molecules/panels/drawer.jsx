@@ -8,7 +8,7 @@ import { Menu as MenuIcon } from '@material-ui/icons';
 
 import IconButton from '../../atoms/buttons/icon.jsx';
 
-export default function DrawerPanel({ className, children }) {
+const Component = ({ className, children }) => {
   const useStyles = makeStyles(theme => ({
     layout: {
       backgroundColor: theme.palette.primary.main,
@@ -39,12 +39,14 @@ export default function DrawerPanel({ className, children }) {
   );
 }
 
-DrawerPanel.defaultProps = {
+Component.defaultProps = {
   className: '',
   children: <></>,
 };
 
-DrawerPanel.propTypes = {
+Component.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
 };
+
+export default Component;

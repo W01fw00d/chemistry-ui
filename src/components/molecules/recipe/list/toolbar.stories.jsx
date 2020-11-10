@@ -12,12 +12,12 @@ import projectData from '../../../../../.storybook/fake_data/project.json';
 
 import escapingBoredomTitleLogo from '../../../../../public/escaping-boredom-title-logo.png';
 
-import RecipeListToolbar from './toolbar';
+import Component from './toolbar';
 
 storiesOf('Molecules/[Recipe]/List/Toolbar', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
-    <RecipeListToolbar
+    <Component
       authorData={authorData}
       projectData={projectData}
       logo={escapingBoredomTitleLogo}

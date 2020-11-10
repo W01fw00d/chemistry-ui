@@ -12,7 +12,7 @@ import ButtonsRow from '../../organisms/item/detail/buttonsRow.jsx';
 import DescriptionSection from '../../organisms/item/detail/descriptionSection.jsx';
 import FooterBar from '../../organisms/item/detail/footerBar.jsx';
 
-export default function ItemDetailTemplate({ literals, data, handleClick }) {
+const Component = ({ literals, data, handleClick }) => {
   const useStyles = makeStyles({
     marginBottom: {
       marginBottom: theme.spacing(7),
@@ -67,7 +67,7 @@ export default function ItemDetailTemplate({ literals, data, handleClick }) {
   );
 }
 
-ItemDetailTemplate.defaultProps = {
+Component.defaultProps = {
   literals: {
     like: ButtonsRow.defaultProps.literals.like,
     comment: ButtonsRow.defaultProps.literals.comment,
@@ -82,10 +82,10 @@ ItemDetailTemplate.defaultProps = {
     price: FooterBar.defaultProps.price,
     isGroupPrice: FooterBar.defaultProps.isGroupPrice,
   },
-  handleClick: () => {},
+  handleClick: () => { },
 };
 
-ItemDetailTemplate.propTypes = {
+Component.propTypes = {
   literals: PropTypes.shape({
     like: ButtonsRow.propTypes.literals.like,
     comment: ButtonsRow.propTypes.literals.comment,
@@ -102,3 +102,5 @@ ItemDetailTemplate.propTypes = {
   }),
   handleClick: PropTypes.func,
 };
+
+export default Component;

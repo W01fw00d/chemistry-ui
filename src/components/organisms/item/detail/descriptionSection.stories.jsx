@@ -7,7 +7,7 @@ import themeDecorator from '../../../../../.storybook/decorators/themeDecorator'
 import literals from '../../../../../.storybook/fake_data/literals.json';
 import data from '../../../../../.storybook/fake_data/items.json';
 
-import ItemDetailDescriptionSection from './descriptionSection';
+import Component from './descriptionSection';
 
 const getLiterals = ({ description }) => ({
   description,
@@ -16,5 +16,8 @@ const getLiterals = ({ description }) => ({
 storiesOf('Organisms/[Item]/Detail/DescriptionSection', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
-    <ItemDetailDescriptionSection literals={getLiterals(literals)} description={data[0].details} />
+    <Component
+      literals={getLiterals(literals)}
+      description={data[0].details}
+    />
   ));

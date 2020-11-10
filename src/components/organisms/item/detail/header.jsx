@@ -13,7 +13,7 @@ import Typography from '../../../atoms/typography.jsx';
 import IconButton from '../../../atoms/buttons/icon.jsx';
 import AppBar from '../../../molecules/layout/appBar.jsx';
 
-export default function ItemDetailAppBar({ name, handleClick }) {
+const Component = ({ name, handleClick }) => {
   const useStyles = makeStyles(theme => ({
     layout: {
       padding: theme.spacing(1),
@@ -53,12 +53,14 @@ export default function ItemDetailAppBar({ name, handleClick }) {
   );
 }
 
-ItemDetailAppBar.defaultProps = {
+Component.defaultProps = {
   name: '',
-  handleClick: () => {},
+  handleClick: () => { },
 };
 
-ItemDetailAppBar.propTypes = {
+Component.propTypes = {
   name: PropTypes.string,
   handleClick: PropTypes.func,
 };
+
+export default Component;

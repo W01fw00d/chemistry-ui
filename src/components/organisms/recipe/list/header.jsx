@@ -6,7 +6,7 @@ import { makeStyles, Grid } from '@material-ui/core';
 import AppBar from '../../../molecules/layout/appBar.jsx';
 import Toolbar from '../../../molecules/recipe/list/toolbar.jsx';
 
-export default function RecipeListHeader({
+const Component = ({
   authorData,
   projectData,
   logo,
@@ -14,7 +14,7 @@ export default function RecipeListHeader({
   handleChange,
   handleClick,
   literals,
-}) {
+}) => {
   const useStyles = makeStyles(theme => ({
     appbar: {
       backgroundColor: 'transparent',
@@ -63,15 +63,15 @@ export default function RecipeListHeader({
   );
 }
 
-RecipeListHeader.defaultProps = {
+Component.defaultProps = {
   authorData: {},
   projectData: {},
   searchValue: '',
-  handleChange: () => {},
-  handleClick: () => {},
+  handleChange: () => { },
+  handleClick: () => { },
 };
 
-RecipeListHeader.propTypes = {
+Component.propTypes = {
   authorData: Toolbar.propTypes.authorData,
   projectData: Toolbar.propTypes.projectData,
   logo: PropTypes.string.isRequired,
@@ -79,3 +79,5 @@ RecipeListHeader.propTypes = {
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,
 };
+
+export default Component;

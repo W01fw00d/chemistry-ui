@@ -8,12 +8,12 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBackIos';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 import theme from '../../../styles/global-styles';
 
-import OverlayedIconButton from './overlayedIcon';
+import Component from './overlayedIcon';
 
 storiesOf('Molecules/Buttons/OverlayedIcon', module)
   .addDecorator(themeDecorator(theme))
   .add('ArrowBackIcon', () => (
-    <OverlayedIconButton handleClick={action('OverlayedIconButton clicked')}>
+    <Component handleClick={action('OverlayedIconButton clicked')}>
       <ArrowBackIcon />
-    </OverlayedIconButton>
+    </Component>
   ));

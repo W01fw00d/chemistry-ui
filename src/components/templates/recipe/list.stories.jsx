@@ -10,21 +10,24 @@ import recipes from '../../../../.storybook/fake_data/recipes.json';
 
 import recipeImage from '../../../../public/fake_imgs/recipe.jpeg';
 
-import RecipeListTemplate from './list';
+import Component from './list';
 
-const getLiterals = ({ difficulty, preparationTime, howManyIngredients, participants }) => ({
-  difficulty,
-  preparationTime,
-  howManyIngredients,
-  participants,
-});
+const getLiterals =
+  ({ difficulty, preparationTime, howManyIngredients, participants }) => ({
+    difficulty,
+    preparationTime,
+    howManyIngredients,
+    participants,
+  });
 
-const formattedRecipes = recipes.map(recipe => ({ ...recipe, image: recipeImage }));
+const formattedRecipes = recipes.map(
+  recipe => ({ ...recipe, image: recipeImage })
+);
 
 storiesOf('Templates/[Recipe]/List', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
-    <RecipeListTemplate
+    <Component
       literals={getLiterals(literals)}
       authorData={{
         name: literals.gabriel,

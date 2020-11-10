@@ -7,12 +7,12 @@ import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 
 import Typography from '../../atoms/typography';
 
-import AppBar from './appBar';
+import Component from './appBar';
 
 storiesOf('Molecules/Layout/AppBar', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
-    <AppBar position="sticky">
+    <Component position="sticky">
       <Typography variant="h6" color="inherit">
         Title 1
       </Typography>
@@ -25,5 +25,5 @@ storiesOf('Molecules/Layout/AppBar', module)
       <Typography variant="h6" color="inherit">
         Title 4
       </Typography>
-    </AppBar>
+    </Component>
   ));

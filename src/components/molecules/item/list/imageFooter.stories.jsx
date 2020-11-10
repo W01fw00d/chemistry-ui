@@ -6,7 +6,7 @@ import theme from '../../../../styles/global-styles';
 import themeDecorator from '../../../../../.storybook/decorators/themeDecorator';
 import items from '../../../../../.storybook/fake_data/items.json';
 
-import ProductImageFooter from './imageFooter';
+import Component from './imageFooter';
 
 const details = items[0];
 const data = {
@@ -17,4 +17,4 @@ const data = {
 
 storiesOf('Molecules/[Item]/List/ImageFooter', module)
   .addDecorator(themeDecorator(theme))
-  .add('default', () => <ProductImageFooter data={data} />);
+  .add('default', () => <Component data={data} />);

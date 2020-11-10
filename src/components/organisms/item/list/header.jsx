@@ -9,7 +9,7 @@ import AppBar from '../../../molecules/layout/appBar.jsx';
 import ItemListToolbar from '../../../molecules/item/list/toolbar.jsx';
 import ItemListTagsBar from '../../../molecules/item/list/tagsBar.jsx';
 
-export default function ItemListHeader({
+const Component = ({
   authorData,
   projectData,
   logo,
@@ -17,7 +17,7 @@ export default function ItemListHeader({
   searchValue,
   handleChange,
   handleClick,
-}) {
+}) => {
   const useStyles = makeStyles(theme => ({
     appbar: {
       backgroundColor: 'transparent',
@@ -58,7 +58,11 @@ export default function ItemListHeader({
           <ItemListTagsBar tags={tags} handleClick={handleClick} />
         </Grid>
         <Grid item xs={12} container justify="center">
-          <IconButton color="primary" className={classes.overlayed} handleClick={handleClick}>
+          <IconButton
+            color="primary"
+            className={classes.overlayed}
+            handleClick={handleClick}
+          >
             <ArrowUpwardIcon />
           </IconButton>
         </Grid>
@@ -67,16 +71,16 @@ export default function ItemListHeader({
   );
 }
 
-ItemListHeader.defaultProps = {
+Component.defaultProps = {
   authorData: {},
   projectData: {},
   tags: [],
   searchValue: '',
-  handleChange: () => {},
-  handleClick: () => {},
+  handleChange: () => { },
+  handleClick: () => { },
 };
 
-ItemListHeader.propTypes = {
+Component.propTypes = {
   authorData: ItemListToolbar.propTypes.authorData,
   projectData: ItemListToolbar.propTypes.projectData,
   logo: PropTypes.string.isRequired,
@@ -85,3 +89,5 @@ ItemListHeader.propTypes = {
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,
 };
+
+export default Component;

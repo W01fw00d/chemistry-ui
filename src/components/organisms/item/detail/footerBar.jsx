@@ -7,7 +7,7 @@ import Typography from '../../../atoms/typography.jsx';
 import TextButton from '../../../atoms/buttons/text.jsx';
 import Footer from '../../../molecules/layout/footer.jsx';
 
-export default function ItemDetailFooterBar({ literals, data, handleClick }) {
+const Component = ({ literals, data, handleClick }) => {
   const useStyles = makeStyles(theme => ({
     bar: {
       backgroundColor: theme.palette.secondary.dark,
@@ -56,13 +56,13 @@ export default function ItemDetailFooterBar({ literals, data, handleClick }) {
   );
 }
 
-ItemDetailFooterBar.defaultProps = {
+Component.defaultProps = {
   literals: {},
   data: {},
-  handleClick: () => {},
+  handleClick: () => { },
 };
 
-ItemDetailFooterBar.propTypes = {
+Component.propTypes = {
   literals: PropTypes.shape({
     buy: PropTypes.string,
   }),
@@ -72,3 +72,5 @@ ItemDetailFooterBar.propTypes = {
   }),
   handleClick: PropTypes.func,
 };
+
+export default Component;

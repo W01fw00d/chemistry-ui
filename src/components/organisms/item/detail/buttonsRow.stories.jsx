@@ -7,7 +7,7 @@ import theme from '../../../../styles/global-styles';
 import themeDecorator from '../../../../../.storybook/decorators/themeDecorator';
 import allLiterals from '../../../../../.storybook/fake_data/literals.json';
 
-import ItemDetailButtonsRow from './buttonsRow';
+import Component from './buttonsRow';
 
 const literals = {
   like: allLiterals.like,
@@ -17,7 +17,7 @@ const literals = {
 storiesOf('Organisms/[Item]/Detail/ButtonsRow', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
-    <ItemDetailButtonsRow
+    <Component
       literals={literals}
       likeCount={3}
       handleClick={action('IconButton clicked')}

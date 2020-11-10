@@ -11,7 +11,7 @@ import ListGrid from '../../molecules/layout/listGrid.jsx';
 import Header from '../../organisms/recipe/list/header.jsx';
 import Item from '../../organisms/recipe/list/item.jsx';
 
-export default function RecipeListTemplate({
+const Component = ({
   literals,
   authorData,
   projectData,
@@ -19,7 +19,7 @@ export default function RecipeListTemplate({
   itemList,
   handleChange,
   handleClick,
-}) {
+}) => {
   const useStyles = makeStyles({
     layout: {
       backgroundColor: theme.palette.primary.light,
@@ -28,11 +28,12 @@ export default function RecipeListTemplate({
   });
   const classes = useStyles();
 
-  const getRecipeListItemLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
-    difficulty,
-    preparationTime,
-    howManyIngredients,
-  });
+  const getRecipeListItemLiterals =
+    ({ difficulty, preparationTime, howManyIngredients }) => ({
+      difficulty,
+      preparationTime,
+      howManyIngredients,
+    });
 
   return (
     <ThemeProvider theme={theme}>
@@ -44,7 +45,7 @@ export default function RecipeListTemplate({
           searchValue={search}
           handleChange={handleChange}
           handleClick={handleClick}
-          literals={{participants: literals.participants}}
+          literals={{ participants: literals.participants }}
         />
         {itemList && (
           <ListGrid>
@@ -62,17 +63,17 @@ export default function RecipeListTemplate({
   );
 }
 
-RecipeListTemplate.defaultProps = {
+Component.defaultProps = {
   literals: {},
   authorData: {},
   projectData: {},
   search: '',
   itemList: [],
-  handleChange: () => {},
-  handleClick: () => {},
+  handleChange: () => { },
+  handleClick: () => { },
 };
 
-RecipeListTemplate.propTypes = {
+Component.propTypes = {
   literals: Item.propTypes.literals,
   authorData: PropTypes.shape({
     name: PropTypes.string,
@@ -87,3 +88,5 @@ RecipeListTemplate.propTypes = {
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,
 };
+
+export default Component;

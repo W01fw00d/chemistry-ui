@@ -12,12 +12,12 @@ import projectData from '../../../../../.storybook/fake_data/project.json';
 
 import escapingBoredomTitleLogo from '../../../../../public/escaping-boredom-title-logo.png';
 
-import RecipeListHeader from './header';
+import Component from './header';
 
 storiesOf('Organisms/[Recipe]/List/Header', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
-    <RecipeListHeader
+    <Component
       authorData={authorData}
       projectData={projectData}
       logo={escapingBoredomTitleLogo}

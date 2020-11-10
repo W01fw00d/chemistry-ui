@@ -8,7 +8,7 @@ import themeDecorator from '../../../../../.storybook/decorators/themeDecorator'
 import recipes from '../../../../../.storybook/fake_data/recipes.json';
 import literals from '../../../../../.storybook/fake_data/literals.json';
 
-import RecipeListImageFooter from './imageFooter';
+import Component from './imageFooter';
 
 const getLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
   difficulty,
@@ -27,8 +27,8 @@ const getData = ({ name, eventDate, difficulty, preparationTime, nIngredients, s
 storiesOf('Molecules/[Recipe]/List/ImageFooter', module)
   .addDecorator(themeDecorator(theme))
   .add('without name', () => (
-    <RecipeListImageFooter literals={getLiterals(literals)} data={getData(recipes[0])} />
+    <Component literals={getLiterals(literals)} data={getData(recipes[0])} />
   ))
   .add('with name', () => (
-    <RecipeListImageFooter literals={getLiterals(literals)} data={getData(recipes[1])} />
+    <Component literals={getLiterals(literals)} data={getData(recipes[1])} />
   ));

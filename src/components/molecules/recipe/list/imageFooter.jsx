@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, Grid } from '@material-ui/core';
+import {
+  makeStyles,
+  Grid
+} from '@material-ui/core';
 
 import Typography from '../../../atoms/typography.jsx';
 
-export default function RecipeListImageFooter({ literals, data }) {
+const Component = ({ literals, data }) => {
   const useStyles = makeStyles(theme => ({
     layout: {
       backgroundColor: theme.palette.primary.main,
@@ -47,12 +50,12 @@ export default function RecipeListImageFooter({ literals, data }) {
   );
 }
 
-RecipeListImageFooter.defaultProps = {
+Component.defaultProps = {
   literals: {},
   data: {},
 };
 
-RecipeListImageFooter.propTypes = {
+Component.propTypes = {
   literals: PropTypes.shape({
     difficulty: PropTypes.string,
     preparationTime: PropTypes.string,
@@ -67,3 +70,5 @@ RecipeListImageFooter.propTypes = {
     showName: PropTypes.bool,
   }),
 };
+
+export default Component;

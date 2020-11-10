@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core';
 import Typography from '../../atoms/typography.jsx';
 import Checkbox from '../../atoms/fields/checkbox.jsx';
 
-export default function LabeledCheckbox({ id, value, handleChange, children }) {
+const Component = ({ id, value, handleChange, children }) => {
   const useStyles = makeStyles({
     label: {
       padding: '0 10px',
@@ -24,16 +24,18 @@ export default function LabeledCheckbox({ id, value, handleChange, children }) {
   );
 }
 
-LabeledCheckbox.defaultProps = {
+Component.defaultProps = {
   id: '',
   value: false,
-  handleChange: () => {},
+  handleChange: () => { },
   children: '',
 };
 
-LabeledCheckbox.propTypes = {
+Component.propTypes = {
   id: PropTypes.string,
   value: PropTypes.bool,
   handleChange: PropTypes.func,
   children: PropTypes.string,
 };
+
+export default Component;

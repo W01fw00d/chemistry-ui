@@ -9,7 +9,7 @@ import allData from '../../../../.storybook/fake_data/items.json';
 
 import itemImage from '../../../../public/fake_imgs/item.jpg';
 
-import ItemDetailTemplate from './detail';
+import Component from './detail';
 
 const literals = {
   like: allLiterals.like,
@@ -28,5 +28,9 @@ const data = {
 storiesOf('Templates/[Item]/Detail', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
-    <ItemDetailTemplate literals={literals} data={data} handleClick={action('Button clicked')} />
+    <Component
+      literals={literals}
+      data={data}
+      handleClick={action('Button clicked')}
+    />
   ));

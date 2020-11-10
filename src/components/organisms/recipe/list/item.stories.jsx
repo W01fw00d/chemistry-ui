@@ -10,7 +10,7 @@ import literals from '../../../../../.storybook/fake_data/literals.json';
 
 import recipeImage from '../../../../../public/fake_imgs/recipe.jpeg';
 
-import RecipeListItem from './item';
+import Component from './item';
 
 const getLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
   difficulty,
@@ -32,8 +32,8 @@ storiesOf('Organisms/[Recipe]/List/Item', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
   .add('without name', () => (
-    <RecipeListItem literals={getLiterals(literals)} data={getData(recipes[0])} />
+    <Component literals={getLiterals(literals)} data={getData(recipes[0])} />
   ))
   .add('with name', () => (
-    <RecipeListItem literals={getLiterals(literals)} data={getData(recipes[1])} />
+    <Component literals={getLiterals(literals)} data={getData(recipes[1])} />
   ));

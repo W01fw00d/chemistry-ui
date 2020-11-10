@@ -13,7 +13,7 @@ import {
 import Typography from '../../../atoms/typography.jsx';
 import Checkbox from '../../../atoms/fields/checkbox.jsx';
 
-export default function Component({ className, steps }) {
+const Component = ({ className, steps }) => {
   const useStyles = makeStyles(theme => ({
     root: {
       width: '100%',
@@ -84,15 +84,15 @@ export default function Component({ className, steps }) {
         )}
       >
         {description && (
-        <MaterialListItem
-          key={`description-${key}`}
-          role={undefined}
-          dense
-        >
-          <ListItemText
-            primary={`* ${description}`}
-          />
-        </MaterialListItem>
+          <MaterialListItem
+            key={`description-${key}`}
+            role={undefined}
+            dense
+          >
+            <ListItemText
+              primary={`* ${description}`}
+            />
+          </MaterialListItem>
         )}
         {items.map(ListItem)}
       </List>
@@ -100,11 +100,11 @@ export default function Component({ className, steps }) {
 
   return steps && steps.length > 0 ?
     steps.map(SectionListItem)
-  : (
-    <Typography variant="body1" className={classes.message}>
-      No steps required
-    </Typography>
-  );
+    : (
+      <Typography variant="body1" className={classes.message}>
+        No steps required
+      </Typography>
+    );
 }
 
 Component.defaultProps = {
@@ -116,3 +116,5 @@ Component.propTypes = {
   className: PropTypes.string,
   steps: PropTypes.array,
 };
+
+export default Component;

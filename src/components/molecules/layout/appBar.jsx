@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, AppBar as MaterialAppBar, Toolbar } from '@material-ui/core';
+import {
+  makeStyles,
+  AppBar,
+  Toolbar
+} from '@material-ui/core';
 
-export default function AppBar({ children, position, className }) {
+const Component = ({ children, position, className }) => {
   const useStyles = makeStyles(theme => ({
     bar: {
       boxShadow: 'none',
@@ -19,22 +23,24 @@ export default function AppBar({ children, position, className }) {
   const classes = useStyles();
 
   return (
-    <MaterialAppBar position={position} className={`${classes.bar} ${className}`}>
+    <AppBar position={position} className={`${classes.bar} ${className}`}>
       <Toolbar variant="dense" className={classes.toolbar}>
         {children}
       </Toolbar>
-    </MaterialAppBar>
+    </AppBar>
   );
 }
 
-AppBar.defaultProps = {
+Component.defaultProps = {
   children: <></>,
   position: '',
   className: '',
 };
 
-AppBar.propTypes = {
+Component.propTypes = {
   children: PropTypes.node,
   position: PropTypes.string,
   className: PropTypes.string,
 };
+
+export default Component;

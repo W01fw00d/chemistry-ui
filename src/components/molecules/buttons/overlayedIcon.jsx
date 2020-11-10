@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core';
 import IconButton from '../../atoms/buttons/icon.jsx';
 import Footer from '../layout/footer.jsx';
 
-export default function OverlayedIconButton({ color, children, handleClick }) {
+const Component = ({ color, children, handleClick }) => {
   const useStyles = makeStyles(theme => ({
     overlayed: {
       float: 'right',
@@ -25,14 +25,16 @@ export default function OverlayedIconButton({ color, children, handleClick }) {
   );
 }
 
-OverlayedIconButton.defaultProps = {
+Component.defaultProps = {
   color: 'primary',
   children: <></>,
-  handleClick: () => {},
+  handleClick: () => { },
 };
 
-OverlayedIconButton.propTypes = {
+Component.propTypes = {
   color: PropTypes.string,
   children: PropTypes.node,
   handleClick: PropTypes.func,
 };
+
+export default Component;
