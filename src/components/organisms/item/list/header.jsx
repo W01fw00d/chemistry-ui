@@ -6,8 +6,8 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 import IconButton from '../../../atoms/buttons/icon.jsx';
 import AppBar from '../../../molecules/layout/appBar.jsx';
-import ItemListToolbar from '../../../molecules/item/list/toolbar.jsx';
-import ItemListTagsBar from '../../../molecules/item/list/tagsBar.jsx';
+import Toolbar from '../../../molecules/item/list/toolbar.jsx';
+import TagsBar from '../../../molecules/item/list/tagsBar.jsx';
 
 const Component = ({
   authorData,
@@ -44,7 +44,7 @@ const Component = ({
     <AppBar position="sticky" className={classes.appbar}>
       <Grid container>
         <Grid item xs={12} className={classes.container}>
-          <ItemListToolbar
+          <Toolbar
             authorData={authorData}
             projectData={projectData}
             logo={logo}
@@ -55,7 +55,7 @@ const Component = ({
           />
         </Grid>
         <Grid item xs={12} className={classes.container}>
-          <ItemListTagsBar tags={tags} handleClick={handleClick} />
+          <TagsBar tags={tags} handleClick={handleClick} />
         </Grid>
         <Grid item xs={12} container justify="center">
           <IconButton
@@ -81,10 +81,10 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  authorData: ItemListToolbar.propTypes.authorData,
-  projectData: ItemListToolbar.propTypes.projectData,
+  authorData: Toolbar.propTypes.authorData,
+  projectData: Toolbar.propTypes.projectData,
   logo: PropTypes.string.isRequired,
-  tags: ItemListTagsBar.propTypes.tags,
+  tags: TagsBar.propTypes.tags,
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,

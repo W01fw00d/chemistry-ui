@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core';
 
 import InternalLink from '../../../atoms/links/internal.jsx';
 import Image from '../../../atoms/image.jsx';
-import RecipeListImageFooter from '../../../molecules/recipe/list/imageFooter.jsx';
+import Footer from '../../../molecules/recipe/list/imageFooter.jsx';
 
 const Component = ({ literals, data }) => {
   const useStyles = makeStyles({
@@ -40,7 +40,7 @@ const Component = ({ literals, data }) => {
       <div className={classes.wrapper}>
         <Image src={data.image} />
       </div>
-      <RecipeListImageFooter literals={literals} data={getFooterData(data)} />
+      <Footer literals={literals} data={getFooterData(data)} />
     </InternalLink>
   );
 }
@@ -51,7 +51,7 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  literals: RecipeListImageFooter.propTypes.literals,
+  literals: Footer.propTypes.literals,
   data: PropTypes.shape({
     id: PropTypes.number,
     image: PropTypes.string,
