@@ -52,10 +52,18 @@ const Component = ({ className, ingredients }) => {
     setChecked(newChecked);
   };
 
-  const ListItem = ({ code, quantity, name, isOptional, alternatives }, key) => {
+  const ListItem = ({
+    code,
+    name,
+    emoji,
+    quantity,
+    isOptional,
+    alternatives
+  }, key) => {
     rowCounter += 1;
 
-    const label = quantity ? `${quantity} ${name}` : name;
+    let label = emoji ? `${emoji} (${name})` : name;
+    label = quantity ? `${quantity} ${label}` : label;
 
     return (
       <MaterialListItem
@@ -71,7 +79,7 @@ const Component = ({ className, ingredients }) => {
         </ListItemIcon>
         <ListItemText
           id={`checkbox-list-label-${code}`}
-          primary={isOptional ? `(${label})` : `${label}`}
+          primary={isOptional ? `{${label}}` : `${label}`}
         />
         {alternatives && alternatives.length > 0 && (
           <ListItemSecondaryAction>

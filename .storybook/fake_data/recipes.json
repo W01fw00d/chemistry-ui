@@ -120,5 +120,37 @@
         ]
       }
     ]
+  },
+  {
+    "_id": 4,
+    "id": 4,
+    "name": "Recipe name 4",
+    "description": "Recipe description 4",
+    "image": "",
+    "eventDate": "25/04/2020",
+    "difficulty": 5,
+    "nIngredients": 10,
+    "ingredients": [
+      {
+        "items": [
+          {
+            "code": "code1",
+            "name": "Ingredient name",
+            "emoji": "😅"
+          },
+          {
+            "code": "code2",
+            "name": "Ingredient name",
+            "emoji": "😅",
+            "quantity": 2
+          },
+          {
+            "code": "code3",
+            "name": "Ingredient name",
+            "quantity": 3
+          }
+        ]
+      }
+    ]
   }
 ]
