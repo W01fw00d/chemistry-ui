@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 import { Grid } from '@material-ui/core';
 
-import TagButton from './tagButton.jsx';
+import TagButton from './components/tagButton.jsx';
 
 const Component = ({ tags, handleClick }) =>
   <Grid container justify="center">
-    {tags.map(tag =>
+    {tags.map((tag) =>
       <TagButton
+        key={tag._id}
         {...tag}
         handleClick={handleClick}
       />

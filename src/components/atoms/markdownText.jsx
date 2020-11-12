@@ -28,7 +28,7 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   text: PropTypes.string,
 };
 

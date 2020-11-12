@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Button as MaterialButton } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 const Component = ({ color, size, className, children, handleClick }) =>
-  <MaterialButton
+  <Button
     className={className}
     variant="contained"
     color={color}
@@ -14,7 +14,7 @@ const Component = ({ color, size, className, children, handleClick }) =>
     onClick={handleClick}
   >
     {children}
-  </MaterialButton>;
+  </Button>;
 
 Component.defaultProps = {
   color: 'primary',

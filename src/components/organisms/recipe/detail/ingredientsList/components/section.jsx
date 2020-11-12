@@ -10,7 +10,6 @@ import {
 const Component = ({
   sectionName,
   items,
-  key,
   className,
   renderItem,
 }) => {
@@ -28,11 +27,9 @@ const Component = ({
   const classes = useStyles();
 
   return <List
-    key={`list-${key}`}
     className={`${classes.root} ${className}`}
     subheader={(
       <ListSubheader
-        key={`subheader-${key}`}
         component="div"
         className={`${classes.subheader}`}
       >
@@ -44,12 +41,15 @@ const Component = ({
   </List>;
 };
 
+Component.defaultProps = {
+  renderItem: () => { },
+};
+
 Component.propTypes = {
   sectionName: PropTypes.string,
   items: PropTypes.array,
-  key: PropTypes.number,
   className: PropTypes.string,
-  renderItem: PropTypes.Function,
+  renderItem: PropTypes.any,
 };
 
 export default Component;

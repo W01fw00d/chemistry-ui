@@ -6,7 +6,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 
-import TextButton from '../../../../atoms/buttons/text.jsx';
+import TextButton from '../../../../../atoms/buttons/text.jsx';
 
 const Component = ({ _id, isCurrent, name, handleClick }) => {
   const useStyles = makeStyles(theme => ({
@@ -21,8 +21,8 @@ const Component = ({ _id, isCurrent, name, handleClick }) => {
 
   return <Grid key={_id} item>
     <TextButton
-      className={`${classes.button} ${isCurrent ? classes.currentTag : ''}`}
       id={_id}
+      className={`${classes.button} ${isCurrent ? classes.currentTag : ''}`}
       handleClick={handleClick}
     >
       {name}

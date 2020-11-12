@@ -142,12 +142,12 @@
             "code": "code2",
             "name": "Ingredient name",
             "emoji": "😅",
-            "quantity": 2
+            "quantity": "2"
           },
           {
             "code": "code3",
             "name": "Ingredient name",
-            "quantity": 3
+            "quantity": "3g"
           }
         ]
       }

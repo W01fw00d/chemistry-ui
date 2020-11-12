@@ -5,8 +5,8 @@ import { makeStyles } from '@material-ui/core';
 
 import Typography from '../../../../atoms/typography.jsx';
 
-import Section from './section.jsx';
-import Item from './item.jsx';
+import Section from './components/section.jsx';
+import Item from './components/item.jsx';
 
 const Component = ({ className, ingredients }) => {
   const useStyles = makeStyles(theme => ({
@@ -36,24 +36,23 @@ const Component = ({ className, ingredients }) => {
   };
 
   return ingredients && ingredients.length > 0 ?
-    ingredients.map((ingredient, sectionKey) =>
+    ingredients.map((ingredient, index) =>
       <Section
         {...ingredient}
-        key={sectionKey}
+        key={`${index}-${rowCounter}`}
         className={className}
-        renderItem={(item, itemKey) => {
+        renderItem={(item, itemIndex) => {
           rowCounter += 1;
 
           return <Item
             {...item}
-            key={itemKey}
+            key={`${itemIndex}-${rowCounter}`}
             rowCounter={rowCounter}
-            checked={checked}
-            handleToggle={handleToggle}
+            value={checked.indexOf(rowCounter) !== -1}
+            handleClick={handleToggle(rowCounter)}
           />;
         }}
-      />
-    )
+      />)
     : (
       <Typography variant="body1" className={classes.message}>
         No ingredients required
