@@ -12,6 +12,7 @@ import {
 
 import Typography from '../../../atoms/typography.jsx';
 import Checkbox from '../../../atoms/fields/checkbox.jsx';
+import MarkdownText from '../../../atoms/markdownText.jsx';
 
 const Component = ({ className, steps }) => {
   const useStyles = makeStyles(theme => ({
@@ -28,7 +29,7 @@ const Component = ({ className, steps }) => {
     subheader: {
       color: '#A9A8AD',
       'font-size': 'medium',
-    },
+    }
   }));
   const classes = useStyles();
 
@@ -63,7 +64,10 @@ const Component = ({ className, steps }) => {
         <ListItemIcon>
           <Checkbox value={checked.indexOf(rowCounter) !== -1} />
         </ListItemIcon>
-        <ListItemText id={`checkbox-list-label-${code}`} primary={step} />
+        <ListItemText
+          id={`checkbox-list-label-${code}`}
+          primary={<MarkdownText id={`${code}-${rowCounter}`} text={step} />}
+        />
       </MaterialListItem>
     );
   };
@@ -73,13 +77,13 @@ const Component = ({ className, steps }) => {
       <List
         key={`list-${key}`}
         className={`${classes.root} ${className}`}
-        subheader={(
+        subheader={sectionName && (
           <ListSubheader
             key={`subheader-${key}`}
             component="div"
             className={`${classes.subheader}`}
           >
-            <div>{sectionName}</div>
+            <MarkdownText id={`${key}-${rowCounter}`} text={sectionName} />
           </ListSubheader>
         )}
       >
