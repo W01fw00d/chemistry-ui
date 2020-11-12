@@ -1,0 +1,34 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import { Grid } from '@material-ui/core';
+
+import TagButton from './tagButton.jsx';
+
+const Component = ({ tags, handleClick }) =>
+  <Grid container justify="center">
+    {tags.map(tag =>
+      <TagButton
+        {...tag}
+        handleClick={handleClick}
+      />
+    )}
+  </Grid>;
+
+Component.defaultProps = {
+  tags: [],
+  handleClick: () => { },
+};
+
+Component.propTypes = {
+  tags: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.number,
+      name: PropTypes.string,
+      isCurrent: PropTypes.bool,
+    }),
+  ),
+  handleClick: PropTypes.func,
+};
+
+export default Component;
