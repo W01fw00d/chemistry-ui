@@ -8,7 +8,7 @@ import theme from '../../../styles/global-styles';
 import Image from '../../atoms/image.jsx';
 import Header from '../../organisms/recipe/detail/header.jsx';
 import IngredientsList from '../../organisms/recipe/detail/ingredientsList/index.jsx';
-import StepsList from '../../organisms/recipe/detail/stepsList.jsx';
+import StepsList from '../../organisms/recipe/detail/stepsList/index.jsx';
 
 const Component = ({ data, handleClick }) => {
   const useStyles = makeStyles({
