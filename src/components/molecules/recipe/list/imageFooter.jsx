@@ -13,6 +13,7 @@ const Component = ({ literals, data }) => {
     layout: {
       backgroundColor: theme.palette.primary.main,
       padding: theme.spacing(1),
+      textAlign: 'center',
     },
     text: {
       color: theme.palette.primary.dark,
