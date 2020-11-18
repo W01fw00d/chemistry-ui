@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  Grid,
-  makeStyles
-} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
+import Grid from '../../../../../atoms/layout/grid.jsx';
 import TextButton from '../../../../../atoms/buttons/text.jsx';
 
 const Component = ({ _id, isCurrent, name, handleClick }) => {
