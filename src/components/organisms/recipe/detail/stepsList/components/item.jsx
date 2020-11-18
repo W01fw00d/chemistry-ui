@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  ListItem,
-  ListItemIcon,
-  ListItemText,
+  ListItem as Item,
+  ListItemIcon as Icon,
+  ListItemText as Text,
 } from '@material-ui/core';
 
 import Checkbox from '../../../../../atoms/fields/checkbox.jsx';
@@ -17,19 +17,20 @@ const Component = ({
   value,
   handleClick
 }) =>
-  <ListItem
+  <Item
     role={undefined}
     dense
     button
     onClick={handleClick}
   >
-    <ListItemIcon>
+    <Icon>
       <Checkbox value={value} />
-    </ListItemIcon>
-    <ListItemText
-      primary={<MarkdownText id={`${index}-${rowCounter}`} text={step} />}
+    </Icon>
+    <Text primary={
+      <MarkdownText id={`${index}-${rowCounter}`} text={step} />
+    }
     />
-  </ListItem>;
+  </Item>;
 
 Component.propTypes = {
   index: PropTypes.number,
