@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Divider } from '@material-ui/core';
 import {
   NotificationsOutlined as NotificationsIcon,
   Check as CheckIcon
 } from '@material-ui/icons';
 
 import Grid from '../../../atoms/layout/grid.jsx';
+import Divider from '../../../atoms/layout/divider.jsx';
 import IconButton from '../../../atoms/buttons/icon.jsx';
 import TextField from '../../../atoms/fields/text.jsx';
 import About from '../../about.jsx';
