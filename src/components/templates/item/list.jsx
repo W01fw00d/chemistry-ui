@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, ThemeProvider } from '@material-ui/core';
+import {
+  ThemeProvider,
+  makeStyles
+} from '@material-ui/core';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 
 import theme from '../../../styles/global-styles';

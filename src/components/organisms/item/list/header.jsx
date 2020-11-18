@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
+import Grid from '../../../atoms/layout/grid.jsx';
 import IconButton from '../../../atoms/buttons/icon.jsx';
 import AppBar from '../../../molecules/layout/appBar.jsx';
 import Toolbar from '../../../molecules/item/list/toolbar.jsx';

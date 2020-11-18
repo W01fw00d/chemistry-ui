@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  ListItemSecondaryAction,
+  ListItem as Item,
+  ListItemIcon as Icon,
+  ListItemText as Text,
+  ListItemSecondaryAction as Action,
 } from '@material-ui/core';
 import CommentIcon from '@material-ui/icons/Comment';
 
@@ -24,26 +24,26 @@ const Component = ({
   let label = emoji ? `${emoji} (${name})` : name;
   label = quantity ? `${quantity} ${label}` : label;
 
-  return <ListItem
+  return <Item
     role={undefined}
     dense
     button
     onClick={handleClick}
   >
-    <ListItemIcon>
+    <Icon>
       <Checkbox value={value} />
-    </ListItemIcon>
-    <ListItemText
+    </Icon>
+    <Text
       primary={isOptional ? `{${label}}` : `${label}`}
     />
     {alternatives && alternatives.length > 0 && (
-      <ListItemSecondaryAction>
+      <Action>
         <IconButton edge="end" aria-label="comments">
           <CommentIcon />
         </IconButton>
-      </ListItemSecondaryAction>
+      </Action>
     )}
-  </ListItem>;
+  </Item>;
 };
 
 Component.propTypes = {

@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  makeStyles,
-  Grid,
-  Divider
-} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
+import Grid from '../../../atoms/layout/grid.jsx';
+import Divider from '../../../atoms/layout/divider.jsx';
 import TextField from '../../../atoms/fields/text.jsx';
 import Select from '../../../atoms/fields/select.jsx';
 import About from '../../about.jsx';

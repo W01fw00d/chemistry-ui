@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {
   makeStyles,
   List,
-  ListSubheader,
+  ListSubheader as Subheader,
 } from '@material-ui/core';
 
 const Component = ({
@@ -29,12 +29,12 @@ const Component = ({
   return <List
     className={`${classes.root} ${className}`}
     subheader={(
-      <ListSubheader
+      <Subheader
         component="div"
         className={`${classes.subheader}`}
       >
         {sectionName}
-      </ListSubheader>
+      </Subheader>
     )}
   >
     {items.map(renderItem)}

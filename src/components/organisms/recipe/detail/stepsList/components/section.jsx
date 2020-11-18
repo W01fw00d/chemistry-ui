@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import {
   makeStyles,
   List,
-  ListSubheader,
-  ListItem,
-  ListItemText,
+  ListSubheader as Subheader,
+  ListItem as Item,
+  ListItemText as Text,
 } from '@material-ui/core';
 
 import MarkdownText from '../../../../../atoms/markdownText.jsx';
@@ -36,7 +36,7 @@ const Component = ({
   return <List
     className={`${classes.root} ${className}`}
     subheader={sectionName && (
-      <ListSubheader
+      <Subheader
         component="div"
         className={`${classes.subheader}`}
       >
@@ -44,21 +44,21 @@ const Component = ({
           id={`${index}-${rowCounter}-subheader`}
           text={sectionName}
         />
-      </ListSubheader>
+      </Subheader>
     )}
   >
     {description && (
-      <ListItem
+      <Item
         role={undefined}
         dense
       >
-        <ListItemText
+        <Text
           primary={<MarkdownText
             id={`${index}-${rowCounter}-description`}
             text={description}
           />}
         />
-      </ListItem>
+      </Item>
     )}
     {items && items.map(renderItem)}
   </List>;
