@@ -17,6 +17,7 @@ const Component = ({
   projectData,
   search,
   itemList,
+  languageData,
   handleChange,
   handleClick,
 }) => {
@@ -45,6 +46,7 @@ const Component = ({
           searchValue={search}
           handleChange={handleChange}
           handleClick={handleClick}
+          languageData={languageData}
           literals={{ participants: literals.participants }}
         />
         {itemList && (

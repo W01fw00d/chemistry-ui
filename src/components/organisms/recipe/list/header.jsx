@@ -13,6 +13,7 @@ const Component = ({
   searchValue,
   handleChange,
   handleClick,
+  languageData,
   literals,
 }) => {
   const useStyles = makeStyles(theme => ({
@@ -49,6 +50,7 @@ const Component = ({
             searchValue={searchValue}
             handleChange={handleChange}
             handleClick={handleClick}
+            languageData={languageData}
             literals={literals}
           />
         </Grid>

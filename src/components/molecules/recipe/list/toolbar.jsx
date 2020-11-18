@@ -8,6 +8,7 @@ import {
 } from '@material-ui/core';
 
 import TextField from '../../../atoms/fields/text.jsx';
+import Select from '../../../atoms/fields/select.jsx';
 import About from '../../about.jsx';
 import DrawerPanel from '../../panels/drawer.jsx';
 
@@ -18,6 +19,7 @@ const Component = ({
   className,
   searchValue,
   handleChange,
+  languageData,
   literals,
 }) => {
   const useStyles = makeStyles({
@@ -54,12 +56,21 @@ const Component = ({
             </div>
           </DrawerPanel>
         </Grid>
-        <Grid item xs={8} container justify="center">
+        <Grid item xs={5} container justify="center">
           <form noValidate autoComplete="off">
             <TextField
               id="search"
               value={searchValue}
               handleChange={handleChange}
+            />
+          </form>
+        </Grid>
+        <Grid item xs={5} container justify="center">
+          <form noValidate autoComplete="off">
+            <Select
+              value={languageData.active}
+              options={languageData.options}
+              handleChange={languageData.onChange}
             />
           </form>
         </Grid>

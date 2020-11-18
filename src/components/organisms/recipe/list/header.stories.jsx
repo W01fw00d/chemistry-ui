@@ -24,6 +24,14 @@ storiesOf('Organisms/[Recipe]/List/Header', module)
       searchValue="Search Value"
       handleChange={action('Input detected')}
       handleClick={action('IconButton clicked')}
+      languageData={{
+        active: 0,
+        options: [
+          { id: 0, text: "Option 1" },
+          { id: 1, text: "Option 2" },
+        ],
+        onChange: action('Select click detected')
+      }}
       literals={allLiterals}
     />
   ));

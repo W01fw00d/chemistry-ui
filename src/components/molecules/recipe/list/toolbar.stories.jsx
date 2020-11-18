@@ -23,6 +23,14 @@ storiesOf('Molecules/[Recipe]/List/Toolbar', module)
       logo={escapingBoredomTitleLogo}
       searchValue="Search Value"
       handleChange={action('Input detected')}
+      languageData={{
+        active: 0,
+        options: [
+          { id: 0, text: "Option 1" },
+          { id: 1, text: "Option 2" },
+        ],
+        onChange: action('Select click detected')
+      }}
       literals={allLiterals}
     />
   ));

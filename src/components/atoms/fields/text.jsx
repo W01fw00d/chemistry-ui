@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, TextField as MaterialTextField } from '@material-ui/core';
+import { makeStyles, TextField } from '@material-ui/core';
 
 const Component = ({ id, label, className, value, handleChange }) => {
   const useStyles = makeStyles(theme => ({
@@ -12,7 +12,7 @@ const Component = ({ id, label, className, value, handleChange }) => {
   const classes = useStyles();
 
   return (
-    <MaterialTextField
+    <TextField
       id={id}
       placeholder={label}
       className={`${classes.field} ${className}`}

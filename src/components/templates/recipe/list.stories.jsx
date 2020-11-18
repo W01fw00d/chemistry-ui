@@ -41,6 +41,14 @@ storiesOf('Templates/[Recipe]/List', module)
       }}
       search={literals.comingSoon}
       itemList={formattedRecipes}
+      languageData={{
+        active: 0,
+        options: [
+          { id: 0, text: "Option 1" },
+          { id: 1, text: "Option 2" },
+        ],
+        onChange: action('Select click detected')
+      }}
       handleChange={action('Input detected')}
       handleClick={action('Button clicked')}
     />
