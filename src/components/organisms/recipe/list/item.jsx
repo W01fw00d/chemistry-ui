@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
+import logo from '../../../../../public/cooking-with-amateurs-title-logo.png';
+
 import InternalLink from '../../../atoms/links/internal.jsx';
 import Image from '../../../atoms/image.jsx';
 import Footer from '../../../molecules/recipe/list/imageFooter.jsx';
@@ -16,6 +18,9 @@ const Component = ({ literals, data }) => {
       position: 'absolute',
       display: 'block',
     },
+    logo: {
+      backgroundColor: 'white',
+    }
   });
   const classes = useStyles();
 
@@ -35,10 +40,18 @@ const Component = ({ literals, data }) => {
     showName,
   });
 
+  const image = data.image;
+
   return (
     <InternalLink to={`/detail/${data.id}`}>
       <div className={classes.wrapper}>
-        <Image src={data.image} />
+        {image ?
+          <Image src={image} /> :
+          <Image
+            src={logo}
+            className={classes.logo}
+          />
+        }
       </div>
       <Footer literals={literals} data={getFooterData(data)} />
     </InternalLink>
