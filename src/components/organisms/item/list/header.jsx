@@ -7,7 +7,7 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import IconButton from '../../../atoms/buttons/icon.jsx';
 import AppBar from '../../../molecules/layout/appBar.jsx';
 import Toolbar from '../../../molecules/item/list/toolbar.jsx';
-import TagsBar from '../../../molecules/item/list/tagsBar.jsx';
+import TagsBar from '../../../molecules/item/list/tagsBar/index.jsx';
 
 const Component = ({
   authorData,

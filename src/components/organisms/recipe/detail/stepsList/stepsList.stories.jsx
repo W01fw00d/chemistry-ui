@@ -2,12 +2,12 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import theme from '../../../../styles/global-styles';
-import themeDecorator from '../../../../../.storybook/decorators/themeDecorator';
+import theme from '../../../../../styles/global-styles';
+import themeDecorator from '../../../../../../.storybook/decorators/themeDecorator';
 
-import steps from '../../../../../.storybook/fake_data/steps.json';
+import steps from '../../../../../../.storybook/fake_data/steps.json';
 
-import Component from './stepsList.jsx';
+import Component from './';
 
 storiesOf('Organisms/[Recipe]/Detail/StepsList', module)
   .addDecorator(themeDecorator(theme))
