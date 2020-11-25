@@ -10,7 +10,7 @@ const Component = ({ id, value, handleChange }) => (
 Component.defaultProps = {
   id: '',
   value: false,
-  handleChange: () => { },
+  handleChange: () => {},
 };
 
 Component.propTypes = {

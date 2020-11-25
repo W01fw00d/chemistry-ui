@@ -19,12 +19,12 @@ const Component = ({ icon, text, handleClick }) => {
       <span className={classes.text}>{text}</span>
     </TextButton>
   );
-}
+};
 
 Component.defaultProps = {
   icon: <></>,
   text: '',
-  handleClick: () => { },
+  handleClick: () => {},
 };
 
 Component.propTypes = {

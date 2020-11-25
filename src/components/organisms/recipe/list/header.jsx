@@ -63,14 +63,14 @@ const Component = ({
       </Grid>
     </AppBar>
   );
-}
+};
 
 Component.defaultProps = {
   authorData: {},
   projectData: {},
   searchValue: '',
-  handleChange: () => { },
-  handleClick: () => { },
+  handleChange: () => {},
+  handleClick: () => {},
 };
 
 Component.propTypes = {

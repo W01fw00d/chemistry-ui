@@ -30,15 +30,13 @@ const Component = ({ data }) => {
   return (
     <InternalLink to={`/detail/${data.id}`}>
       <div className={classes.wrapper}>
-        {data.isEditorsChoice &&
-          <Image src={banner} alt="Banner" className={classes.banner} />
-        }
+        {data.isEditorsChoice && <Image src={banner} alt="Banner" className={classes.banner} />}
         <Image src={data.image} />
       </div>
       <ImageFooter data={getFooterData(data)} />
     </InternalLink>
   );
-}
+};
 
 Component.defaultProps = {
   data: {},

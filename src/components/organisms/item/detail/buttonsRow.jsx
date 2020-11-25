@@ -28,11 +28,7 @@ const Component = ({ literals, likeCount, handleClick }) => {
   return (
     <Grid container alignItems="center" className={classes.layout}>
       <Grid item xs={3}>
-        <IconTextButton
-          text={literals.like}
-          icon={<LikeIcon />}
-          handleClick={handleClick}
-        />
+        <IconTextButton text={literals.like} icon={<LikeIcon />} handleClick={handleClick} />
       </Grid>
       <Grid item xs={2} container id="likeCount">
         <Typography variant="h6" color="inherit" className={classes.name}>
@@ -40,11 +36,7 @@ const Component = ({ literals, likeCount, handleClick }) => {
         </Typography>
       </Grid>
       <Grid item xs={4}>
-        <IconTextButton
-          text={literals.comment}
-          icon={<CommentIcon />}
-          handleClick={handleClick}
-        />
+        <IconTextButton text={literals.comment} icon={<CommentIcon />} handleClick={handleClick} />
       </Grid>
       <Grid item xs={3} container justify="flex-end">
         <IconButton color="secondary" handleClick={handleClick}>
@@ -53,12 +45,12 @@ const Component = ({ literals, likeCount, handleClick }) => {
       </Grid>
     </Grid>
   );
-}
+};
 
 Component.defaultProps = {
   literals: {},
   likeCount: 0,
-  handleClick: () => { },
+  handleClick: () => {},
 };
 
 Component.propTypes = {

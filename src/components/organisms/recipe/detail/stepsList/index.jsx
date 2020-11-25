@@ -14,7 +14,7 @@ const Component = ({ className, steps }) => {
       color: theme.palette.primary.dark,
       textAlign: 'center',
       paddingBottom: '20px',
-    }
+    },
   }));
   const classes = useStyles();
 
@@ -35,8 +35,8 @@ const Component = ({ className, steps }) => {
     setChecked(newChecked);
   };
 
-  return steps && steps.length > 0 ?
-    steps.map((step, index) =>
+  return steps && steps.length > 0 ? (
+    steps.map((step, index) => (
       <Section
         {...step}
         index={index}
@@ -46,22 +46,27 @@ const Component = ({ className, steps }) => {
         renderItem={(item, itemIndex) => {
           rowCounter += 1;
 
-          return item && <Item
-            index={itemIndex}
-            rowCounter={rowCounter}
-            step={item}
-            key={`${itemIndex}-${rowCounter}`}
-            value={checked.indexOf(rowCounter) !== -1}
-            handleClick={handleToggle(rowCounter)}
-          />;
+          return (
+            item && (
+              <Item
+                index={itemIndex}
+                rowCounter={rowCounter}
+                step={item}
+                key={`${itemIndex}-${rowCounter}`}
+                value={checked.indexOf(rowCounter) !== -1}
+                handleClick={handleToggle(rowCounter)}
+              />
+            )
+          );
         }}
-      />)
-    : (
-      <Typography variant="body1" className={classes.message}>
-        No steps required
-      </Typography>
-    );
-}
+      />
+    ))
+  ) : (
+    <Typography variant="body1" className={classes.message}>
+      No steps required
+    </Typography>
+  );
+};
 
 Component.defaultProps = {
   className: '',

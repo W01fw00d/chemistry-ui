@@ -14,7 +14,7 @@ const Component = ({ className, ingredients }) => {
       color: theme.palette.primary.dark,
       textAlign: 'center',
       paddingBottom: '20px',
-    }
+    },
   }));
   const classes = useStyles();
 
@@ -35,8 +35,8 @@ const Component = ({ className, ingredients }) => {
     setChecked(newChecked);
   };
 
-  return ingredients && ingredients.length > 0 ?
-    ingredients.map((ingredient, index) =>
+  return ingredients && ingredients.length > 0 ? (
+    ingredients.map((ingredient, index) => (
       <Section
         {...ingredient}
         key={`${index}-${rowCounter}`}
@@ -44,21 +44,24 @@ const Component = ({ className, ingredients }) => {
         renderItem={(item, itemIndex) => {
           rowCounter += 1;
 
-          return <Item
-            {...item}
-            key={`${itemIndex}-${rowCounter}`}
-            rowCounter={rowCounter}
-            value={checked.indexOf(rowCounter) !== -1}
-            handleClick={handleToggle(rowCounter)}
-          />;
+          return (
+            <Item
+              {...item}
+              key={`${itemIndex}-${rowCounter}`}
+              rowCounter={rowCounter}
+              value={checked.indexOf(rowCounter) !== -1}
+              handleClick={handleToggle(rowCounter)}
+            />
+          );
         }}
-      />)
-    : (
-      <Typography variant="body1" className={classes.message}>
-        No ingredients required
-      </Typography>
-    );
-}
+      />
+    ))
+  ) : (
+    <Typography variant="body1" className={classes.message}>
+      No ingredients required
+    </Typography>
+  );
+};
 
 Component.defaultProps = {
   className: '',

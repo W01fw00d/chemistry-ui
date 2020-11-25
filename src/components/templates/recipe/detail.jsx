@@ -21,26 +21,14 @@ const Component = ({ data, handleClick }) => {
   return (
     data && (
       <ThemeProvider theme={theme}>
-        <Header
-          name={data.name}
-          handleClick={handleClick}
-        />
-        <Image
-          src={data.image}
-          alt={data.name}
-        />
-        <IngredientsList
-          className={classes.marginBottom}
-          ingredients={data.ingredients}
-        />
-        <StepsList
-          className={classes.marginBottom}
-          steps={data.steps}
-        />
+        <Header name={data.name} handleClick={handleClick} />
+        <Image src={data.image} alt={data.name} />
+        <IngredientsList className={classes.marginBottom} ingredients={data.ingredients} />
+        <StepsList className={classes.marginBottom} steps={data.steps} />
       </ThemeProvider>
     )
   );
-}
+};
 
 Component.defaultProps = {
   data: {
@@ -49,7 +37,7 @@ Component.defaultProps = {
     ingredients: [],
     steps: [],
   },
-  handleClick: () => { },
+  handleClick: () => {},
 };
 
 Component.propTypes = {

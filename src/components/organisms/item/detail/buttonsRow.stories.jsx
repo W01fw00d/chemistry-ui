@@ -17,9 +17,5 @@ const literals = {
 storiesOf('Organisms/[Item]/Detail/ButtonsRow', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
-    <Component
-      literals={literals}
-      likeCount={3}
-      handleClick={action('IconButton clicked')}
-    />
+    <Component literals={literals} likeCount={3} handleClick={action('IconButton clicked')} />
   ));

@@ -54,12 +54,12 @@ const Component = ({ literals, data, handleClick }) => {
       </Grid>
     </Footer>
   );
-}
+};
 
 Component.defaultProps = {
   literals: {},
   data: {},
-  handleClick: () => { },
+  handleClick: () => {},
 };
 
 Component.propTypes = {

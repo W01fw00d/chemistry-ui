@@ -29,7 +29,7 @@ const Component = ({ className, steps }) => {
     subheader: {
       color: '#A9A8AD',
       'font-size': 'medium',
-    }
+    },
   }));
   const classes = useStyles();
 
@@ -54,13 +54,7 @@ const Component = ({ className, steps }) => {
     rowCounter += 1;
 
     return (
-      <MaterialListItem
-        key={code}
-        role={undefined}
-        dense
-        button
-        onClick={handleToggle(rowCounter)}
-      >
+      <MaterialListItem key={code} role={undefined} dense button onClick={handleToggle(rowCounter)}>
         <ListItemIcon>
           <Checkbox value={checked.indexOf(rowCounter) !== -1} />
         </ListItemIcon>
@@ -77,39 +71,35 @@ const Component = ({ className, steps }) => {
       <List
         key={`list-${key}`}
         className={`${classes.root} ${className}`}
-        subheader={sectionName && (
-          <ListSubheader
-            key={`subheader-${key}`}
-            component="div"
-            className={`${classes.subheader}`}
-          >
-            <MarkdownText id={`${key}-${rowCounter}`} text={sectionName} />
-          </ListSubheader>
-        )}
+        subheader={
+          sectionName && (
+            <ListSubheader
+              key={`subheader-${key}`}
+              component="div"
+              className={`${classes.subheader}`}
+            >
+              <MarkdownText id={`${key}-${rowCounter}`} text={sectionName} />
+            </ListSubheader>
+          )
+        }
       >
         {description && (
-          <MaterialListItem
-            key={`description-${key}`}
-            role={undefined}
-            dense
-          >
-            <ListItemText
-              primary={`* ${description}`}
-            />
+          <MaterialListItem key={`description-${key}`} role={undefined} dense>
+            <ListItemText primary={`* ${description}`} />
           </MaterialListItem>
         )}
         {items.map(ListItem)}
       </List>
     );
 
-  return steps && steps.length > 0 ?
+  return steps && steps.length > 0 ? (
     steps.map(SectionListItem)
-    : (
-      <Typography variant="body1" className={classes.message}>
-        No steps required
-      </Typography>
-    );
-}
+  ) : (
+    <Typography variant="body1" className={classes.message}>
+      No steps required
+    </Typography>
+  );
+};
 
 Component.defaultProps = {
   className: '',

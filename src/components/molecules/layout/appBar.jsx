@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  makeStyles,
-  AppBar,
-  Toolbar
-} from '@material-ui/core';
+import { makeStyles, AppBar, Toolbar } from '@material-ui/core';
 
 const Component = ({ children, position, className }) => {
   const useStyles = makeStyles(theme => ({
@@ -29,7 +25,7 @@ const Component = ({ children, position, className }) => {
       </Toolbar>
     </AppBar>
   );
-}
+};
 
 Component.defaultProps = {
   children: <></>,

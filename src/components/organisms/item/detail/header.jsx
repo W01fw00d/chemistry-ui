@@ -51,11 +51,11 @@ const Component = ({ name, handleClick }) => {
       </Grid>
     </AppBar>
   );
-}
+};
 
 Component.defaultProps = {
   name: '',
-  handleClick: () => { },
+  handleClick: () => {},
 };
 
 Component.propTypes = {

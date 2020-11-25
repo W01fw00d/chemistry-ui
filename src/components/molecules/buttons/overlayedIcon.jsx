@@ -23,12 +23,12 @@ const Component = ({ color, children, handleClick }) => {
       </IconButton>
     </Footer>
   );
-}
+};
 
 Component.defaultProps = {
   color: 'primary',
   children: <></>,
-  handleClick: () => { },
+  handleClick: () => {},
 };
 
 Component.propTypes = {

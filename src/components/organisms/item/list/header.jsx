@@ -58,26 +58,22 @@ const Component = ({
           <TagsBar tags={tags} handleClick={handleClick} />
         </Grid>
         <Grid item xs={12} container justify="center">
-          <IconButton
-            color="primary"
-            className={classes.overlayed}
-            handleClick={handleClick}
-          >
+          <IconButton color="primary" className={classes.overlayed} handleClick={handleClick}>
             <ArrowUpwardIcon />
           </IconButton>
         </Grid>
       </Grid>
     </AppBar>
   );
-}
+};
 
 Component.defaultProps = {
   authorData: {},
   projectData: {},
   tags: [],
   searchValue: '',
-  handleChange: () => { },
-  handleClick: () => { },
+  handleChange: () => {},
+  handleClick: () => {},
 };
 
 Component.propTypes = {

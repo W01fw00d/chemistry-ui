@@ -56,7 +56,7 @@ const Component = ({ data }) => {
       </Grid>
     </div>
   );
-}
+};
 
 Component.defaultProps = {
   data: {},

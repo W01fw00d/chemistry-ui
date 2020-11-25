@@ -22,14 +22,14 @@ const Component = ({ id, label, className, value, handleChange }) => {
       onChange={handleChange}
     />
   );
-}
+};
 
 Component.defaultProps = {
   id: 'textButton',
   label: '',
   className: '',
   value: '',
-  handleChange: () => { },
+  handleChange: () => {},
 };
 
 Component.propTypes = {

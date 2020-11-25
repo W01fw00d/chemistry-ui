@@ -3,22 +3,18 @@ import PropTypes from 'prop-types';
 
 import { IconButton } from '@material-ui/core';
 
-const Component = ({ id, color, className, children, handleClick }) =>
-  <IconButton
-    id={id}
-    color={color}
-    className={className}
-    onClick={handleClick}
-  >
+const Component = ({ id, color, className, children, handleClick }) => (
+  <IconButton id={id} color={color} className={className} onClick={handleClick}>
     {children}
-  </IconButton>;
+  </IconButton>
+);
 
 Component.defaultProps = {
   id: 'iconButton',
   color: 'primary',
   className: '',
   children: <></>,
-  handleClick: () => { },
+  handleClick: () => {},
 };
 
 Component.propTypes = {

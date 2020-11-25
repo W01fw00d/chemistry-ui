@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  Grid,
-  makeStyles
-} from '@material-ui/core';
+import { Grid, makeStyles } from '@material-ui/core';
 
 import TextButton from '../../../../../atoms/buttons/text.jsx';
 
@@ -19,15 +16,17 @@ const Component = ({ _id, isCurrent, name, handleClick }) => {
   }));
   const classes = useStyles();
 
-  return <Grid key={_id} item>
-    <TextButton
-      id={_id}
-      className={`${classes.button} ${isCurrent ? classes.currentTag : ''}`}
-      handleClick={handleClick}
-    >
-      {name}
-    </TextButton >
-  </Grid >;
+  return (
+    <Grid key={_id} item>
+      <TextButton
+        id={_id}
+        className={`${classes.button} ${isCurrent ? classes.currentTag : ''}`}
+        handleClick={handleClick}
+      >
+        {name}
+      </TextButton>
+    </Grid>
+  );
 };
 
 Component.defaultProps = {

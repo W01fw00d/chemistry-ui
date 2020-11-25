@@ -14,8 +14,8 @@ storiesOf('Atoms/Fields/Select', module)
     <Component
       value={0}
       options={[
-        { id: 0, text: "Option 1" },
-        { id: 1, text: "Option 2" },
+        { id: 0, text: 'Option 1' },
+        { id: 1, text: 'Option 2' },
       ]}
       handleChange={action('Select click detected')}
     />

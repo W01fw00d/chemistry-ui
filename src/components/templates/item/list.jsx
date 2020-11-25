@@ -57,7 +57,7 @@ const Component = ({
       </div>
     </ThemeProvider>
   );
-}
+};
 
 Component.defaultProps = {
   authorData: {},
@@ -65,8 +65,8 @@ Component.defaultProps = {
   search: '',
   itemList: [],
   tags: [],
-  handleChange: () => { },
-  handleClick: () => { },
+  handleChange: () => {},
+  handleClick: () => {},
 };
 
 Component.propTypes = {

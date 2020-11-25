@@ -1,0 +1,3 @@
+- [ ] npm run prettier
+- [ ] npm run storybook : no warning or errors on browser console
+- [ ] check that cooking-with-amateurs works with new build without warning or errors on browser console

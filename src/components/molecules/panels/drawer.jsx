@@ -37,7 +37,7 @@ const Component = ({ className, children }) => {
       </Drawer>
     </>
   );
-}
+};
 
 Component.defaultProps = {
   className: '',

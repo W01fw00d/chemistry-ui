@@ -17,17 +17,16 @@ const getLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
   preparationTime,
   howManyIngredients,
 });
-const getData =
-  ({ id, name, eventDate, difficulty, preparationTime, nIngredients, showName }) => ({
-    id,
-    name,
-    eventDate,
-    difficulty,
-    preparationTime,
-    nIngredients,
-    image: recipeImage,
-    showName,
-  });
+const getData = ({ id, name, eventDate, difficulty, preparationTime, nIngredients, showName }) => ({
+  id,
+  name,
+  eventDate,
+  difficulty,
+  preparationTime,
+  nIngredients,
+  image: recipeImage,
+  showName,
+});
 
 storiesOf('Organisms/[Recipe]/List/Item', module)
   .addDecorator(StoryRouter())
@@ -35,14 +34,13 @@ storiesOf('Organisms/[Recipe]/List/Item', module)
   .add('without name', () => (
     <Component literals={getLiterals(literals)} data={getData(recipes[0])} />
   ))
-  .add('with name', () => (
-    <Component literals={getLiterals(literals)} data={getData(recipes[1])} />
-  ))
+  .add('with name', () => <Component literals={getLiterals(literals)} data={getData(recipes[1])} />)
   .add('without image', () => (
     <Component
       literals={getLiterals(literals)}
       data={{
         ...getData(recipes[0]),
         image: null,
-      }} />
+      }}
+    />
   ));

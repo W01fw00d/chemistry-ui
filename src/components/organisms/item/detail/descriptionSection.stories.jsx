@@ -16,8 +16,5 @@ const getLiterals = ({ description }) => ({
 storiesOf('Organisms/[Item]/Detail/DescriptionSection', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
-    <Component
-      literals={getLiterals(literals)}
-      description={data[0].details}
-    />
+    <Component literals={getLiterals(literals)} description={data[0].details} />
   ));

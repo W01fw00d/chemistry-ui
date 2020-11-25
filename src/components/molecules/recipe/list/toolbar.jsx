@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  makeStyles,
-  Grid,
-  Divider
-} from '@material-ui/core';
+import { makeStyles, Grid, Divider } from '@material-ui/core';
 
 import TextField from '../../../atoms/fields/text.jsx';
 import Select from '../../../atoms/fields/select.jsx';
@@ -28,7 +24,7 @@ const Component = ({
     },
     alignText: {
       'text-align': 'center',
-    }
+    },
   });
   const classes = useStyles();
 
@@ -50,19 +46,15 @@ const Component = ({
               <p>
                 <strong>{literals.participants}</strong>
               </p>
-              {projectData.participants.map(
-                (name) => <p key={`${name}`}>{name}</p>
-              )}
+              {projectData.participants.map(name => (
+                <p key={`${name}`}>{name}</p>
+              ))}
             </div>
           </DrawerPanel>
         </Grid>
         <Grid item xs={5} container justify="center">
           <form noValidate autoComplete="off">
-            <TextField
-              id="search"
-              value={searchValue}
-              handleChange={handleChange}
-            />
+            <TextField id="search" value={searchValue} handleChange={handleChange} />
           </form>
         </Grid>
         <Grid item xs={5} container justify="center">
@@ -77,14 +69,14 @@ const Component = ({
       </Grid>
     </div>
   );
-}
+};
 
 Component.defaultProps = {
   authorData: {},
   projectData: {},
   className: '',
   searchValue: null,
-  handleChange: () => { },
+  handleChange: () => {},
 };
 
 Component.propTypes = {

@@ -20,7 +20,7 @@ const Component = ({ literals, data }) => {
     },
     logo: {
       backgroundColor: 'white',
-    }
+    },
   });
   const classes = useStyles();
 
@@ -40,23 +40,17 @@ const Component = ({ literals, data }) => {
     showName,
   });
 
-  const image = data.image;
+  const { image } = data;
 
   return (
     <InternalLink to={`/detail/${data.id}`}>
       <div className={classes.wrapper}>
-        {image ?
-          <Image src={image} /> :
-          <Image
-            src={logo}
-            className={classes.logo}
-          />
-        }
+        {image ? <Image src={image} /> : <Image src={logo} className={classes.logo} />}
       </div>
       <Footer literals={literals} data={getFooterData(data)} />
     </InternalLink>
   );
-}
+};
 
 Component.defaultProps = {
   literals: {},

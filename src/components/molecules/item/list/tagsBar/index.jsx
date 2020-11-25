@@ -5,20 +5,17 @@ import { Grid } from '@material-ui/core';
 
 import TagButton from './components/tagButton.jsx';
 
-const Component = ({ tags, handleClick }) =>
+const Component = ({ tags, handleClick }) => (
   <Grid container justify="center">
-    {tags.map((tag) =>
-      <TagButton
-        key={tag._id}
-        {...tag}
-        handleClick={handleClick}
-      />
-    )}
-  </Grid>;
+    {tags.map(tag => (
+      <TagButton key={tag._id} {...tag} handleClick={handleClick} />
+    ))}
+  </Grid>
+);
 
 Component.defaultProps = {
   tags: [],
-  handleClick: () => { },
+  handleClick: () => {},
 };
 
 Component.propTypes = {

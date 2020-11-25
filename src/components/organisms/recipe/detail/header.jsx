@@ -36,7 +36,7 @@ const Component = ({ name }) => {
       </Grid>
     </AppBar>
   );
-}
+};
 
 Component.defaultProps = {
   name: '',

@@ -28,9 +28,5 @@ const data = {
 storiesOf('Templates/[Item]/Detail', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
-    <Component
-      literals={literals}
-      data={data}
-      handleClick={action('Button clicked')}
-    />
+    <Component literals={literals} data={data} handleClick={action('Button clicked')} />
   ));

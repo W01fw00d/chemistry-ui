@@ -27,10 +27,10 @@ storiesOf('Organisms/[Recipe]/List/Header', module)
       languageData={{
         active: 0,
         options: [
-          { id: 0, text: "Option 1" },
-          { id: 1, text: "Option 2" },
+          { id: 0, text: 'Option 1' },
+          { id: 1, text: 'Option 2' },
         ],
-        onChange: action('Select click detected')
+        onChange: action('Select click detected'),
       }}
       literals={allLiterals}
     />

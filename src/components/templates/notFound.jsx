@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  ThemeProvider,
-  makeStyles
-} from '@material-ui/core';
+import { ThemeProvider, makeStyles } from '@material-ui/core';
 
 import theme from '../../styles/global-styles';
 import Header from '../organisms/recipe/detail/header.jsx';
@@ -23,17 +20,12 @@ const Component = ({ literals }) => {
   return (
     <ThemeProvider theme={theme}>
       <Header name={literals.goHome} />
-      <Typography
-        variant="h6"
-        color="inherit"
-        className={classes.notFound}
-      >
+      <Typography variant="h6" color="inherit" className={classes.notFound}>
         {literals.notFound}
       </Typography>
-
     </ThemeProvider>
   );
-}
+};
 
 Component.defaultProps = {
   literals: {},

@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Grid, Divider } from '@material-ui/core';
-import {
-  NotificationsOutlined as NotificationsIcon,
-  Check as CheckIcon
-} from '@material-ui/icons';
+import { NotificationsOutlined as NotificationsIcon, Check as CheckIcon } from '@material-ui/icons';
 
 import IconButton from '../../../atoms/buttons/icon.jsx';
 import TextField from '../../../atoms/fields/text.jsx';
@@ -20,7 +17,7 @@ const Component = ({
   searchValue,
   handleChange,
   handleClick,
-}) =>
+}) => (
   <div className={className}>
     <Grid container alignItems="center">
       <Grid item xs={2} container justify="center">
@@ -37,10 +34,7 @@ const Component = ({
       </Grid>
       <Grid item xs={6} container justify="center">
         <form noValidate autoComplete="off">
-          <TextField
-            id="search"
-            value={searchValue}
-            handleChange={handleChange} />
+          <TextField id="search" value={searchValue} handleChange={handleChange} />
         </form>
       </Grid>
       <Grid item xs={2} container justify="flex-end">
@@ -54,15 +48,16 @@ const Component = ({
         </IconButton>
       </Grid>
     </Grid>
-  </div>;
+  </div>
+);
 
 Component.defaultProps = {
   authorData: {},
   projectData: {},
   className: '',
   searchValue: null,
-  handleChange: () => { },
-  handleClick: () => { },
+  handleChange: () => {},
+  handleClick: () => {},
 };
 
 Component.propTypes = {

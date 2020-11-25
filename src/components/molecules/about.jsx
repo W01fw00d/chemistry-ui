@@ -42,7 +42,7 @@ const Component = ({ logo, authorName, email, authorUrl, projectUrl }) => {
       </Typography>
     </div>
   );
-}
+};
 
 Component.defaultProps = {
   authorName: '',

@@ -17,19 +17,16 @@ const getData = ({ name, ingredients }) => ({
   steps: [
     {
       id: 1,
-      sectionName: "Section Name 1",
-      description: "Description",
-      items: [
-        "Item 1",
-        "Item 2"
-      ]
+      sectionName: 'Section Name 1',
+      description: 'Description',
+      items: ['Item 1', 'Item 2'],
     },
     {
       id: 1,
-      sectionName: "Section Name 2",
-      description: "Description",
+      sectionName: 'Section Name 2',
+      description: 'Description',
     },
-  ]
+  ],
 });
 
 storiesOf('Templates/[Recipe]/Detail', module)

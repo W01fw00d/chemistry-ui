@@ -19,23 +19,15 @@ const Component = ({ className, literals, description }) => {
 
   return (
     <div className={className}>
-      <Typography
-        variant="h6"
-        color="inherit"
-        className={`${classes.layout} ${classes.title}`}
-      >
+      <Typography variant="h6" color="inherit" className={`${classes.layout} ${classes.title}`}>
         {literals.description}
       </Typography>
-      <Typography
-        variant="h6"
-        color="inherit"
-        className={classes.layout}
-      >
+      <Typography variant="h6" color="inherit" className={classes.layout}>
         {description}
       </Typography>
     </div>
   );
-}
+};
 
 Component.defaultProps = {
   className: '',

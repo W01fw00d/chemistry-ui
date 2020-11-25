@@ -23,7 +23,7 @@ const Component = ({ id, to, className, children }) => {
       {children}
     </a>
   );
-}
+};
 
 Component.defaultProps = {
   id: 'externalLink',

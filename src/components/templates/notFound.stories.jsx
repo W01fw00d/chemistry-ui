@@ -8,8 +8,10 @@ import Component from './notFound';
 storiesOf('Templates/NotFound', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
-    <Component literals={{
-      notFound: 'Not Found Message',
-      goHome: 'Go to Home Page',
-    }} />
+    <Component
+      literals={{
+        notFound: 'Not Found Message',
+        goHome: 'Go to Home Page',
+      }}
+    />
   ));

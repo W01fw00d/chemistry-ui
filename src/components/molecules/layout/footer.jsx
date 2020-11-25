@@ -15,7 +15,7 @@ const Component = ({ children, className }) => {
   const classes = useStyles();
 
   return <footer className={`${classes.bar} ${className}`}>{children}</footer>;
-}
+};
 
 Component.defaultProps = {
   children: <></>,

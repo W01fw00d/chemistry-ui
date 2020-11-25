@@ -1,18 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  makeStyles,
-  List,
-  ListSubheader,
-} from '@material-ui/core';
+import { makeStyles, List, ListSubheader as Subheader } from '@material-ui/core';
 
-const Component = ({
-  sectionName,
-  items,
-  className,
-  renderItem,
-}) => {
+const Component = ({ sectionName, items, className, renderItem }) => {
   const useStyles = makeStyles(theme => ({
     root: {
       width: '100%',
@@ -26,23 +17,22 @@ const Component = ({
   }));
   const classes = useStyles();
 
-  return <List
-    className={`${classes.root} ${className}`}
-    subheader={(
-      <ListSubheader
-        component="div"
-        className={`${classes.subheader}`}
-      >
-        {sectionName}
-      </ListSubheader>
-    )}
-  >
-    {items.map(renderItem)}
-  </List>;
+  return (
+    <List
+      className={`${classes.root} ${className}`}
+      subheader={
+        <Subheader component="div" className={`${classes.subheader}`}>
+          {sectionName}
+        </Subheader>
+      }
+    >
+      {items.map(renderItem)}
+    </List>
+  );
 };
 
 Component.defaultProps = {
-  renderItem: () => { },
+  renderItem: () => {},
 };
 
 Component.propTypes = {

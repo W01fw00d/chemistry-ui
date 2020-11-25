@@ -20,7 +20,7 @@ const Component = ({ children }) => {
       ))}
     </Grid>
   );
-}
+};
 
 Component.defaultProps = {
   children: <></>,

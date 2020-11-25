@@ -57,15 +57,11 @@ const Component = ({ literals, data, handleClick }) => {
           literals={descriptionSectionLiterals}
           description={data.description}
         />
-        <FooterBar
-          literals={footerBarLiterals}
-          data={footerBarData}
-          handleClick={handleClick}
-        />
+        <FooterBar literals={footerBarLiterals} data={footerBarData} handleClick={handleClick} />
       </ThemeProvider>
     )
   );
-}
+};
 
 Component.defaultProps = {
   literals: {
@@ -82,7 +78,7 @@ Component.defaultProps = {
     price: FooterBar.defaultProps.price,
     isGroupPrice: FooterBar.defaultProps.isGroupPrice,
   },
-  handleClick: () => { },
+  handleClick: () => {},
 };
 
 Component.propTypes = {

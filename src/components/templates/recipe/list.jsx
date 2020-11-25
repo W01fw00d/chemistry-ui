@@ -29,12 +29,11 @@ const Component = ({
   });
   const classes = useStyles();
 
-  const getRecipeListItemLiterals =
-    ({ difficulty, preparationTime, howManyIngredients }) => ({
-      difficulty,
-      preparationTime,
-      howManyIngredients,
-    });
+  const getRecipeListItemLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
+    difficulty,
+    preparationTime,
+    howManyIngredients,
+  });
 
   return (
     <ThemeProvider theme={theme}>
@@ -63,7 +62,7 @@ const Component = ({
       </div>
     </ThemeProvider>
   );
-}
+};
 
 Component.defaultProps = {
   literals: {},
@@ -71,8 +70,8 @@ Component.defaultProps = {
   projectData: {},
   search: '',
   itemList: [],
-  handleChange: () => { },
-  handleClick: () => { },
+  handleChange: () => {},
+  handleClick: () => {},
 };
 
 Component.propTypes = {

@@ -11,7 +11,4 @@ import Component from '.';
 
 storiesOf('Molecules/[Item]/List/TagsBar', module)
   .addDecorator(themeDecorator(theme))
-  .add('default', () => <Component
-    tags={tags}
-    handleClick={action('IconButton clicked')}
-  />);
+  .add('default', () => <Component tags={tags} handleClick={action('IconButton clicked')} />);

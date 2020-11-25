@@ -2,14 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 
-const Component = ({ id, to, children }) =>
-  <RouterLink
-    id={id}
-    to={to}
-    style={{ textDecoration: 'none', color: 'inherit' }}
-  >
+const Component = ({ id, to, children }) => (
+  <RouterLink id={id} to={to} style={{ textDecoration: 'none', color: 'inherit' }}>
     {children}
-  </RouterLink>;
+  </RouterLink>
+);
 
 Component.defaultProps = {
   id: 'link',

@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  makeStyles,
-  Grid
-} from '@material-ui/core';
+import { makeStyles, Grid } from '@material-ui/core';
 
 import Typography from '../../../atoms/typography.jsx';
 
@@ -49,7 +46,7 @@ const Component = ({ literals, data }) => {
       </Grid>
     </div>
   );
-}
+};
 
 Component.defaultProps = {
   literals: {},

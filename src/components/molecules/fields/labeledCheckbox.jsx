@@ -22,12 +22,12 @@ const Component = ({ id, value, handleChange, children }) => {
       </Typography>
     </div>
   );
-}
+};
 
 Component.defaultProps = {
   id: '',
   value: false,
-  handleChange: () => { },
+  handleChange: () => {},
   children: '',
 };
 

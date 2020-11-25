@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  FormControl,
-  Select,
-  MenuItem,
-  makeStyles
-} from '@material-ui/core';
+import { FormControl, Select, MenuItem, makeStyles } from '@material-ui/core';
 
 const Component = ({ value, options, handleChange }) => {
   const useStyles = makeStyles(theme => ({
@@ -28,18 +23,20 @@ const Component = ({ value, options, handleChange }) => {
         onChange={handleChange}
       >
         {options.map(({ id, text }) => (
-          <MenuItem key={id} value={id}>{text}</MenuItem>
+          <MenuItem key={id} value={id}>
+            {text}
+          </MenuItem>
         ))}
       </Select>
     </FormControl>
   );
-}
+};
 
 Component.defaultProps = {
   label: '',
   value: 0,
   options: [],
-  handleChange: () => { },
+  handleChange: () => {},
 };
 
 Component.propTypes = {
