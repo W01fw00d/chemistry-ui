@@ -20,6 +20,7 @@ const literals = {
 
 const details = allData[0];
 const data = {
+  name: 'Item Name',
   image: itemImage,
   price: details.price,
   isGroupPrice: details.isGroupPrice,

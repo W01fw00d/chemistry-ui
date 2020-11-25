@@ -13,6 +13,7 @@ const Component = ({ literals }) => {
       textAlign: 'center',
       fontWeight: 'bold',
       marginTop: '15px',
+      color: theme.palette.primary.dark,
     },
   });
   const classes = useStyles();
@@ -20,7 +21,7 @@ const Component = ({ literals }) => {
   return (
     <ThemeProvider theme={theme}>
       <Header name={literals.goHome} />
-      <Typography variant="h6" color="inherit" className={classes.notFound}>
+      <Typography variant="h6" className={classes.notFound}>
         {literals.notFound}
       </Typography>
     </ThemeProvider>

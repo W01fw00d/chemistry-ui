@@ -22,6 +22,10 @@ const Component = ({ name, handleClick }) => {
     name: {
       textAlign: 'center',
       fontWeight: 'bold',
+      color: theme.palette.primary.dark,
+    },
+    icon: {
+      color: theme.palette.primary.dark,
     },
   }));
   const classes = useStyles();
@@ -31,11 +35,11 @@ const Component = ({ name, handleClick }) => {
       <Grid container alignItems="center" className={classes.layout}>
         <Grid item xs={2} container justify="center">
           <InternalLink id="back" to="/">
-            <ArrowBackIcon />
+            <ArrowBackIcon className={classes.icon} />
           </InternalLink>
         </Grid>
         <Grid item xs={6}>
-          <Typography variant="h6" color="inherit" className={classes.name}>
+          <Typography variant="h6" className={classes.name}>
             {name}
           </Typography>
         </Grid>
