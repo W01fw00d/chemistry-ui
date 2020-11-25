@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import { FavoriteBorder as LikeIcon } from '@material-ui/icons';
 
+import Grid from '../../../atoms/layout/grid.jsx';
 import Typography from '../../../atoms/typography.jsx';
 
 const Component = ({ data }) => {

@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
+import Grid from '../../../atoms/layout/grid.jsx';
 import AppBar from '../../../molecules/layout/appBar.jsx';
 import Toolbar from '../../../molecules/recipe/list/toolbar.jsx';
 
