@@ -20,10 +20,30 @@ const Component = ({ className, ingredients }) => {
 
   let rowCounter = -1;
 
+  let sectionsIngredients = [];
+
   const [checked, setChecked] = useState([]);
+  const [checkedSections, setCheckedSections] = useState([]);
+
   const handleToggle = value => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
+
+    const checkCompleteSection = () => {
+      const newCheckedSections = checkedSections;
+
+      const currentSectionIndex = sectionsIngredients.findIndex(
+        section => section.indexOf(value) !== -1
+      );
+
+      if (sectionsIngredients[currentSectionIndex].every(
+        ingredient => newChecked.includes(ingredient)
+      )) {
+        newCheckedSections.push(currentSectionIndex);
+      };
+
+      setCheckedSections(newCheckedSections);
+    }
 
     if (currentIndex === -1) {
       newChecked.push(value);
@@ -32,12 +52,12 @@ const Component = ({ className, ingredients }) => {
     }
 
     setChecked(newChecked);
+    checkCompleteSection();
   };
 
-  const [isSectionChecked, setIsSectionChecked] = useState([]);
   const handleSectionToggle = value => () => {
-    const currentIndex = isSectionChecked.indexOf(value);
-    const newChecked = [...isSectionChecked];
+    const currentIndex = checkedSections.indexOf(value);
+    const newChecked = [...checkedSections];
 
     if (currentIndex === -1) {
       newChecked.push(value);
@@ -45,19 +65,22 @@ const Component = ({ className, ingredients }) => {
       newChecked.splice(currentIndex, 1);
     }
 
-    setIsSectionChecked(newChecked);
+    setCheckedSections(newChecked);
   };
 
   return ingredients && ingredients.length > 0 ? (
-    ingredients.map((ingredient, index) => (
-      <Section
+    ingredients.map((ingredient, index) => {
+      sectionsIngredients[index] = [];
+
+      return <Section
         {...ingredient}
-        key={`${index}-${rowCounter}`}
+        key={`${index}`}
         className={className}
-        value={isSectionChecked.indexOf(index) !== -1}
+        value={checkedSections.indexOf(index) !== -1}
         handleClick={handleSectionToggle(index)}
         renderItem={(item, itemIndex) => {
           rowCounter += 1;
+          sectionsIngredients[index].push(rowCounter);
 
           return (
             <Item
@@ -69,8 +92,8 @@ const Component = ({ className, ingredients }) => {
             />
           );
         }}
-      />
-    ))
+      />;
+    })
   ) : (
       <Typography variant="body1" className={classes.message}>
         No ingredients required
