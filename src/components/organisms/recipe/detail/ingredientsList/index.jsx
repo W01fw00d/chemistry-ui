@@ -21,7 +21,6 @@ const Component = ({ className, ingredients }) => {
   let rowCounter = -1;
 
   const [checked, setChecked] = useState([]);
-
   const handleToggle = value => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
@@ -35,12 +34,28 @@ const Component = ({ className, ingredients }) => {
     setChecked(newChecked);
   };
 
+  const [isSectionChecked, setIsSectionChecked] = useState([]);
+  const handleSectionToggle = value => () => {
+    const currentIndex = isSectionChecked.indexOf(value);
+    const newChecked = [...isSectionChecked];
+
+    if (currentIndex === -1) {
+      newChecked.push(value);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
+
+    setIsSectionChecked(newChecked);
+  };
+
   return ingredients && ingredients.length > 0 ? (
     ingredients.map((ingredient, index) => (
       <Section
         {...ingredient}
         key={`${index}-${rowCounter}`}
         className={className}
+        value={isSectionChecked.indexOf(index) !== -1}
+        handleClick={handleSectionToggle(index)}
         renderItem={(item, itemIndex) => {
           rowCounter += 1;
 
@@ -57,10 +72,10 @@ const Component = ({ className, ingredients }) => {
       />
     ))
   ) : (
-    <Typography variant="body1" className={classes.message}>
-      No ingredients required
-    </Typography>
-  );
+      <Typography variant="body1" className={classes.message}>
+        No ingredients required
+      </Typography>
+    );
 };
 
 Component.defaultProps = {

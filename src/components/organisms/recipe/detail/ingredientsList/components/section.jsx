@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, List, ListSubheader as Subheader } from '@material-ui/core';
+import { makeStyles, List, ListItem as Item, ListSubheader as Subheader } from '@material-ui/core';
 
-const Component = ({ sectionName, items, className, renderItem }) => {
+import Checkbox from '../../../../list/item/checkbox.jsx';
+
+const Component = ({ sectionName, items, className, renderItem, value, handleClick }) => {
   const useStyles = makeStyles(theme => ({
     root: {
       width: '100%',
@@ -18,21 +20,25 @@ const Component = ({ sectionName, items, className, renderItem }) => {
   const classes = useStyles();
 
   return (
-    <List
-      className={`${classes.root} ${className}`}
-      subheader={
-        <Subheader component="div" className={`${classes.subheader}`}>
-          {sectionName}
-        </Subheader>
-      }
-    >
-      {items.map(renderItem)}
-    </List>
+    sectionName ?
+      <List
+        className={`${classes.root} ${className}`}
+        subheader={
+          <Item role={undefined} dense button onClick={handleClick}>
+            <Checkbox value={value} text={sectionName} />
+          </Item>
+        }
+      >
+        {items.map(renderItem)}
+      </List > :
+      <List className={`${classes.root} ${className}`}>
+        {items.map(renderItem)}
+      </List >
   );
 };
 
 Component.defaultProps = {
-  renderItem: () => {},
+  renderItem: () => { },
 };
 
 Component.propTypes = {
