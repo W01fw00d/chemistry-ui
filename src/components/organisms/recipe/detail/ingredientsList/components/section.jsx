@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, List, ListItem as Item, ListSubheader as Subheader } from '@material-ui/core';
+import { makeStyles, List, ListItem as Item, ListItemText as Text, Collapse } from '@material-ui/core';
 
-import Checkbox from '../../../../list/item/checkbox.jsx';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
 
 const Component = ({ sectionName, items, className, renderItem, value, handleClick }) => {
   const useStyles = makeStyles(theme => ({
@@ -16,6 +17,9 @@ const Component = ({ sectionName, items, className, renderItem, value, handleCli
       color: '#A9A8AD',
       'font-size': 'medium',
     },
+    icon: {
+      color: theme.palette.primary.dark,
+    },
   }));
   const classes = useStyles();
 
@@ -25,11 +29,14 @@ const Component = ({ sectionName, items, className, renderItem, value, handleCli
         className={`${classes.root} ${className}`}
         subheader={
           <Item role={undefined} dense button onClick={handleClick}>
-            <Checkbox value={value} text={sectionName} />
+            <Text primary={sectionName} />
+            {!value ? <ExpandLess className={classes.icon} /> : <ExpandMore className={classes.icon} />}
           </Item>
         }
       >
-        {items.map(renderItem)}
+        <Collapse in={!value} timeout="auto" unmountOnExit>
+          {items.map(renderItem)}
+        </Collapse>
       </List > :
       <List className={`${classes.root} ${className}`}>
         {items.map(renderItem)}

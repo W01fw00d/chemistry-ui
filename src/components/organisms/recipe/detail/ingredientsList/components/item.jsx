@@ -10,7 +10,7 @@ import Checkbox from '../../../../list/item/checkbox.jsx';
 const Component = ({ name, emoji, quantity, isOptional, alternatives, value, handleClick }) => {
   const useStyles = makeStyles({
     item: {
-      paddingLeft: '64px',
+      paddingLeft: '32px',
     },
   });
   const classes = useStyles();
