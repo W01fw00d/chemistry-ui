@@ -16,6 +16,9 @@ const Component = ({ sectionName, description, items, className, renderItem, val
     icon: {
       color: theme.palette.primary.dark,
     },
+    item: {
+      paddingLeft: '32px',
+    },
   }));
   const classes = useStyles();
 
@@ -38,7 +41,7 @@ const Component = ({ sectionName, description, items, className, renderItem, val
       >
         {description &&
           <Collapse in={!value} timeout="auto" unmountOnExit>
-            <Item role={undefined} dense>
+            <Item role={undefined} dense className={classes.item}>
               <Text primary={description} />
             </Item>
           </Collapse>
