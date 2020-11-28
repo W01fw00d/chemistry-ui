@@ -6,11 +6,11 @@ import List from '../../../list/index.jsx';
 import Section from './components/section.jsx';
 import Item from './components/item.jsx';
 
-const Component = ({ className, ingredients }) => (
+const Component = ({ noItemsMsg, className, ingredients }) => (
   <List
     className={className}
     items={ingredients}
-    noItemsMsg="No ingredients required"
+    noItemsMsg={noItemsMsg}
     Section={props => <Section {...props} />}
     Item={props => <Item {...props} item={null} {...props.item} />}
   />
@@ -22,6 +22,7 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
+  noItemsMsg: PropTypes.string,
   className: PropTypes.string,
   ingredients: PropTypes.array,
 };
