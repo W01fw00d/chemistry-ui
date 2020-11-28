@@ -5,8 +5,8 @@ import { makeStyles, AppBar, Tabs, Tab } from '@material-ui/core';
 
 import Panel from './components/panel';
 
-const Component = ({ tabsData }) => {
-  const useStyles = makeStyles((theme) => ({
+const Component = ({ data }) => {
+  const useStyles = makeStyles(theme => ({
     root: {
       flexGrow: 1,
       width: '100%',
@@ -21,7 +21,7 @@ const Component = ({ tabsData }) => {
     setValue(newValue);
   };
 
-  const getTabId = (index) => ({
+  const getTabId = index => ({
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
   });
@@ -32,30 +32,31 @@ const Component = ({ tabsData }) => {
         <Tabs
           value={value}
           onChange={handleChange}
+          centered
           indicatorColor="primary"
-          textColor="primary"
+          textColor="secondary"
           aria-label="simple tabs example"
         >
-          {tabsData.map((tab, index) =>
+          {data.map((tab, index) => (
             <Tab key={index} {...tab} {...getTabId(index)} />
-          )}
+          ))}
         </Tabs>
       </AppBar>
-      {tabsData.map(({ content }, index) =>
+      {data.map(({ content }, index) => (
         <Panel key={index} value={value} index={index}>
           {content}
         </Panel>
-      )}
+      ))}
     </div>
   );
 };
 
 Component.defaultProps = {
-  tabsData: [],
+  data: [],
 };
 
 Component.propTypes = {
-  tabsData: PropTypes.array,
+  data: PropTypes.array,
 };
 
 export default Component;

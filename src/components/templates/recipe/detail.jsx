@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 
 import { ThemeProvider, makeStyles } from '@material-ui/core';
 
+import { Kitchen as KitchenIcon, Fastfood as FastfoodIcon } from '@material-ui/icons';
+
 import theme from '../../../styles/global-styles';
 
 import Image from '../../atoms/image.jsx';
 import Header from '../../organisms/recipe/detail/header.jsx';
 import IngredientsList from '../../organisms/recipe/detail/ingredientsList/index.jsx';
 import StepsList from '../../organisms/recipe/detail/stepsList/index.jsx';
+import Tabs from '../../molecules/panels/tabs/index.jsx';
 
 const Component = ({ literals, data, handleClick }) => {
   const useStyles = makeStyles({
@@ -18,21 +21,41 @@ const Component = ({ literals, data, handleClick }) => {
   });
   const classes = useStyles();
 
+  const RecipeTabs = () => {
+    const tabsData = [
+      {
+        icon: <KitchenIcon />,
+        label: literals.ingredients,
+        content: (
+          <IngredientsList
+            noItemsMsg={literals.noIngredients}
+            className={classes.marginBottom}
+            ingredients={data.ingredients}
+          />
+        ),
+      },
+      {
+        icon: <FastfoodIcon />,
+        label: literals.steps,
+        content: (
+          <StepsList
+            noItemsMsg={literals.noSteps}
+            className={classes.marginBottom}
+            steps={data.steps}
+          />
+        ),
+      },
+    ];
+
+    return <Tabs data={tabsData} />;
+  };
+
   return (
     data && (
       <ThemeProvider theme={theme}>
         <Header name={data.name} handleClick={handleClick} />
         <Image src={data.image} alt={data.name} />
-        <IngredientsList
-          noItemsMsg={literals.noIngredients}
-          className={classes.marginBottom}
-          ingredients={data.ingredients}
-        />
-        <StepsList
-          noItemsMsg={literals.noSteps}
-          className={classes.marginBottom}
-          steps={data.steps}
-        />
+        <RecipeTabs />
       </ThemeProvider>
     )
   );

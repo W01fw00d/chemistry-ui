@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Typography, Box } from '@material-ui/core';
-
 const Component = ({ children, value, index, ...other }) => (
   <div
     role="tabpanel"
@@ -11,16 +9,11 @@ const Component = ({ children, value, index, ...other }) => (
     aria-labelledby={`simple-tab-${index}`}
     {...other}
   >
-    {value === index && (
-      <Box p={3}>
-        <Typography>{children}</Typography>
-      </Box>
-    )}
+    {value === index && children}
   </div>
 );
 
 Component.defaultProps = {
-  tabsData: [],
   value: 0,
   index: 0,
 };

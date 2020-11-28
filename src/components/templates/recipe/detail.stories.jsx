@@ -29,8 +29,17 @@ const getData = ({ name, ingredients }) => ({
   ],
 });
 
+const literals = {
+  ingredients: 'Ingredients',
+  steps: 'Steps',
+};
+
 storiesOf('Templates/[Recipe]/Detail', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
-    <Component data={getData(allData[0])} handleClick={action('Button clicked')} />
+    <Component
+      literals={literals}
+      data={getData(allData[0])}
+      handleClick={action('Button clicked')}
+    />
   ));
