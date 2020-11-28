@@ -1,23 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles } from '@material-ui/core';
-
-import Typography from '../../../../atoms/typography.jsx';
+import NoItems from '../../../list/noItems.jsx';
 
 import Section from './components/section.jsx';
 import Item from './components/item.jsx';
 
 const Component = ({ className, ingredients }) => {
-  const useStyles = makeStyles(theme => ({
-    message: {
-      color: theme.palette.primary.dark,
-      textAlign: 'center',
-      paddingBottom: '20px',
-    },
-  }));
-  const classes = useStyles();
-
   let rowCounter = -1;
 
   let sectionsIngredients = [];
@@ -95,9 +84,9 @@ const Component = ({ className, ingredients }) => {
       />;
     })
   ) : (
-      <Typography variant="body1" className={classes.message}>
+      <NoItems>
         No ingredients required
-      </Typography>
+      </NoItems>
     );
 };
 
