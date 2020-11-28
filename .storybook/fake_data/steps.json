@@ -14,9 +14,9 @@
   {
     "id": 2,
     "sectionName": "_Markdown_",
-    "description": "Para acompañar este postre tan contundente recomiendo algo refrescante como alguna fruta con zumo de limón y hierbas fresca. En esta ocasión hemos elegido naranjas y hierbabuena.",
+    "description": "Para _acompañar_ este **postre** tan contundente recomiendo algo refrescante como alguna fruta con zumo de limón y hierbas fresca. En esta ocasión hemos elegido naranjas y hierbabuena.",
     "items": [
-      "Para ello cortaremos las **naranjas** con gajos en vivo. Es decir, pelar la **naranja** a cuchillo quitando la piel y la parte blanca; y sacar cada gajo _(separados por las membranas blancas)_ con el cuchillo.",
+      "Para ello _cortaremos_ las **naranjas** con gajos en vivo. Es decir, pelar la **naranja** a cuchillo quitando la piel y la parte blanca; y sacar cada gajo _(separados por las membranas blancas)_ con el cuchillo.",
       "Con los restos de **naranja** que nos sobran los exprimimos con las manos mismas. Juntamos este zumo con los gajos.",
       "_Por último_, para darle aún un toque más fresco, picamos _un poco_ de hierbabuena."
     ]
@@ -25,5 +25,9 @@
     "id": 3,
     "sectionName": "Finalización",
     "description": "Recuerda que el coulant se debe comer cuando está aún caliente y con la guarnición fresquita."
+  },
+  {
+    "id": 4,
+    "sectionName": "Section name"
   }
 ]

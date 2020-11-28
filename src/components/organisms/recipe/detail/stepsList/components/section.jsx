@@ -1,15 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  makeStyles,
-  List,
-  ListSubheader as Subheader,
-  ListItem as Item,
-  ListItemText as Text,
-} from '@material-ui/core';
-
 import MarkdownText from '../../../../../atoms/markdownText.jsx';
+
+import Section from '../../../../list/section.jsx';
 
 const Component = ({
   index,
@@ -19,45 +13,27 @@ const Component = ({
   items,
   className,
   renderItem,
-}) => {
-  const useStyles = makeStyles(theme => ({
-    root: {
-      width: '100%',
-      backgroundColor: theme.palette.background.paper,
-      'margin-bottom': 0,
-    },
-    subheader: {
-      color: '#A9A8AD',
-      'font-size': 'medium',
-    },
-  }));
-  const classes = useStyles();
-
-  return (
-    <List
-      className={`${classes.root} ${className}`}
-      subheader={
-        sectionName && (
-          <Subheader component="div" className={`${classes.subheader}`}>
-            <MarkdownText id={`${index}-${rowCounter}-subheader`} text={sectionName} />
-          </Subheader>
-        )
-      }
-    >
-      {description && (
-        <Item role={undefined} dense>
-          <Text
-            primary={<MarkdownText id={`${index}-${rowCounter}-description`} text={description} />}
-          />
-        </Item>
-      )}
-      {items && items.map(renderItem)}
-    </List>
-  );
-};
+  value,
+  handleClick,
+}) => (
+  <Section
+    sectionName={
+      sectionName && <MarkdownText id={`${index}-${rowCounter}-subheader`} text={sectionName} />
+    }
+    description={
+      description && <MarkdownText id={`${index}-${rowCounter}-description`} text={description} />
+    }
+    items={items}
+    className={className}
+    renderItem={renderItem}
+    value={value}
+    handleClick={handleClick}
+  />
+);
 
 Component.defaultProps = {
   renderItem: () => {},
+  handleClick: () => {},
 };
 
 Component.propTypes = {
@@ -68,6 +44,8 @@ Component.propTypes = {
   items: PropTypes.array,
   className: PropTypes.string,
   renderItem: PropTypes.any,
+  value: PropTypes.bool,
+  handleClick: PropTypes.func,
 };
 
 export default Component;

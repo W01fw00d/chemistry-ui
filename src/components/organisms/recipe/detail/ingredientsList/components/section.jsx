@@ -1,38 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, List, ListSubheader as Subheader } from '@material-ui/core';
+import Section from '../../../../list/section.jsx';
 
-const Component = ({ sectionName, items, className, renderItem }) => {
-  const useStyles = makeStyles(theme => ({
-    root: {
-      width: '100%',
-      backgroundColor: theme.palette.background.paper,
-      'margin-bottom': 0,
-    },
-    subheader: {
-      color: '#A9A8AD',
-      'font-size': 'medium',
-    },
-  }));
-  const classes = useStyles();
-
-  return (
-    <List
-      className={`${classes.root} ${className}`}
-      subheader={
-        <Subheader component="div" className={`${classes.subheader}`}>
-          {sectionName}
-        </Subheader>
-      }
-    >
-      {items.map(renderItem)}
-    </List>
-  );
-};
+const Component = ({ sectionName, items, className, renderItem, value, handleClick }) => (
+  <Section
+    sectionName={sectionName}
+    items={items}
+    className={className}
+    renderItem={renderItem}
+    value={value}
+    handleClick={handleClick}
+  />
+);
 
 Component.defaultProps = {
   renderItem: () => {},
+  handleClick: () => {},
 };
 
 Component.propTypes = {
@@ -40,6 +24,8 @@ Component.propTypes = {
   items: PropTypes.array,
   className: PropTypes.string,
   renderItem: PropTypes.any,
+  value: PropTypes.bool,
+  handleClick: PropTypes.func,
 };
 
 export default Component;
