@@ -10,7 +10,7 @@ import Header from '../../organisms/recipe/detail/header.jsx';
 import IngredientsList from '../../organisms/recipe/detail/ingredientsList/index.jsx';
 import StepsList from '../../organisms/recipe/detail/stepsList/index.jsx';
 
-const Component = ({ data, handleClick }) => {
+const Component = ({ literals, data, handleClick }) => {
   const useStyles = makeStyles({
     marginBottom: {
       marginBottom: theme.spacing(7),
@@ -23,14 +23,23 @@ const Component = ({ data, handleClick }) => {
       <ThemeProvider theme={theme}>
         <Header name={data.name} handleClick={handleClick} />
         <Image src={data.image} alt={data.name} />
-        <IngredientsList className={classes.marginBottom} ingredients={data.ingredients} />
-        <StepsList className={classes.marginBottom} steps={data.steps} />
+        <IngredientsList
+          noItemsMsg={literals.noIngredients}
+          className={classes.marginBottom}
+          ingredients={data.ingredients}
+        />
+        <StepsList
+          noItemsMsg={literals.noSteps}
+          className={classes.marginBottom}
+          steps={data.steps}
+        />
       </ThemeProvider>
     )
   );
 };
 
 Component.defaultProps = {
+  literals: {},
   data: {
     name: Header.defaultProps.name,
     image: Image.defaultProps.src,
@@ -41,6 +50,7 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
+  literals: PropTypes.any,
   data: PropTypes.shape({
     name: Header.propTypes.name,
     image: Image.propTypes.src,
