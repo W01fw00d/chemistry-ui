@@ -38,7 +38,9 @@ const Component = ({ sectionName, description, items, className, renderItem, val
       >
         {description &&
           <Collapse in={!value} timeout="auto" unmountOnExit>
-            {description}
+            <Item role={undefined} dense>
+              <Text primary={description} />
+            </Item>
           </Collapse>
         }
         {items &&
@@ -48,7 +50,11 @@ const Component = ({ sectionName, description, items, className, renderItem, val
         }
       </List > :
       <List className={`${classes.root} ${className}`}>
-        {description}
+        {description &&
+          <Item role={undefined} dense>
+            <Text primary={description} />
+          </Item>
+        }
         {items && items.map(renderItem)}
       </List >
   );
@@ -56,6 +62,7 @@ const Component = ({ sectionName, description, items, className, renderItem, val
 
 Component.defaultProps = {
   renderItem: () => { },
+  handleClick: () => { },
 };
 
 Component.propTypes = {
@@ -64,6 +71,8 @@ Component.propTypes = {
   items: PropTypes.array,
   className: PropTypes.string,
   renderItem: PropTypes.any,
+  value: PropTypes.bool,
+  handleClick: PropTypes.func,
 };
 
 export default Component;

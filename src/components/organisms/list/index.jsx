@@ -5,8 +5,7 @@ import NoItems from './noItems.jsx';
 
 const Component = ({ className, items, noItemsMsg, Section, Item }) => {
   let rowCounter = -1;
-
-  let sectionsIngredients = [];
+  let sectionsItems = [];
 
   const [checked, setChecked] = useState([]);
   const [checkedSections, setCheckedSections] = useState([]);
@@ -18,12 +17,12 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
     const checkCompleteSection = () => {
       const newCheckedSections = checkedSections;
 
-      const currentSectionIndex = sectionsIngredients.findIndex(
+      const currentSectionIndex = sectionsItems.findIndex(
         section => section.indexOf(value) !== -1
       );
 
-      if (sectionsIngredients[currentSectionIndex].every(
-        ingredient => newChecked.includes(ingredient)
+      if (sectionsItems[currentSectionIndex].every(
+        item => newChecked.includes(item)
       )) {
         newCheckedSections.push(currentSectionIndex);
       };
@@ -56,8 +55,8 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
 
   return items && items.length > 0 ? (
     items.map((section, index) => {
-      sectionsIngredients[index] = [];
-      console.log('generic Index items', section);
+      sectionsItems[index] = [];
+
       return <Section
         {...section}
         key={`${index}`}
@@ -68,7 +67,7 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
         handleClick={handleSectionToggle(index)}
         renderItem={(item, itemIndex) => {
           rowCounter += 1;
-          sectionsIngredients[index].push(rowCounter);
+          sectionsItems[index].push(rowCounter);
 
           return item &&
             <Item
@@ -89,11 +88,16 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
 Component.defaultProps = {
   className: '',
   items: [],
+  Section: () => { },
+  Item: () => { },
 };
 
 Component.propTypes = {
   className: PropTypes.string,
   items: PropTypes.array,
+  noItemsMsg: PropTypes.string,
+  Section: PropTypes.any,
+  Item: PropTypes.any,
 };
 
 export default Component;

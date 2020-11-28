@@ -3,17 +3,16 @@ import PropTypes from 'prop-types';
 
 import Section from '../../../../list/section.jsx';
 
-const Component = ({ sectionName, items, className, renderItem, value, handleClick }) => {
-  return (
-    <Section
-      sectionName={sectionName}
-      items={items} className={className} renderItem={renderItem} value={value} handleClick={handleClick}
-    />
-  );
-};
+const Component = ({ sectionName, items, className, renderItem, value, handleClick }) => (
+  <Section
+    sectionName={sectionName}
+    items={items} className={className} renderItem={renderItem} value={value} handleClick={handleClick}
+  />
+);
 
 Component.defaultProps = {
   renderItem: () => { },
+  handleClick: () => { },
 };
 
 Component.propTypes = {
@@ -21,6 +20,8 @@ Component.propTypes = {
   items: PropTypes.array,
   className: PropTypes.string,
   renderItem: PropTypes.any,
+  value: PropTypes.bool,
+  handleClick: PropTypes.func,
 };
 
 export default Component;

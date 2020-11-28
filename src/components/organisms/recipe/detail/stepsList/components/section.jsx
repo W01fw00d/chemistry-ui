@@ -1,12 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  makeStyles,
-  ListItem as Item,
-  ListItemText as Text,
-} from '@material-ui/core';
-
 import MarkdownText from '../../../../../atoms/markdownText.jsx';
 
 import Section from '../../../../list/section.jsx';
@@ -19,27 +13,23 @@ const Component = ({
   items,
   className,
   renderItem,
-  value, handleClick
-}) => {
-  return (
+  value,
+  handleClick
+}) => (
     <Section
       sectionName={sectionName &&
         <MarkdownText id={`${index}-${rowCounter}-subheader`} text={sectionName} />
       }
-      description={description && (
-        <Item role={undefined} dense>
-          <Text
-            primary={<MarkdownText id={`${index}-${rowCounter}-description`} text={description} />}
-          />
-        </Item>
-      )}
+      description={description &&
+        <MarkdownText id={`${index}-${rowCounter}-description`} text={description} />
+      }
       items={items} className={className} renderItem={renderItem} value={value} handleClick={handleClick}
     />
   );
-};
 
 Component.defaultProps = {
   renderItem: () => { },
+  handleClick: () => { },
 };
 
 Component.propTypes = {
@@ -50,6 +40,8 @@ Component.propTypes = {
   items: PropTypes.array,
   className: PropTypes.string,
   renderItem: PropTypes.any,
+  value: PropTypes.bool,
+  handleClick: PropTypes.func,
 };
 
 export default Component;

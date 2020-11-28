@@ -6,15 +6,15 @@ import List from '../../../list/index.jsx';
 import Section from './components/section.jsx';
 import Item from './components/item.jsx';
 
-const Component = ({ className, steps }) => {
-  return <List
+const Component = ({ className, steps }) => (
+  <List
     className={className}
     items={steps}
     noItemsMsg='No steps required'
     Section={(props) => <Section {...props} />}
     Item={(props) => <Item {...props} />}
-  />;
-};
+  />
+);
 
 Component.defaultProps = {
   className: '',
