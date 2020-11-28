@@ -6,9 +6,9 @@ import { ListItem as Item } from '@material-ui/core';
 import Checkbox from '../../../../list/item/checkbox.jsx';
 import MarkdownText from '../../../../../atoms/markdownText.jsx';
 
-const Component = ({ index, rowCounter, step, value, handleClick }) => (
+const Component = ({ index, rowCounter, item, value, handleClick }) => (
   <Item role={undefined} dense button onClick={handleClick}>
-    <Checkbox value={value} text={<MarkdownText id={`${index}-${rowCounter}`} text={step} />} />
+    <Checkbox value={value} text={<MarkdownText id={`${index}-${rowCounter}`} text={item} />} />
   </Item>
 );
 

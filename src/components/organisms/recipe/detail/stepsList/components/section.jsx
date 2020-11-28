@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import {
   makeStyles,
-  List,
-  ListSubheader as Subheader,
   ListItem as Item,
   ListItemText as Text,
 } from '@material-ui/core';
 
 import MarkdownText from '../../../../../atoms/markdownText.jsx';
+
+import Section from '../../../../list/section.jsx';
 
 const Component = ({
   index,
@@ -19,45 +19,27 @@ const Component = ({
   items,
   className,
   renderItem,
+  value, handleClick
 }) => {
-  const useStyles = makeStyles(theme => ({
-    root: {
-      width: '100%',
-      backgroundColor: theme.palette.background.paper,
-      'margin-bottom': 0,
-    },
-    subheader: {
-      color: '#A9A8AD',
-      'font-size': 'medium',
-    },
-  }));
-  const classes = useStyles();
-
   return (
-    <List
-      className={`${classes.root} ${className}`}
-      subheader={
-        sectionName && (
-          <Subheader component="div" className={`${classes.subheader}`}>
-            <MarkdownText id={`${index}-${rowCounter}-subheader`} text={sectionName} />
-          </Subheader>
-        )
+    <Section
+      sectionName={sectionName &&
+        <MarkdownText id={`${index}-${rowCounter}-subheader`} text={sectionName} />
       }
-    >
-      {description && (
+      description={description && (
         <Item role={undefined} dense>
           <Text
             primary={<MarkdownText id={`${index}-${rowCounter}-description`} text={description} />}
           />
         </Item>
       )}
-      {items && items.map(renderItem)}
-    </List>
+      items={items} className={className} renderItem={renderItem} value={value} handleClick={handleClick}
+    />
   );
 };
 
 Component.defaultProps = {
-  renderItem: () => {},
+  renderItem: () => { },
 };
 
 Component.propTypes = {
