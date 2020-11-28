@@ -38,7 +38,7 @@ const Component = ({
     <List
       className={`${classes.root} ${className}`}
       subheader={
-        <Item isSubheader onClick={hasExpandAction && handleClick}>
+        <Item isSubheader onClick={hasExpandAction ? handleClick : undefined}>
           <Text primary={sectionName} />
           {hasExpandAction && renderExpandIcon()}
         </Item>
