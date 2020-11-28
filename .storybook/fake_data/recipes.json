@@ -46,7 +46,7 @@
             "alternatives": [
               {
                 "code": "code3",
-                "name": "Ingredient name 3"
+                "name": "Alternative 1"
               }
             ]
           },
@@ -57,11 +57,11 @@
             "alternatives": [
               {
                 "code": "code4",
-                "name": "Ingredient name 4"
+                "name": "Alternative 1"
               },
               {
                 "code": "code5",
-                "name": "Ingredient name 5"
+                "name": "Alternative 2"
               }
             ]
           },
