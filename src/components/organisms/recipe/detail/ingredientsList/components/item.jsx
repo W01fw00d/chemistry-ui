@@ -13,7 +13,7 @@ const Component = ({ name, emoji, quantity, isOptional, alternatives, value, han
   label = quantity ? `${quantity} ${label}` : label;
 
   return (
-    <Item onClick={handleClick} >
+    <Item onClick={handleClick}>
       <Checkbox value={value} text={isOptional ? `{${label}}` : `${label}`} />
       {alternatives && alternatives.length > 0 && (
         <Action>

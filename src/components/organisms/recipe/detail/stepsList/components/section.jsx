@@ -14,22 +14,26 @@ const Component = ({
   className,
   renderItem,
   value,
-  handleClick
+  handleClick,
 }) => (
-    <Section
-      sectionName={sectionName &&
-        <MarkdownText id={`${index}-${rowCounter}-subheader`} text={sectionName} />
-      }
-      description={description &&
-        <MarkdownText id={`${index}-${rowCounter}-description`} text={description} />
-      }
-      items={items} className={className} renderItem={renderItem} value={value} handleClick={handleClick}
-    />
-  );
+  <Section
+    sectionName={
+      sectionName && <MarkdownText id={`${index}-${rowCounter}-subheader`} text={sectionName} />
+    }
+    description={
+      description && <MarkdownText id={`${index}-${rowCounter}-description`} text={description} />
+    }
+    items={items}
+    className={className}
+    renderItem={renderItem}
+    value={value}
+    handleClick={handleClick}
+  />
+);
 
 Component.defaultProps = {
-  renderItem: () => { },
-  handleClick: () => { },
+  renderItem: () => {},
+  handleClick: () => {},
 };
 
 Component.propTypes = {

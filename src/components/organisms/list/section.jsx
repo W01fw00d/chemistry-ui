@@ -1,12 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, List, ListItem as Item, ListItemText as Text, Collapse } from '@material-ui/core';
+import { makeStyles, List, ListItemText as Text, Collapse } from '@material-ui/core';
 
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 
-const Component = ({ sectionName, description, items, className, renderItem, value, handleClick }) => {
+import Item from './item/index.jsx';
+
+const Component = ({
+  sectionName,
+  description,
+  items,
+  className,
+  renderItem,
+  value,
+  handleClick,
+}) => {
   const useStyles = makeStyles(theme => ({
     root: {
       width: '100%',
@@ -16,56 +26,52 @@ const Component = ({ sectionName, description, items, className, renderItem, val
     icon: {
       color: theme.palette.primary.dark,
     },
-    item: {
-      paddingLeft: '32px',
-    },
   }));
   const classes = useStyles();
 
   const hasExpandAction = !!items || !!description;
 
-  const renderExpandIcon = () => !value ?
-    <ExpandLess className={classes.icon} /> :
-    <ExpandMore className={classes.icon} />
+  const renderExpandIcon = () =>
+    !value ? <ExpandLess className={classes.icon} /> : <ExpandMore className={classes.icon} />;
 
-  return (
-    sectionName ?
-      <List
-        className={`${classes.root} ${className}`}
-        subheader={
-          <Item role={undefined} dense button onClick={hasExpandAction ? handleClick : () => { }}>
-            <Text primary={sectionName} />
-            {hasExpandAction && renderExpandIcon()}
-          </Item>
-        }
-      >
-        {description &&
-          <Collapse in={!value} timeout="auto" unmountOnExit>
-            <Item role={undefined} dense className={classes.item}>
-              <Text primary={description} />
-            </Item>
-          </Collapse>
-        }
-        {items &&
-          <Collapse in={!value} timeout="auto" unmountOnExit>
-            {items.map(renderItem)}
-          </Collapse>
-        }
-      </List > :
-      <List className={`${classes.root} ${className}`}>
-        {description &&
-          <Item role={undefined} dense>
+  return sectionName ? (
+    <List
+      className={`${classes.root} ${className}`}
+      subheader={
+        <Item isSubheader onClick={hasExpandAction && handleClick}>
+          <Text primary={sectionName} />
+          {hasExpandAction && renderExpandIcon()}
+        </Item>
+      }
+    >
+      {description && (
+        <Collapse in={!value} timeout="auto" unmountOnExit>
+          <Item>
             <Text primary={description} />
           </Item>
-        }
-        {items && items.map(renderItem)}
-      </List >
+        </Collapse>
+      )}
+      {items && (
+        <Collapse in={!value} timeout="auto" unmountOnExit>
+          {items.map(renderItem)}
+        </Collapse>
+      )}
+    </List>
+  ) : (
+    <List className={`${classes.root} ${className}`}>
+      {description && (
+        <Item>
+          <Text primary={description} />
+        </Item>
+      )}
+      {items && items.map(renderItem)}
+    </List>
   );
 };
 
 Component.defaultProps = {
-  renderItem: () => { },
-  handleClick: () => { },
+  renderItem: () => {},
+  handleClick: () => {},
 };
 
 Component.propTypes = {

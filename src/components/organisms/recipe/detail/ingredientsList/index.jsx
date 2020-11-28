@@ -10,9 +10,9 @@ const Component = ({ className, ingredients }) => (
   <List
     className={className}
     items={ingredients}
-    noItemsMsg='No ingredients required'
-    Section={(props) => <Section {...props} />}
-    Item={(props) => <Item {...props} item={null} {...props.item} />}
+    noItemsMsg="No ingredients required"
+    Section={props => <Section {...props} />}
+    Item={props => <Item {...props} item={null} {...props.item} />}
   />
 );
 

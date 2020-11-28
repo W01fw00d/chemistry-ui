@@ -25,5 +25,9 @@
     "id": 3,
     "sectionName": "Finalización",
     "description": "Recuerda que el coulant se debe comer cuando está aún caliente y con la guarnición fresquita."
+  },
+  {
+    "id": 4,
+    "sectionName": "Section name"
   }
 ]

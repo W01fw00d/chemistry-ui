@@ -6,13 +6,17 @@ import Section from '../../../../list/section.jsx';
 const Component = ({ sectionName, items, className, renderItem, value, handleClick }) => (
   <Section
     sectionName={sectionName}
-    items={items} className={className} renderItem={renderItem} value={value} handleClick={handleClick}
+    items={items}
+    className={className}
+    renderItem={renderItem}
+    value={value}
+    handleClick={handleClick}
   />
 );
 
 Component.defaultProps = {
-  renderItem: () => { },
-  handleClick: () => { },
+  renderItem: () => {},
+  handleClick: () => {},
 };
 
 Component.propTypes = {

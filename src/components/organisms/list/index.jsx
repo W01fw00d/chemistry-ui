@@ -17,18 +17,14 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
     const checkCompleteSection = () => {
       const newCheckedSections = checkedSections;
 
-      const currentSectionIndex = sectionsItems.findIndex(
-        section => section.indexOf(value) !== -1
-      );
+      const currentSectionIndex = sectionsItems.findIndex(section => section.indexOf(value) !== -1);
 
-      if (sectionsItems[currentSectionIndex].every(
-        item => newChecked.includes(item)
-      )) {
+      if (sectionsItems[currentSectionIndex].every(item => newChecked.includes(item))) {
         newCheckedSections.push(currentSectionIndex);
-      };
+      }
 
       setCheckedSections(newCheckedSections);
-    }
+    };
 
     if (currentIndex === -1) {
       newChecked.push(value);
@@ -57,39 +53,44 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
     items.map((section, index) => {
       sectionsItems[index] = [];
 
-      return <Section
-        {...section}
-        key={`${index}`}
-        index={index}
-        rowCounter={rowCounter}
-        className={className}
-        value={checkedSections.indexOf(index) !== -1}
-        handleClick={handleSectionToggle(index)}
-        renderItem={(item, itemIndex) => {
-          rowCounter += 1;
-          sectionsItems[index].push(rowCounter);
+      return (
+        <Section
+          {...section}
+          key={`${index}`}
+          index={index}
+          rowCounter={rowCounter}
+          className={className}
+          value={checkedSections.indexOf(index) !== -1}
+          handleClick={handleSectionToggle(index)}
+          renderItem={(item, itemIndex) => {
+            rowCounter += 1;
+            sectionsItems[index].push(rowCounter);
 
-          return item &&
-            <Item
-              item={item}
-              key={`${itemIndex}-${rowCounter}`}
-              rowCounter={rowCounter}
-              value={checked.indexOf(rowCounter) !== -1}
-              handleClick={handleToggle(rowCounter)}
-            />;
-        }}
-      />;
+            return (
+              item && (
+                <Item
+                  item={item}
+                  key={`${itemIndex}-${rowCounter}`}
+                  rowCounter={rowCounter}
+                  value={checked.indexOf(rowCounter) !== -1}
+                  handleClick={handleToggle(rowCounter)}
+                />
+              )
+            );
+          }}
+        />
+      );
     })
-  ) : <NoItems>
-      {noItemsMsg}
-    </NoItems>;
+  ) : (
+    <NoItems>{noItemsMsg}</NoItems>
+  );
 };
 
 Component.defaultProps = {
   className: '',
   items: [],
-  Section: () => { },
-  Item: () => { },
+  Section: () => {},
+  Item: () => {},
 };
 
 Component.propTypes = {
