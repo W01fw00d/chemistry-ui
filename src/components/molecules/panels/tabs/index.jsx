@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles, AppBar, Tabs, Tab, Typography, Box } from '@material-ui/core';
+import { makeStyles, AppBar, Tabs, Tab } from '@material-ui/core';
+
+import Panel from './components/panel';
 
 const Component = ({ tabsData }) => {
   const useStyles = makeStyles((theme) => ({
@@ -19,32 +21,10 @@ const Component = ({ tabsData }) => {
     setValue(newValue);
   };
 
-  function a11yProps(index) {
-    return {
-      id: `simple-tab-${index}`,
-      'aria-controls': `simple-tabpanel-${index}`,
-    };
-  }
-
-  function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-
-    return (
-      <div
-        role="tabpanel"
-        hidden={value !== index}
-        id={`simple-tabpanel-${index}`}
-        aria-labelledby={`simple-tab-${index}`}
-        {...other}
-      >
-        {value === index && (
-          <Box p={3}>
-            <Typography>{children}</Typography>
-          </Box>
-        )}
-      </div>
-    );
-  }
+  const getTabId = (index) => ({
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  });
 
   return (
     <div className={classes.root}>
@@ -56,15 +36,15 @@ const Component = ({ tabsData }) => {
           textColor="primary"
           aria-label="simple tabs example"
         >
-          {tabsData.map(({ label, icon }, index) =>
-            <Tab key={index} label={label} icon={icon} {...a11yProps(index)} />
+          {tabsData.map((tab, index) =>
+            <Tab key={index} {...tab} {...getTabId(index)} />
           )}
         </Tabs>
       </AppBar>
       {tabsData.map(({ content }, index) =>
-        <TabPanel key={index} value={value} index={index}>
+        <Panel key={index} value={value} index={index}>
           {content}
-        </TabPanel>
+        </Panel>
       )}
     </div>
   );
