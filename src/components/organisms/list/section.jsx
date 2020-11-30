@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles, List, ListItemText as Text, Collapse } from '@material-ui/core';
 
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
+import { ExpandLess as ExpandLessIcon, ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
 
 import Item from './item/index.jsx';
 
@@ -20,7 +19,6 @@ const Component = ({
   const useStyles = makeStyles(theme => ({
     root: {
       width: '100%',
-      backgroundColor: theme.palette.background.paper,
       'margin-bottom': 0,
     },
     icon: {
@@ -32,7 +30,11 @@ const Component = ({
   const hasExpandAction = !!items || !!description;
 
   const renderExpandIcon = () =>
-    !value ? <ExpandLess className={classes.icon} /> : <ExpandMore className={classes.icon} />;
+    !value ? (
+      <ExpandLessIcon className={classes.icon} />
+    ) : (
+      <ExpandMoreIcon className={classes.icon} />
+    );
 
   return sectionName ? (
     <List
