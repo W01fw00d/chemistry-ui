@@ -33,7 +33,7 @@ const Component = ({ data }) => {
           value={value}
           onChange={handleChange}
           centered
-          indicatorColor="primary"
+          indicatorColor="secondary"
           textColor="secondary"
           aria-label="simple tabs example"
         >

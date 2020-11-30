@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 import { ThemeProvider, makeStyles } from '@material-ui/core';
 
-import { Kitchen as KitchenIcon, Fastfood as FastfoodIcon } from '@material-ui/icons';
+import {
+  Photo as PhotoIcon,
+  Kitchen as KitchenIcon,
+  Fastfood as FastfoodIcon,
+} from '@material-ui/icons';
 
 import theme from '../../../styles/global-styles';
 
@@ -23,6 +27,11 @@ const Component = ({ literals, data, handleClick }) => {
 
   const RecipeTabs = () => {
     const tabsData = [
+      {
+        icon: <PhotoIcon />,
+        label: literals.image,
+        content: <Image src={data.image} alt={data.name} />,
+      },
       {
         icon: <KitchenIcon />,
         label: literals.ingredients,
@@ -54,7 +63,6 @@ const Component = ({ literals, data, handleClick }) => {
     data && (
       <ThemeProvider theme={theme}>
         <Header name={data.name} handleClick={handleClick} />
-        <Image src={data.image} alt={data.name} />
         <RecipeTabs />
       </ThemeProvider>
     )

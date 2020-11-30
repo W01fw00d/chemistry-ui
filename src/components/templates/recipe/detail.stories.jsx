@@ -30,6 +30,7 @@ const getData = ({ name, ingredients }) => ({
 });
 
 const literals = {
+  image: 'Image',
   ingredients: 'Ingredients',
   steps: 'Steps',
 };

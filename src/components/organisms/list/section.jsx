@@ -19,7 +19,6 @@ const Component = ({
   const useStyles = makeStyles(theme => ({
     root: {
       width: '100%',
-      backgroundColor: theme.palette.background.paper,
       'margin-bottom': 0,
     },
     icon: {
