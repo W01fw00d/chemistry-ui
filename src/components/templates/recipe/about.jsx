@@ -40,7 +40,6 @@ const Component = ({ literals, authorData, projectData }) => {
           <p>
             <strong>{literals.participants}</strong>
           </p>
-
           {projectData.participants.map(name => (
             <p key={`${name}`}>{name}</p>
           ))}

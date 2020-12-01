@@ -39,7 +39,7 @@ const Component = ({
           handleChange={handleChange}
           handleClick={handleClick}
           languageData={languageData}
-          literals={{ participants: literals.participants }}
+          aboutLiteral={literals.about}
         />
         {itemList && (
           <ListGrid>

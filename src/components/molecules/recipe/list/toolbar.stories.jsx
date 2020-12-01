@@ -2,6 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import StoryRouter from 'storybook-react-router';
 
 import theme from '../../../../styles/global-styles';
 
@@ -12,8 +13,10 @@ import Component from './toolbar';
 
 storiesOf('Molecules/[Recipe]/List/Toolbar', module)
   .addDecorator(themeDecorator(theme))
+  .addDecorator(StoryRouter())
   .add('default', () => (
     <Component
+      aboutLiteral="About"
       searchValue="Search Value"
       handleChange={action('Input detected')}
       languageData={{

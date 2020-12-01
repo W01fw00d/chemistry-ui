@@ -12,7 +12,7 @@ const Component = ({
   handleChange,
   handleClick,
   languageData,
-  literals,
+  aboutLiteral,
 }) => {
   const useStyles = makeStyles(theme => ({
     appbar: {
@@ -41,12 +41,12 @@ const Component = ({
       <Grid container>
         <Grid item xs={12} className={classes.container}>
           <Toolbar
+            aboutLiteral={aboutLiteral}
             className={classes.toolbar}
             searchValue={searchValue}
             handleChange={handleChange}
             handleClick={handleClick}
             languageData={languageData}
-            literals={literals}
           />
         </Grid>
         {/* TODO: Anchor */}

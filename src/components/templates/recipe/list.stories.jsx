@@ -16,6 +16,7 @@ const getLiterals = ({ difficulty, preparationTime, howManyIngredients, particip
   preparationTime,
   howManyIngredients,
   participants,
+  about: "About",
 });
 
 const formattedRecipes = recipes.map(recipe => ({ ...recipe, image: recipeImage }));
