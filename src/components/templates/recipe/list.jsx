@@ -9,14 +9,7 @@ import ListGrid from '../../molecules/layout/listGrid.jsx';
 import Header from '../../organisms/recipe/list/header.jsx';
 import Item from '../../organisms/recipe/list/item.jsx';
 
-const Component = ({
-  literals,
-  search,
-  itemList,
-  languageData,
-  handleChange,
-  handleClick,
-}) => {
+const Component = ({ literals, search, itemList, languageData, handleChange, handleClick }) => {
   const useStyles = makeStyles({
     layout: {
       backgroundColor: theme.palette.primary.light,
@@ -61,8 +54,8 @@ Component.defaultProps = {
   literals: {},
   search: '',
   itemList: [],
-  handleChange: () => { },
-  handleClick: () => { },
+  handleChange: () => {},
+  handleClick: () => {},
 };
 
 Component.propTypes = {

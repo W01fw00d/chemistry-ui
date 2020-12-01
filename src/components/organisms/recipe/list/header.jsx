@@ -7,13 +7,7 @@ import Grid from '../../../atoms/layout/grid.jsx';
 import AppBar from '../../../molecules/layout/appBar.jsx';
 import Toolbar from '../../../molecules/recipe/list/toolbar.jsx';
 
-const Component = ({
-  searchValue,
-  handleChange,
-  handleClick,
-  languageData,
-  aboutLiteral,
-}) => {
+const Component = ({ searchValue, handleChange, handleClick, languageData, aboutLiteral }) => {
   const useStyles = makeStyles(theme => ({
     appbar: {
       backgroundColor: 'transparent',
@@ -62,8 +56,8 @@ const Component = ({
 
 Component.defaultProps = {
   searchValue: '',
-  handleChange: () => { },
-  handleClick: () => { },
+  handleChange: () => {},
+  handleClick: () => {},
 };
 
 Component.propTypes = {

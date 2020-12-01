@@ -11,13 +11,7 @@ import Link from '../../../atoms/links/internal.jsx';
 
 import DrawerPanel from '../../panels/drawer.jsx';
 
-const Component = ({
-  aboutLiteral,
-  className,
-  searchValue,
-  handleChange,
-  languageData,
-}) => {
+const Component = ({ aboutLiteral, className, searchValue, handleChange, languageData }) => {
   const useStyles = makeStyles({
     wrapper: {
       textAlign: 'center',
@@ -30,13 +24,11 @@ const Component = ({
   const classes = useStyles();
 
   return (
-    <div className={className} >
+    <div className={className}>
       <Grid container alignItems="center">
         <Grid item xs={2} container justify="center">
           <DrawerPanel className={classes.wrapper}>
-            <Link to="/about">
-              {aboutLiteral}
-            </Link>
+            <Link to="/about">{aboutLiteral}</Link>
             <Divider className={classes.divider} />
             <form noValidate autoComplete="off">
               <Select
@@ -55,12 +47,12 @@ const Component = ({
       </Grid>
     </div>
   );
-}
+};
 
 Component.defaultProps = {
   className: '',
   searchValue: null,
-  handleChange: () => { },
+  handleChange: () => {},
 };
 
 Component.propTypes = {
