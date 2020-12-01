@@ -7,16 +7,7 @@ import Grid from '../../../atoms/layout/grid.jsx';
 import AppBar from '../../../molecules/layout/appBar.jsx';
 import Toolbar from '../../../molecules/recipe/list/toolbar.jsx';
 
-const Component = ({
-  authorData,
-  projectData,
-  logo,
-  searchValue,
-  handleChange,
-  handleClick,
-  languageData,
-  literals,
-}) => {
+const Component = ({ searchValue, handleChange, handleClick, languageData, aboutLiteral }) => {
   const useStyles = makeStyles(theme => ({
     appbar: {
       backgroundColor: 'transparent',
@@ -44,15 +35,12 @@ const Component = ({
       <Grid container>
         <Grid item xs={12} className={classes.container}>
           <Toolbar
-            authorData={authorData}
-            projectData={projectData}
-            logo={logo}
+            aboutLiteral={aboutLiteral}
             className={classes.toolbar}
             searchValue={searchValue}
             handleChange={handleChange}
             handleClick={handleClick}
             languageData={languageData}
-            literals={literals}
           />
         </Grid>
         {/* TODO: Anchor */}
@@ -67,20 +55,18 @@ const Component = ({
 };
 
 Component.defaultProps = {
-  authorData: {},
-  projectData: {},
   searchValue: '',
   handleChange: () => {},
   handleClick: () => {},
+  languageData: {},
 };
 
 Component.propTypes = {
-  authorData: Toolbar.propTypes.authorData,
-  projectData: Toolbar.propTypes.projectData,
-  logo: PropTypes.string.isRequired,
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,
+  languageData: PropTypes.any,
+  aboutLiteral: PropTypes.string,
 };
 
 export default Component;

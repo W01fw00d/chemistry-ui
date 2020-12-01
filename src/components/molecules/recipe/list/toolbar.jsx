@@ -4,28 +4,21 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
 
 import Grid from '../../../atoms/layout/grid.jsx';
-import Divider from '../../../atoms/layout/divider.jsx';
 import TextField from '../../../atoms/fields/text.jsx';
 import Select from '../../../atoms/fields/select.jsx';
-import About from '../../about.jsx';
+import Divider from '../../../atoms/layout/divider.jsx';
+import Link from '../../../atoms/links/internal.jsx';
+
 import DrawerPanel from '../../panels/drawer.jsx';
 
-const Component = ({
-  authorData,
-  projectData,
-  logo,
-  className,
-  searchValue,
-  handleChange,
-  languageData,
-  literals,
-}) => {
+const Component = ({ aboutLiteral, className, searchValue, handleChange, languageData }) => {
   const useStyles = makeStyles({
-    description: {
-      width: '300px',
+    wrapper: {
+      textAlign: 'center',
     },
-    alignText: {
-      'text-align': 'center',
+    divider: {
+      marginTop: '20px',
+      marginBottom: '20px',
     },
   });
   const classes = useStyles();
@@ -34,38 +27,21 @@ const Component = ({
     <div className={className}>
       <Grid container alignItems="center">
         <Grid item xs={2} container justify="center">
-          <DrawerPanel>
-            <About
-              logo={logo}
-              authorName={authorData.name}
-              email={authorData.email}
-              authorUrl={authorData.url}
-              projectUrl={projectData.url}
-            />
-            <Divider />
-            <div className={`${classes.description} ${classes.alignText}`}>
-              <p>{projectData.description}</p>
-              <p>
-                <strong>{literals.participants}</strong>
-              </p>
-              {projectData.participants.map(name => (
-                <p key={`${name}`}>{name}</p>
-              ))}
-            </div>
+          <DrawerPanel className={classes.wrapper}>
+            <Link to="/about">{aboutLiteral}</Link>
+            <Divider className={classes.divider} />
+            <form noValidate autoComplete="off">
+              <Select
+                value={languageData.active}
+                options={languageData.options}
+                handleChange={languageData.onChange}
+              />
+            </form>
           </DrawerPanel>
         </Grid>
         <Grid item xs={5} container justify="center">
           <form noValidate autoComplete="off">
             <TextField id="search" value={searchValue} handleChange={handleChange} />
-          </form>
-        </Grid>
-        <Grid item xs={5} container justify="center">
-          <form noValidate autoComplete="off">
-            <Select
-              value={languageData.active}
-              options={languageData.options}
-              handleChange={languageData.onChange}
-            />
           </form>
         </Grid>
       </Grid>
@@ -74,28 +50,18 @@ const Component = ({
 };
 
 Component.defaultProps = {
-  authorData: {},
-  projectData: {},
   className: '',
   searchValue: null,
   handleChange: () => {},
+  languageData: {},
 };
 
 Component.propTypes = {
-  authorData: PropTypes.shape({
-    name: PropTypes.string,
-    email: PropTypes.string,
-    url: PropTypes.string,
-  }),
-  projectData: PropTypes.shape({
-    description: PropTypes.string,
-    logo: PropTypes.string,
-    url: PropTypes.string,
-  }),
-  logo: PropTypes.string.isRequired,
+  aboutLiteral: PropTypes.string,
   className: PropTypes.string,
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
+  languageData: PropTypes.any,
 };
 
 export default Component;
