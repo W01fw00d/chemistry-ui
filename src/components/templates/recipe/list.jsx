@@ -5,16 +5,12 @@ import { ThemeProvider, makeStyles } from '@material-ui/core';
 
 import theme from '../../../styles/global-styles';
 
-import logo from '../../../../public/cooking-with-amateurs-title-logo.png';
-
 import ListGrid from '../../molecules/layout/listGrid.jsx';
 import Header from '../../organisms/recipe/list/header.jsx';
 import Item from '../../organisms/recipe/list/item.jsx';
 
 const Component = ({
   literals,
-  authorData,
-  projectData,
   search,
   itemList,
   languageData,
@@ -39,9 +35,6 @@ const Component = ({
     <ThemeProvider theme={theme}>
       <div className={classes.layout}>
         <Header
-          authorData={authorData}
-          projectData={projectData}
-          logo={logo}
           searchValue={search}
           handleChange={handleChange}
           handleClick={handleClick}
@@ -66,24 +59,14 @@ const Component = ({
 
 Component.defaultProps = {
   literals: {},
-  authorData: {},
-  projectData: {},
   search: '',
   itemList: [],
-  handleChange: () => {},
-  handleClick: () => {},
+  handleChange: () => { },
+  handleClick: () => { },
 };
 
 Component.propTypes = {
   literals: Item.propTypes.literals,
-  authorData: PropTypes.shape({
-    name: PropTypes.string,
-    email: PropTypes.string,
-    url: PropTypes.string,
-  }),
-  projectData: PropTypes.shape({
-    url: PropTypes.string,
-  }),
   search: PropTypes.string,
   itemList: PropTypes.arrayOf(PropTypes.object),
   handleChange: PropTypes.func,

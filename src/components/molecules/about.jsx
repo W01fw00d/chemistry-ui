@@ -10,7 +10,6 @@ import ExternalLink from '../atoms/links/external.jsx';
 const Component = ({ logo, authorName, email, authorUrl, projectUrl }) => {
   const useStyles = makeStyles(theme => ({
     logo: {
-      width: '300px',
       paddingBottom: '10px',
     },
     link: {

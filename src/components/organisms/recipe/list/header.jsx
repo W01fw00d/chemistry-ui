@@ -8,9 +8,6 @@ import AppBar from '../../../molecules/layout/appBar.jsx';
 import Toolbar from '../../../molecules/recipe/list/toolbar.jsx';
 
 const Component = ({
-  authorData,
-  projectData,
-  logo,
   searchValue,
   handleChange,
   handleClick,
@@ -44,9 +41,6 @@ const Component = ({
       <Grid container>
         <Grid item xs={12} className={classes.container}>
           <Toolbar
-            authorData={authorData}
-            projectData={projectData}
-            logo={logo}
             className={classes.toolbar}
             searchValue={searchValue}
             handleChange={handleChange}
@@ -67,17 +61,12 @@ const Component = ({
 };
 
 Component.defaultProps = {
-  authorData: {},
-  projectData: {},
   searchValue: '',
-  handleChange: () => {},
-  handleClick: () => {},
+  handleChange: () => { },
+  handleClick: () => { },
 };
 
 Component.propTypes = {
-  authorData: Toolbar.propTypes.authorData,
-  projectData: Toolbar.propTypes.projectData,
-  logo: PropTypes.string.isRequired,
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,
