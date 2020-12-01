@@ -58,12 +58,15 @@ Component.defaultProps = {
   searchValue: '',
   handleChange: () => {},
   handleClick: () => {},
+  languageData: {},
 };
 
 Component.propTypes = {
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,
+  languageData: PropTypes.any,
+  aboutLiteral: PropTypes.string,
 };
 
 export default Component;

@@ -53,12 +53,15 @@ Component.defaultProps = {
   className: '',
   searchValue: null,
   handleChange: () => {},
+  languageData: {},
 };
 
 Component.propTypes = {
+  aboutLiteral: PropTypes.string,
   className: PropTypes.string,
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
+  languageData: PropTypes.any,
 };
 
 export default Component;

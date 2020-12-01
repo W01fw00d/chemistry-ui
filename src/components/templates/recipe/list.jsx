@@ -54,6 +54,7 @@ Component.defaultProps = {
   literals: {},
   search: '',
   itemList: [],
+  languageData: {},
   handleChange: () => {},
   handleClick: () => {},
 };
@@ -62,6 +63,7 @@ Component.propTypes = {
   literals: Item.propTypes.literals,
   search: PropTypes.string,
   itemList: PropTypes.arrayOf(PropTypes.object),
+  languageData: PropTypes.any,
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,
 };
