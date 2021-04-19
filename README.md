@@ -4,7 +4,7 @@
 
 ## How to use
 
-A link to an usage example project will be added soon...
+A link to a simple usage example project will be added soon...
 
 ## How to launch Storybook
 
@@ -74,6 +74,5 @@ npm run prettier
 
 ## Projects using this library
 
-- [Escaping Boredom, a simple blog about Escape Rooms](https://github.com/W01fw00d/escaping_boredom)
-
-- More comming soon...
+- [Escaping Boredom, a blog about Escape Rooms](https://github.com/W01fw00d/escaping_boredom)
+- [Cooking with Amateurs, a cooking recipes Web App](https://github.com/W01fw00d/cooking-with-amateurs)
