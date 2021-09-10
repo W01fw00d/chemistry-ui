@@ -16,6 +16,8 @@
   <img width="55" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/webpack.svg"/>
 </div>
 
+</br></br>
+
 [![npm version](https://badge.fury.io/js/chemistry-ui.svg)](//npmjs.com/package/chemistry-ui)
 
 ## How to use
