@@ -17,8 +17,14 @@ const Component = ({ literals, authorData, projectData }) => {
       paddingBottom: theme.spacing(4),
     },
     alignText: {
-      'text-align': 'center',
+      textAlign: 'center',
     },
+    noPadding: {
+      padding: 0,
+    },
+    noListStyle: {
+      display: 'initial',
+    }
   });
   const classes = useStyles();
 
@@ -26,24 +32,34 @@ const Component = ({ literals, authorData, projectData }) => {
     <ThemeProvider theme={theme}>
       <div className={classes.layout}>
         <Header name={literals.about} />
-        <About
-          logo={logo}
-          authorName={authorData.name}
-          email={authorData.email}
-          authorUrl={authorData.url}
-          projectUrl={projectData.url}
-        />
-        <Divider />
-        <div className={`${classes.description} ${classes.alignText}`}>
-          <p>{projectData.description}</p>
+        <article>
+          <header>
+            <About
+              logo={logo}
+              authorName={authorData.name}
+              email={authorData.email}
+              authorUrl={authorData.url}
+              projectUrl={projectData.url}
+            />
+          </header>
           <Divider />
-          <p>
-            <strong>{literals.participants}</strong>
-          </p>
-          {projectData.participants.map(name => (
-            <p key={`${name}`}>{name}</p>
-          ))}
-        </div>
+          <section className={classes.alignText}>
+            <p>{projectData.description}</p>
+          </section>
+          <Divider />
+          <section className={classes.alignText}>
+            <p>
+              <strong>{literals.participants}</strong>
+            </p>
+            <ul className={classes.noPadding}>
+              {projectData.participants.map(name => (
+                <li key={name.toLowerCase()} className={classes.noListStyle}>
+                  <p>{name}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </article>
       </div>
     </ThemeProvider>
   );
