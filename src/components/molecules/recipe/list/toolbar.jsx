@@ -28,7 +28,9 @@ const Component = ({ aboutLiteral, className, searchValue, handleChange, languag
       <Grid container alignItems="center">
         <Grid item xs={2} container justify="center">
           <DrawerPanel className={classes.wrapper}>
-            <Link to="/about">{aboutLiteral}</Link>
+            <nav>
+              <Link to="/about">{aboutLiteral}</Link>
+            </nav>
             <Divider className={classes.divider} />
             <form noValidate autoComplete="off">
               <Select
@@ -52,7 +54,7 @@ const Component = ({ aboutLiteral, className, searchValue, handleChange, languag
 Component.defaultProps = {
   className: '',
   searchValue: null,
-  handleChange: () => {},
+  handleChange: () => { },
   languageData: {},
 };
 
