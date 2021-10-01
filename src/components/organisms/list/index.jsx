@@ -108,8 +108,8 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
 Component.defaultProps = {
   className: '',
   items: [],
-  Section: () => { },
-  Item: () => { },
+  Section: () => {},
+  Item: () => {},
 };
 
 Component.propTypes = {

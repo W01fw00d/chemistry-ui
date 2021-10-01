@@ -25,6 +25,7 @@ const Component = ({
         <DrawerPanel>
           <About
             logo={logo}
+            projectName={projectData.name}
             authorName={authorData.name}
             email={authorData.email}
             authorUrl={authorData.url}
@@ -68,6 +69,7 @@ Component.propTypes = {
     url: PropTypes.string,
   }),
   projectData: PropTypes.shape({
+    name: PropTypes.string,
     logo: PropTypes.string,
     url: PropTypes.string,
   }),

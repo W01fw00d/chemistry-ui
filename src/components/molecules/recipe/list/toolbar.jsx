@@ -54,7 +54,7 @@ const Component = ({ aboutLiteral, className, searchValue, handleChange, languag
 Component.defaultProps = {
   className: '',
   searchValue: null,
-  handleChange: () => { },
+  handleChange: () => {},
   languageData: {},
 };
 

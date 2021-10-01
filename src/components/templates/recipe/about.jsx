@@ -24,7 +24,7 @@ const Component = ({ literals, authorData, projectData }) => {
     },
     noListStyle: {
       display: 'initial',
-    }
+    },
   });
   const classes = useStyles();
 
@@ -80,6 +80,7 @@ Component.propTypes = {
     url: PropTypes.string,
   }),
   projectData: PropTypes.shape({
+    name: PropTypes.string,
     description: PropTypes.string,
     logo: PropTypes.string,
     url: PropTypes.string,

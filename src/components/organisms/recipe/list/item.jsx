@@ -46,17 +46,15 @@ const Component = ({ literals, data }) => {
     <InternalLink to={`/detail/${data.id}`}>
       <article>
         <section className={classes.wrapper}>
-          {
-            image ?
-              <Image src={image} description={data.name} /> :
-              (
-                <Image
-                  src={logo}
-                  description="This Recipe doesn't have image"
-                  className={classes.logo}
-                />
-              )
-          }
+          {image ? (
+            <Image src={image} description={data.name} />
+          ) : (
+            <Image
+              src={logo}
+              description="This Recipe doesn't have image"
+              className={classes.logo}
+            />
+          )}
         </section>
         <Footer literals={literals} data={getFooterData(data)} />
       </article>

@@ -31,10 +31,9 @@ const Component = ({ data }) => {
     <InternalLink to={`/detail/${data.id}`}>
       <article>
         <section className={classes.wrapper}>
-          {
-            data.isEditorsChoice &&
+          {data.isEditorsChoice && (
             <Image src={banner} description="Banner" className={classes.banner} />
-          }
+          )}
           <Image src={data.image} description={data.name} />
         </section>
         <ImageFooter data={getFooterData(data)} />
