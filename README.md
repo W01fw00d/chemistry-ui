@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Chemistry-UI Logo" src="https://github.com/W01fw00d/chemistry-ui/blob/master/public/chemistry-ui-logo.png?raw=true" width="350" title="by Marta Ximenis">
+  <img alt="Chemistry-UI Logo" title="Chemistry-UI Logo" src="https://github.com/W01fw00d/chemistry-ui/blob/master/public/chemistry-ui-logo.png?raw=true" width="350" title="by Marta Ximenis">
 </div>
 
 <div align="center">

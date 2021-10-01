@@ -30,7 +30,7 @@ const Component = ({ literals, data, handleClick }) => {
       {
         icon: <PhotoIcon />,
         label: literals.image,
-        content: <Image src={data.image} alt={data.name} />,
+        content: <Image src={data.image} description={data.name} />,
       },
       {
         icon: <KitchenIcon />,
@@ -77,7 +77,7 @@ Component.defaultProps = {
     ingredients: [],
     steps: [],
   },
-  handleClick: () => {},
+  handleClick: () => { },
 };
 
 Component.propTypes = {
