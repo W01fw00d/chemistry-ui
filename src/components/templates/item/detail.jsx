@@ -43,7 +43,7 @@ const Component = ({ literals, data, handleClick }) => {
     data && (
       <ThemeProvider theme={theme}>
         <Header name={data.name} handleClick={handleClick} />
-        <Image src={data.image} alt={data.name} />
+        <Image src={data.image} description={data.name} />
         <Typography variant="h6" color="inherit" className={classes.name}>
           {data.name}
         </Typography>
@@ -78,7 +78,7 @@ Component.defaultProps = {
     price: FooterBar.defaultProps.price,
     isGroupPrice: FooterBar.defaultProps.isGroupPrice,
   },
-  handleClick: () => {},
+  handleClick: () => { },
 };
 
 Component.propTypes = {

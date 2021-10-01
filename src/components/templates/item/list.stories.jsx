@@ -22,6 +22,7 @@ storiesOf('Templates/[Item]/List', module)
         url: 'https://www.linkedin.com/in/gabriel-romay-machado-40050a114/?locale=en_US',
       }}
       projectData={{
+        name: 'Escaping Boredom',
         url: 'https://github.com/W01fw00d/chemistry-ui/blob/master/README.md',
       }}
       search="Search Value"

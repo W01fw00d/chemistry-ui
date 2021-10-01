@@ -19,7 +19,7 @@ const Component = ({
   const useStyles = makeStyles(theme => ({
     root: {
       width: '100%',
-      'margin-bottom': 0,
+      marginBottom: 0,
     },
     icon: {
       color: theme.palette.primary.dark,
@@ -39,12 +39,12 @@ const Component = ({
   return sectionName ? (
     <List
       className={`${classes.root} ${className}`}
-      subheader={
+      subheader={(
         <Item isSubheader onClick={hasExpandAction ? handleClick : undefined}>
           <Text primary={sectionName} />
           {hasExpandAction && renderExpandIcon()}
         </Item>
-      }
+      )}
     >
       {description && (
         <Collapse in={!value} timeout="auto" unmountOnExit>
@@ -72,8 +72,8 @@ const Component = ({
 };
 
 Component.defaultProps = {
-  renderItem: () => {},
-  handleClick: () => {},
+  renderItem: () => { },
+  handleClick: () => { },
 };
 
 Component.propTypes = {

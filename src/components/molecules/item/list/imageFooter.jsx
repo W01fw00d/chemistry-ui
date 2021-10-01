@@ -28,7 +28,7 @@ const Component = ({ data }) => {
   const priceWithCurrency = `¥${data.price}`;
 
   return (
-    <div className={classes.layout}>
+    <section className={classes.layout}>
       <Grid container>
         <Grid item xs={12}>
           <Typography variant="h6" className={classes.text}>
@@ -55,7 +55,7 @@ const Component = ({ data }) => {
           </Grid>
         )}
       </Grid>
-    </div>
+    </section>
   );
 };
 

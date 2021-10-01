@@ -70,33 +70,34 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
       sectionsItems[index] = [];
 
       return (
-        <Section
-          {...section}
-          key={`${index}`}
-          index={index}
-          rowCounter={rowCounter}
-          className={className}
-          value={checkedSections.indexOf(index) !== -1}
-          handleClick={handleSectionToggle(index)}
-          renderItem={(item, itemIndex) => {
-            rowCounter += 1;
-            sectionsItems[index].push(rowCounter);
+        <section key={`${index}`}>
+          <Section
+            {...section}
+            index={index}
+            rowCounter={rowCounter}
+            className={className}
+            value={checkedSections.indexOf(index) !== -1}
+            handleClick={handleSectionToggle(index)}
+            renderItem={(item, itemIndex) => {
+              rowCounter += 1;
+              sectionsItems[index].push(rowCounter);
 
-            return (
-              item && (
-                <Item
-                  item={item}
-                  key={`${itemIndex}-${rowCounter}`}
-                  rowCounter={rowCounter}
-                  value={checked.indexOf(rowCounter) !== -1}
-                  handleClick={handleToggle(rowCounter)}
-                  currentNameIndex={currentItemsName[rowCounter]}
-                  setCurrentNameIndex={setCurrentNameIndex(rowCounter)}
-                />
-              )
-            );
-          }}
-        />
+              return (
+                item && (
+                  <Item
+                    item={item}
+                    key={`${itemIndex}-${rowCounter}`}
+                    rowCounter={rowCounter}
+                    value={checked.indexOf(rowCounter) !== -1}
+                    handleClick={handleToggle(rowCounter)}
+                    currentNameIndex={currentItemsName[rowCounter]}
+                    setCurrentNameIndex={setCurrentNameIndex(rowCounter)}
+                  />
+                )
+              );
+            }}
+          />
+        </section>
       );
     })
   ) : (

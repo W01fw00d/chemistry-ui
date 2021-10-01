@@ -22,8 +22,9 @@ storiesOf('Templates/[Recipe]/About', module)
         url: literals.cv,
       }}
       projectData={{
+        name: project.name,
         description: project.description,
-        url: 'https://github.com/W01fw00d/chemistry-ui/blob/master/README.md',
+        url: project.url,
         participants: project.participants,
       }}
     />

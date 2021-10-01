@@ -16,6 +16,7 @@ storiesOf('Molecules/About', module)
   .add('default', () => (
     <Component
       logo={itemImage}
+      projectName="Project Name"
       authorName="Author Name"
       email="fake@email.com"
       authorUrl="https://fake.io/author-url"

@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Chemistry-UI Logo" src="https://github.com/W01fw00d/chemistry-ui/blob/master/public/chemistry-ui-logo.png?raw=true" width="350" title="by Marta Ximenis">
+  <img alt="Chemistry-UI Logo" title="Chemistry-UI Logo" src="https://github.com/W01fw00d/chemistry-ui/blob/master/public/chemistry-ui-logo.png?raw=true" width="350" title="by Marta Ximenis">
 </div>
 
 <div align="center">
@@ -51,6 +51,10 @@ npm run prettier
 ## Functional description
 
 - When Storybook is launched, a catalogue will appear with all the App components. A component will be rendered with its default material-ui theme, if our custom theme isn't explicitly defined on its story (templates themes are defined to help visualization).
+
+- Some components are displayed in [Name] folders. That means those components are specifically used only by a concrete App in the Chemistry-UI little ecosystem. Right now, we have:
+  - [Recipe]: Used by the `Cooking with Amateurs` App
+  - [Item]: Used by the `Scaping Boredom` App
 
 ## Technical Stack
 
