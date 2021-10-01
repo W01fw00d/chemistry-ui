@@ -19,7 +19,7 @@ const Component = ({ logo, projectName, authorName, email, authorUrl, projectUrl
       padding: '20px 0',
     },
     alignText: {
-      'text-align': 'center',
+      textAlign: 'center',
     },
   }));
   const classes = useStyles();
