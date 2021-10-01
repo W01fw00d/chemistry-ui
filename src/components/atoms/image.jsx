@@ -11,7 +11,14 @@ const Component = ({ src, description, className }) => {
   });
   const classes = useStyles();
 
-  return <img src={src} alt={description} title={description} className={`${classes.img} ${className}`} />;
+  return (
+    <img
+      src={src}
+      alt={description}
+      title={description}
+      className={`${classes.img} ${className}`}
+    />
+  );
 };
 
 Component.defaultProps = {

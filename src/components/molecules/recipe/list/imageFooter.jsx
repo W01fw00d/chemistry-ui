@@ -20,7 +20,7 @@ const Component = ({ literals, data }) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.layout}>
+    <section className={classes.layout}>
       <Grid container>
         {data.showName && (
           <Grid item xs={12}>
@@ -45,7 +45,7 @@ const Component = ({ literals, data }) => {
           </Typography>
         </Grid>
       </Grid>
-    </div>
+    </section>
   );
 };
 

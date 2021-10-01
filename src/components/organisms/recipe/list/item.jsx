@@ -44,10 +44,22 @@ const Component = ({ literals, data }) => {
 
   return (
     <InternalLink to={`/detail/${data.id}`}>
-      <div className={classes.wrapper}>
-        {image ? <Image src={image} /> : <Image src={logo} className={classes.logo} />}
-      </div>
-      <Footer literals={literals} data={getFooterData(data)} />
+      <article>
+        <section className={classes.wrapper}>
+          {
+            image ?
+              <Image src={image} description={data.name} /> :
+              (
+                <Image
+                  src={logo}
+                  description="This Recipe doesn't have image"
+                  className={classes.logo}
+                />
+              )
+          }
+        </section>
+        <Footer literals={literals} data={getFooterData(data)} />
+      </article>
     </InternalLink>
   );
 };

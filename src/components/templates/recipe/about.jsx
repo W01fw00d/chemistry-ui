@@ -36,6 +36,7 @@ const Component = ({ literals, authorData, projectData }) => {
           <header>
             <About
               logo={logo}
+              projectName={projectData.name}
               authorName={authorData.name}
               email={authorData.email}
               authorUrl={authorData.url}

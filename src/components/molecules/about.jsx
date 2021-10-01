@@ -7,7 +7,7 @@ import Image from '../atoms/image.jsx';
 import Typography from '../atoms/typography.jsx';
 import ExternalLink from '../atoms/links/external.jsx';
 
-const Component = ({ logo, authorName, email, authorUrl, projectUrl }) => {
+const Component = ({ logo, projectName, authorName, email, authorUrl, projectUrl }) => {
   const useStyles = makeStyles(theme => ({
     logo: {
       paddingBottom: '10px',
@@ -28,7 +28,7 @@ const Component = ({ logo, authorName, email, authorUrl, projectUrl }) => {
     <div>
       <ExternalLink id="projectUrl" to={projectUrl}>
         <div className={classes.logo}>
-          <Image src={logo} alt="App Logo" />
+          <Image src={logo} description={`'${projectName}' Logo`} />
         </div>
       </ExternalLink>
       <Typography variant="body1" className={`${classes.link} ${classes.alignText}`}>
@@ -52,6 +52,7 @@ Component.defaultProps = {
 
 Component.propTypes = {
   logo: PropTypes.string.isRequired,
+  projectName: PropTypes.string.isRequired,
   authorName: PropTypes.string,
   email: PropTypes.string,
   authorUrl: PropTypes.string,
