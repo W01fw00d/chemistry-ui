@@ -14,7 +14,7 @@ const Component = ({ src, description, className }) => {
   return (
     <img
       src={src}
-      alt={description}
+      alt={`${description}.`}
       title={description}
       className={`${classes.img} ${className}`}
     />
