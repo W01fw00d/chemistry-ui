@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 
 import allData from '../../../../.storybook/fake_data/recipes.json';
 
-import recipeImage from '../../../../public/fake_imgs/recipe.jpeg';
+import recipeImage from '../../../../public/fake_imgs/recipe.jpg';
 
 import Component from './detail';
 

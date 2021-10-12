@@ -8,7 +8,7 @@ import themeDecorator from '../../../../../.storybook/decorators/themeDecorator'
 import recipes from '../../../../../.storybook/fake_data/recipes.json';
 import literals from '../../../../../.storybook/fake_data/literals.json';
 
-import recipeImage from '../../../../../public/fake_imgs/recipe.jpeg';
+import recipeImage from '../../../../../public/fake_imgs/recipe.jpg';
 
 import Component from './item';
 

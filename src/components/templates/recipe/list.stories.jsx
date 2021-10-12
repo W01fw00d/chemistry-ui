@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 import literals from '../../../../.storybook/fake_data/literals.json';
 import recipes from '../../../../.storybook/fake_data/recipes.json';
 
-import recipeImage from '../../../../public/fake_imgs/recipe.jpeg';
+import recipeImage from '../../../../public/fake_imgs/recipe.jpg';
 
 import Component from './list';
 
