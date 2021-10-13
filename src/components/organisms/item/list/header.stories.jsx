@@ -20,7 +20,11 @@ storiesOf('Organisms/[Item]/List/Header', module)
     <Component
       authorData={authorData}
       projectData={projectData}
-      logo={escapingBoredomTitleLogo}
+      logo={{
+        src: escapingBoredomTitleLogo,
+        width: 1458,
+        height: 625,
+      }}
       tags={tags}
       searchValue="Search Value"
       handleChange={action('Input detected')}

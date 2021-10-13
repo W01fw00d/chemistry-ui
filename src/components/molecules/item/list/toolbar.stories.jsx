@@ -13,13 +13,19 @@ import escapingBoredomTitleLogo from '../../../../../public/escaping-boredom-tit
 
 import Component from './toolbar';
 
+const logo = {
+  src: escapingBoredomTitleLogo,
+  width: 1458,
+  height: 625,
+};
+
 storiesOf('Molecules/[Item]/List/Toolbar', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <Component
       authorData={authorData}
       projectData={projectData}
-      logo={escapingBoredomTitleLogo}
+      logo={logo}
       searchValue="Search Value"
       handleChange={action('Input detected')}
       handleClick={action('IconButton clicked')}

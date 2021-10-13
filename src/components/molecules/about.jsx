@@ -28,7 +28,12 @@ const Component = ({ logo, projectName, authorName, email, authorUrl, projectUrl
     <div>
       <ExternalLink id="projectUrl" to={projectUrl}>
         <div className={classes.logo}>
-          <Image src={logo} description={`'${projectName}' Logo`} />
+          <Image
+            src={logo.src}
+            width={logo.width}
+            height={logo.height}
+            description={`'${projectName}' Logo`}
+          />
         </div>
       </ExternalLink>
       <Typography variant="body1" className={`${classes.link} ${classes.alignText}`}>
@@ -51,7 +56,11 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  logo: PropTypes.string.isRequired,
+  logo: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+  }).isRequired,
   projectName: PropTypes.string.isRequired,
   authorName: PropTypes.string,
   email: PropTypes.string,

@@ -27,14 +27,27 @@ const Component = ({ data }) => {
     likeCount,
   });
 
+  const { image } = data;
+
   return (
     <InternalLink to={`/detail/${data.id}`}>
       <article>
         <section className={classes.wrapper}>
           {data.isEditorsChoice && (
-            <Image src={banner} description="Banner" className={classes.banner} />
+            <Image
+              src={banner}
+              width={640}
+              height={320}
+              description="Banner"
+              className={classes.banner}
+            />
           )}
-          <Image src={data.image} description={data.name} />
+          <Image
+            src={image.src}
+            width={image.width}
+            height={image.height}
+            description={data.name}
+          />
         </section>
         <ImageFooter data={getFooterData(data)} />
       </article>
@@ -49,7 +62,11 @@ Component.defaultProps = {
 Component.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.number,
-    image: PropTypes.string,
+    image: PropTypes.shape({
+      src: Image.propTypes.src,
+      width: Image.propTypes.width,
+      height: Image.propTypes.height,
+    }),
     name: PropTypes.string,
     price: PropTypes.number,
     likeCount: PropTypes.number,

@@ -6,14 +6,18 @@ import { action } from '@storybook/addon-actions';
 
 import allData from '../../../../.storybook/fake_data/recipes.json';
 
-import recipeImage from '../../../../public/fake_imgs/recipe.jpeg';
+import recipeImage from '../../../../public/fake_imgs/recipe.jpg';
 
 import Component from './detail';
 
 const getData = ({ name, ingredients }) => ({
   name,
   ingredients,
-  image: recipeImage,
+  image: {
+    src: recipeImage,
+    width: 1080,
+    height: 1440,
+  },
   steps: [
     {
       id: 1,
@@ -29,6 +33,9 @@ const getData = ({ name, ingredients }) => ({
   ],
 });
 
+const defaultData = getData(allData[0]);
+const noImageData = {...defaultData, image: null}
+
 const literals = {
   image: 'Image',
   ingredients: 'Ingredients',
@@ -40,7 +47,14 @@ storiesOf('Templates/[Recipe]/Detail', module)
   .add('default', () => (
     <Component
       literals={literals}
-      data={getData(allData[0])}
+      data={defaultData}
+      handleClick={action('Button clicked')}
+    />
+  ))
+  .add('without image tab', () => (
+    <Component
+      literals={literals}
+      data={noImageData}
       handleClick={action('Button clicked')}
     />
   ));

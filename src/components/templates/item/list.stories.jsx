@@ -10,7 +10,14 @@ import Component from './list';
 
 import itemImage from '../../../../public/fake_imgs/item.jpg';
 
-const formattedItems = items.map(item => ({ ...item, image: itemImage }));
+const formattedItems = items.map(item => ({
+  ...item,
+  image: {
+    src: itemImage,
+    width: 640,
+    height: 360,
+  }
+}));
 
 storiesOf('Templates/[Item]/List', module)
   .addDecorator(StoryRouter())

@@ -47,10 +47,17 @@ const Component = ({ literals, data }) => {
       <article>
         <section className={classes.wrapper}>
           {image ? (
-            <Image src={image} description={data.name} />
+            <Image
+              src={image.src}
+              width={image.width}
+              height={image.height}
+              description={data.name}
+            />
           ) : (
             <Image
               src={logo}
+              width={3543}
+              height={1772}
               description="This Recipe doesn't have image"
               className={classes.logo}
             />
@@ -71,7 +78,11 @@ Component.propTypes = {
   literals: Footer.propTypes.literals,
   data: PropTypes.shape({
     id: PropTypes.number,
-    image: PropTypes.string,
+    image: PropTypes.shape({
+      src: PropTypes.string,
+      width: PropTypes.number,
+      height: PropTypes.number,
+    }),
     name: PropTypes.string,
     eventDate: PropTypes.string,
     preparationTime: PropTypes.string,
