@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { ListItemSecondaryAction as Action } from '@material-ui/core';
@@ -43,6 +43,18 @@ const Component = ({
   );
 };
 
+Component.defaultProps = {
+  name: '',
+  emoji: '',
+  quantity: '',
+  isOptional: false,
+  alternatives: null,
+  value: false,
+  handleClick: () => {},
+  currentNameIndex: 0,
+  setCurrentNameIndex: () => {},
+};
+
 Component.propTypes = {
   name: PropTypes.string,
   emoji: PropTypes.string,
@@ -50,7 +62,9 @@ Component.propTypes = {
   isOptional: PropTypes.bool,
   alternatives: PropTypes.array,
   value: PropTypes.bool,
-  handleToggle: PropTypes.any,
+  handleClick: PropTypes.func,
+  currentNameIndex: PropTypes.number,
+  setCurrentNameIndex: PropTypes.func,
 };
 
 export default Component;

@@ -33,7 +33,10 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  literals: PropTypes.any,
+  literals: PropTypes.shape({
+    goHome: PropTypes.string,
+    notFound: PropTypes.string,
+  }),
 };
 
 export default Component;

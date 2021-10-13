@@ -12,11 +12,13 @@ const Component = ({ noItemsMsg, className, ingredients }) => (
     items={ingredients}
     noItemsMsg={noItemsMsg}
     Section={props => <Section {...props} />}
-    Item={props => <Item {...props} item={null} {...props.item} />}
+    // eslint-disable-next-line react/prop-types
+    Item={(props) => <Item {...props} item={null} {...props.item} />}
   />
 );
 
 Component.defaultProps = {
+  noItemsMsg: '',
   className: '',
   ingredients: [],
 };

@@ -8,6 +8,7 @@ import TagButton from './components/tagButton.jsx';
 const Component = ({ tags, handleClick }) => (
   <Grid container justify="center">
     {tags.map(tag => (
+      // eslint-disable-next-line no-underscore-dangle
       <TagButton key={tag._id} {...tag} handleClick={handleClick} />
     ))}
   </Grid>

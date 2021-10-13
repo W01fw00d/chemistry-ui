@@ -62,8 +62,8 @@ Component.defaultProps = {
 Component.propTypes = {
   literals: Item.propTypes.literals,
   search: PropTypes.string,
-  itemList: PropTypes.arrayOf(PropTypes.object),
-  languageData: PropTypes.any,
+  itemList: PropTypes.arrayOf(Item.propTypes.data),
+  languageData: Header.propTypes.languageData,
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,
 };

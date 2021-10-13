@@ -34,12 +34,14 @@ Component.defaultProps = {
   _id: 0,
   name: '',
   isCurrent: false,
+  handleClick: () => {},
 };
 
 Component.propTypes = {
   _id: PropTypes.number,
   name: PropTypes.string,
   isCurrent: PropTypes.bool,
+  handleClick: PropTypes.func,
 };
 
 export default Component;

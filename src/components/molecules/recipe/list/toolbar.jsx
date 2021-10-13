@@ -52,6 +52,7 @@ const Component = ({ aboutLiteral, className, searchValue, handleChange, languag
 };
 
 Component.defaultProps = {
+  aboutLiteral: '',
   className: '',
   searchValue: null,
   handleChange: () => {},
@@ -63,7 +64,11 @@ Component.propTypes = {
   className: PropTypes.string,
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
-  languageData: PropTypes.any,
+  languageData: PropTypes.shape({
+    active: PropTypes.bool,
+    options: Select.propTypes.options,
+    onChange: PropTypes.func,
+  }),
 };
 
 export default Component;

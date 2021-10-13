@@ -11,12 +11,17 @@ const Component = ({ index, rowCounter, item, value, handleClick }) => (
   </Item>
 );
 
+Component.defaultProps = {
+  index: 0,
+  handleClick: () => {},
+};
+
 Component.propTypes = {
   index: PropTypes.number,
-  rowCounter: PropTypes.number,
-  item: PropTypes.string,
-  value: PropTypes.bool,
-  handleToggle: PropTypes.any,
+  rowCounter: PropTypes.number.isRequired,
+  item: PropTypes.string.isRequired,
+  value: PropTypes.bool.isRequired,
+  handleClick: PropTypes.func,
 };
 
 export default Component;

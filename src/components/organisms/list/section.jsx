@@ -72,13 +72,18 @@ const Component = ({
 };
 
 Component.defaultProps = {
+  sectionName: null,
+  description: null,
+  items: [],
+  value: true,
+  className: '',
   renderItem: () => {},
   handleClick: () => {},
 };
 
 Component.propTypes = {
-  sectionName: PropTypes.any,
-  description: PropTypes.any,
+  sectionName: PropTypes.string,
+  description: PropTypes.string,
   items: PropTypes.array,
   className: PropTypes.string,
   renderItem: PropTypes.any,

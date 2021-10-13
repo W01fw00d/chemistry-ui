@@ -17,6 +17,7 @@ const Component = ({ noItemsMsg, className, steps }) => (
 );
 
 Component.defaultProps = {
+  noItemsMsg: '',
   className: '',
   steps: [],
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import StoryRouter from 'storybook-react-router';
 import { storiesOf } from '@storybook/react';
@@ -7,6 +8,8 @@ import { action } from '@storybook/addon-actions';
 import literals from '../../../../.storybook/fake_data/literals.json';
 import recipes from '../../../../.storybook/fake_data/recipes.json';
 import recipes8 from '../../../../.storybook/fake_data/recipes8.json';
+
+import RecipeListItem from "../../organisms/recipe/list/item";
 
 import recipeImage from '../../../../public/fake_imgs/recipe.jpg';
 
@@ -63,6 +66,10 @@ const StoryComponent = ({ itemList }) => {
       handleClick={action('Button clicked')}
     />
   );
+};
+
+StoryComponent.propTypes = {
+  itemList: PropTypes.arrayOf(RecipeListItem.propTypes.data).isRequired,
 };
 
 storiesOf('Templates/[Recipe]/List', module)

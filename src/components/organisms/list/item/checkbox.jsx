@@ -24,6 +24,11 @@ const Component = ({ text, value }) => {
   );
 };
 
+Component.defaultProps = {
+  text: '',
+  value: false,
+};
+
 Component.propTypes = {
   text: PropTypes.any,
   value: PropTypes.bool,

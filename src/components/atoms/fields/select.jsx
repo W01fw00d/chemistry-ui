@@ -33,16 +33,19 @@ const Component = ({ value, options, handleChange }) => {
 };
 
 Component.defaultProps = {
-  label: '',
   value: 0,
   options: [],
   handleChange: () => {},
 };
 
 Component.propTypes = {
-  label: PropTypes.string,
   value: PropTypes.number,
-  options: PropTypes.array,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      text: PropTypes.string,
+    }),
+  ),
   handleChange: PropTypes.func,
 };
 

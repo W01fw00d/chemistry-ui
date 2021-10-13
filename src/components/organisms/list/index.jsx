@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import NoItems from './noItems.jsx';
 
 const Component = ({ className, items, noItemsMsg, Section, Item }) => {
+  let rowCounter = -1;
+  const sectionsItems = [];
+
   const initCurrentItemsName = () => {
     let counter = 0;
     items.forEach(section => {
@@ -12,6 +15,10 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
 
     return Array.from({ length: counter }, () => 0);
   };
+
+  const [currentItemsName, setCurrentItemsName] = useState(initCurrentItemsName());
+  const [checked, setChecked] = useState([]);
+  const [checkedSections, setCheckedSections] = useState([]);
 
   const handleToggle = value => () => {
     const currentIndex = checked.indexOf(value);
@@ -58,13 +65,6 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
     setCurrentItemsName(newCurrentItemsName);
   };
 
-  let rowCounter = -1;
-  let sectionsItems = [];
-
-  const [checked, setChecked] = useState([]);
-  const [checkedSections, setCheckedSections] = useState([]);
-  const [currentItemsName, setCurrentItemsName] = useState(initCurrentItemsName());
-
   return items && items.length > 0 ? (
     items.map((section, index) => {
       sectionsItems[index] = [];
@@ -108,6 +108,7 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
 Component.defaultProps = {
   className: '',
   items: [],
+  noItemsMsg: '',
   Section: () => {},
   Item: () => {},
 };

@@ -32,19 +32,23 @@ const Component = ({
 );
 
 Component.defaultProps = {
+  sectionName: null,
+  description: null,
+  items: [],
+  className: '',
   renderItem: () => {},
   handleClick: () => {},
 };
 
 Component.propTypes = {
-  index: PropTypes.number,
-  rowCounter: PropTypes.number,
+  index: PropTypes.number.isRequired,
+  rowCounter: PropTypes.number.isRequired,
   sectionName: PropTypes.string,
   description: PropTypes.string,
   items: PropTypes.array,
   className: PropTypes.string,
   renderItem: PropTypes.any,
-  value: PropTypes.bool,
+  value: PropTypes.bool.isRequired,
   handleClick: PropTypes.func,
 };
 

@@ -97,7 +97,13 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  literals: PropTypes.any,
+  literals: PropTypes.shape({
+    ingredients: PropTypes.string,
+    noIngredients: PropTypes.string,
+    steps: PropTypes.string,
+    noSteps: PropTypes.string,
+    image: PropTypes.string,
+  }),
   data: PropTypes.shape({
     name: Header.propTypes.name,
     image: PropTypes.shape({

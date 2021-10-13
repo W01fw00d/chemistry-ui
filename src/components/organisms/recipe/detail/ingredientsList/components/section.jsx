@@ -15,16 +15,20 @@ const Component = ({ sectionName, items, className, renderItem, value, handleCli
 );
 
 Component.defaultProps = {
+  sectionName: '',
+  items: [],
+  className: '',
+  value: true,
   renderItem: () => {},
   handleClick: () => {},
 };
 
 Component.propTypes = {
-  sectionName: PropTypes.string,
+  sectionName: Section.propTypes.sectionName,
   items: PropTypes.array,
   className: PropTypes.string,
   renderItem: PropTypes.any,
-  value: PropTypes.bool,
+  value: Section.propTypes.value,
   handleClick: PropTypes.func,
 };
 

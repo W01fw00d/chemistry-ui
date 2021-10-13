@@ -8,6 +8,7 @@
     "build-storybook": "build-storybook -s public",
     "build": "webpack",
     "eslint": "eslint --fix src/**",
+    "prepare": "husky install",
     "prettier": "prettier src/** --write"
   },
   "repository": "git://github.com/W01fw00d/chemistry-ui.git",
@@ -41,7 +42,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "husky": "^4.2.1",
+    "husky": "^7.0.0",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
@@ -59,9 +60,6 @@
     "@material-ui/icons": "^4.9.1",
     "marked": "^2.0.0",
     "react-hot-loader": "^4.12.19"
-  },
-  "husky": {
-    "hooks": {}
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [

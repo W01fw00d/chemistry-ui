@@ -59,13 +59,14 @@ Component.defaultProps = {
   handleChange: () => {},
   handleClick: () => {},
   languageData: {},
+  aboutLiteral: '',
 };
 
 Component.propTypes = {
   searchValue: PropTypes.string,
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,
-  languageData: PropTypes.any,
+  languageData: Toolbar.propTypes.languageData,
   aboutLiteral: PropTypes.string,
 };
 
