@@ -50,7 +50,7 @@ const Component = ({
         )}
         {itemList && (
           <ListGrid>
-            {itemList.map(productData => (
+            {itemList.map((productData) => (
               <Product key={productData.id} data={productData} />
             ))}
           </ListGrid>

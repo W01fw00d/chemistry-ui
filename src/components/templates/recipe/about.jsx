@@ -57,7 +57,7 @@ const Component = ({ literals, authorData, projectData }) => {
               <strong>{literals.participants}</strong>
             </p>
             <ul className={classes.noPadding}>
-              {projectData.participants.map(name => (
+              {projectData.participants.map((name) => (
                 <li key={name.toLowerCase()} className={classes.noListStyle}>
                   <p>{name}</p>
                 </li>

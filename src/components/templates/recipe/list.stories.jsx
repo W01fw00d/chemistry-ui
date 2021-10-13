@@ -15,7 +15,7 @@ import recipeImage from '../../../../public/fake_imgs/recipe.jpg';
 
 import Component from './list';
 
-const defaultRecipes = recipes.map(recipe => ({
+const defaultRecipes = recipes.map((recipe) => ({
   ...recipe,
   image: {
     src: recipeImage,

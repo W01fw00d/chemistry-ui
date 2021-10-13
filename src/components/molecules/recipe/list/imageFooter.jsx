@@ -7,7 +7,7 @@ import Grid from '../../../atoms/layout/grid.jsx';
 import Typography from '../../../atoms/typography.jsx';
 
 const Component = ({ literals, data }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     layout: {
       backgroundColor: theme.palette.primary.main,
       padding: theme.spacing(1),

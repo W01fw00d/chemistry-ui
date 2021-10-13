@@ -1,6 +1,5 @@
 [
   {
-    "_id": 1,
     "id": 1,
     "name": "item name 1",
     "description": "item description 1",
@@ -13,7 +12,6 @@
     "tags": [1, 2]
   },
   {
-    "_id": 2,
     "id": 2,
     "name": "item name 2",
     "description": "item description 2",
@@ -26,7 +24,6 @@
     "tags": [3]
   },
   {
-    "_id": 3,
     "id": 3,
     "name": "item name 3",
     "description": "item description 3",

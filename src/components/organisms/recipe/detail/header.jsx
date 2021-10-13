@@ -10,7 +10,7 @@ import Typography from '../../../atoms/typography.jsx';
 import AppBar from '../../../molecules/layout/appBar.jsx';
 
 const Component = ({ name }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     layout: {
       padding: theme.spacing(1),
     },

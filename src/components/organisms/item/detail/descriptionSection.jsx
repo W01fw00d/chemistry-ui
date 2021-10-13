@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core';
 import Typography from '../../../atoms/typography.jsx';
 
 const Component = ({ className, literals, description }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     layout: {
       padding: theme.spacing(1),
     },

@@ -8,7 +8,7 @@ import Typography from '../atoms/typography.jsx';
 import ExternalLink from '../atoms/links/external.jsx';
 
 const Component = ({ logo, projectName, authorName, email, authorUrl, projectUrl }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     logo: {
       paddingBottom: '10px',
     },

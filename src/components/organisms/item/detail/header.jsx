@@ -15,7 +15,7 @@ import IconButton from '../../../atoms/buttons/icon.jsx';
 import AppBar from '../../../molecules/layout/appBar.jsx';
 
 const Component = ({ name, handleClick }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     layout: {
       padding: theme.spacing(1),
     },

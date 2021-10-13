@@ -9,7 +9,7 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
 
   const initCurrentItemsName = () => {
     let counter = 0;
-    items.forEach(section => {
+    items.forEach((section) => {
       counter += section.items ? section.items.length : 0;
     });
 
@@ -20,16 +20,18 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
   const [checked, setChecked] = useState([]);
   const [checkedSections, setCheckedSections] = useState([]);
 
-  const handleToggle = value => () => {
+  const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
 
     const checkCompleteSection = () => {
       const newCheckedSections = checkedSections;
 
-      const currentSectionIndex = sectionsItems.findIndex(section => section.indexOf(value) !== -1);
+      const currentSectionIndex = sectionsItems.findIndex(
+        (section) => section.indexOf(value) !== -1,
+      );
 
-      if (sectionsItems[currentSectionIndex].every(item => newChecked.includes(item))) {
+      if (sectionsItems[currentSectionIndex].every((item) => newChecked.includes(item))) {
         newCheckedSections.push(currentSectionIndex);
       }
 
@@ -46,7 +48,7 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
     checkCompleteSection();
   };
 
-  const handleSectionToggle = value => () => {
+  const handleSectionToggle = (value) => () => {
     const currentIndex = checkedSections.indexOf(value);
     const newChecked = [...checkedSections];
 
@@ -59,7 +61,7 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
     setCheckedSections(newChecked);
   };
 
-  const setCurrentNameIndex = currentRowCounter => value => {
+  const setCurrentNameIndex = (currentRowCounter) => (value) => {
     const newCurrentItemsName = [...currentItemsName];
     newCurrentItemsName[currentRowCounter] = value;
     setCurrentItemsName(newCurrentItemsName);

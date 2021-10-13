@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core';
 import Typography from '../../atoms/typography.jsx';
 
 const Component = ({ children }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     message: {
       color: theme.palette.primary.dark,
       textAlign: 'center',

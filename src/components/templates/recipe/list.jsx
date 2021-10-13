@@ -36,7 +36,7 @@ const Component = ({ literals, search, itemList, languageData, handleChange, han
         />
         {itemList && (
           <ListGrid>
-            {itemList.map(productData => (
+            {itemList.map((productData) => (
               <Item
                 literals={getRecipeListItemLiterals(literals)}
                 key={productData.id}

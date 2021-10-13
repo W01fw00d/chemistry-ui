@@ -35,7 +35,7 @@ storiesOf('Molecules/Layout/ListGrid', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <ListGrid>
-      {data.map(item => (
+      {data.map((item) => (
         <ItemListProduct key={item.id} data={item} />
       ))}
     </ListGrid>

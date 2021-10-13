@@ -14,7 +14,7 @@ import IconTextButton from '../../../atoms/buttons/iconText.jsx';
 import IconButton from '../../../atoms/buttons/icon.jsx';
 
 const Component = ({ literals, likeCount, handleClick }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     layout: {
       padding: theme.spacing(1),
     },

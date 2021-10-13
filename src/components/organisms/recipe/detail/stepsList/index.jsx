@@ -11,8 +11,8 @@ const Component = ({ noItemsMsg, className, steps }) => (
     className={className}
     items={steps}
     noItemsMsg={noItemsMsg}
-    Section={props => <Section {...props} />}
-    Item={props => <Item {...props} />}
+    Section={(props) => <Section {...props} />}
+    Item={(props) => <Item {...props} />}
   />
 );
 

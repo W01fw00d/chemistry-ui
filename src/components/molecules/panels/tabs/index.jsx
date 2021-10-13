@@ -6,7 +6,7 @@ import { makeStyles, AppBar, Tabs, Tab } from '@material-ui/core';
 import Panel from './components/panel.jsx';
 
 const Component = ({ data }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
       width: '100%',
@@ -21,7 +21,7 @@ const Component = ({ data }) => {
     setValue(newValue);
   };
 
-  const getTabId = index => ({
+  const getTabId = (index) => ({
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
   });

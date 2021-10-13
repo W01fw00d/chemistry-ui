@@ -11,9 +11,9 @@ const Component = ({ noItemsMsg, className, ingredients }) => (
     className={className}
     items={ingredients}
     noItemsMsg={noItemsMsg}
-    Section={props => <Section {...props} />}
+    Section={(props) => <Section {...props} />}
     // eslint-disable-next-line react/prop-types
-    Item={props => <Item {...props} item={null} {...props.item} />}
+    Item={(props) => <Item {...props} item={null} {...props.item} />}
   />
 );
 

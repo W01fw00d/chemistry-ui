@@ -8,7 +8,7 @@ import AppBar from '../../../molecules/layout/appBar.jsx';
 import Toolbar from '../../../molecules/recipe/list/toolbar.jsx';
 
 const Component = ({ searchValue, handleChange, handleClick, languageData, aboutLiteral }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     appbar: {
       backgroundColor: 'transparent',
       borderBottom: 'none !important',

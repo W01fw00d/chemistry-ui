@@ -9,7 +9,7 @@ import TextButton from '../../../atoms/buttons/text.jsx';
 import Footer from '../../../molecules/layout/footer.jsx';
 
 const Component = ({ literals, data, handleClick }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     bar: {
       backgroundColor: theme.palette.secondary.dark,
       color: theme.palette.secondary.light,

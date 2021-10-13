@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { FormControl, Select, MenuItem, makeStyles } from '@material-ui/core';
 
 const Component = ({ value, options, handleChange }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     field: {
       backgroundColor: theme.palette.primary.light,
       paddingLeft: '7px',

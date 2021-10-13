@@ -10,7 +10,7 @@ import Component from './list';
 
 import itemImage from '../../../../public/fake_imgs/item.jpg';
 
-const formattedItems = items.map(item => ({
+const formattedItems = items.map((item) => ({
   ...item,
   image: {
     src: itemImage,

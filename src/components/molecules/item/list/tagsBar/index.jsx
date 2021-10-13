@@ -7,9 +7,8 @@ import TagButton from './components/tagButton.jsx';
 
 const Component = ({ tags, handleClick }) => (
   <Grid container justify="center">
-    {tags.map(tag => (
-      // eslint-disable-next-line no-underscore-dangle
-      <TagButton key={tag._id} {...tag} handleClick={handleClick} />
+    {tags.map((tag) => (
+      <TagButton key={tag.id} {...tag} handleClick={handleClick} />
     ))}
   </Grid>
 );
@@ -22,7 +21,7 @@ Component.defaultProps = {
 Component.propTypes = {
   tags: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.number,
+      id: PropTypes.number,
       name: PropTypes.string,
       isCurrent: PropTypes.bool,
     }),

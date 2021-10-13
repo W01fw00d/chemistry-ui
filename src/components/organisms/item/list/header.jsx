@@ -20,7 +20,7 @@ const Component = ({
   handleChange,
   handleClick,
 }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     appbar: {
       backgroundColor: 'transparent',
       borderBottom: 'none !important',

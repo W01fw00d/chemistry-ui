@@ -7,7 +7,7 @@ import IconButton from '../../atoms/buttons/icon.jsx';
 import Footer from '../layout/footer.jsx';
 
 const Component = ({ color, children, handleClick }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     overlayed: {
       float: 'right',
       margin: theme.spacing(4),

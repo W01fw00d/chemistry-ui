@@ -19,7 +19,10 @@ const Component = ({
   currentNameIndex,
   setCurrentNameIndex,
 }) => {
-  const names = [name, ...(alternatives ? alternatives.map(alternative => alternative.name) : [])];
+  const names = [
+    name,
+    ...(alternatives ? alternatives.map((alternative) => alternative.name) : []),
+  ];
   const currentName = names[currentNameIndex];
 
   let label = emoji ? `${emoji} (${currentName})` : currentName;

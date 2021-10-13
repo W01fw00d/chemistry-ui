@@ -16,7 +16,7 @@ const Component = ({
   value,
   handleClick,
 }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
       marginBottom: 0,
