@@ -7,7 +7,7 @@ const Component = ({ src, width, height, description, className }) => {
   const useStyles = makeStyles({
     img: {
       width: '100%',
-      height: 'auto'
+      height: 'auto',
     },
   });
   const classes = useStyles();

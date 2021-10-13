@@ -34,7 +34,7 @@ const lazyLoadingRecipes = recipes8.map(
       width: 1080,
       height: 1440,
     },
-  })
+  }),
 );
 
 const StoryComponent = ({ itemList }) => {
@@ -67,5 +67,5 @@ const StoryComponent = ({ itemList }) => {
 
 storiesOf('Templates/[Recipe]/List', module)
   .addDecorator(StoryRouter())
-  .add('default', () => (<StoryComponent itemList={defaultRecipes} />))
-  .add('Lazy Loading Test', () => (<StoryComponent itemList={lazyLoadingRecipes} />));
+  .add('default', () => <StoryComponent itemList={defaultRecipes} />)
+  .add('Lazy Loading Test', () => <StoryComponent itemList={lazyLoadingRecipes} />);

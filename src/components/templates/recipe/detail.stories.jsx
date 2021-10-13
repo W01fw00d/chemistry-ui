@@ -34,7 +34,7 @@ const getData = ({ name, ingredients }) => ({
 });
 
 const defaultData = getData(allData[0]);
-const noImageData = {...defaultData, image: null}
+const noImageData = { ...defaultData, image: null };
 
 const literals = {
   image: 'Image',
@@ -45,16 +45,8 @@ const literals = {
 storiesOf('Templates/[Recipe]/Detail', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
-    <Component
-      literals={literals}
-      data={defaultData}
-      handleClick={action('Button clicked')}
-    />
+    <Component literals={literals} data={defaultData} handleClick={action('Button clicked')} />
   ))
   .add('without image tab', () => (
-    <Component
-      literals={literals}
-      data={noImageData}
-      handleClick={action('Button clicked')}
-    />
+    <Component literals={literals} data={noImageData} handleClick={action('Button clicked')} />
   ));

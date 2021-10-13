@@ -16,7 +16,7 @@ const formattedItems = items.map(item => ({
     src: itemImage,
     width: 640,
     height: 360,
-  }
+  },
 }));
 
 storiesOf('Templates/[Item]/List', module)

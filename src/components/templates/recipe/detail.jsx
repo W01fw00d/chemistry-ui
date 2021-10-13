@@ -54,18 +54,18 @@ const Component = ({ literals, data, handleClick }) => {
     ];
 
     if (image) {
-      tabsData.unshift(
-        {
-          icon: <PhotoIcon />,
-          label: literals.image,
-          content: <Image
+      tabsData.unshift({
+        icon: <PhotoIcon />,
+        label: literals.image,
+        content: (
+          <Image
             src={image.src}
             width={image.width}
             height={image.height}
             description={data.name}
-          />,
-        }
-      );
+          />
+        ),
+      });
     }
 
     return <Tabs data={tabsData} />;
@@ -93,7 +93,7 @@ Component.defaultProps = {
     ingredients: [],
     steps: [],
   },
-  handleClick: () => { },
+  handleClick: () => {},
 };
 
 Component.propTypes = {
