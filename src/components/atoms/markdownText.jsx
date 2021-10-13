@@ -22,7 +22,7 @@ const Component = ({ id, text }) => {
 };
 
 Component.defaultProps = {
-  id: "id",
+  id: 'id',
   text: <></>,
 };
 

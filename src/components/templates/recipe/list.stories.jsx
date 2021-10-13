@@ -9,7 +9,7 @@ import literals from '../../../../.storybook/fake_data/literals.json';
 import recipes from '../../../../.storybook/fake_data/recipes.json';
 import recipes8 from '../../../../.storybook/fake_data/recipes8.json';
 
-import RecipeListItem from "../../organisms/recipe/list/item";
+import RecipeListItem from '../../organisms/recipe/list/item';
 
 import recipeImage from '../../../../public/fake_imgs/recipe.jpg';
 

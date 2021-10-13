@@ -91,7 +91,7 @@ Component.propTypes = {
     description: PropTypes.string,
     logo: PropTypes.string,
     url: PropTypes.string,
-    participants: PropTypes.arrayOf(PropTypes.string)
+    participants: PropTypes.arrayOf(PropTypes.string),
   }),
 };
 
