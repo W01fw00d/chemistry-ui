@@ -32,9 +32,20 @@ const Component = ({ data }) => {
       <article>
         <section className={classes.wrapper}>
           {data.isEditorsChoice && (
-            <Image src={banner} description="Banner" className={classes.banner} />
+            <Image
+              src={banner}
+              width={640}
+              height={320}
+              description="Banner"
+              className={classes.banner}
+            />
           )}
-          <Image src={data.image} description={data.name} />
+          <Image
+            src={data.image}
+            width={640}
+            height={360}
+            description={data.name}
+          />
         </section>
         <ImageFooter data={getFooterData(data)} />
       </article>

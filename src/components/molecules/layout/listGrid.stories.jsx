@@ -14,7 +14,11 @@ import ItemListProduct from '../../organisms/item/list/product';
 import ListGrid from './listGrid';
 
 const getItemData = ({ name, price, likeCount }) => ({
-  image: itemImage,
+  image: {
+    src: itemImage,
+    width: 640,
+    height: 360,
+  },
   name,
   price,
   likeCount,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-const Component = ({ src, description, className }) => {
+const Component = ({ src, width, height, description, className }) => {
   const useStyles = makeStyles({
     img: {
       width: '100%',
@@ -14,10 +14,10 @@ const Component = ({ src, description, className }) => {
 
   return (
     <img
-      width="1080" // TODO: store the width and height of every image and pass it as a prop
-      height="1440"
-      loading="lazy"
       src={src}
+      width={width}
+      height={height}
+      loading="lazy"
       alt={`${description}.`}
       title={description}
       className={`${classes.img} ${className}`}
@@ -26,13 +26,14 @@ const Component = ({ src, description, className }) => {
 };
 
 Component.defaultProps = {
-  src: '',
   description: 'Image without description',
   className: '',
 };
 
 Component.propTypes = {
-  src: PropTypes.string,
+  src: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
   description: PropTypes.string,
   className: PropTypes.string,
 };

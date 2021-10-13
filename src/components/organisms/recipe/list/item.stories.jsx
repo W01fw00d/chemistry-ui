@@ -24,7 +24,11 @@ const getData = ({ id, name, eventDate, difficulty, preparationTime, nIngredient
   difficulty,
   preparationTime,
   nIngredients,
-  image: recipeImage,
+  image: {
+    src: recipeImage,
+    width: 1080,
+    height: 1440,
+  },
   showName,
 });
 

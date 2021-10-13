@@ -15,7 +15,11 @@ storiesOf('Molecules/About', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <Component
-      logo={itemImage}
+      logo={{
+        src: itemImage,
+        width: 640,
+        height: 360,
+      }}
       projectName="Project Name"
       authorName="Author Name"
       email="fake@email.com"

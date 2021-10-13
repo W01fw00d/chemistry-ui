@@ -25,12 +25,19 @@ const Component = ({ literals, data, handleClick }) => {
   });
   const classes = useStyles();
 
+  const { image } = data;
+
   const RecipeTabs = () => {
     const tabsData = [
       {
         icon: <PhotoIcon />,
         label: literals.image,
-        content: <Image src={data.image} description={data.name} />,
+        content: <Image
+          src={image.url}
+          width={image.width}
+          height={image.height}
+          description={data.name}
+        />,
       },
       {
         icon: <KitchenIcon />,
@@ -73,7 +80,11 @@ Component.defaultProps = {
   literals: {},
   data: {
     name: Header.defaultProps.name,
-    image: Image.defaultProps.src,
+    image: {
+      src: Image.defaultProps.src,
+      width: 640,
+      height: 360,
+    },
     ingredients: [],
     steps: [],
   },
@@ -84,7 +95,11 @@ Component.propTypes = {
   literals: PropTypes.any,
   data: PropTypes.shape({
     name: Header.propTypes.name,
-    image: Image.propTypes.src,
+    image: PropTypes.shape({
+      src: Image.propTypes.src,
+      width: Image.propTypes.width,
+      height: Image.propTypes.height,
+    }),
     ingredients: PropTypes.array,
     steps: PropTypes.array,
   }),

@@ -17,7 +17,11 @@ const getData = ({ id, name, price, likeCount, isEditorsChoice }) => ({
   price,
   likeCount,
   isEditorsChoice,
-  image: itemImage,
+  image: {
+    src: itemImage,
+    width: 640,
+    height: 360,
+  },
 });
 
 storiesOf('Organisms/[Item]/List/Product', module)

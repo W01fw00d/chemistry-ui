@@ -39,11 +39,18 @@ const Component = ({ literals, data, handleClick }) => {
     isGroupPrice: data.isGroupPrice,
   };
 
+  const { image } = data;
+
   return (
     data && (
       <ThemeProvider theme={theme}>
         <Header name={data.name} handleClick={handleClick} />
-        <Image src={data.image} description={data.name} />
+        <Image
+          src={image.src}
+          width={image.width}
+          height={image.height}
+          description={data.name}
+        />
         <Typography variant="h6" color="inherit" className={classes.name}>
           {data.name}
         </Typography>
@@ -72,7 +79,11 @@ Component.defaultProps = {
   },
   data: {
     name: Header.defaultProps.name,
-    image: Image.defaultProps.src,
+    image: {
+      src: '',
+      width: 640,
+      height: 360,
+    },
     likeCount: Header.defaultProps.likeCount,
     description: ButtonsRow.defaultProps.description,
     price: FooterBar.defaultProps.price,
@@ -90,7 +101,11 @@ Component.propTypes = {
   }),
   data: PropTypes.shape({
     name: Header.propTypes.name,
-    image: Image.propTypes.src,
+    image: PropTypes.shape({
+      src: Image.propTypes.src,
+      width: Image.propTypes.width,
+      height: Image.propTypes.height,
+    }),
     likeCount: Header.propTypes.likeCount,
     description: ButtonsRow.propTypes.description,
     price: FooterBar.propTypes.price,

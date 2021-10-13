@@ -35,7 +35,11 @@ const Component = ({ literals, authorData, projectData }) => {
         <article>
           <header>
             <About
-              logo={logo}
+              logo={{
+                src: logo,
+                width: 3543,
+                height: 1772,
+              }}
               projectName={projectData.name}
               authorName={authorData.name}
               email={authorData.email}

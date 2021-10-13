@@ -13,7 +13,11 @@ import Component from './detail';
 const getData = ({ name, ingredients }) => ({
   name,
   ingredients,
-  image: recipeImage,
+  image: {
+    src: recipeImage,
+    width: 1080,
+    height: 1440,
+  },
   steps: [
     {
       id: 1,
