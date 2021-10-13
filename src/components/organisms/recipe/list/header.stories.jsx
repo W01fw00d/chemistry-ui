@@ -6,7 +6,6 @@ import StoryRouter from 'storybook-react-router';
 
 import theme from '../../../../styles/global-styles';
 
-import allLiterals from '../../../../../.storybook/fake_data/literals.json';
 import themeDecorator from '../../../../../.storybook/decorators/themeDecorator';
 
 import Component from './header';

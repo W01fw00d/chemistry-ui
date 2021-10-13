@@ -27,6 +27,8 @@ const Component = ({ data }) => {
     likeCount,
   });
 
+  const { image } = data;
+
   return (
     <InternalLink to={`/detail/${data.id}`}>
       <article>
@@ -41,9 +43,9 @@ const Component = ({ data }) => {
             />
           )}
           <Image
-            src={data.image}
-            width={640}
-            height={360}
+            src={image.src}
+            width={image.width}
+            height={image.height}
             description={data.name}
           />
         </section>
@@ -60,7 +62,11 @@ Component.defaultProps = {
 Component.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.number,
-    image: PropTypes.string,
+    image: PropTypes.shape({
+      src: Image.propTypes.src,
+      width: Image.propTypes.width,
+      height: Image.propTypes.height,
+    }),
     name: PropTypes.string,
     price: PropTypes.number,
     likeCount: PropTypes.number,

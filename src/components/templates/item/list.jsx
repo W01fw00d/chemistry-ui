@@ -37,7 +37,11 @@ const Component = ({
           <Header
             authorData={authorData}
             projectData={projectData}
-            logo={escapingBoredomTitleLogo}
+            logo={{
+              src: escapingBoredomTitleLogo,
+              width: 1458,
+              height: 625,
+            }}
             tags={tags}
             searchValue={search}
             handleChange={handleChange}

@@ -33,7 +33,7 @@ const Component = ({ literals, data, handleClick }) => {
         icon: <PhotoIcon />,
         label: literals.image,
         content: <Image
-          src={image.url}
+          src={image.src}
           width={image.width}
           height={image.height}
           description={data.name}
