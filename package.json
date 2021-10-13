@@ -4,12 +4,12 @@
   "description": "Portfolio React Components Library based on Material-ui",
   "main": "lib/index.js",
   "scripts": {
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
     "build": "webpack",
+    "build-storybook": "build-storybook -s public",
     "eslint": "eslint --fix src/**",
     "prepare": "husky install",
-    "prettier": "prettier src/** --write"
+    "prettier": "prettier src/** --write",
+    "storybook": "start-storybook -p 6006 -s public"
   },
   "repository": "git://github.com/W01fw00d/chemistry-ui.git",
   "author": "Gabriel Romay Machado",
@@ -32,7 +32,6 @@
     "@storybook/addons": "^6.3.11",
     "@storybook/react": "^6.3.11",
     "@storybook/theming": "^6.3.11",
-    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^7.32.0",
