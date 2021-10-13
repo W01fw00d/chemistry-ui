@@ -30,16 +30,6 @@ const Component = ({ literals, data, handleClick }) => {
   const RecipeTabs = () => {
     const tabsData = [
       {
-        icon: <PhotoIcon />,
-        label: literals.image,
-        content: <Image
-          src={image.src}
-          width={image.width}
-          height={image.height}
-          description={data.name}
-        />,
-      },
-      {
         icon: <KitchenIcon />,
         label: literals.ingredients,
         content: (
@@ -62,6 +52,21 @@ const Component = ({ literals, data, handleClick }) => {
         ),
       },
     ];
+
+    if (image) {
+      tabsData.unshift(
+        {
+          icon: <PhotoIcon />,
+          label: literals.image,
+          content: <Image
+            src={image.src}
+            width={image.width}
+            height={image.height}
+            description={data.name}
+          />,
+        }
+      );
+    }
 
     return <Tabs data={tabsData} />;
   };

@@ -33,6 +33,9 @@ const getData = ({ name, ingredients }) => ({
   ],
 });
 
+const defaultData = getData(allData[0]);
+const noImageData = {...defaultData, image: null}
+
 const literals = {
   image: 'Image',
   ingredients: 'Ingredients',
@@ -44,7 +47,14 @@ storiesOf('Templates/[Recipe]/Detail', module)
   .add('default', () => (
     <Component
       literals={literals}
-      data={getData(allData[0])}
+      data={defaultData}
+      handleClick={action('Button clicked')}
+    />
+  ))
+  .add('without image tab', () => (
+    <Component
+      literals={literals}
+      data={noImageData}
       handleClick={action('Button clicked')}
     />
   ));
