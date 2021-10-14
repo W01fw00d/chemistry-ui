@@ -17,7 +17,7 @@ import IngredientsList from '../../organisms/[recipe]/detail/ingredientsList/ind
 import StepsList from '../../organisms/[recipe]/detail/stepsList/index.jsx';
 import Tabs from '../../molecules/panels/tabs/index.jsx';
 
-const Component = ({ literals, data, handleClick }) => {
+const Component = ({ literals, data }) => {
   const useStyles = makeStyles({
     marginBottom: {
       marginBottom: theme.spacing(7),
@@ -74,7 +74,7 @@ const Component = ({ literals, data, handleClick }) => {
   return (
     data && (
       <ThemeProvider theme={theme}>
-        <Header name={data.name} handleClick={handleClick} />
+        <Header name={data.name} />
         <RecipeTabs />
       </ThemeProvider>
     )
@@ -93,7 +93,6 @@ Component.defaultProps = {
     ingredients: [],
     steps: [],
   },
-  handleClick: () => {},
 };
 
 Component.propTypes = {
@@ -114,7 +113,6 @@ Component.propTypes = {
     ingredients: PropTypes.array,
     steps: PropTypes.array,
   }),
-  handleClick: PropTypes.func,
 };
 
 export default Component;

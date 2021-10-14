@@ -43,13 +43,13 @@ Component.defaultProps = {
 Component.propTypes = {
   index: PropTypes.number.isRequired,
   rowCounter: PropTypes.number.isRequired,
-  sectionName: PropTypes.string,
-  description: PropTypes.string,
-  items: PropTypes.array,
-  className: PropTypes.string,
-  renderItem: PropTypes.any,
-  value: PropTypes.bool.isRequired,
-  handleClick: PropTypes.func,
+  sectionName: MarkdownText.propTypes.text,
+  description: MarkdownText.propTypes.text,
+  items: Section.propTypes.items,
+  className: Section.propTypes.className,
+  renderItem: Section.propTypes.renderItem,
+  value: Section.propTypes.value.isRequired,
+  handleClick: Section.propTypes.handleClick,
 };
 
 export default Component;

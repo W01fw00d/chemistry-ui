@@ -34,7 +34,7 @@ Component.defaultProps = {
 
 Component.propTypes = {
   literals: PropTypes.shape({
-    goHome: PropTypes.string,
+    goHome: Header.propTypes.name,
     notFound: PropTypes.string,
   }),
 };

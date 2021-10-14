@@ -61,11 +61,11 @@ Component.defaultProps = {
 
 Component.propTypes = {
   literals: Item.propTypes.literals,
-  search: PropTypes.string,
+  search: Header.propTypes.searchValue,
   itemList: PropTypes.arrayOf(Item.propTypes.data),
   languageData: Header.propTypes.languageData,
-  handleChange: PropTypes.func,
-  handleClick: PropTypes.func,
+  handleChange: Header.propTypes.handleChange,
+  handleClick: Header.propTypes.handleClick,
 };
 
 export default Component;

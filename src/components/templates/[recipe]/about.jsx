@@ -78,19 +78,19 @@ Component.defaultProps = {
 
 Component.propTypes = {
   literals: PropTypes.shape({
-    about: PropTypes.string,
+    about: Header.propTypes.name,
     participants: PropTypes.string,
   }),
   authorData: PropTypes.shape({
-    name: PropTypes.string,
-    email: PropTypes.string,
-    url: PropTypes.string,
+    name: About.propTypes.authorName,
+    email: About.propTypes.email,
+    url: About.propTypes.authorUrl,
   }),
   projectData: PropTypes.shape({
-    name: PropTypes.string,
+    name: About.propTypes.projectName,
     description: PropTypes.string,
     logo: PropTypes.string,
-    url: PropTypes.string,
+    url: About.propTypes.projectUrl,
     participants: PropTypes.arrayOf(PropTypes.string),
   }),
 };

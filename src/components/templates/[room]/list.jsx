@@ -74,18 +74,13 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  authorData: PropTypes.shape({
-    name: PropTypes.string,
-    email: PropTypes.string,
-    url: PropTypes.string,
-  }),
-  projectData: PropTypes.shape({
-    url: PropTypes.string,
-  }),
-  search: PropTypes.string,
+  authorData: Header.propTypes.authorData,
+  projectData: Header.propTypes.projectData,
+  search: Header.propTypes.searchValue,
   itemList: PropTypes.arrayOf(PropTypes.object),
-  tags: PropTypes.arrayOf(PropTypes.object),
-  handleChange: PropTypes.func,
+  // TODO: do not use object, use something more specific
+  tags: Header.propTypes.tags,
+  handleChange: Header.propTypes.handleChange,
   handleClick: PropTypes.func,
 };
 

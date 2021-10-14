@@ -19,9 +19,9 @@ Component.defaultProps = {
 Component.propTypes = {
   index: PropTypes.number,
   rowCounter: PropTypes.number.isRequired,
-  item: PropTypes.string.isRequired,
-  value: PropTypes.bool.isRequired,
-  handleClick: PropTypes.func,
+  item: MarkdownText.propTypes.text.isRequired,
+  value: Checkbox.propTypes.value.isRequired,
+  handleClick: Item.propTypes.onClick,
 };
 
 export default Component;

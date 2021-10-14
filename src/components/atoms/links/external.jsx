@@ -18,7 +18,7 @@ const Component = ({ id, to, className, children }) => {
       href={to}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${classes.text} ${className}`}
+      className={`${classes.text}${className ? ` ${className}` : ''}`}
     >
       {children}
     </a>

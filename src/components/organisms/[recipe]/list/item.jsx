@@ -83,7 +83,7 @@ Component.propTypes = {
       width: PropTypes.number,
       height: PropTypes.number,
     }),
-    name: PropTypes.string,
+    name: Image.propTypes.description,
     eventDate: PropTypes.string,
     preparationTime: PropTypes.string,
     difficulty: PropTypes.number,
