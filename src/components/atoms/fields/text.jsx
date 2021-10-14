@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles, TextField } from '@material-ui/core';
 
 const Component = ({ id, label, className, value, handleChange }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     field: {
       backgroundColor: theme.palette.primary.light,
     },

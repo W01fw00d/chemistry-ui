@@ -1,6 +1,5 @@
 [
   {
-    "_id": 1,
     "id": 1,
     "name": "Recipe name 1",
     "description": "Recipe description 1",
@@ -26,7 +25,6 @@
     ]
   },
   {
-    "_id": 2,
     "id": 2,
     "name": "Recipe name 2",
     "showName": true,
@@ -75,7 +73,6 @@
     ]
   },
   {
-    "_id": 3,
     "id": 3,
     "name": "Recipe name 3",
     "image": "",
@@ -122,7 +119,6 @@
     ]
   },
   {
-    "_id": 4,
     "id": 4,
     "name": "Recipe name 4",
     "description": "Recipe description 4",
@@ -154,7 +150,6 @@
     ]
   },
   {
-    "_id": 5,
     "id": 5,
     "name": "Recipe name 5",
     "description": "Recipe description 5",
@@ -186,7 +181,6 @@
     ]
   },
   {
-    "_id": 6,
     "id": 6,
     "name": "Recipe name 6",
     "description": "Recipe description 6",
@@ -218,7 +212,6 @@
     ]
   },
   {
-    "_id": 7,
     "id": 7,
     "name": "Recipe name 7",
     "description": "Recipe description 7",
@@ -250,7 +243,6 @@
     ]
   },
   {
-    "_id": 8,
     "id": 8,
     "name": "Recipe name 8",
     "description": "Recipe description 8",

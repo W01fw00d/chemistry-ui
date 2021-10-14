@@ -6,7 +6,7 @@ import { makeStyles, ListItemIcon as Icon, ListItemText as Text } from '@materia
 import Checkbox from '../../../atoms/fields/checkbox.jsx';
 
 const Component = ({ text, value }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     lineThrough: {
       textDecoration: 'line-through',
       textDecorationColor: theme.palette.primary.dark,
@@ -22,6 +22,11 @@ const Component = ({ text, value }) => {
       <Text primary={text} className={value ? classes.lineThrough : ''} />
     </>
   );
+};
+
+Component.defaultProps = {
+  text: '',
+  value: false,
 };
 
 Component.propTypes = {

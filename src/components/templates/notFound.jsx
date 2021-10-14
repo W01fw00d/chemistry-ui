@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider, makeStyles } from '@material-ui/core';
 
 import theme from '../../styles/global-styles';
-import Header from '../organisms/recipe/detail/header.jsx';
+import Header from '../organisms/[recipe]/detail/header.jsx';
 import Typography from '../atoms/typography.jsx';
 
 const Component = ({ literals }) => {
@@ -33,7 +33,10 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  literals: PropTypes.any,
+  literals: PropTypes.shape({
+    goHome: PropTypes.string,
+    notFound: PropTypes.string,
+  }),
 };
 
 export default Component;

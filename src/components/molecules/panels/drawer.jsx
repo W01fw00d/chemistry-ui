@@ -9,7 +9,7 @@ import { Menu as MenuIcon } from '@material-ui/icons';
 import IconButton from '../../atoms/buttons/icon.jsx';
 
 const Component = ({ className, children }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     layout: {
       backgroundColor: theme.palette.primary.main,
       padding: theme.spacing(1),

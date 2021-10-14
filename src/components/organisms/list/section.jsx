@@ -16,7 +16,7 @@ const Component = ({
   value,
   handleClick,
 }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
       marginBottom: 0,
@@ -39,12 +39,12 @@ const Component = ({
   return sectionName ? (
     <List
       className={`${classes.root} ${className}`}
-      subheader={(
+      subheader={
         <Item isSubheader onClick={hasExpandAction ? handleClick : undefined}>
           <Text primary={sectionName} />
           {hasExpandAction && renderExpandIcon()}
         </Item>
-      )}
+      }
     >
       {description && (
         <Collapse in={!value} timeout="auto" unmountOnExit>
@@ -72,13 +72,18 @@ const Component = ({
 };
 
 Component.defaultProps = {
-  renderItem: () => { },
-  handleClick: () => { },
+  sectionName: null,
+  description: null,
+  items: [],
+  value: true,
+  className: '',
+  renderItem: () => {},
+  handleClick: () => {},
 };
 
 Component.propTypes = {
-  sectionName: PropTypes.any,
-  description: PropTypes.any,
+  sectionName: PropTypes.any, // TODO: can be MarkdownText or string
+  description: PropTypes.any, // TODO: can be MarkdownText or string
   items: PropTypes.array,
   className: PropTypes.string,
   renderItem: PropTypes.any,

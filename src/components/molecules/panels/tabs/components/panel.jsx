@@ -8,13 +8,13 @@ const Component = ({ children, value, index, ...other }) => (
     id={`simple-tabpanel-${index}`}
     aria-labelledby={`simple-tab-${index}`}
     {...other}
-    hidden={value !== index}
   >
     {children}
   </div>
 );
 
 Component.defaultProps = {
+  children: <></>,
   value: 0,
   index: 0,
 };

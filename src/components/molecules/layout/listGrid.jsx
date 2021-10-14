@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core';
 import Grid from '../../atoms/layout/grid.jsx';
 
 const Component = ({ children }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     grid: {
       padding: theme.spacing(2),
     },
@@ -15,7 +15,7 @@ const Component = ({ children }) => {
 
   return (
     <Grid container className={classes.grid} spacing={2}>
-      {children.map(node => (
+      {children.map((node) => (
         <Grid item xs={12} md={6} key={node.props.data.id}>
           {node}
         </Grid>

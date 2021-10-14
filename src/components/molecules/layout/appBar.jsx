@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles, AppBar, Toolbar } from '@material-ui/core';
 
 const Component = ({ children, position, className }) => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     bar: {
       boxShadow: 'none',
       borderBottomWidth: '1px',

@@ -24,6 +24,12 @@ const Component = ({ children, onClick, isSubheader }) => {
   );
 };
 
+Component.defaultProps = {
+  children: <></>,
+  onClick: () => {},
+  isSubheader: false,
+};
+
 Component.propTypes = {
   children: PropTypes.any,
   onClick: PropTypes.func,

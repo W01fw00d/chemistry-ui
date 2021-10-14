@@ -9,7 +9,7 @@ import itemsData from '../../../../.storybook/fake_data/items.json';
 
 import itemImage from '../../../../public/fake_imgs/item.jpg';
 
-import ItemListProduct from '../../organisms/item/list/product';
+import ItemListProduct from '../../organisms/[room]/list/product';
 
 import ListGrid from './listGrid';
 
@@ -35,7 +35,7 @@ storiesOf('Molecules/Layout/ListGrid', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <ListGrid>
-      {data.map(item => (
+      {data.map((item) => (
         <ItemListProduct key={item.id} data={item} />
       ))}
     </ListGrid>
