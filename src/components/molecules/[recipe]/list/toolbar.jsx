@@ -31,14 +31,16 @@ const Component = ({ aboutLiteral, className, searchValue, handleChange, languag
             <nav>
               <Link to="/about">{aboutLiteral}</Link>
             </nav>
-            <Divider className={classes.divider} />
-            <form noValidate autoComplete="off">
-              <Select
-                value={languageData.active}
-                options={languageData.options}
-                handleChange={languageData.onChange}
-              />
-            </form>
+            {languageData && <Divider className={classes.divider} />}
+            {languageData && (
+              <form noValidate autoComplete="off">
+                <Select
+                  value={languageData.active}
+                  options={languageData.options}
+                  handleChange={languageData.onChange}
+                />
+              </form>
+            )}
           </DrawerPanel>
         </Grid>
         <Grid item xs={5} container justifyContent="center">
@@ -56,18 +58,18 @@ Component.defaultProps = {
   className: '',
   searchValue: null,
   handleChange: () => {},
-  languageData: {},
+  languageData: null,
 };
 
 Component.propTypes = {
   aboutLiteral: PropTypes.string,
   className: PropTypes.string,
-  searchValue: PropTypes.string,
-  handleChange: PropTypes.func,
+  searchValue: TextField.propTypes.value,
+  handleChange: TextField.propTypes.handleChange,
   languageData: PropTypes.shape({
-    active: PropTypes.number,
+    active: Select.propTypes.value,
     options: Select.propTypes.options,
-    onChange: PropTypes.func,
+    onChange: Select.propTypes.handleChange,
   }),
 };
 

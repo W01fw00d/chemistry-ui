@@ -65,7 +65,7 @@ Component.defaultProps = {
 
 Component.propTypes = {
   name: PropTypes.string,
-  handleClick: PropTypes.func,
+  handleClick: IconButton.propTypes.handleClick,
 };
 
 export default Component;

@@ -31,7 +31,7 @@ Component.defaultProps = {
 
 Component.propTypes = {
   text: PropTypes.any,
-  value: PropTypes.bool,
+  value: Checkbox.propTypes.value,
 };
 
 export default Component;

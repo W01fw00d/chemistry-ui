@@ -6,7 +6,6 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 import Grid from '../../../atoms/layout/grid.jsx';
 import IconButton from '../../../atoms/buttons/icon.jsx';
-import Image from '../../../atoms/image.jsx';
 import AppBar from '../../../molecules/layout/appBar.jsx';
 import Toolbar from '../../../molecules/[room]/list/toolbar.jsx';
 import TagsBar from '../../../molecules/[room]/list/tagsBar/index.jsx';
@@ -80,23 +79,12 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  authorData: PropTypes.shape({
-    name: PropTypes.string,
-    email: PropTypes.string,
-    url: PropTypes.string,
-  }),
-  projectData: PropTypes.shape({
-    name: PropTypes.string,
-    url: PropTypes.string,
-  }),
-  logo: PropTypes.shape({
-    src: Image.propTypes.src,
-    width: Image.propTypes.width,
-    height: Image.propTypes.height,
-  }),
+  authorData: Toolbar.propTypes.authorData,
+  projectData: Toolbar.propTypes.projectData,
+  logo: Toolbar.propTypes.logo,
   tags: TagsBar.propTypes.tags,
-  searchValue: PropTypes.string,
-  handleChange: PropTypes.func,
+  searchValue: Toolbar.propTypes.searchValue,
+  handleChange: Toolbar.propTypes.handleChange,
   handleClick: PropTypes.func,
 };
 

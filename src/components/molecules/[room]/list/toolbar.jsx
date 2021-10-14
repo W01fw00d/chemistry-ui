@@ -7,7 +7,6 @@ import Grid from '../../../atoms/layout/grid.jsx';
 import Divider from '../../../atoms/layout/divider.jsx';
 import IconButton from '../../../atoms/buttons/icon.jsx';
 import TextField from '../../../atoms/fields/text.jsx';
-import Image from '../../../atoms/image.jsx';
 import About from '../../about.jsx';
 import DrawerPanel from '../../panels/drawer.jsx';
 
@@ -66,23 +65,19 @@ Component.defaultProps = {
 
 Component.propTypes = {
   authorData: PropTypes.shape({
-    name: PropTypes.string,
-    email: PropTypes.string,
-    url: PropTypes.string,
+    name: About.propTypes.authorName,
+    email: About.propTypes.email,
+    url: About.propTypes.authorUrl,
   }),
   projectData: PropTypes.shape({
-    name: PropTypes.string,
-    url: PropTypes.string,
+    name: About.propTypes.projectname,
+    url: About.propTypes.projectUrl,
   }),
-  logo: PropTypes.shape({
-    src: Image.propTypes.src,
-    width: Image.propTypes.width,
-    height: Image.propTypes.height,
-  }),
+  logo: About.propTypes.logo,
   className: PropTypes.string,
-  searchValue: PropTypes.string,
-  handleChange: PropTypes.func,
-  handleClick: PropTypes.func,
+  searchValue: TextField.propTypes.value,
+  handleChange: TextField.propTypes.handleChange,
+  handleClick: IconButton.propTypes.handleClick,
 };
 
 export default Component;

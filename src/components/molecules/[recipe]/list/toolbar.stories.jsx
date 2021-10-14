@@ -29,4 +29,13 @@ storiesOf('Molecules/[Recipe]/List/Toolbar', module)
       }}
       literals={allLiterals}
     />
+  ))
+  .add('without language select', () => (
+    <Component
+      aboutLiteral="About"
+      searchValue="Search Value"
+      handleChange={action('Input detected')}
+      languageData={null}
+      literals={allLiterals}
+    />
   ));

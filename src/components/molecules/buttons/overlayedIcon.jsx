@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
@@ -32,9 +31,9 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  color: PropTypes.string,
-  children: PropTypes.node,
-  handleClick: PropTypes.func,
+  color: IconButton.propTypes.color,
+  children: IconButton.propTypes.children,
+  handleClick: IconButton.propTypes.handleClick,
 };
 
 export default Component;

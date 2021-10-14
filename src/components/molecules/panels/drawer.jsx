@@ -33,7 +33,7 @@ const Component = ({ className, children }) => {
         <MenuIcon />
       </IconButton>
       <Drawer anchor="left" open={state} onClose={toggleDrawer}>
-        <div className={`${classes.layout} ${className}`}>{children}</div>
+        <div className={`${classes.layout}${className ? ` ${className}` : ''}`}>{children}</div>
       </Drawer>
     </>
   );

@@ -56,8 +56,8 @@ Component.defaultProps = {
 
 Component.propTypes = {
   literals: PropTypes.shape({
-    like: PropTypes.string,
-    comment: PropTypes.string,
+    like: IconTextButton.propTypes.text,
+    comment: IconTextButton.propTypes.text,
   }),
   likeCount: PropTypes.number,
   handleClick: PropTypes.func,

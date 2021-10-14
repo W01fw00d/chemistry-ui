@@ -30,7 +30,7 @@ Component.defaultProps = {
 Component.propTypes = {
   icon: PropTypes.node,
   text: PropTypes.string,
-  handleClick: PropTypes.func,
+  handleClick: TextButton.propTypes.handleClick,
 };
 
 export default Component;

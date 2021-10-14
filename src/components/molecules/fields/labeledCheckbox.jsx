@@ -32,9 +32,9 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  id: PropTypes.string,
-  value: PropTypes.bool,
-  handleChange: PropTypes.func,
+  id: Checkbox.propTypes.id,
+  value: Checkbox.propTypes.value,
+  handleChange: Checkbox.propTypes.handleChange,
   children: PropTypes.string,
 };
 

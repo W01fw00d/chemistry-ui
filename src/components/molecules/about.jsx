@@ -57,15 +57,15 @@ Component.defaultProps = {
 
 Component.propTypes = {
   logo: PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
+    src: Image.propTypes.src,
+    width: Image.propTypes.width,
+    height: Image.propTypes.height,
   }).isRequired,
   projectName: PropTypes.string.isRequired,
   authorName: PropTypes.string,
   email: PropTypes.string,
-  authorUrl: PropTypes.string,
-  projectUrl: PropTypes.string,
+  authorUrl: ExternalLink.propTypes.to,
+  projectUrl: ExternalLink.propTypes.to,
 };
 
 export default Component;

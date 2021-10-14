@@ -64,7 +64,7 @@ Component.propTypes = {
   quantity: PropTypes.string,
   isOptional: PropTypes.bool,
   alternatives: PropTypes.array,
-  value: PropTypes.bool,
+  value: Checkbox.propTypes.value,
   handleClick: PropTypes.func,
   currentNameIndex: PropTypes.number,
   setCurrentNameIndex: PropTypes.func,
