@@ -82,8 +82,8 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  sectionName: PropTypes.string,
-  description: PropTypes.string,
+  sectionName: PropTypes.any, // TODO: can be MarkdownText or string
+  description: PropTypes.any, // TODO: can be MarkdownText or string
   items: PropTypes.array,
   className: PropTypes.string,
   renderItem: PropTypes.any,

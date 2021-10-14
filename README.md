@@ -54,7 +54,7 @@ npm run prettier
 
 - Some components are displayed in [Name] folders. That means those components are specifically used only by a concrete App in the Chemistry-UI little ecosystem. Right now, we have:
   - [Recipe]: Used by the `Cooking with Amateurs` App
-  - [Item]: Used by the `Scaping Boredom` App
+  - [Room]: Used by the `Scaping Boredom` App
 
 ## Technical Stack
 
