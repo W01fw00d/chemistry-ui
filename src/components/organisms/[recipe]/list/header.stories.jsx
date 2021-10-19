@@ -16,16 +16,16 @@ storiesOf('Organisms/[Recipe]/List/Header', module)
   .add('default', () => (
     <Component
       aboutLiteral="About"
-      searchValue="Search Value"
       handleChange={action('Input detected')}
       handleClick={action('IconButton clicked')}
       languageData={{
         active: 0,
+        onChange: action('Select click detected'),
         options: [
           { id: 0, text: 'Option 1' },
           { id: 1, text: 'Option 2' },
         ],
-        onChange: action('Select click detected'),
       }}
+      searchValue="Search Value"
     />
   ));

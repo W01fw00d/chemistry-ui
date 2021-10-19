@@ -10,8 +10,8 @@ storiesOf('Templates/NotFound', module)
   .add('default', () => (
     <Component
       literals={{
-        notFound: 'Not Found Message',
         goHome: 'Go to Home Page',
+        notFound: 'Not Found Message',
       }}
     />
   ));

@@ -12,20 +12,20 @@ storiesOf('Templates/[Recipe]/About', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
     <Component
+      authorData={{
+        email: 'romay.gabriel@gmail.com',
+        name: literals.gabriel,
+        url: literals.cv,
+      }}
       literals={{
         about: 'About',
         participants: 'Participants',
       }}
-      authorData={{
-        name: literals.gabriel,
-        email: 'romay.gabriel@gmail.com',
-        url: literals.cv,
-      }}
       projectData={{
-        name: project.name,
         description: project.description,
-        url: project.url,
+        name: project.name,
         participants: project.participants,
+        url: project.url,
       }}
     />
   ));

@@ -10,7 +10,7 @@ import Component from './checkbox';
 
 storiesOf('Atoms/Fields/Checkbox', module)
   .addDecorator(themeDecorator(theme))
-  .add('checked', () => <Component id="checkbox" value handleChange={action('Input detected')} />)
+  .add('checked', () => <Component handleChange={action('Input detected')} id="checkbox" value />)
   .add('unchecked', () => (
-    <Component id="checkbox" value={false} handleChange={action('Input detected')} />
+    <Component handleChange={action('Input detected')} id="checkbox" value={false} />
   ));

@@ -12,4 +12,4 @@ import Component from './header';
 storiesOf('Organisms/[Room]/Detail/Header', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
-  .add('default', () => <Component name="Item Name" handleClick={action('IconButton clicked')} />);
+  .add('default', () => <Component handleClick={action('IconButton clicked')} name="Item Name" />);

@@ -3,33 +3,33 @@ import PropTypes from 'prop-types';
 
 import Section from '../../../../list/section.jsx';
 
-const Component = ({ sectionName, items, className, renderItem, value, handleClick }) => (
+const Component = ({ className, handleClick, items, renderItem, sectionName, value }) => (
   <Section
-    sectionName={sectionName}
-    items={items}
     className={className}
-    renderItem={renderItem}
-    value={value}
     handleClick={handleClick}
+    items={items}
+    renderItem={renderItem}
+    sectionName={sectionName}
+    value={value}
   />
 );
 
 Component.defaultProps = {
-  sectionName: '',
-  items: [],
   className: '',
-  value: true,
-  renderItem: () => {},
   handleClick: () => {},
+  items: [],
+  renderItem: () => {},
+  sectionName: '',
+  value: true,
 };
 
 Component.propTypes = {
-  sectionName: Section.propTypes.sectionName,
-  items: PropTypes.array,
   className: PropTypes.string,
-  renderItem: PropTypes.any,
-  value: Section.propTypes.value,
   handleClick: PropTypes.func,
+  items: PropTypes.array,
+  renderItem: PropTypes.any,
+  sectionName: Section.propTypes.sectionName,
+  value: Section.propTypes.value,
 };
 
 export default Component;

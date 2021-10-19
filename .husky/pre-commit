@@ -1,6 +1,7 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+npm run format-rules-file
 npm run eslint
 npm run prettier
 git add .

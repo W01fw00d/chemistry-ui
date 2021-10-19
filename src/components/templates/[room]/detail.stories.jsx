@@ -12,26 +12,26 @@ import itemImage from '../../../../public/fake_imgs/item.jpg';
 import Component from './detail';
 
 const literals = {
-  like: allLiterals.like,
+  buy: allLiterals.buy,
   comment: allLiterals.comment,
   description: allLiterals.description,
-  buy: allLiterals.buy,
+  like: allLiterals.like,
 };
 
 const details = allData[0];
 const data = {
-  name: 'Item Name',
   image: {
+    height: 360,
     src: itemImage,
     width: 640,
-    height: 360,
   },
-  price: details.price,
   isGroupPrice: details.isGroupPrice,
+  name: 'Item Name',
+  price: details.price,
 };
 
 storiesOf('Templates/[Room]/Detail', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
-    <Component literals={literals} data={data} handleClick={action('Button clicked')} />
+    <Component data={data} handleClick={action('Button clicked')} literals={literals} />
   ));

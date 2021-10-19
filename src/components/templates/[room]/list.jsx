@@ -15,12 +15,12 @@ import Product from '../../organisms/[room]/list/product.jsx';
 
 const Component = ({
   authorData,
-  projectData,
-  search,
-  itemList,
-  tags,
   handleChange,
   handleClick,
+  itemList,
+  projectData,
+  search,
+  tags,
 }) => {
   const useStyles = makeStyles({
     layout: {
@@ -36,22 +36,22 @@ const Component = ({
         {tags && (
           <Header
             authorData={authorData}
-            projectData={projectData}
-            logo={{
-              src: escapingBoredomTitleLogo,
-              width: 1458,
-              height: 625,
-            }}
-            tags={tags}
-            searchValue={search}
             handleChange={handleChange}
             handleClick={handleClick}
+            logo={{
+              height: 625,
+              src: escapingBoredomTitleLogo,
+              width: 1458,
+            }}
+            projectData={projectData}
+            searchValue={search}
+            tags={tags}
           />
         )}
         {itemList && (
           <ListGrid>
             {itemList.map((productData) => (
-              <Product key={productData.id} data={productData} />
+              <Product data={productData} key={productData.id} />
             ))}
           </ListGrid>
         )}
@@ -65,23 +65,23 @@ const Component = ({
 
 Component.defaultProps = {
   authorData: {},
-  projectData: {},
-  search: '',
-  itemList: [],
-  tags: [],
   handleChange: () => {},
   handleClick: () => {},
+  itemList: [],
+  projectData: {},
+  search: '',
+  tags: [],
 };
 
 Component.propTypes = {
   authorData: Header.propTypes.authorData,
-  projectData: Header.propTypes.projectData,
-  search: Header.propTypes.searchValue,
-  itemList: PropTypes.arrayOf(PropTypes.object),
-  // TODO: do not use object, use something more specific
-  tags: Header.propTypes.tags,
   handleChange: Header.propTypes.handleChange,
   handleClick: PropTypes.func,
+  itemList: PropTypes.arrayOf(PropTypes.object),
+  // TODO: do not use object, use something more specific
+  projectData: Header.propTypes.projectData,
+  search: Header.propTypes.searchValue,
+  tags: Header.propTypes.tags,
 };
 
 export default Component;

@@ -12,12 +12,12 @@ import TagsBar from '../../../molecules/[room]/list/tagsBar/index.jsx';
 
 const Component = ({
   authorData,
-  projectData,
-  logo,
-  tags,
-  searchValue,
   handleChange,
   handleClick,
+  logo,
+  projectData,
+  searchValue,
+  tags,
 }) => {
   const useStyles = makeStyles((theme) => ({
     appbar: {
@@ -27,39 +27,39 @@ const Component = ({
     container: {
       backgroundColor: theme.palette.primary.main,
     },
-    toolbar: {
-      borderBottomWidth: '1px',
-      borderBottomColor: theme.palette.primary.light,
-      borderBottomStyle: 'solid',
-    },
     overlayed: {
-      float: 'center',
-      marginTop: theme.spacing(1),
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.secondary.main,
+      float: 'center',
+      marginTop: theme.spacing(1),
+    },
+    toolbar: {
+      borderBottomColor: theme.palette.primary.light,
+      borderBottomStyle: 'solid',
+      borderBottomWidth: '1px',
     },
   }));
   const classes = useStyles();
 
   return (
-    <AppBar position="sticky" className={classes.appbar}>
+    <AppBar className={classes.appbar} position="sticky">
       <Grid container>
-        <Grid item xs={12} className={classes.container}>
+        <Grid className={classes.container} item xs={12}>
           <Toolbar
             authorData={authorData}
-            projectData={projectData}
-            logo={logo}
             className={classes.toolbar}
-            searchValue={searchValue}
             handleChange={handleChange}
             handleClick={handleClick}
+            logo={logo}
+            projectData={projectData}
+            searchValue={searchValue}
           />
         </Grid>
-        <Grid item xs={12} className={classes.container}>
-          <TagsBar tags={tags} handleClick={handleClick} />
+        <Grid className={classes.container} item xs={12}>
+          <TagsBar handleClick={handleClick} tags={tags} />
         </Grid>
-        <Grid item xs={12} container justifyContent="center">
-          <IconButton color="primary" className={classes.overlayed} handleClick={handleClick}>
+        <Grid container item justifyContent="center" xs={12}>
+          <IconButton className={classes.overlayed} color="primary" handleClick={handleClick}>
             <ArrowUpwardIcon />
           </IconButton>
         </Grid>
@@ -70,22 +70,22 @@ const Component = ({
 
 Component.defaultProps = {
   authorData: {},
-  projectData: {},
-  logo: {},
-  tags: [],
-  searchValue: '',
   handleChange: () => {},
   handleClick: () => {},
+  logo: {},
+  projectData: {},
+  searchValue: '',
+  tags: [],
 };
 
 Component.propTypes = {
   authorData: Toolbar.propTypes.authorData,
-  projectData: Toolbar.propTypes.projectData,
-  logo: Toolbar.propTypes.logo,
-  tags: TagsBar.propTypes.tags,
-  searchValue: Toolbar.propTypes.searchValue,
   handleChange: Toolbar.propTypes.handleChange,
   handleClick: PropTypes.func,
+  logo: Toolbar.propTypes.logo,
+  projectData: Toolbar.propTypes.projectData,
+  searchValue: Toolbar.propTypes.searchValue,
+  tags: TagsBar.propTypes.tags,
 };
 
 export default Component;

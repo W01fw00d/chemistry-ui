@@ -14,41 +14,41 @@ import Typography from '../../../atoms/typography.jsx';
 import IconButton from '../../../atoms/buttons/icon.jsx';
 import AppBar from '../../../molecules/layout/appBar.jsx';
 
-const Component = ({ name, handleClick }) => {
+const Component = ({ handleClick, name }) => {
   const useStyles = makeStyles((theme) => ({
+    icon: {
+      color: theme.palette.primary.dark,
+    },
     layout: {
       padding: theme.spacing(1),
     },
     name: {
-      textAlign: 'center',
+      color: theme.palette.primary.dark,
       fontWeight: 'bold',
-      color: theme.palette.primary.dark,
-    },
-    icon: {
-      color: theme.palette.primary.dark,
+      textAlign: 'center',
     },
   }));
   const classes = useStyles();
 
   return (
     <AppBar position="sticky">
-      <Grid container alignItems="center" className={classes.layout}>
-        <Grid item xs={2} container justifyContent="center">
+      <Grid alignItems="center" className={classes.layout} container>
+        <Grid container item justifyContent="center" xs={2}>
           <InternalLink id="back" to="/">
             <ArrowBackIcon className={classes.icon} />
           </InternalLink>
         </Grid>
         <Grid item xs={6}>
-          <Typography variant="h6" className={classes.name}>
+          <Typography className={classes.name} variant="h6">
             {name}
           </Typography>
         </Grid>
-        <Grid item xs={2} container justifyContent="center">
+        <Grid container item justifyContent="center" xs={2}>
           <IconButton handleClick={handleClick}>
             <SearchIcon />
           </IconButton>
         </Grid>
-        <Grid item xs={2} container justifyContent="center">
+        <Grid container item justifyContent="center" xs={2}>
           <IconButton handleClick={handleClick}>
             <PublishIcon />
           </IconButton>
@@ -59,13 +59,13 @@ const Component = ({ name, handleClick }) => {
 };
 
 Component.defaultProps = {
-  name: '',
   handleClick: () => {},
+  name: '',
 };
 
 Component.propTypes = {
-  name: PropTypes.string,
   handleClick: IconButton.propTypes.handleClick,
+  name: PropTypes.string,
 };
 
 export default Component;

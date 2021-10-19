@@ -5,19 +5,19 @@ import { makeStyles } from '@material-ui/core';
 import IconButton from '../../atoms/buttons/icon.jsx';
 import Footer from '../layout/footer.jsx';
 
-const Component = ({ color, children, handleClick }) => {
+const Component = ({ children, color, handleClick }) => {
   const useStyles = makeStyles((theme) => ({
     overlayed: {
+      backgroundColor: theme.palette.secondary.main,
       float: 'right',
       margin: theme.spacing(4),
-      backgroundColor: theme.palette.secondary.main,
     },
   }));
   const classes = useStyles();
 
   return (
     <Footer>
-      <IconButton color={color} className={classes.overlayed} onClick={handleClick}>
+      <IconButton className={classes.overlayed} color={color} onClick={handleClick}>
         {children}
       </IconButton>
     </Footer>
@@ -25,14 +25,14 @@ const Component = ({ color, children, handleClick }) => {
 };
 
 Component.defaultProps = {
-  color: 'primary',
   children: <></>,
+  color: 'primary',
   handleClick: () => {},
 };
 
 Component.propTypes = {
-  color: IconButton.propTypes.color,
   children: IconButton.propTypes.children,
+  color: IconButton.propTypes.color,
   handleClick: IconButton.propTypes.handleClick,
 };
 

@@ -9,34 +9,34 @@ import InternalLink from '../../../atoms/links/internal.jsx';
 import Image from '../../../atoms/image.jsx';
 import Footer from '../../../molecules/[recipe]/list/imageFooter.jsx';
 
-const Component = ({ literals, data }) => {
+const Component = ({ data, literals }) => {
   const useStyles = makeStyles({
-    wrapper: {
-      position: 'relative',
-    },
     banner: {
-      position: 'absolute',
       display: 'block',
+      position: 'absolute',
     },
     logo: {
       backgroundColor: 'white',
+    },
+    wrapper: {
+      position: 'relative',
     },
   });
   const classes = useStyles();
 
   const getFooterData = ({
-    name,
-    eventDate,
-    preparationTime,
     difficulty,
+    eventDate,
+    name,
     nIngredients,
+    preparationTime,
     showName,
   }) => ({
-    name,
-    eventDate,
-    preparationTime,
     difficulty,
+    eventDate,
+    name,
     nIngredients,
+    preparationTime,
     showName,
   });
 
@@ -48,48 +48,48 @@ const Component = ({ literals, data }) => {
         <section className={classes.wrapper}>
           {image ? (
             <Image
+              description={data.name}
+              height={image.height}
               src={image.src}
               width={image.width}
-              height={image.height}
-              description={data.name}
             />
           ) : (
             <Image
+              className={classes.logo}
+              description="This Recipe doesn't have image"
+              height={1772}
               src={logo}
               width={3543}
-              height={1772}
-              description="This Recipe doesn't have image"
-              className={classes.logo}
             />
           )}
         </section>
-        <Footer literals={literals} data={getFooterData(data)} />
+        <Footer data={getFooterData(data)} literals={literals} />
       </article>
     </InternalLink>
   );
 };
 
 Component.defaultProps = {
-  literals: {},
   data: {},
+  literals: {},
 };
 
 Component.propTypes = {
-  literals: Footer.propTypes.literals,
   data: PropTypes.shape({
+    difficulty: PropTypes.number,
+    eventDate: PropTypes.string,
     id: PropTypes.number,
     image: PropTypes.shape({
+      height: PropTypes.number,
       src: PropTypes.string,
       width: PropTypes.number,
-      height: PropTypes.number,
     }),
     name: Image.propTypes.description,
-    eventDate: PropTypes.string,
-    preparationTime: PropTypes.string,
-    difficulty: PropTypes.number,
     nIngredients: PropTypes.number,
+    preparationTime: PropTypes.string,
     showName: PropTypes.bool,
   }),
+  literals: Footer.propTypes.literals,
 };
 
 export default Component;

@@ -12,5 +12,5 @@ import Component from './image';
 storiesOf('Atoms/Image', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
-    <Component description="Item Image" src={itemImage} width={640} height={360} />
+    <Component description="Item Image" height={360} src={itemImage} width={640} />
   ));

@@ -11,17 +11,17 @@ import itemImage from '../../../../../public/fake_imgs/item.jpg';
 
 import Component from './product';
 
-const getData = ({ id, name, price, likeCount, isEditorsChoice }) => ({
+const getData = ({ id, isEditorsChoice, likeCount, name, price }) => ({
   id,
-  name,
-  price,
-  likeCount,
-  isEditorsChoice,
   image: {
+    height: 360,
     src: itemImage,
     width: 640,
-    height: 360,
   },
+  isEditorsChoice,
+  likeCount,
+  name,
+  price,
 });
 
 storiesOf('Organisms/[Room]/List/Product', module)

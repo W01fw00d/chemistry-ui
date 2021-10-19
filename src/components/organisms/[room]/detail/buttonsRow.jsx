@@ -13,7 +13,7 @@ import Typography from '../../../atoms/typography.jsx';
 import IconTextButton from '../../../atoms/buttons/iconText.jsx';
 import IconButton from '../../../atoms/buttons/icon.jsx';
 
-const Component = ({ literals, likeCount, handleClick }) => {
+const Component = ({ handleClick, likeCount, literals }) => {
   const useStyles = makeStyles((theme) => ({
     layout: {
       padding: theme.spacing(1),
@@ -27,19 +27,19 @@ const Component = ({ literals, likeCount, handleClick }) => {
   const classes = useStyles();
 
   return (
-    <Grid container alignItems="center" className={classes.layout}>
+    <Grid alignItems="center" className={classes.layout} container>
       <Grid item xs={3}>
-        <IconTextButton text={literals.like} icon={<LikeIcon />} handleClick={handleClick} />
+        <IconTextButton handleClick={handleClick} icon={<LikeIcon />} text={literals.like} />
       </Grid>
-      <Grid item xs={2} container id="likeCount">
-        <Typography variant="h6" color="inherit" className={classes.name}>
+      <Grid container id="likeCount" item xs={2}>
+        <Typography className={classes.name} color="inherit" variant="h6">
           {likeCount}
         </Typography>
       </Grid>
       <Grid item xs={4}>
-        <IconTextButton text={literals.comment} icon={<CommentIcon />} handleClick={handleClick} />
+        <IconTextButton handleClick={handleClick} icon={<CommentIcon />} text={literals.comment} />
       </Grid>
-      <Grid item xs={3} container justifyContent="flex-end">
+      <Grid container item justifyContent="flex-end" xs={3}>
         <IconButton color="secondary" handleClick={handleClick}>
           <FlagIcon />
         </IconButton>
@@ -49,18 +49,18 @@ const Component = ({ literals, likeCount, handleClick }) => {
 };
 
 Component.defaultProps = {
-  literals: {},
-  likeCount: 0,
   handleClick: () => {},
+  likeCount: 0,
+  literals: {},
 };
 
 Component.propTypes = {
-  literals: PropTypes.shape({
-    like: IconTextButton.propTypes.text,
-    comment: IconTextButton.propTypes.text,
-  }),
-  likeCount: PropTypes.number,
   handleClick: PropTypes.func,
+  likeCount: PropTypes.number,
+  literals: PropTypes.shape({
+    comment: IconTextButton.propTypes.text,
+    like: IconTextButton.propTypes.text,
+  }),
 };
 
 export default Component;

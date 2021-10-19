@@ -16,16 +16,16 @@ const footerBarLiterals = {
 
 const details = data[0];
 const footerBarData = {
-  price: details.price,
   isGroupPrice: details.isGroupPrice,
+  price: details.price,
 };
 
 storiesOf('Organisms/[Room]/Detail/Footer', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <Component
-      literals={footerBarLiterals}
       data={footerBarData}
       handleClick={action('Button clicked')}
+      literals={footerBarLiterals}
     />
   ));

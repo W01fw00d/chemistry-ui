@@ -14,9 +14,9 @@ const Component = ({ children }) => {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.grid} spacing={2}>
+    <Grid className={classes.grid} container spacing={2}>
       {children.map((node) => (
-        <Grid item xs={12} md={6} key={node.props.data.id}>
+        <Grid item key={node.props.data.id} md={6} xs={12}>
           {node}
         </Grid>
       ))}

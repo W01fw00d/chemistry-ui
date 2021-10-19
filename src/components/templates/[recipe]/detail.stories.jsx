@@ -10,25 +10,25 @@ import recipeImage from '../../../../public/fake_imgs/recipe.jpg';
 
 import Component from './detail';
 
-const getData = ({ name, ingredients }) => ({
-  name,
-  ingredients,
+const getData = ({ ingredients, name }) => ({
   image: {
+    height: 1440,
     src: recipeImage,
     width: 1080,
-    height: 1440,
   },
+  ingredients,
+  name,
   steps: [
     {
-      id: 1,
-      sectionName: 'Section Name 1',
       description: 'Description',
+      id: 1,
       items: ['Item 1', 'Item 2'],
+      sectionName: 'Section Name 1',
     },
     {
+      description: 'Description',
       id: 1,
       sectionName: 'Section Name 2',
-      description: 'Description',
     },
   ],
 });
@@ -45,8 +45,8 @@ const literals = {
 storiesOf('Templates/[Recipe]/Detail', module)
   .addDecorator(StoryRouter())
   .add('default', () => (
-    <Component literals={literals} data={defaultData} handleClick={action('Button clicked')} />
+    <Component data={defaultData} handleClick={action('Button clicked')} literals={literals} />
   ))
   .add('without image tab', () => (
-    <Component literals={literals} data={noImageData} handleClick={action('Button clicked')} />
+    <Component data={noImageData} handleClick={action('Button clicked')} literals={literals} />
   ));

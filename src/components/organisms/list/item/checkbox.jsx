@@ -19,7 +19,7 @@ const Component = ({ text, value }) => {
       <Icon>
         <Checkbox value={value} />
       </Icon>
-      <Text primary={text} className={value ? classes.lineThrough : ''} />
+      <Text className={value ? classes.lineThrough : ''} primary={text} />
     </>
   );
 };

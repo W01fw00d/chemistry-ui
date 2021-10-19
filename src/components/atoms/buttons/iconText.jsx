@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core';
 
 import TextButton from './text.jsx';
 
-const Component = ({ icon, text, handleClick }) => {
+const Component = ({ handleClick, icon, text }) => {
   const useStyles = makeStyles((theme) => ({
     text: {
       marginLeft: theme.spacing(1),
@@ -22,15 +22,15 @@ const Component = ({ icon, text, handleClick }) => {
 };
 
 Component.defaultProps = {
+  handleClick: () => {},
   icon: <></>,
   text: '',
-  handleClick: () => {},
 };
 
 Component.propTypes = {
+  handleClick: TextButton.propTypes.handleClick,
   icon: PropTypes.node,
   text: PropTypes.string,
-  handleClick: TextButton.propTypes.handleClick,
 };
 
 export default Component;

@@ -11,41 +11,41 @@ import Link from '../../../atoms/links/internal.jsx';
 
 import DrawerPanel from '../../panels/drawer.jsx';
 
-const Component = ({ aboutLiteral, className, searchValue, handleChange, languageData }) => {
+const Component = ({ aboutLiteral, className, handleChange, languageData, searchValue }) => {
   const useStyles = makeStyles({
+    divider: {
+      marginBottom: '20px',
+      marginTop: '20px',
+    },
     wrapper: {
       textAlign: 'center',
-    },
-    divider: {
-      marginTop: '20px',
-      marginBottom: '20px',
     },
   });
   const classes = useStyles();
 
   return (
     <div className={className}>
-      <Grid container alignItems="center">
-        <Grid item xs={2} container justifyContent="center">
+      <Grid alignItems="center" container>
+        <Grid container item justifyContent="center" xs={2}>
           <DrawerPanel className={classes.wrapper}>
             <nav>
               <Link to="/about">{aboutLiteral}</Link>
             </nav>
             {languageData && <Divider className={classes.divider} />}
             {languageData && (
-              <form noValidate autoComplete="off">
+              <form autoComplete="off" noValidate>
                 <Select
-                  value={languageData.active}
-                  options={languageData.options}
                   handleChange={languageData.onChange}
+                  options={languageData.options}
+                  value={languageData.active}
                 />
               </form>
             )}
           </DrawerPanel>
         </Grid>
-        <Grid item xs={5} container justifyContent="center">
-          <form noValidate autoComplete="off">
-            <TextField id="search" value={searchValue} handleChange={handleChange} />
+        <Grid container item justifyContent="center" xs={5}>
+          <form autoComplete="off" noValidate>
+            <TextField handleChange={handleChange} id="search" value={searchValue} />
           </form>
         </Grid>
       </Grid>
@@ -56,21 +56,21 @@ const Component = ({ aboutLiteral, className, searchValue, handleChange, languag
 Component.defaultProps = {
   aboutLiteral: '',
   className: '',
-  searchValue: null,
   handleChange: () => {},
   languageData: null,
+  searchValue: null,
 };
 
 Component.propTypes = {
   aboutLiteral: PropTypes.string,
   className: PropTypes.string,
-  searchValue: TextField.propTypes.value,
   handleChange: TextField.propTypes.handleChange,
   languageData: PropTypes.shape({
     active: Select.propTypes.value,
-    options: Select.propTypes.options,
     onChange: Select.propTypes.handleChange,
+    options: Select.propTypes.options,
   }),
+  searchValue: TextField.propTypes.value,
 };
 
 export default Component;

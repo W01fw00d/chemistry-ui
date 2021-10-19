@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-const Component = ({ id, to, className, children }) => {
+const Component = ({ children, className, id, to }) => {
   const useStyles = makeStyles({
     text: {
-      textDecoration: 'none',
       color: 'inherit',
+      textDecoration: 'none',
     },
   });
   const classes = useStyles();
 
   return (
     <a
-      id={id}
-      href={to}
-      target="_blank"
-      rel="noopener noreferrer"
       className={`${classes.text}${className ? ` ${className}` : ''}`}
+      href={to}
+      id={id}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       {children}
     </a>
@@ -26,17 +26,17 @@ const Component = ({ id, to, className, children }) => {
 };
 
 Component.defaultProps = {
+  children: <></>,
+  className: '',
   id: 'externalLink',
   to: '/',
-  className: '',
-  children: <></>,
 };
 
 Component.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
   id: PropTypes.string,
   to: PropTypes.string,
-  className: PropTypes.string,
-  children: PropTypes.node,
 };
 
 export default Component;

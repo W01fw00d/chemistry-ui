@@ -10,20 +10,20 @@ import About from '../../molecules/about.jsx';
 import Header from '../../organisms/[recipe]/detail/header.jsx';
 import logo from '../../../../public/cooking-with-amateurs-title-logo.png';
 
-const Component = ({ literals, authorData, projectData }) => {
+const Component = ({ authorData, literals, projectData }) => {
   const useStyles = makeStyles({
+    alignText: {
+      textAlign: 'center',
+    },
     layout: {
       backgroundColor: theme.palette.primary.light,
       paddingBottom: theme.spacing(4),
     },
-    alignText: {
-      textAlign: 'center',
+    noListStyle: {
+      display: 'initial',
     },
     noPadding: {
       padding: 0,
-    },
-    noListStyle: {
-      display: 'initial',
     },
   });
   const classes = useStyles();
@@ -35,15 +35,15 @@ const Component = ({ literals, authorData, projectData }) => {
         <article>
           <header>
             <About
+              authorName={authorData.name}
+              authorUrl={authorData.url}
+              email={authorData.email}
               logo={{
+                height: 1772,
                 src: logo,
                 width: 3543,
-                height: 1772,
               }}
               projectName={projectData.name}
-              authorName={authorData.name}
-              email={authorData.email}
-              authorUrl={authorData.url}
               projectUrl={projectData.url}
             />
           </header>
@@ -58,7 +58,7 @@ const Component = ({ literals, authorData, projectData }) => {
             </p>
             <ul className={classes.noPadding}>
               {projectData.participants.map((name) => (
-                <li key={name.toLowerCase()} className={classes.noListStyle}>
+                <li className={classes.noListStyle} key={name.toLowerCase()}>
                   <p>{name}</p>
                 </li>
               ))}
@@ -71,27 +71,27 @@ const Component = ({ literals, authorData, projectData }) => {
 };
 
 Component.defaultProps = {
-  literals: {},
   authorData: {},
+  literals: {},
   projectData: {},
 };
 
 Component.propTypes = {
+  authorData: PropTypes.shape({
+    email: About.propTypes.email,
+    name: About.propTypes.authorName,
+    url: About.propTypes.authorUrl,
+  }),
   literals: PropTypes.shape({
     about: Header.propTypes.name,
     participants: PropTypes.string,
   }),
-  authorData: PropTypes.shape({
-    name: About.propTypes.authorName,
-    email: About.propTypes.email,
-    url: About.propTypes.authorUrl,
-  }),
   projectData: PropTypes.shape({
-    name: About.propTypes.projectName,
     description: PropTypes.string,
     logo: PropTypes.string,
-    url: About.propTypes.projectUrl,
+    name: About.propTypes.projectName,
     participants: PropTypes.arrayOf(PropTypes.string),
+    url: About.propTypes.projectUrl,
   }),
 };
 

@@ -3,34 +3,34 @@ import PropTypes from 'prop-types';
 
 import { Button } from '@material-ui/core';
 
-const Component = ({ color, size, className, children, handleClick }) => (
+const Component = ({ children, className, color, handleClick, size }) => (
   <Button
     className={className}
-    variant="contained"
     color={color}
-    size={size}
     component="span"
     disableElevation
     onClick={handleClick}
+    size={size}
+    variant="contained"
   >
     {children}
   </Button>
 );
 
 Component.defaultProps = {
-  color: 'primary',
-  size: 'medium',
   children: <>Click me!</>,
   className: '',
+  color: 'primary',
   handleClick: () => {},
+  size: 'medium',
 };
 
 Component.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
+  color: PropTypes.string,
   handleClick: PropTypes.func,
+  size: PropTypes.string,
 };
 
 export default Component;

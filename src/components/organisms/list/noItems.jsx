@@ -9,14 +9,14 @@ const Component = ({ children }) => {
   const useStyles = makeStyles((theme) => ({
     message: {
       color: theme.palette.primary.dark,
-      textAlign: 'center',
       paddingBottom: '20px',
+      textAlign: 'center',
     },
   }));
   const classes = useStyles();
 
   return (
-    <Typography variant="body1" className={classes.message}>
+    <Typography className={classes.message} variant="body1">
       {children}
     </Typography>
   );

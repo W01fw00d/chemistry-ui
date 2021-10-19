@@ -10,10 +10,10 @@ import Typography from '../atoms/typography.jsx';
 const Component = ({ literals }) => {
   const useStyles = makeStyles({
     notFound: {
-      textAlign: 'center',
+      color: theme.palette.primary.dark,
       fontWeight: 'bold',
       marginTop: '15px',
-      color: theme.palette.primary.dark,
+      textAlign: 'center',
     },
   });
   const classes = useStyles();
@@ -21,7 +21,7 @@ const Component = ({ literals }) => {
   return (
     <ThemeProvider theme={theme}>
       <Header name={literals.goHome} />
-      <Typography variant="h6" className={classes.notFound}>
+      <Typography className={classes.notFound} variant="h6">
         {literals.notFound}
       </Typography>
     </ThemeProvider>

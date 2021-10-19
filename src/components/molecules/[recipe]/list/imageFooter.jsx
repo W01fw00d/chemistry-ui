@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core';
 import Grid from '../../../atoms/layout/grid.jsx';
 import Typography from '../../../atoms/typography.jsx';
 
-const Component = ({ literals, data }) => {
+const Component = ({ data, literals }) => {
   const useStyles = makeStyles((theme) => ({
     layout: {
       backgroundColor: theme.palette.primary.main,
@@ -24,23 +24,24 @@ const Component = ({ literals, data }) => {
       <Grid container>
         {data.showName && (
           <Grid item xs={12}>
-            <Typography variant="h6" className={classes.text}>
+            <Typography className={classes.text} variant="h6">
+              {/* TODO refactor: this component can be extracted */}
               {`[${data.name}] - ${data.eventDate}`}
             </Typography>
           </Grid>
         )}
         <Grid item xs={12}>
-          <Typography variant="h6" className={classes.text}>
+          <Typography className={classes.text} variant="h6">
             {`${literals.difficulty}: ${data.difficulty}/5`}
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="h6" className={classes.text}>
+          <Typography className={classes.text} variant="h6">
             {`${literals.preparationTime}: ${data.preparationTime} h`}
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="h6" className={classes.text}>
+          <Typography className={classes.text} variant="h6">
             {`${literals.howManyIngredients} ${data.nIngredients}`}
           </Typography>
         </Grid>
@@ -50,23 +51,23 @@ const Component = ({ literals, data }) => {
 };
 
 Component.defaultProps = {
-  literals: {},
   data: {},
+  literals: {},
 };
 
 Component.propTypes = {
+  data: PropTypes.shape({
+    difficulty: PropTypes.number,
+    eventDate: PropTypes.string,
+    name: PropTypes.string,
+    nIngredients: PropTypes.number,
+    preparationTime: PropTypes.string,
+    showName: PropTypes.bool,
+  }),
   literals: PropTypes.shape({
     difficulty: PropTypes.string,
-    preparationTime: PropTypes.string,
     howManyIngredients: PropTypes.string,
-  }),
-  data: PropTypes.shape({
-    name: PropTypes.string,
-    eventDate: PropTypes.string,
-    difficulty: PropTypes.number,
     preparationTime: PropTypes.string,
-    nIngredients: PropTypes.number,
-    showName: PropTypes.bool,
   }),
 };
 

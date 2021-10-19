@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import { makeStyles, AppBar, Toolbar } from '@material-ui/core';
 
-const Component = ({ children, position, className }) => {
+const Component = ({ children, className, position }) => {
   const useStyles = makeStyles((theme) => ({
     bar: {
-      boxShadow: 'none',
-      borderBottomWidth: '1px',
       borderBottomColor: theme.palette.primary.light,
       borderBottomStyle: 'solid',
+      borderBottomWidth: '1px',
+      boxShadow: 'none',
     },
     toolbar: {
       paddingLeft: '0',
@@ -19,8 +19,8 @@ const Component = ({ children, position, className }) => {
   const classes = useStyles();
 
   return (
-    <AppBar position={position} className={`${classes.bar} ${className}`}>
-      <Toolbar variant="dense" className={classes.toolbar}>
+    <AppBar className={`${classes.bar} ${className}`} position={position}>
+      <Toolbar className={classes.toolbar} variant="dense">
         {children}
       </Toolbar>
     </AppBar>
@@ -29,14 +29,14 @@ const Component = ({ children, position, className }) => {
 
 Component.defaultProps = {
   children: <></>,
-  position: '',
   className: '',
+  position: '',
 };
 
 Component.propTypes = {
   children: PropTypes.node,
-  position: PropTypes.string,
   className: PropTypes.string,
+  position: PropTypes.string,
 };
 
 export default Component;

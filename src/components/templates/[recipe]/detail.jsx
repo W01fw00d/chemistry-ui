@@ -17,7 +17,7 @@ import IngredientsList from '../../organisms/[recipe]/detail/ingredientsList/ind
 import StepsList from '../../organisms/[recipe]/detail/stepsList/index.jsx';
 import Tabs from '../../molecules/panels/tabs/index.jsx';
 
-const Component = ({ literals, data }) => {
+const Component = ({ data, literals }) => {
   const useStyles = makeStyles({
     marginBottom: {
       marginBottom: theme.spacing(7),
@@ -30,41 +30,41 @@ const Component = ({ literals, data }) => {
   const RecipeTabs = () => {
     const tabsData = [
       {
-        icon: <KitchenIcon />,
-        label: literals.ingredients,
         content: (
           <IngredientsList
-            noItemsMsg={literals.noIngredients}
             className={classes.marginBottom}
             ingredients={data.ingredients}
+            noItemsMsg={literals.noIngredients}
           />
         ),
+        icon: <KitchenIcon />,
+        label: literals.ingredients,
       },
       {
-        icon: <FastfoodIcon />,
-        label: literals.steps,
         content: (
           <StepsList
-            noItemsMsg={literals.noSteps}
             className={classes.marginBottom}
+            noItemsMsg={literals.noSteps}
             steps={data.steps}
           />
         ),
+        icon: <FastfoodIcon />,
+        label: literals.steps,
       },
     ];
 
     if (image) {
       tabsData.unshift({
-        icon: <PhotoIcon />,
-        label: literals.image,
         content: (
           <Image
+            description={data.name}
+            height={image.height}
             src={image.src}
             width={image.width}
-            height={image.height}
-            description={data.name}
           />
         ),
+        icon: <PhotoIcon />,
+        label: literals.image,
       });
     }
 
@@ -82,36 +82,36 @@ const Component = ({ literals, data }) => {
 };
 
 Component.defaultProps = {
-  literals: {},
   data: {
-    name: Header.defaultProps.name,
     image: {
+      height: 360,
       src: Image.defaultProps.src,
       width: 640,
-      height: 360,
     },
     ingredients: [],
+    name: Header.defaultProps.name,
     steps: [],
   },
+  literals: {},
 };
 
 Component.propTypes = {
-  literals: PropTypes.shape({
-    ingredients: PropTypes.string,
-    noIngredients: PropTypes.string,
-    steps: PropTypes.string,
-    noSteps: PropTypes.string,
-    image: PropTypes.string,
-  }),
   data: PropTypes.shape({
-    name: Header.propTypes.name,
     image: PropTypes.shape({
+      height: Image.propTypes.height,
       src: Image.propTypes.src,
       width: Image.propTypes.width,
-      height: Image.propTypes.height,
     }),
     ingredients: PropTypes.array,
+    name: Header.propTypes.name,
     steps: PropTypes.array,
+  }),
+  literals: PropTypes.shape({
+    image: PropTypes.string,
+    ingredients: PropTypes.string,
+    noIngredients: PropTypes.string,
+    noSteps: PropTypes.string,
+    steps: PropTypes.string,
   }),
 };
 

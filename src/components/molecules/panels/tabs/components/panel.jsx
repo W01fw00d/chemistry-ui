@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Component = ({ children, value, index, ...other }) => (
+const Component = ({ children, index, value, ...other }) => (
   <div
-    role="tabpanel"
+    aria-labelledby={`simple-tab-${index}`}
     hidden={value !== index}
     id={`simple-tabpanel-${index}`}
-    aria-labelledby={`simple-tab-${index}`}
+    role="tabpanel"
     {...other}
   >
     {children}
@@ -15,14 +15,14 @@ const Component = ({ children, value, index, ...other }) => (
 
 Component.defaultProps = {
   children: <></>,
-  value: 0,
   index: 0,
+  value: 0,
 };
 
 Component.propTypes = {
   children: PropTypes.any,
-  value: PropTypes.number,
   index: PropTypes.number,
+  value: PropTypes.number,
 };
 
 export default Component;

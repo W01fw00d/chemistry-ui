@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core';
 
 import Typography from '../../../atoms/typography.jsx';
 
-const Component = ({ className, literals, description }) => {
+const Component = ({ className, description, literals }) => {
   const useStyles = makeStyles((theme) => ({
     layout: {
       padding: theme.spacing(1),
@@ -19,10 +19,10 @@ const Component = ({ className, literals, description }) => {
 
   return (
     <div className={className}>
-      <Typography variant="h6" color="inherit" className={`${classes.layout} ${classes.title}`}>
+      <Typography className={`${classes.layout} ${classes.title}`} color="inherit" variant="h6">
         {literals.description}
       </Typography>
-      <Typography variant="h6" color="inherit" className={classes.layout}>
+      <Typography className={classes.layout} color="inherit" variant="h6">
         {description}
       </Typography>
     </div>
@@ -31,16 +31,16 @@ const Component = ({ className, literals, description }) => {
 
 Component.defaultProps = {
   className: '',
-  literals: {},
   description: '',
+  literals: {},
 };
 
 Component.propTypes = {
   className: PropTypes.string,
+  description: PropTypes.string,
   literals: PropTypes.shape({
     description: PropTypes.string,
   }),
-  description: PropTypes.string,
 };
 
 export default Component;
