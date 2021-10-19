@@ -11,7 +11,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'unused-imports'],
   rules: {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
@@ -25,5 +25,17 @@ module.exports = {
     'react/jsx-filename-extension': ['off'],
     'react/jsx-wrap-multilines': 'off',
     'react/prop-types': ['warn'],
+    // 'unused-imports' plugin related rules:
+    'no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        'vars': 'all',
+        'varsIgnorePattern': '^_',
+        'args': 'after-used',
+        'argsIgnorePattern': '^_'
+      }
+    ],
   },
 };
