@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import theme from '../../../styles/global-styles';
 import themeDecorator from '../../../../.storybook/decorators/themeDecorator';
 
-import Component from './labeledCheckbox.jsx';
+import Component from './labeledCheckbox';
 
 storiesOf('Molecules/Fields/LabeledCheckbox', module)
   .addDecorator(themeDecorator(theme))

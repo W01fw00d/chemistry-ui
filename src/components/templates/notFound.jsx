@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { ThemeProvider, makeStyles } from '@material-ui/core';
 
 import theme from '../../styles/global-styles';
-import Header from '../organisms/[recipe]/detail/header.jsx';
-import Typography from '../atoms/typography.jsx';
+import Header from '../organisms/_recipe_/detail/header';
+import Typography from '../atoms/typography';
 
 const Component = ({ literals }) => {
   const useStyles = makeStyles({

@@ -9,7 +9,7 @@ import itemsData from '../../../../.storybook/fake_data/items.json';
 
 import itemImage from '../../../../public/fake_imgs/item.jpg';
 
-import ItemListProduct from '../../organisms/[room]/list/product';
+import ItemListProduct from '../../organisms/_room_/list/product';
 
 import ListGrid from './listGrid';
 

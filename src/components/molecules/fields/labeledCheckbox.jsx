@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-import Typography from '../../atoms/typography.jsx';
-import Checkbox from '../../atoms/fields/checkbox.jsx';
+import Typography from '../../atoms/typography';
+import Checkbox from '../../atoms/fields/checkbox';
 
 const Component = ({ children, handleChange, id, value }) => {
   const useStyles = makeStyles({

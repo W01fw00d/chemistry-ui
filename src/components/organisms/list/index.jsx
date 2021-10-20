@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import NoItems from './noItems.jsx';
+import NoItems from './noItems';
 
 const Component = ({ className, Item, items, noItemsMsg, Section }) => {
   let rowCounter = -1;

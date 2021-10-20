@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-import Typography from '../../atoms/typography.jsx';
+import Typography from '../../atoms/typography';
 
 const Component = ({ children }) => {
   const useStyles = makeStyles((theme) => ({

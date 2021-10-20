@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles, ListItemIcon as Icon, ListItemText as Text } from '@material-ui/core';
 
-import Checkbox from '../../../atoms/fields/checkbox.jsx';
+import Checkbox from '../../../atoms/fields/checkbox';
 
 const Component = ({ text, value }) => {
   const useStyles = makeStyles((theme) => ({

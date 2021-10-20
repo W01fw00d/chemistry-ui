@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles, AppBar, Tabs, Tab } from '@material-ui/core';
 
-import Panel from './components/panel.jsx';
+import Panel from './components/panel';
 
 const Component = ({ data }) => {
   const useStyles = makeStyles((theme) => ({

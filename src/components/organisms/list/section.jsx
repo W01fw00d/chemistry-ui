@@ -5,7 +5,7 @@ import { makeStyles, List, ListItemText as Text, Collapse } from '@material-ui/c
 
 import { ExpandLess as ExpandLessIcon, ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
 
-import Item from './item/index.jsx';
+import Item from './item/index';
 
 const Component = ({
   className,

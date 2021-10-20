@@ -13,7 +13,7 @@ module.exports = {
   },
   plugins: ['react', 'sort-destructure-keys', 'sort-keys-fix', 'unused-imports'],
   rules: {
-    'import/extensions': 'off', // TODO: remove after fixing code
+    'import/extensions': 'warn',
     'import/no-extraneous-dependencies': 'off', // TODO: remove after fixing code
     'max-len': ['error', { code: 100 }],
     'no-return-assign': ['warn'],
