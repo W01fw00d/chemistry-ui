@@ -9,6 +9,7 @@ import Item from './components/item';
 const Component = ({ className, ingredients, noItemsMsg }) => (
   <List
     className={className}
+    // TODO: Issue #55
     // eslint-disable-next-line react/prop-types
     Item={(props) => <Item {...props} item={null} {...props.item} />}
     items={ingredients}

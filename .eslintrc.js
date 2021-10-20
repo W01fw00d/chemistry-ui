@@ -16,8 +16,8 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off', // TODO: Issue #54
     'max-len': ['error', { code: 100 }],
     'no-return-assign': ['warn'],
-    'react/forbid-prop-types': 'off', // TODO: remove after fixing code
-    'react/jsx-props-no-spreading': 'off', // TODO: remove after fixing code
+    'react/forbid-prop-types': 'off', // TODO: Issue #55
+    'react/jsx-props-no-spreading': 'off', // TODO: Issue #55
     'react/jsx-sort-default-props': [
       'warn',
       {

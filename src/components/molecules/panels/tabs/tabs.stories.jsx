@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import StoryRouter from 'storybook-react-router';
 import { storiesOf } from '@storybook/react';
@@ -8,23 +9,23 @@ import KitchenIcon from '@material-ui/icons/Kitchen';
 
 import Component from '.';
 
+const CustomBox = ({ children }) => (
+  <Box p={3}>
+    <Typography>{children}</Typography>
+  </Box>
+);
+CustomBox.propTypes = {
+  children: PropTypes.string.isRequired,
+};
+
 const data = [
   {
-    content: (
-      <Box p={3}>
-        {/* TODO refactor: this component can be extracted */}
-        <Typography>Contents of Tab 1</Typography>
-      </Box>
-    ),
+    content: <CustomBox>Contents of Tab 1</CustomBox>,
     icon: <KitchenIcon />,
     label: 'Tab 1',
   },
   {
-    content: (
-      <Box p={3}>
-        <Typography>Contents of Tab 2</Typography>
-      </Box>
-    ),
+    content: <CustomBox>Contents of Tab 2</CustomBox>,
     icon: <KitchenIcon />,
     label: 'Tab 2',
   },

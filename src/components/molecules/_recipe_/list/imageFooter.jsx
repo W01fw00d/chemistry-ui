@@ -19,32 +19,24 @@ const Component = ({ data, literals }) => {
   }));
   const classes = useStyles();
 
+  const GridItem = ({ children }) => (
+    <Grid item xs={12}>
+      <Typography className={classes.text} variant="h6">
+        {children}
+      </Typography>
+    </Grid>
+  );
+  GridItem.propTypes = {
+    children: PropTypes.string.isRequired,
+  };
+
   return (
     <section className={classes.layout}>
       <Grid container>
-        {data.showName && (
-          <Grid item xs={12}>
-            <Typography className={classes.text} variant="h6">
-              {/* TODO refactor: this component can be extracted */}
-              {`[${data.name}] - ${data.eventDate}`}
-            </Typography>
-          </Grid>
-        )}
-        <Grid item xs={12}>
-          <Typography className={classes.text} variant="h6">
-            {`${literals.difficulty}: ${data.difficulty}/5`}
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography className={classes.text} variant="h6">
-            {`${literals.preparationTime}: ${data.preparationTime} h`}
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography className={classes.text} variant="h6">
-            {`${literals.howManyIngredients} ${data.nIngredients}`}
-          </Typography>
-        </Grid>
+        {data.showName && <GridItem>{`[${data.name}] - ${data.eventDate}`}</GridItem>}
+        <GridItem>{`${literals.difficulty}: ${data.difficulty}/5`}</GridItem>
+        <GridItem>{`${literals.preparationTime}: ${data.preparationTime} h`}</GridItem>
+        <GridItem>{`${literals.howManyIngredients} ${data.nIngredients}`}</GridItem>
       </Grid>
     </section>
   );

@@ -7,6 +7,7 @@
     "build": "webpack",
     "build-storybook": "build-storybook -s public",
     "eslint": "eslint --fix \"./**\"",
+    "format": "eslint --fix \"./**\" && prettier --write .",
     "prepare": "husky install",
     "prettier": "prettier --write .",
     "storybook": "start-storybook -p 6006 -s public"

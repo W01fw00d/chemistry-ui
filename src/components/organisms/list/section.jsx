@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { makeStyles, List, ListItemText as Text, Collapse } from '@material-ui/core';
-
 import { ExpandLess as ExpandLessIcon, ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
 
 import Item from './item/index';
@@ -83,11 +82,11 @@ Component.defaultProps = {
 
 Component.propTypes = {
   className: PropTypes.string,
-  description: PropTypes.any, // TODO: can be MarkdownText or string
+  description: PropTypes.instanceOf(Object),
   handleClick: PropTypes.func,
   items: PropTypes.array,
   renderItem: PropTypes.any,
-  sectionName: PropTypes.any, // TODO: can be MarkdownText or string
+  sectionName: PropTypes.any, // TODO: Issue #55 can be MarkdownText or string
   value: PropTypes.bool,
 };
 

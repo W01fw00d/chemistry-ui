@@ -78,7 +78,7 @@ Component.propTypes = {
   handleChange: Header.propTypes.handleChange,
   handleClick: PropTypes.func,
   itemList: PropTypes.arrayOf(PropTypes.object),
-  // TODO: do not use object, use something more specific
+  // TODO: Issue #55; do not use object, use something more specific
   projectData: Header.propTypes.projectData,
   search: Header.propTypes.searchValue,
   tags: Header.propTypes.tags,
