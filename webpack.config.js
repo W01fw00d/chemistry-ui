@@ -34,4 +34,7 @@ module.exports = {
     path: path.join(__dirname, './lib'),
     publicPath: '/dist/',
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
 };

@@ -17,7 +17,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off', // TODO: remove after fixing code
     'max-len': ['error', { code: 100 }],
     'no-return-assign': ['warn'],
-    'no-unused-vars': 'off', // TODO: remove after fixing code?
+    'no-unused-vars': 'warn',
     'prefer-promise-reject-errors': ['off'],
     'react/forbid-prop-types': 'off', // TODO: remove after fixing code
     'react/jsx-filename-extension': ['off'],
