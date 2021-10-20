@@ -8,7 +8,7 @@ import themeDecorator from '../../../.storybook/decorators/themeDecorator';
 
 import itemImage from '../../../public/fake_imgs/item.jpg';
 
-import Component from './about.jsx';
+import Component from './about';
 
 storiesOf('Molecules/About', module)
   .addDecorator(StoryRouter())

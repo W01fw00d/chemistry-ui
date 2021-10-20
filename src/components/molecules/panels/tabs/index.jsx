@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles, AppBar, Tabs, Tab } from '@material-ui/core';
 
-import Panel from './components/panel.jsx';
+import Panel from './components/panel';
 
 const Component = ({ data }) => {
   const useStyles = makeStyles((theme) => ({
@@ -38,12 +38,12 @@ const Component = ({ data }) => {
           value={value}
         >
           {data.map((tab, index) => (
-            <Tab key={index} {...tab} {...getTabId(index)} />
+            <Tab key={`tab-${tab.label}`} {...tab} {...getTabId(index)} />
           ))}
         </Tabs>
       </AppBar>
-      {data.map(({ content }, index) => (
-        <Panel index={index} key={index} value={value}>
+      {data.map(({ content, label }, index) => (
+        <Panel index={index} key={`panel-${label}`} value={value}>
           {content}
         </Panel>
       ))}

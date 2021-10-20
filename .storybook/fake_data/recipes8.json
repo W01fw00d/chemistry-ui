@@ -4,11 +4,13 @@
     "name": "Recipe name 1",
     "description": "Recipe description 1",
     "image": "",
+    "preparationTime": "00:30",
     "eventDate": "25/04/2020",
     "difficulty": 5,
     "nIngredients": 10,
     "ingredients": [
       {
+        "id": 1,
         "items": [
           {
             "code": "code1",
@@ -35,6 +37,7 @@
     "nIngredients": 3,
     "ingredients": [
       {
+        "id": 1,
         "sectionName": "Section 1",
         "items": [
           {
@@ -82,6 +85,7 @@
     "nIngredients": 1,
     "ingredients": [
       {
+        "id": 1,
         "sectionName": "Section 1",
         "items": [
           {
@@ -102,6 +106,7 @@
         ]
       },
       {
+        "id": 2,
         "sectionName": "Section 2",
         "items": [
           {
@@ -123,11 +128,13 @@
     "name": "Recipe name 4",
     "description": "Recipe description 4",
     "image": "",
+    "preparationTime": "00:30",
     "eventDate": "25/04/2020",
     "difficulty": 5,
     "nIngredients": 10,
     "ingredients": [
       {
+        "id": 1,
         "items": [
           {
             "code": "code1",
@@ -154,11 +161,13 @@
     "name": "Recipe name 5",
     "description": "Recipe description 5",
     "image": "",
+    "preparationTime": "00:30",
     "eventDate": "25/04/2020",
     "difficulty": 5,
     "nIngredients": 10,
     "ingredients": [
       {
+        "id": 1,
         "items": [
           {
             "code": "code1",
@@ -185,11 +194,13 @@
     "name": "Recipe name 6",
     "description": "Recipe description 6",
     "image": "",
+    "preparationTime": "00:30",
     "eventDate": "25/04/2020",
     "difficulty": 5,
     "nIngredients": 10,
     "ingredients": [
       {
+        "id": 1,
         "items": [
           {
             "code": "code1",
@@ -216,11 +227,13 @@
     "name": "Recipe name 7",
     "description": "Recipe description 7",
     "image": "",
+    "preparationTime": "00:30",
     "eventDate": "25/04/2020",
     "difficulty": 5,
     "nIngredients": 10,
     "ingredients": [
       {
+        "id": 1,
         "items": [
           {
             "code": "code1",
@@ -247,11 +260,13 @@
     "name": "Recipe name 8",
     "description": "Recipe description 8",
     "image": "",
+    "preparationTime": "00:30",
     "eventDate": "25/04/2020",
     "difficulty": 5,
     "nIngredients": 10,
     "ingredients": [
       {
+        "id": 1,
         "items": [
           {
             "code": "code1",

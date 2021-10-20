@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import NoItems from './noItems.jsx';
+import NoItems from './noItems';
 
 const Component = ({ className, Item, items, noItemsMsg, Section }) => {
   let rowCounter = -1;
@@ -72,7 +72,7 @@ const Component = ({ className, Item, items, noItemsMsg, Section }) => {
       sectionsItems[index] = [];
 
       return (
-        <section key={`${index}`}>
+        <section key={section.id}>
           <Section
             {...section}
             className={className}

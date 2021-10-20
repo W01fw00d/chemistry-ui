@@ -53,8 +53,8 @@ npm run prettier
 - When Storybook is launched, a catalogue will appear with all the App components. A component will be rendered with its default material-ui theme, if our custom theme isn't explicitly defined on its story (templates themes are defined to help visualization).
 
 - Some components are displayed in [Name] folders. That means those components are specifically used only by a concrete App in the Chemistry-UI little ecosystem. Right now, we have:
-  - [Recipe]: Used by the `Cooking with Amateurs` App
-  - [Room]: Used by the `Scaping Boredom` App
+  - _Recipe_: Used by the `Cooking with Amateurs` App
+  - _Room_: Used by the `Scaping Boredom` App
 
 ## Technical Stack
 

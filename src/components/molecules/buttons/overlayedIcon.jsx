@@ -2,8 +2,8 @@ import React from 'react';
 
 import { makeStyles } from '@material-ui/core';
 
-import IconButton from '../../atoms/buttons/icon.jsx';
-import Footer from '../layout/footer.jsx';
+import IconButton from '../../atoms/buttons/icon';
+import Footer from '../layout/footer';
 
 const Component = ({ children, color, handleClick }) => {
   const useStyles = makeStyles((theme) => ({

@@ -6,7 +6,7 @@ import Drawer from '@material-ui/core/Drawer';
 
 import { Menu as MenuIcon } from '@material-ui/icons';
 
-import IconButton from '../../atoms/buttons/icon.jsx';
+import IconButton from '../../atoms/buttons/icon';
 
 const Component = ({ children, className }) => {
   const useStyles = makeStyles((theme) => ({
