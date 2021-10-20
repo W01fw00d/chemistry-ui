@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core';
 import Typography from '../../atoms/typography.jsx';
 import Checkbox from '../../atoms/fields/checkbox.jsx';
 
-const Component = ({ id, value, handleChange, children }) => {
+const Component = ({ children, handleChange, id, value }) => {
   const useStyles = makeStyles({
     label: {
       padding: '0 10px',
@@ -17,7 +17,7 @@ const Component = ({ id, value, handleChange, children }) => {
   return (
     <div>
       <Typography variant="body1">
-        <Checkbox id={id} value={value} handleChange={handleChange} />
+        <Checkbox handleChange={handleChange} id={id} value={value} />
         <span className={classes.label}>{children}</span>
       </Typography>
     </div>
@@ -25,17 +25,17 @@ const Component = ({ id, value, handleChange, children }) => {
 };
 
 Component.defaultProps = {
+  children: '',
+  handleChange: () => {},
   id: '',
   value: false,
-  handleChange: () => {},
-  children: '',
 };
 
 Component.propTypes = {
-  id: PropTypes.string,
-  value: PropTypes.bool,
-  handleChange: PropTypes.func,
   children: PropTypes.string,
+  handleChange: Checkbox.propTypes.handleChange,
+  id: Checkbox.propTypes.id,
+  value: Checkbox.propTypes.value,
 };
 
 export default Component;

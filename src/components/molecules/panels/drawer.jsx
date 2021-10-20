@@ -8,7 +8,7 @@ import { Menu as MenuIcon } from '@material-ui/icons';
 
 import IconButton from '../../atoms/buttons/icon.jsx';
 
-const Component = ({ className, children }) => {
+const Component = ({ children, className }) => {
   const useStyles = makeStyles((theme) => ({
     layout: {
       backgroundColor: theme.palette.primary.main,
@@ -19,7 +19,7 @@ const Component = ({ className, children }) => {
 
   const [state, setState] = useState(false);
 
-  const toggleDrawer = ({ type, key }) => {
+  const toggleDrawer = ({ key, type }) => {
     if (type === 'keydown' && (key === 'Tab' || key === 'Shift')) {
       return;
     }
@@ -29,24 +29,24 @@ const Component = ({ className, children }) => {
 
   return (
     <>
-      <IconButton id="drawerButton" handleClick={toggleDrawer}>
+      <IconButton handleClick={toggleDrawer} id="drawerButton">
         <MenuIcon />
       </IconButton>
-      <Drawer anchor="left" open={state} onClose={toggleDrawer}>
-        <div className={`${classes.layout} ${className}`}>{children}</div>
+      <Drawer anchor="left" onClose={toggleDrawer} open={state}>
+        <div className={`${classes.layout}${className ? ` ${className}` : ''}`}>{children}</div>
       </Drawer>
     </>
   );
 };
 
 Component.defaultProps = {
-  className: '',
   children: <></>,
+  className: '',
 };
 
 Component.propTypes = {
-  className: PropTypes.string,
   children: PropTypes.node,
+  className: PropTypes.string,
 };
 
 export default Component;

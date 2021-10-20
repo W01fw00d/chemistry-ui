@@ -9,7 +9,7 @@ import ListGrid from '../../molecules/layout/listGrid.jsx';
 import Header from '../../organisms/[recipe]/list/header.jsx';
 import Item from '../../organisms/[recipe]/list/item.jsx';
 
-const Component = ({ literals, search, itemList, languageData, handleChange, handleClick }) => {
+const Component = ({ handleChange, handleClick, itemList, languageData, literals, search }) => {
   const useStyles = makeStyles({
     layout: {
       backgroundColor: theme.palette.primary.light,
@@ -18,29 +18,29 @@ const Component = ({ literals, search, itemList, languageData, handleChange, han
   });
   const classes = useStyles();
 
-  const getRecipeListItemLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
+  const getRecipeListItemLiterals = ({ difficulty, howManyIngredients, preparationTime }) => ({
     difficulty,
-    preparationTime,
     howManyIngredients,
+    preparationTime,
   });
 
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.layout}>
         <Header
-          searchValue={search}
+          aboutLiteral={literals.about}
           handleChange={handleChange}
           handleClick={handleClick}
           languageData={languageData}
-          aboutLiteral={literals.about}
+          searchValue={search}
         />
         {itemList && (
           <ListGrid>
             {itemList.map((productData) => (
               <Item
-                literals={getRecipeListItemLiterals(literals)}
-                key={productData.id}
                 data={productData}
+                key={productData.id}
+                literals={getRecipeListItemLiterals(literals)}
               />
             ))}
           </ListGrid>
@@ -51,21 +51,21 @@ const Component = ({ literals, search, itemList, languageData, handleChange, han
 };
 
 Component.defaultProps = {
-  literals: {},
-  search: '',
-  itemList: [],
-  languageData: {},
   handleChange: () => {},
   handleClick: () => {},
+  itemList: [],
+  languageData: {},
+  literals: {},
+  search: '',
 };
 
 Component.propTypes = {
-  literals: Item.propTypes.literals,
-  search: PropTypes.string,
+  handleChange: Header.propTypes.handleChange,
+  handleClick: Header.propTypes.handleClick,
   itemList: PropTypes.arrayOf(Item.propTypes.data),
   languageData: Header.propTypes.languageData,
-  handleChange: PropTypes.func,
-  handleClick: PropTypes.func,
+  literals: Item.propTypes.literals,
+  search: Header.propTypes.searchValue,
 };
 
 export default Component;

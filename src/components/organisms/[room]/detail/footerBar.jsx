@@ -8,21 +8,21 @@ import Typography from '../../../atoms/typography.jsx';
 import TextButton from '../../../atoms/buttons/text.jsx';
 import Footer from '../../../molecules/layout/footer.jsx';
 
-const Component = ({ literals, data, handleClick }) => {
+const Component = ({ data, handleClick, literals }) => {
   const useStyles = makeStyles((theme) => ({
     bar: {
       backgroundColor: theme.palette.secondary.dark,
       color: theme.palette.secondary.light,
       padding: theme.spacing(1),
     },
+    fee: {
+      marginLeft: theme.spacing(1),
+    },
     price: {
       padding: theme.spacing(1),
     },
     priceNumber: {
       lineHeight: 1,
-    },
-    fee: {
-      marginLeft: theme.spacing(1),
     },
   }));
   const classes = useStyles();
@@ -31,23 +31,23 @@ const Component = ({ literals, data, handleClick }) => {
 
   return (
     <Footer className={classes.bar}>
-      <Grid container alignItems="center">
-        <Grid item xs={7} container justifyContent="flex-start" className={classes.price}>
-          <Grid container alignItems="flex-end">
-            <Typography variant="h4" color="inherit" className={classes.priceNumber}>
+      <Grid alignItems="center" container>
+        <Grid className={classes.price} container item justifyContent="flex-start" xs={7}>
+          <Grid alignItems="flex-end" container>
+            <Typography className={classes.priceNumber} color="inherit" variant="h4">
               {priceWithCurrency}
             </Typography>
-            <Typography variant="subtitle2" color="inherit" className={classes.fee}>
+            <Typography className={classes.fee} color="inherit" variant="subtitle2">
               {data.isGroupPrice ? 'Per group' : 'Per person'}
             </Typography>
           </Grid>
         </Grid>
-        <Grid item xs={5} container justifyContent="flex-end">
+        <Grid container item justifyContent="flex-end" xs={5}>
           <TextButton
-            color="secondary"
-            size="large"
             className={classes.button}
+            color="secondary"
             handleClick={handleClick}
+            size="large"
           >
             {literals.buy}
           </TextButton>
@@ -58,20 +58,20 @@ const Component = ({ literals, data, handleClick }) => {
 };
 
 Component.defaultProps = {
-  literals: {},
   data: {},
   handleClick: () => {},
+  literals: {},
 };
 
 Component.propTypes = {
+  data: PropTypes.shape({
+    isGroupPrice: PropTypes.bool,
+    price: PropTypes.number,
+  }),
+  handleClick: PropTypes.func,
   literals: PropTypes.shape({
     buy: PropTypes.string,
   }),
-  data: PropTypes.shape({
-    price: PropTypes.number,
-    isGroupPrice: PropTypes.bool,
-  }),
-  handleClick: PropTypes.func,
 };
 
 export default Component;

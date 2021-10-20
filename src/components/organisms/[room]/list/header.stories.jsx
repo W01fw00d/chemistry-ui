@@ -19,15 +19,15 @@ storiesOf('Organisms/[Room]/List/Header', module)
   .add('default', () => (
     <Component
       authorData={authorData}
-      projectData={projectData}
-      logo={{
-        src: escapingBoredomTitleLogo,
-        width: 1458,
-        height: 625,
-      }}
-      tags={tags}
-      searchValue="Search Value"
       handleChange={action('Input detected')}
       handleClick={action('IconButton clicked')}
+      logo={{
+        height: 625,
+        src: escapingBoredomTitleLogo,
+        width: 1458,
+      }}
+      projectData={projectData}
+      searchValue="Search Value"
+      tags={tags}
     />
   ));

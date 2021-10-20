@@ -10,25 +10,25 @@ import literals from '../../../../../.storybook/fake_data/literals.json';
 
 import Component from './imageFooter';
 
-const getLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
+const getLiterals = ({ difficulty, howManyIngredients, preparationTime }) => ({
   difficulty,
-  preparationTime,
   howManyIngredients,
-});
-const getData = ({ name, eventDate, difficulty, preparationTime, nIngredients, showName }) => ({
-  name,
-  eventDate,
-  difficulty,
   preparationTime,
+});
+const getData = ({ difficulty, eventDate, name, nIngredients, preparationTime, showName }) => ({
+  difficulty,
+  eventDate,
+  name,
   nIngredients,
+  preparationTime,
   showName,
 });
 
 storiesOf('Molecules/[Recipe]/List/ImageFooter', module)
   .addDecorator(themeDecorator(theme))
   .add('without name', () => (
-    <Component literals={getLiterals(literals)} data={getData(recipes[0])} />
+    <Component data={getData(recipes[0])} literals={getLiterals(literals)} />
   ))
   .add('with name', () => (
-    <Component literals={getLiterals(literals)} data={getData(recipes[1])} />
+    <Component data={getData(recipes[1])} literals={getLiterals(literals)} />
   ));

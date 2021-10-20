@@ -7,7 +7,7 @@ import Grid from '../../../atoms/layout/grid.jsx';
 import AppBar from '../../../molecules/layout/appBar.jsx';
 import Toolbar from '../../../molecules/[recipe]/list/toolbar.jsx';
 
-const Component = ({ searchValue, handleChange, handleClick, languageData, aboutLiteral }) => {
+const Component = ({ aboutLiteral, handleChange, handleClick, languageData, searchValue }) => {
   const useStyles = makeStyles((theme) => ({
     appbar: {
       backgroundColor: 'transparent',
@@ -16,31 +16,31 @@ const Component = ({ searchValue, handleChange, handleClick, languageData, about
     container: {
       backgroundColor: theme.palette.primary.main,
     },
-    toolbar: {
-      borderBottomWidth: '1px',
-      borderBottomColor: theme.palette.primary.light,
-      borderBottomStyle: 'solid',
-    },
     overlayed: {
-      float: 'center',
-      marginTop: theme.spacing(1),
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.secondary.main,
+      float: 'center',
+      marginTop: theme.spacing(1),
+    },
+    toolbar: {
+      borderBottomColor: theme.palette.primary.light,
+      borderBottomStyle: 'solid',
+      borderBottomWidth: '1px',
     },
   }));
   const classes = useStyles();
 
   return (
-    <AppBar position="sticky" className={classes.appbar}>
+    <AppBar className={classes.appbar} position="sticky">
       <Grid container>
-        <Grid item xs={12} className={classes.container}>
+        <Grid className={classes.container} item xs={12}>
           <Toolbar
             aboutLiteral={aboutLiteral}
             className={classes.toolbar}
-            searchValue={searchValue}
             handleChange={handleChange}
             handleClick={handleClick}
             languageData={languageData}
+            searchValue={searchValue}
           />
         </Grid>
         {/* TODO: Anchor */}
@@ -55,19 +55,19 @@ const Component = ({ searchValue, handleChange, handleClick, languageData, about
 };
 
 Component.defaultProps = {
-  searchValue: '',
+  aboutLiteral: '',
   handleChange: () => {},
   handleClick: () => {},
   languageData: {},
-  aboutLiteral: '',
+  searchValue: '',
 };
 
 Component.propTypes = {
-  searchValue: PropTypes.string,
+  aboutLiteral: PropTypes.string,
   handleChange: PropTypes.func,
   handleClick: PropTypes.func,
   languageData: Toolbar.propTypes.languageData,
-  aboutLiteral: PropTypes.string,
+  searchValue: PropTypes.string,
 };
 
 export default Component;

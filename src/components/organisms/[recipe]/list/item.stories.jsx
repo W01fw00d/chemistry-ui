@@ -12,23 +12,23 @@ import recipeImage from '../../../../../public/fake_imgs/recipe.jpg';
 
 import Component from './item';
 
-const getLiterals = ({ difficulty, preparationTime, howManyIngredients }) => ({
+const getLiterals = ({ difficulty, howManyIngredients, preparationTime }) => ({
   difficulty,
-  preparationTime,
   howManyIngredients,
-});
-const getData = ({ id, name, eventDate, difficulty, preparationTime, nIngredients, showName }) => ({
-  id,
-  name,
-  eventDate,
-  difficulty,
   preparationTime,
-  nIngredients,
+});
+const getData = ({ difficulty, eventDate, id, name, nIngredients, preparationTime, showName }) => ({
+  difficulty,
+  eventDate,
+  id,
   image: {
+    height: 1440,
     src: recipeImage,
     width: 1080,
-    height: 1440,
   },
+  name,
+  nIngredients,
+  preparationTime,
   showName,
 });
 
@@ -36,15 +36,15 @@ storiesOf('Organisms/[Recipe]/List/Item', module)
   .addDecorator(StoryRouter())
   .addDecorator(themeDecorator(theme))
   .add('without name', () => (
-    <Component literals={getLiterals(literals)} data={getData(recipes[0])} />
+    <Component data={getData(recipes[0])} literals={getLiterals(literals)} />
   ))
-  .add('with name', () => <Component literals={getLiterals(literals)} data={getData(recipes[1])} />)
+  .add('with name', () => <Component data={getData(recipes[1])} literals={getLiterals(literals)} />)
   .add('without image', () => (
     <Component
-      literals={getLiterals(literals)}
       data={{
         ...getData(recipes[0]),
         image: null,
       }}
+      literals={getLiterals(literals)}
     />
   ));

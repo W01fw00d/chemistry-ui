@@ -15,15 +15,15 @@ storiesOf('Molecules/About', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <Component
+      authorName="Author Name"
+      authorUrl="https://fake.io/author-url"
+      email="fake@email.com"
       logo={{
+        height: 360,
         src: itemImage,
         width: 640,
-        height: 360,
       }}
       projectName="Project Name"
-      authorName="Author Name"
-      email="fake@email.com"
-      authorUrl="https://fake.io/author-url"
       projectUrl="https://fake.io/project-url"
     />
   ));

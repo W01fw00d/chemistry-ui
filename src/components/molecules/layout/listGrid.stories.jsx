@@ -13,15 +13,15 @@ import ItemListProduct from '../../organisms/[room]/list/product';
 
 import ListGrid from './listGrid';
 
-const getItemData = ({ name, price, likeCount }) => ({
+const getItemData = ({ likeCount, name, price }) => ({
   image: {
+    height: 360,
     src: itemImage,
     width: 640,
-    height: 360,
   },
+  likeCount,
   name,
   price,
-  likeCount,
 });
 
 const data = [
@@ -36,7 +36,7 @@ storiesOf('Molecules/Layout/ListGrid', module)
   .add('default', () => (
     <ListGrid>
       {data.map((item) => (
-        <ItemListProduct key={item.id} data={item} />
+        <ItemListProduct data={item} key={item.id} />
       ))}
     </ListGrid>
   ));

@@ -18,9 +18,9 @@ import Component from './list';
 const defaultRecipes = recipes.map((recipe) => ({
   ...recipe,
   image: {
+    height: 1440,
     src: recipeImage,
     width: 1080,
-    height: 1440,
   },
 }));
 
@@ -33,37 +33,37 @@ const lazyLoadingRecipes = recipes8.map(
   (recipe, index) => ({
     ...recipe,
     image: {
+      height: 1440,
       src: `${recipeImage}?${index}`,
       width: 1080,
-      height: 1440,
     },
   }),
 );
 
 const StoryComponent = ({ itemList }) => {
-  const getLiterals = ({ difficulty, preparationTime, howManyIngredients, participants }) => ({
+  const getLiterals = ({ difficulty, howManyIngredients, participants, preparationTime }) => ({
+    about: 'About',
     difficulty,
-    preparationTime,
     howManyIngredients,
     participants,
-    about: 'About',
+    preparationTime,
   });
 
   return (
     <Component
-      literals={getLiterals(literals)}
-      search={literals.comingSoon}
+      handleChange={action('Input detected')}
+      handleClick={action('Button clicked')}
       itemList={itemList}
       languageData={{
         active: 0,
+        onChange: action('Select click detected'),
         options: [
           { id: 0, text: 'Option 1' },
           { id: 1, text: 'Option 2' },
         ],
-        onChange: action('Select click detected'),
       }}
-      handleChange={action('Input detected')}
-      handleClick={action('Button clicked')}
+      literals={getLiterals(literals)}
+      search={literals.comingSoon}
     />
   );
 };

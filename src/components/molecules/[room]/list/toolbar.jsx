@@ -7,45 +7,44 @@ import Grid from '../../../atoms/layout/grid.jsx';
 import Divider from '../../../atoms/layout/divider.jsx';
 import IconButton from '../../../atoms/buttons/icon.jsx';
 import TextField from '../../../atoms/fields/text.jsx';
-import Image from '../../../atoms/image.jsx';
 import About from '../../about.jsx';
 import DrawerPanel from '../../panels/drawer.jsx';
 
 const Component = ({
   authorData,
-  projectData,
-  logo,
   className,
-  searchValue,
   handleChange,
   handleClick,
+  logo,
+  projectData,
+  searchValue,
 }) => (
   <div className={className}>
-    <Grid container alignItems="center">
-      <Grid item xs={2} container justifyContent="center">
+    <Grid alignItems="center" container>
+      <Grid container item justifyContent="center" xs={2}>
         <DrawerPanel>
           <About
+            authorName={authorData.name}
+            authorUrl={authorData.url}
+            email={authorData.email}
             logo={logo}
             projectName={projectData.name}
-            authorName={authorData.name}
-            email={authorData.email}
-            authorUrl={authorData.url}
             projectUrl={projectData.url}
           />
           <Divider />
         </DrawerPanel>
       </Grid>
-      <Grid item xs={6} container justifyContent="center">
-        <form noValidate autoComplete="off">
-          <TextField id="search" value={searchValue} handleChange={handleChange} />
+      <Grid container item justifyContent="center" xs={6}>
+        <form autoComplete="off" noValidate>
+          <TextField handleChange={handleChange} id="search" value={searchValue} />
         </form>
       </Grid>
-      <Grid item xs={2} container justifyContent="flex-end">
+      <Grid container item justifyContent="flex-end" xs={2}>
         <IconButton handleClick={handleClick}>
           <NotificationsIcon />
         </IconButton>
       </Grid>
-      <Grid item xs={2} container justifyContent="flex-start">
+      <Grid container item justifyContent="flex-start" xs={2}>
         <IconButton handleClick={handleClick}>
           <CheckIcon />
         </IconButton>
@@ -56,33 +55,29 @@ const Component = ({
 
 Component.defaultProps = {
   authorData: {},
-  projectData: {},
-  logo: {},
   className: '',
-  searchValue: null,
   handleChange: () => {},
   handleClick: () => {},
+  logo: {},
+  projectData: {},
+  searchValue: null,
 };
 
 Component.propTypes = {
   authorData: PropTypes.shape({
-    name: PropTypes.string,
-    email: PropTypes.string,
-    url: PropTypes.string,
-  }),
-  projectData: PropTypes.shape({
-    name: PropTypes.string,
-    url: PropTypes.string,
-  }),
-  logo: PropTypes.shape({
-    src: Image.propTypes.src,
-    width: Image.propTypes.width,
-    height: Image.propTypes.height,
+    email: About.propTypes.email,
+    name: About.propTypes.authorName,
+    url: About.propTypes.authorUrl,
   }),
   className: PropTypes.string,
-  searchValue: PropTypes.string,
-  handleChange: PropTypes.func,
-  handleClick: PropTypes.func,
+  handleChange: TextField.propTypes.handleChange,
+  handleClick: IconButton.propTypes.handleClick,
+  logo: About.propTypes.logo,
+  projectData: PropTypes.shape({
+    name: About.propTypes.projectname,
+    url: About.propTypes.projectUrl,
+  }),
+  searchValue: TextField.propTypes.value,
 };
 
 export default Component;

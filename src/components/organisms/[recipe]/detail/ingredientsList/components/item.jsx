@@ -9,15 +9,15 @@ import Item from '../../../../list/item/index.jsx';
 import Checkbox from '../../../../list/item/checkbox.jsx';
 
 const Component = ({
-  name,
-  emoji,
-  quantity,
-  isOptional,
   alternatives,
-  value,
-  handleClick,
   currentNameIndex,
+  emoji,
+  handleClick,
+  isOptional,
+  name,
+  quantity,
   setCurrentNameIndex,
+  value,
 }) => {
   const names = [
     name,
@@ -34,10 +34,10 @@ const Component = ({
 
   return (
     <Item onClick={handleClick}>
-      <Checkbox value={value} text={isOptional ? `{${label}}` : `${label}`} />
+      <Checkbox text={isOptional ? `{${label}}` : `${label}`} value={value} />
       {alternatives && alternatives.length > 0 && (
         <Action>
-          <IconButton edge="end" aria-label="comments" handleClick={iterateNames}>
+          <IconButton aria-label="comments" edge="end" handleClick={iterateNames}>
             <AutorenewIcon />
           </IconButton>
         </Action>
@@ -47,27 +47,27 @@ const Component = ({
 };
 
 Component.defaultProps = {
-  name: '',
-  emoji: '',
-  quantity: '',
-  isOptional: false,
   alternatives: null,
-  value: false,
-  handleClick: () => {},
   currentNameIndex: 0,
+  emoji: '',
+  handleClick: () => {},
+  isOptional: false,
+  name: '',
+  quantity: '',
   setCurrentNameIndex: () => {},
+  value: false,
 };
 
 Component.propTypes = {
-  name: PropTypes.string,
-  emoji: PropTypes.string,
-  quantity: PropTypes.string,
-  isOptional: PropTypes.bool,
   alternatives: PropTypes.array,
-  value: PropTypes.bool,
-  handleClick: PropTypes.func,
   currentNameIndex: PropTypes.number,
+  emoji: PropTypes.string,
+  handleClick: PropTypes.func,
+  isOptional: PropTypes.bool,
+  name: PropTypes.string,
+  quantity: PropTypes.string,
   setCurrentNameIndex: PropTypes.func,
+  value: Checkbox.propTypes.value,
 };
 
 export default Component;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles, TextField } from '@material-ui/core';
 
-const Component = ({ id, label, className, value, handleChange }) => {
+const Component = ({ className, handleChange, id, label, value }) => {
   const useStyles = makeStyles((theme) => ({
     field: {
       backgroundColor: theme.palette.primary.light,
@@ -13,31 +13,31 @@ const Component = ({ id, label, className, value, handleChange }) => {
 
   return (
     <TextField
-      id={id}
-      placeholder={label}
       className={`${classes.field} ${className}`}
       color="primary"
-      variant="outlined"
-      value={value}
+      id={id}
       onChange={handleChange}
+      placeholder={label}
+      value={value}
+      variant="outlined"
     />
   );
 };
 
 Component.defaultProps = {
+  className: '',
+  handleChange: () => {},
   id: 'textButton',
   label: '',
-  className: '',
   value: '',
-  handleChange: () => {},
 };
 
 Component.propTypes = {
+  className: PropTypes.string,
+  handleChange: PropTypes.func,
   id: PropTypes.string,
   label: PropTypes.string,
-  className: PropTypes.string,
   value: PropTypes.string,
-  handleChange: PropTypes.func,
 };
 
 export default Component;

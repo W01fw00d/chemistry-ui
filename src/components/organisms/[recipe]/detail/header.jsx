@@ -11,24 +11,24 @@ import AppBar from '../../../molecules/layout/appBar.jsx';
 
 const Component = ({ name }) => {
   const useStyles = makeStyles((theme) => ({
+    icon: {
+      color: theme.palette.primary.dark,
+    },
     layout: {
       padding: theme.spacing(1),
     },
     name: {
-      textAlign: 'center',
+      color: theme.palette.primary.dark,
       fontWeight: 'bold',
-      color: theme.palette.primary.dark,
-    },
-    icon: {
-      color: theme.palette.primary.dark,
+      textAlign: 'center',
     },
   }));
   const classes = useStyles();
 
   return (
     <AppBar position="sticky">
-      <Grid container alignItems="center" className={classes.layout}>
-        <Grid item xs={2} container justifyContent="center">
+      <Grid alignItems="center" className={classes.layout} container>
+        <Grid container item justifyContent="center" xs={2}>
           <nav>
             <InternalLink id="back" to="/">
               <ArrowBackIcon className={classes.icon} />
@@ -36,7 +36,7 @@ const Component = ({ name }) => {
           </nav>
         </Grid>
         <Grid item xs={8}>
-          <Typography variant="h6" className={classes.name}>
+          <Typography className={classes.name} variant="h6">
             {name}
           </Typography>
         </Grid>

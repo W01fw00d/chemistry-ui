@@ -11,20 +11,20 @@ import ImageFooter from '../../../molecules/[room]/list/imageFooter.jsx';
 
 const Component = ({ data }) => {
   const useStyles = makeStyles({
+    banner: {
+      display: 'block',
+      position: 'absolute',
+    },
     wrapper: {
       position: 'relative',
-    },
-    banner: {
-      position: 'absolute',
-      display: 'block',
     },
   });
   const classes = useStyles();
 
-  const getFooterData = ({ name, price, likeCount }) => ({
+  const getFooterData = ({ likeCount, name, price }) => ({
+    likeCount,
     name,
     price,
-    likeCount,
   });
 
   const { image } = data;
@@ -35,18 +35,18 @@ const Component = ({ data }) => {
         <section className={classes.wrapper}>
           {data.isEditorsChoice && (
             <Image
+              className={classes.banner}
+              description="Banner"
+              height={320}
               src={banner}
               width={640}
-              height={320}
-              description="Banner"
-              className={classes.banner}
             />
           )}
           <Image
+            description={data.name}
+            height={image.height}
             src={image.src}
             width={image.width}
-            height={image.height}
-            description={data.name}
           />
         </section>
         <ImageFooter data={getFooterData(data)} />
@@ -63,14 +63,14 @@ Component.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.number,
     image: PropTypes.shape({
+      height: Image.propTypes.height,
       src: Image.propTypes.src,
       width: Image.propTypes.width,
-      height: Image.propTypes.height,
     }),
+    isEditorsChoice: PropTypes.bool,
+    likeCount: PropTypes.number,
     name: PropTypes.string,
     price: PropTypes.number,
-    likeCount: PropTypes.number,
-    isEditorsChoice: PropTypes.bool,
   }),
 };
 

@@ -12,11 +12,11 @@ storiesOf('Atoms/Fields/Select', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
     <Component
-      value={0}
+      handleChange={action('Select click detected')}
       options={[
         { id: 0, text: 'Option 1' },
         { id: 1, text: 'Option 2' },
       ]}
-      handleChange={action('Select click detected')}
+      value={0}
     />
   ));

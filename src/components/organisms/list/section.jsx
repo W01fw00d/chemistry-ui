@@ -8,21 +8,21 @@ import { ExpandLess as ExpandLessIcon, ExpandMore as ExpandMoreIcon } from '@mat
 import Item from './item/index.jsx';
 
 const Component = ({
-  sectionName,
-  description,
-  items,
   className,
-  renderItem,
-  value,
+  description,
   handleClick,
+  items,
+  renderItem,
+  sectionName,
+  value,
 }) => {
   const useStyles = makeStyles((theme) => ({
-    root: {
-      width: '100%',
-      marginBottom: 0,
-    },
     icon: {
       color: theme.palette.primary.dark,
+    },
+    root: {
+      marginBottom: 0,
+      width: '100%',
     },
   }));
   const classes = useStyles();
@@ -72,23 +72,23 @@ const Component = ({
 };
 
 Component.defaultProps = {
-  sectionName: null,
-  description: null,
-  items: [],
-  value: true,
   className: '',
-  renderItem: () => {},
+  description: null,
   handleClick: () => {},
+  items: [],
+  renderItem: () => {},
+  sectionName: null,
+  value: true,
 };
 
 Component.propTypes = {
-  sectionName: PropTypes.any, // TODO: can be MarkdownText or string
-  description: PropTypes.any, // TODO: can be MarkdownText or string
-  items: PropTypes.array,
   className: PropTypes.string,
-  renderItem: PropTypes.any,
-  value: PropTypes.bool,
+  description: PropTypes.any, // TODO: can be MarkdownText or string
   handleClick: PropTypes.func,
+  items: PropTypes.array,
+  renderItem: PropTypes.any,
+  sectionName: PropTypes.any, // TODO: can be MarkdownText or string
+  value: PropTypes.bool,
 };
 
 export default Component;

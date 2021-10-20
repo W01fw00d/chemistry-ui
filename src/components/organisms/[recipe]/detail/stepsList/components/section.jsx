@@ -6,50 +6,50 @@ import MarkdownText from '../../../../../atoms/markdownText.jsx';
 import Section from '../../../../list/section.jsx';
 
 const Component = ({
+  className,
+  description,
+  handleClick,
   index,
+  items,
+  renderItem,
   rowCounter,
   sectionName,
-  description,
-  items,
-  className,
-  renderItem,
   value,
-  handleClick,
 }) => (
   <Section
-    sectionName={
-      sectionName && <MarkdownText id={`${index}-${rowCounter}-subheader`} text={sectionName} />
-    }
+    className={className}
     description={
       description && <MarkdownText id={`${index}-${rowCounter}-description`} text={description} />
     }
-    items={items}
-    className={className}
-    renderItem={renderItem}
-    value={value}
     handleClick={handleClick}
+    items={items}
+    renderItem={renderItem}
+    sectionName={
+      sectionName && <MarkdownText id={`${index}-${rowCounter}-subheader`} text={sectionName} />
+    }
+    value={value}
   />
 );
 
 Component.defaultProps = {
-  sectionName: null,
-  description: null,
-  items: [],
   className: '',
-  renderItem: () => {},
+  description: null,
   handleClick: () => {},
+  items: [],
+  renderItem: () => {},
+  sectionName: null,
 };
 
 Component.propTypes = {
+  className: Section.propTypes.className,
+  description: MarkdownText.propTypes.text,
+  handleClick: Section.propTypes.handleClick,
   index: PropTypes.number.isRequired,
+  items: Section.propTypes.items,
+  renderItem: Section.propTypes.renderItem,
   rowCounter: PropTypes.number.isRequired,
-  sectionName: PropTypes.string,
-  description: PropTypes.string,
-  items: PropTypes.array,
-  className: PropTypes.string,
-  renderItem: PropTypes.any,
-  value: PropTypes.bool.isRequired,
-  handleClick: PropTypes.func,
+  sectionName: MarkdownText.propTypes.text,
+  value: Section.propTypes.value.isRequired,
 };
 
 export default Component;

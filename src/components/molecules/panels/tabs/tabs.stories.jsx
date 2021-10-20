@@ -10,22 +10,23 @@ import Component from '.';
 
 const data = [
   {
-    icon: <KitchenIcon />,
-    label: 'Tab 1',
     content: (
       <Box p={3}>
+        {/* TODO refactor: this component can be extracted */}
         <Typography>Contents of Tab 1</Typography>
       </Box>
     ),
+    icon: <KitchenIcon />,
+    label: 'Tab 1',
   },
   {
-    icon: <KitchenIcon />,
-    label: 'Tab 2',
     content: (
       <Box p={3}>
         <Typography>Contents of Tab 2</Typography>
       </Box>
     ),
+    icon: <KitchenIcon />,
+    label: 'Tab 2',
   },
 ];
 

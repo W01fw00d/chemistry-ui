@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles, ListItem as Item } from '@material-ui/core';
 
-const Component = ({ children, onClick, isSubheader }) => {
+const Component = ({ children, isSubheader, onClick }) => {
   const useStyles = makeStyles({
     item: {
       paddingLeft: '32px',
@@ -13,11 +13,11 @@ const Component = ({ children, onClick, isSubheader }) => {
 
   return (
     <Item
-      role={undefined}
-      dense
       button={!!onClick}
-      onClick={onClick || (() => {})}
       className={isSubheader ? '' : classes.item}
+      dense
+      onClick={onClick || (() => {})}
+      role={undefined}
     >
       {children}
     </Item>
@@ -26,14 +26,14 @@ const Component = ({ children, onClick, isSubheader }) => {
 
 Component.defaultProps = {
   children: <></>,
-  onClick: () => {},
   isSubheader: false,
+  onClick: () => {},
 };
 
 Component.propTypes = {
   children: PropTypes.any,
-  onClick: PropTypes.func,
   isSubheader: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 export default Component;

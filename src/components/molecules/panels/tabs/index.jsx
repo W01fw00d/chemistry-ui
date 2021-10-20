@@ -8,9 +8,9 @@ import Panel from './components/panel.jsx';
 const Component = ({ data }) => {
   const useStyles = makeStyles((theme) => ({
     root: {
+      backgroundColor: theme.palette.background.paper,
       flexGrow: 1,
       width: '100%',
-      backgroundColor: theme.palette.background.paper,
     },
   }));
   const classes = useStyles();
@@ -22,20 +22,20 @@ const Component = ({ data }) => {
   };
 
   const getTabId = (index) => ({
-    id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
+    id: `simple-tab-${index}`,
   });
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar color="default" position="static">
         <Tabs
-          value={value}
-          onChange={handleChange}
+          aria-label="simple tabs example"
           centered
           indicatorColor="secondary"
+          onChange={handleChange}
           textColor="secondary"
-          aria-label="simple tabs example"
+          value={value}
         >
           {data.map((tab, index) => (
             <Tab key={index} {...tab} {...getTabId(index)} />
@@ -43,7 +43,7 @@ const Component = ({ data }) => {
         </Tabs>
       </AppBar>
       {data.map(({ content }, index) => (
-        <Panel key={index} value={value} index={index}>
+        <Panel index={index} key={index} value={value}>
           {content}
         </Panel>
       ))}

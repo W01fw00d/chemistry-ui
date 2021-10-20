@@ -19,7 +19,7 @@ const Component = ({ text, value }) => {
       <Icon>
         <Checkbox value={value} />
       </Icon>
-      <Text primary={text} className={value ? classes.lineThrough : ''} />
+      <Text className={value ? classes.lineThrough : ''} primary={text} />
     </>
   );
 };
@@ -31,7 +31,7 @@ Component.defaultProps = {
 
 Component.propTypes = {
   text: PropTypes.any,
-  value: PropTypes.bool,
+  value: Checkbox.propTypes.value,
 };
 
 export default Component;

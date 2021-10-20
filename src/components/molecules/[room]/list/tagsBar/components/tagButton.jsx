@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core';
 import Grid from '../../../../../atoms/layout/grid.jsx';
 import TextButton from '../../../../../atoms/buttons/text.jsx';
 
-const Component = ({ id, isCurrent, name, handleClick }) => {
+const Component = ({ handleClick, id, isCurrent, name }) => {
   const useStyles = makeStyles((theme) => ({
     button: {
       backgroundColor: theme.palette.primary.main,
@@ -18,11 +18,11 @@ const Component = ({ id, isCurrent, name, handleClick }) => {
   const classes = useStyles();
 
   return (
-    <Grid key={id} item>
+    <Grid item key={id}>
       <TextButton
-        id={id}
         className={`${classes.button} ${isCurrent ? classes.currentTag : ''}`}
         handleClick={handleClick}
+        id={id}
       >
         {name}
       </TextButton>
@@ -31,17 +31,17 @@ const Component = ({ id, isCurrent, name, handleClick }) => {
 };
 
 Component.defaultProps = {
-  id: 0,
-  name: '',
-  isCurrent: false,
   handleClick: () => {},
+  id: 0,
+  isCurrent: false,
+  name: '',
 };
 
 Component.propTypes = {
-  id: PropTypes.number,
-  name: PropTypes.string,
-  isCurrent: PropTypes.bool,
   handleClick: PropTypes.func,
+  id: PropTypes.number,
+  isCurrent: PropTypes.bool,
+  name: PropTypes.string,
 };
 
 export default Component;

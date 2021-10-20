@@ -6,10 +6,10 @@ import { makeStyles } from '@material-ui/core';
 const Component = ({ children, className }) => {
   const useStyles = makeStyles({
     bar: {
-      left: 0,
-      right: 0,
       bottom: 0,
+      left: 0,
       position: 'fixed',
+      right: 0,
     },
   });
   const classes = useStyles();

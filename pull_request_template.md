@@ -1,4 +1,3 @@
-- [ ] check Proptypes for edited/new components are properly defined // TODO: can be removed after enabling related eslint rules
 - [ ] `npm run storybook`: no warning or errors on browser console
 - [ ] check that [cooking-with-amateurs](https://github.com/W01fw00d/cooking-with-amateurs) works with new build without warning or errors on browser console
 - [ ] Upgrade version

@@ -10,9 +10,9 @@ import Component from './imageFooter';
 
 const details = items[0];
 const data = {
+  likeCount: details.likeCount,
   name: details.name,
   price: details.price,
-  likeCount: details.likeCount,
 };
 
 storiesOf('Molecules/[Room]/List/ImageFooter', module)

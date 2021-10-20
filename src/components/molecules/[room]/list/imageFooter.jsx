@@ -13,14 +13,14 @@ const Component = ({ data }) => {
       backgroundColor: theme.palette.primary.main,
       padding: theme.spacing(1),
     },
+    likeCount: {
+      marginLeft: theme.spacing(1),
+    },
     price: {
       fontWeight: '800',
     },
     text: {
       color: theme.palette.primary.dark,
-    },
-    likeCount: {
-      marginLeft: theme.spacing(1),
     },
   }));
   const classes = useStyles();
@@ -31,20 +31,20 @@ const Component = ({ data }) => {
     <section className={classes.layout}>
       <Grid container>
         <Grid item xs={12}>
-          <Typography variant="h6" className={classes.text}>
+          <Typography className={classes.text} variant="h6">
             {data.name}
           </Typography>
         </Grid>
         <Grid item xs={6}>
-          <Typography variant="h6" className={`${classes.text} ${classes.price}`}>
+          <Typography className={`${classes.text} ${classes.price}`} variant="h6">
             {priceWithCurrency}
           </Typography>
         </Grid>
         {data.likeCount > 0 && (
-          <Grid item xs={6} container justifyContent="flex-end" className={classes.text}>
+          <Grid className={classes.text} container item justifyContent="flex-end" xs={6}>
             <Typography variant="h6">
               <Grid container spacing={1}>
-                <Grid item xs={6} container alignItems="center">
+                <Grid alignItems="center" container item xs={6}>
                   <LikeIcon />
                 </Grid>
                 <Grid item xs={6}>
@@ -65,9 +65,9 @@ Component.defaultProps = {
 
 Component.propTypes = {
   data: PropTypes.shape({
+    likeCount: PropTypes.number,
     name: PropTypes.string,
     price: PropTypes.number,
-    likeCount: PropTypes.number,
   }),
 };
 

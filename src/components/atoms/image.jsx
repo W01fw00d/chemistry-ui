@@ -3,39 +3,39 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core';
 
-const Component = ({ src, width, height, description, className }) => {
+const Component = ({ className, description, height, src, width }) => {
   const useStyles = makeStyles({
     img: {
-      width: '100%',
       height: 'auto',
+      width: '100%',
     },
   });
   const classes = useStyles();
 
   return (
     <img
-      src={src}
-      width={width}
+      alt={`${description}.`}
+      className={`${classes.img} ${className}`}
       height={height}
       loading="lazy"
-      alt={`${description}.`}
+      src={src}
       title={description}
-      className={`${classes.img} ${className}`}
+      width={width}
     />
   );
 };
 
 Component.defaultProps = {
-  description: 'Image without description',
   className: '',
+  description: 'Image without description',
 };
 
 Component.propTypes = {
+  className: PropTypes.string,
+  description: PropTypes.string,
+  height: PropTypes.number.isRequired,
   src: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
-  description: PropTypes.string,
-  className: PropTypes.string,
 };
 
 export default Component;

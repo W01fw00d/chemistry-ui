@@ -10,12 +10,12 @@ import allLiterals from '../../../../../.storybook/fake_data/literals.json';
 import Component from './buttonsRow';
 
 const literals = {
-  like: allLiterals.like,
   comment: allLiterals.comment,
+  like: allLiterals.like,
 };
 
 storiesOf('Organisms/[Room]/Detail/ButtonsRow', module)
   .addDecorator(themeDecorator(theme))
   .add('default', () => (
-    <Component literals={literals} likeCount={3} handleClick={action('IconButton clicked')} />
+    <Component handleClick={action('IconButton clicked')} likeCount={3} literals={literals} />
   ));

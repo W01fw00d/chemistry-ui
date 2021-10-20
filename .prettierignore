@@ -1,0 +1,12 @@
+node_modules
+storybook-static
+lib
+public
+
+README.md
+notes.txt
+package.json
+package-lock.json
+pull_request_template.md
+
+.storybook/fake_data

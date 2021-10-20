@@ -5,23 +5,23 @@ import Item from '../../../../list/item/index.jsx';
 import Checkbox from '../../../../list/item/checkbox.jsx';
 import MarkdownText from '../../../../../atoms/markdownText.jsx';
 
-const Component = ({ index, rowCounter, item, value, handleClick }) => (
+const Component = ({ handleClick, index, item, rowCounter, value }) => (
   <Item onClick={handleClick}>
-    <Checkbox value={value} text={<MarkdownText id={`${index}-${rowCounter}`} text={item} />} />
+    <Checkbox text={<MarkdownText id={`${index}-${rowCounter}`} text={item} />} value={value} />
   </Item>
 );
 
 Component.defaultProps = {
-  index: 0,
   handleClick: () => {},
+  index: 0,
 };
 
 Component.propTypes = {
+  handleClick: Item.propTypes.onClick,
   index: PropTypes.number,
+  item: MarkdownText.propTypes.text.isRequired,
   rowCounter: PropTypes.number.isRequired,
-  item: PropTypes.string.isRequired,
-  value: PropTypes.bool.isRequired,
-  handleClick: PropTypes.func,
+  value: Checkbox.propTypes.value.isRequired,
 };
 
 export default Component;

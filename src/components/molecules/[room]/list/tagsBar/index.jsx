@@ -5,7 +5,7 @@ import Grid from '../../../../atoms/layout/grid.jsx';
 
 import TagButton from './components/tagButton.jsx';
 
-const Component = ({ tags, handleClick }) => (
+const Component = ({ handleClick, tags }) => (
   <Grid container justifyContent="center">
     {tags.map((tag) => (
       <TagButton key={tag.id} {...tag} handleClick={handleClick} />
@@ -14,19 +14,19 @@ const Component = ({ tags, handleClick }) => (
 );
 
 Component.defaultProps = {
-  tags: [],
   handleClick: () => {},
+  tags: [],
 };
 
 Component.propTypes = {
+  handleClick: PropTypes.func,
   tags: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
-      name: PropTypes.string,
       isCurrent: PropTypes.bool,
+      name: PropTypes.string,
     }),
   ),
-  handleClick: PropTypes.func,
 };
 
 export default Component;

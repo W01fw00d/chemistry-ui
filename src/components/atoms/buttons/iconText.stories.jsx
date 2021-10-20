@@ -14,8 +14,8 @@ storiesOf('Atoms/Buttons/IconText', module)
   .addDecorator(themeDecorator(theme))
   .add('With Like Icon', () => (
     <Component
+      handleClick={action('IconTextButton clicked')}
       icon={<LikeIcon />}
       text="Icon Text Button"
-      handleClick={action('IconTextButton clicked')}
     />
   ));

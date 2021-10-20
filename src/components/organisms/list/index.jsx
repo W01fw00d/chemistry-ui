@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import NoItems from './noItems.jsx';
 
-const Component = ({ className, items, noItemsMsg, Section, Item }) => {
+const Component = ({ className, Item, items, noItemsMsg, Section }) => {
   let rowCounter = -1;
   const sectionsItems = [];
 
@@ -75,11 +75,9 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
         <section key={`${index}`}>
           <Section
             {...section}
-            index={index}
-            rowCounter={rowCounter}
             className={className}
-            value={checkedSections.indexOf(index) !== -1}
             handleClick={handleSectionToggle(index)}
+            index={index}
             renderItem={(item, itemIndex) => {
               rowCounter += 1;
               sectionsItems[index].push(rowCounter);
@@ -87,17 +85,19 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
               return (
                 item && (
                   <Item
+                    currentNameIndex={currentItemsName[rowCounter]}
+                    handleClick={handleToggle(rowCounter)}
                     item={item}
                     key={`${itemIndex}-${rowCounter}`}
                     rowCounter={rowCounter}
-                    value={checked.indexOf(rowCounter) !== -1}
-                    handleClick={handleToggle(rowCounter)}
-                    currentNameIndex={currentItemsName[rowCounter]}
                     setCurrentNameIndex={setCurrentNameIndex(rowCounter)}
+                    value={checked.indexOf(rowCounter) !== -1}
                   />
                 )
               );
             }}
+            rowCounter={rowCounter}
+            value={checkedSections.indexOf(index) !== -1}
           />
         </section>
       );
@@ -109,18 +109,18 @@ const Component = ({ className, items, noItemsMsg, Section, Item }) => {
 
 Component.defaultProps = {
   className: '',
+  Item: () => {},
   items: [],
   noItemsMsg: '',
   Section: () => {},
-  Item: () => {},
 };
 
 Component.propTypes = {
   className: PropTypes.string,
+  Item: PropTypes.any,
   items: PropTypes.array,
   noItemsMsg: PropTypes.string,
   Section: PropTypes.any,
-  Item: PropTypes.any,
 };
 
 export default Component;
