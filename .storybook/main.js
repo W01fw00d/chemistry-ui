@@ -13,5 +13,5 @@ module.exports = {
     '@storybook/theming',
     '@storybook/theming/create',
   ],
-  webpackFinal: async config => config,
+  webpackFinal: async (config) => config,
 };

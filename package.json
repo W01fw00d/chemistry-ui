@@ -6,10 +6,9 @@
   "scripts": {
     "build": "webpack",
     "build-storybook": "build-storybook -s public",
-    "eslint": "eslint --fix src/**",
-    "format-rules-file": "eslint --fix .eslintrc.js && prettier .eslintrc.js --write",
+    "eslint": "eslint --fix \"./**\"",
     "prepare": "husky install",
-    "prettier": "prettier src/** --write",
+    "prettier": "prettier --write .",
     "storybook": "start-storybook -p 6006 -s public"
   },
   "repository": "git://github.com/W01fw00d/chemistry-ui.git",
