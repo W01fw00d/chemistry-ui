@@ -72,7 +72,7 @@ const Component = ({ className, Item, items, noItemsMsg, Section }) => {
       sectionsItems[index] = [];
 
       return (
-        <section key={`${index}`}>
+        <section key={section.id}>
           <Section
             {...section}
             className={className}

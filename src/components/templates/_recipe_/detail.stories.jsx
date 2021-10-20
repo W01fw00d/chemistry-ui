@@ -27,7 +27,7 @@ const getData = ({ ingredients, name }) => ({
     },
     {
       description: 'Description',
-      id: 1,
+      id: 2,
       sectionName: 'Section Name 2',
     },
   ],
