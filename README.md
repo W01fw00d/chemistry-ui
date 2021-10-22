@@ -28,6 +28,12 @@ A link to a simple usage example project will be added soon...
 npm install
 ```
 
+* If it fails due to a "Could not resolve dependency" error, try with:
+
+```
+npm install --legacy-peer-deps
+```
+
 2. Launch Storybook
 
 ```
