@@ -1,6 +1,6 @@
 {
   "name": "chemistry-ui",
-  "version": "2.4.5",
+  "version": "2.4.6",
   "description": "Portfolio React Components Library based on Material-ui",
   "main": "lib/index.js",
   "scripts": {
@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/W01fw00d/chemistry-ui#readme",
   "engines": {
-    "node": "12.13.1"
+    "node": "v14.18.0",
+    "npm": "8.1.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
