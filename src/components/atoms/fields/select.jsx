@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { FormControl, Select, MenuItem, makeStyles } from '@material-ui/core';
 
-const Component = ({ handleChange, options, value }) => {
+const Component = ({ handleChange, id, options, value }) => {
   const useStyles = makeStyles((theme) => ({
     field: {
       backgroundColor: theme.palette.primary.light,
@@ -15,6 +15,7 @@ const Component = ({ handleChange, options, value }) => {
   return (
     <FormControl>
       <Select
+        id={id}
         className={classes.field}
         color="primary"
         labelId="language-select"
@@ -22,9 +23,9 @@ const Component = ({ handleChange, options, value }) => {
         value={value}
         variant="outlined"
       >
-        {options.map(({ id, text }) => (
-          <MenuItem key={id} value={id}>
-            {text}
+        {options.map((option) => (
+          <MenuItem key={option.id} value={option.id}>
+            {option.text}
           </MenuItem>
         ))}
       </Select>
@@ -34,12 +35,14 @@ const Component = ({ handleChange, options, value }) => {
 
 Component.defaultProps = {
   handleChange: () => {},
+  id: 'select',
   options: [],
   value: 0,
 };
 
 Component.propTypes = {
   handleChange: PropTypes.func,
+  id: PropTypes.string,
   options: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
