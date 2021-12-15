@@ -35,6 +35,7 @@ const Component = ({ aboutLiteral, className, handleChange, languageData, search
             {languageData && (
               <form autoComplete="off" noValidate>
                 <Select
+                  id="languageSelect"
                   handleChange={languageData.onChange}
                   options={languageData.options}
                   value={languageData.active}

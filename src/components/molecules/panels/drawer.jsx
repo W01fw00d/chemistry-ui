@@ -32,7 +32,7 @@ const Component = ({ children, className }) => {
       <IconButton handleClick={toggleDrawer} id="drawerButton">
         <MenuIcon />
       </IconButton>
-      <Drawer anchor="left" onClose={toggleDrawer} open={state}>
+      <Drawer id="drawerPanel" anchor="left" onClose={toggleDrawer} open={state}>
         <div className={`${classes.layout}${className ? ` ${className}` : ''}`}>{children}</div>
       </Drawer>
     </>
