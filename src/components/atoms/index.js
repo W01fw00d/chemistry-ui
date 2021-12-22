@@ -1,1 +1,2 @@
-export default './loadingText';
+// eslint-disable-next-line import/prefer-default-export
+export { default as LoadingText } from './loadingText';
