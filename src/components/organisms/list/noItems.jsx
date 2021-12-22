@@ -9,7 +9,7 @@ const Component = ({ children }) => {
   const useStyles = makeStyles((theme) => ({
     message: {
       color: theme.palette.primary.dark,
-      paddingBottom: '20px',
+      padding: '20px 0',
       textAlign: 'center',
     },
   }));
