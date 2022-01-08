@@ -22,7 +22,13 @@ const Component = ({ authorData, literals, projectData }) => {
     noListStyle: {
       display: 'initial',
     },
-    noPadding: {
+    noMargin: {
+      margin: 0,
+    },
+    ul: {
+      '-moz-columns': 2,
+      '-webkit-columns': 2,
+      columns: 2,
       padding: 0,
     },
   });
@@ -56,10 +62,10 @@ const Component = ({ authorData, literals, projectData }) => {
             <p>
               <strong>{literals.participants}</strong>
             </p>
-            <ul className={classes.noPadding}>
-              {projectData.participants.map((name) => (
-                <li className={classes.noListStyle} key={name.toLowerCase()}>
-                  <p>{name}</p>
+            <ul className={classes.ul}>
+              {projectData.participants.map((participant, index) => (
+                <li className={classes.noListStyle} key={participant.toLowerCase()}>
+                  <p className={index === 0 ? `${classes.noMargin}` : ''}>{participant}</p>
                 </li>
               ))}
             </ul>
