@@ -15,6 +15,9 @@ const Component = ({ authorData, literals, projectData }) => {
     alignText: {
       textAlign: 'center',
     },
+    horizontalPadding: {
+      padding: '0 20px',
+    },
     layout: {
       backgroundColor: theme.palette.primary.light,
       paddingBottom: theme.spacing(4),
@@ -55,7 +58,7 @@ const Component = ({ authorData, literals, projectData }) => {
           </header>
           <Divider />
           <section className={classes.alignText}>
-            <p>{projectData.description}</p>
+            <p className={classes.horizontalPadding}>{projectData.description}</p>
           </section>
           <Divider />
           <section className={classes.alignText}>
