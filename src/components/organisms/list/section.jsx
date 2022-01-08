@@ -5,6 +5,7 @@ import { makeStyles, List, ListItemText as Text, Collapse } from '@material-ui/c
 import { ExpandLess as ExpandLessIcon, ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
 
 import Item from './item/index';
+import Description from './item/description';
 
 const Component = ({
   className,
@@ -47,9 +48,9 @@ const Component = ({
     >
       {description && (
         <Collapse in={!value} timeout="auto" unmountOnExit>
-          <Item>
+          <Description>
             <Text primary={description} />
-          </Item>
+          </Description>
         </Collapse>
       )}
       {items && (
@@ -61,9 +62,9 @@ const Component = ({
   ) : (
     <List className={`${classes.root} ${className}`}>
       {description && (
-        <Item>
+        <Description>
           <Text primary={description} />
-        </Item>
+        </Description>
       )}
       {items && items.map(renderItem)}
     </List>
